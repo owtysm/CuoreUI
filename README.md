@@ -1,7 +1,11 @@
 ![CuoreUI Logo](https://i.imgur.com/sh8j9cJ.png)
 ![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
 
-CuoreUI is currently in development.
+# LOOKING FOR A NEW OWNER!
+<br>
+
+> [!WARNING]
+> # CuoreUI's DEVELOPMENT is HALTED.
 
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
@@ -15,7 +19,11 @@ Have you ever used a UI Library only to find out you need a license, it is unpol
 
 **CuoreUI might be the solution.**
 
-CuoreUI will be alive for as long as at least one person uses it! 
+~~CuoreUI will be alive for as long as at least one person uses it!~~
+
+I'm removing my online presence for personal reasons, please forgive me.
+
+CuoreUI is looking for a new owner!
 
 ## 💾 Where to install? 
 `dotnet add package CuoreUI.Winforms`
