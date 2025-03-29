@@ -30,7 +30,7 @@ Don't hesitate to reach out, I respect everyone!
 
 ![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's talk on Discord: [@svn.ow](https://discord.com/)
 
-![YouTube logo](https://i.imgur.com/OOAQDD5.png) I have a YouTube channel: [@sevenow](https://www.youtube.com/@sevenoww)
+![YouTube logo](https://i.imgur.com/OOAQDD5.png) I have a YouTube channel: [@sevenowh](https://www.youtube.com/@sevenowh)
 
 ## 🖋️ Versioning
 **We use the following format:**
