@@ -25,7 +25,7 @@ namespace CuoreUI
         static Drawing()
         {
             HandCursorFix.EnableModernCursor();
-            Process.GetCurrentProcess().Exited += (e, s) => 
+            Process.GetCurrentProcess().Exited += (e, s) =>
             {
                 GlobalMouseHook.Stop();
             };
@@ -68,7 +68,7 @@ namespace CuoreUI
         {
             get
             {
-                return (float)1000/GetHighestRefreshRate();
+                return (float)1000 / GetHighestRefreshRate();
             }
         }
 
