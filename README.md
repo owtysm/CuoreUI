@@ -2,10 +2,7 @@
 ![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
 
 > [!NOTE]
-> # Please read: [./DEPARTURE.md](https://github.com/7owh/CuoreUI/blob/master/DEPARTURE.md)
-
-> [!CAUTION]
-> ## CuoreUI's DEVELOPMENT is HALTED.
+> CuoreUI is in development
 
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
@@ -19,11 +16,7 @@ Have you ever used a UI Library only to find out you need a license, it is unpol
 
 **CuoreUI might be the solution.**
 
-~~CuoreUI will be alive for as long as at least one person uses it!~~
-
-The original owner is removing or had already removed their online presence for personal reasons, please forgive them.
-
-CuoreUI is looking for a new owner!
+CuoreUI will be alive for as long as at least one person uses it!
 
 ## 💾 Where to install? 
 `dotnet add package CuoreUI.Winforms`
@@ -33,7 +26,11 @@ Latest Releases: [NuGet](https://www.nuget.org/packages/CuoreUI.Winforms/).
 Older Releases (+ DLL): [GitHub](https://github.com/7owh/CuoreUI/releases).
 ## 📫 Contact?
 
-There's no way to contact the original owner.
+Don't hesitate to reach out, I respect everyone!
+
+![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's talk on Discord: [@svn.ow](https://discord.com/)
+
+![YouTube logo](https://i.imgur.com/OOAQDD5.png) I have a YouTube channel: [@sevenowh](https://www.youtube.com/@sevenowh)
 
 ## 🖋️ Versioning
 **We use the following format:**
