@@ -223,7 +223,7 @@
             this.button1.ImageAutoCenter = true;
             this.button1.ImageExpand = new System.Drawing.Point(0, 0);
             this.button1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button1.ImageTint = System.Drawing.Color.Empty;
+            this.button1.NormalImageTint = System.Drawing.Color.Empty;
             this.button1.Location = new System.Drawing.Point(0, 3);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
@@ -258,7 +258,7 @@
             this.button2.ImageAutoCenter = true;
             this.button2.ImageExpand = new System.Drawing.Point(0, 0);
             this.button2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button2.ImageTint = System.Drawing.Color.Empty;
+            this.button2.NormalImageTint = System.Drawing.Color.Empty;
             this.button2.Location = new System.Drawing.Point(56, 3);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
@@ -293,7 +293,7 @@
             this.button3.ImageAutoCenter = true;
             this.button3.ImageExpand = new System.Drawing.Point(0, 0);
             this.button3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button3.ImageTint = System.Drawing.Color.Empty;
+            this.button3.NormalImageTint = System.Drawing.Color.Empty;
             this.button3.Location = new System.Drawing.Point(112, 3);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
@@ -328,7 +328,7 @@
             this.button4.ImageAutoCenter = true;
             this.button4.ImageExpand = new System.Drawing.Point(0, 0);
             this.button4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button4.ImageTint = System.Drawing.Color.Empty;
+            this.button4.NormalImageTint = System.Drawing.Color.Empty;
             this.button4.Location = new System.Drawing.Point(168, 3);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
@@ -363,7 +363,7 @@
             this.button5.ImageAutoCenter = true;
             this.button5.ImageExpand = new System.Drawing.Point(0, 0);
             this.button5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button5.ImageTint = System.Drawing.Color.Empty;
+            this.button5.NormalImageTint = System.Drawing.Color.Empty;
             this.button5.Location = new System.Drawing.Point(225, 3);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
@@ -398,7 +398,7 @@
             this.button6.ImageAutoCenter = true;
             this.button6.ImageExpand = new System.Drawing.Point(0, 0);
             this.button6.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button6.ImageTint = System.Drawing.Color.Empty;
+            this.button6.NormalImageTint = System.Drawing.Color.Empty;
             this.button6.Location = new System.Drawing.Point(281, 3);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
@@ -433,7 +433,7 @@
             this.button7.ImageAutoCenter = true;
             this.button7.ImageExpand = new System.Drawing.Point(0, 0);
             this.button7.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button7.ImageTint = System.Drawing.Color.Empty;
+            this.button7.NormalImageTint = System.Drawing.Color.Empty;
             this.button7.Location = new System.Drawing.Point(336, 3);
             this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
@@ -468,7 +468,7 @@
             this.button8.ImageAutoCenter = true;
             this.button8.ImageExpand = new System.Drawing.Point(0, 0);
             this.button8.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button8.ImageTint = System.Drawing.Color.Empty;
+            this.button8.NormalImageTint = System.Drawing.Color.Empty;
             this.button8.Location = new System.Drawing.Point(0, 33);
             this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
@@ -503,7 +503,7 @@
             this.button9.ImageAutoCenter = true;
             this.button9.ImageExpand = new System.Drawing.Point(0, 0);
             this.button9.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button9.ImageTint = System.Drawing.Color.Empty;
+            this.button9.NormalImageTint = System.Drawing.Color.Empty;
             this.button9.Location = new System.Drawing.Point(56, 33);
             this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
@@ -538,7 +538,7 @@
             this.button10.ImageAutoCenter = true;
             this.button10.ImageExpand = new System.Drawing.Point(0, 0);
             this.button10.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button10.ImageTint = System.Drawing.Color.Empty;
+            this.button10.NormalImageTint = System.Drawing.Color.Empty;
             this.button10.Location = new System.Drawing.Point(112, 33);
             this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button10.Name = "button10";
@@ -573,7 +573,7 @@
             this.button11.ImageAutoCenter = true;
             this.button11.ImageExpand = new System.Drawing.Point(0, 0);
             this.button11.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button11.ImageTint = System.Drawing.Color.Empty;
+            this.button11.NormalImageTint = System.Drawing.Color.Empty;
             this.button11.Location = new System.Drawing.Point(168, 33);
             this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button11.Name = "button11";
@@ -608,7 +608,7 @@
             this.button12.ImageAutoCenter = true;
             this.button12.ImageExpand = new System.Drawing.Point(0, 0);
             this.button12.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button12.ImageTint = System.Drawing.Color.Empty;
+            this.button12.NormalImageTint = System.Drawing.Color.Empty;
             this.button12.Location = new System.Drawing.Point(225, 33);
             this.button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button12.Name = "button12";
@@ -643,7 +643,7 @@
             this.button13.ImageAutoCenter = true;
             this.button13.ImageExpand = new System.Drawing.Point(0, 0);
             this.button13.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button13.ImageTint = System.Drawing.Color.Empty;
+            this.button13.NormalImageTint = System.Drawing.Color.Empty;
             this.button13.Location = new System.Drawing.Point(281, 33);
             this.button13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button13.Name = "button13";
@@ -678,7 +678,7 @@
             this.button14.ImageAutoCenter = true;
             this.button14.ImageExpand = new System.Drawing.Point(0, 0);
             this.button14.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button14.ImageTint = System.Drawing.Color.Empty;
+            this.button14.NormalImageTint = System.Drawing.Color.Empty;
             this.button14.Location = new System.Drawing.Point(336, 33);
             this.button14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button14.Name = "button14";
@@ -713,7 +713,7 @@
             this.button15.ImageAutoCenter = true;
             this.button15.ImageExpand = new System.Drawing.Point(0, 0);
             this.button15.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button15.ImageTint = System.Drawing.Color.Empty;
+            this.button15.NormalImageTint = System.Drawing.Color.Empty;
             this.button15.Location = new System.Drawing.Point(0, 63);
             this.button15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button15.Name = "button15";
@@ -748,7 +748,7 @@
             this.button16.ImageAutoCenter = true;
             this.button16.ImageExpand = new System.Drawing.Point(0, 0);
             this.button16.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button16.ImageTint = System.Drawing.Color.Empty;
+            this.button16.NormalImageTint = System.Drawing.Color.Empty;
             this.button16.Location = new System.Drawing.Point(56, 63);
             this.button16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button16.Name = "button16";
@@ -783,7 +783,7 @@
             this.button17.ImageAutoCenter = true;
             this.button17.ImageExpand = new System.Drawing.Point(0, 0);
             this.button17.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button17.ImageTint = System.Drawing.Color.Empty;
+            this.button17.NormalImageTint = System.Drawing.Color.Empty;
             this.button17.Location = new System.Drawing.Point(112, 63);
             this.button17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button17.Name = "button17";
@@ -818,7 +818,7 @@
             this.button18.ImageAutoCenter = true;
             this.button18.ImageExpand = new System.Drawing.Point(0, 0);
             this.button18.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button18.ImageTint = System.Drawing.Color.Empty;
+            this.button18.NormalImageTint = System.Drawing.Color.Empty;
             this.button18.Location = new System.Drawing.Point(168, 63);
             this.button18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button18.Name = "button18";
@@ -853,7 +853,7 @@
             this.button19.ImageAutoCenter = true;
             this.button19.ImageExpand = new System.Drawing.Point(0, 0);
             this.button19.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button19.ImageTint = System.Drawing.Color.Empty;
+            this.button19.NormalImageTint = System.Drawing.Color.Empty;
             this.button19.Location = new System.Drawing.Point(225, 63);
             this.button19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button19.Name = "button19";
@@ -888,7 +888,7 @@
             this.button20.ImageAutoCenter = true;
             this.button20.ImageExpand = new System.Drawing.Point(0, 0);
             this.button20.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button20.ImageTint = System.Drawing.Color.Empty;
+            this.button20.NormalImageTint = System.Drawing.Color.Empty;
             this.button20.Location = new System.Drawing.Point(281, 63);
             this.button20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button20.Name = "button20";
@@ -923,7 +923,7 @@
             this.button21.ImageAutoCenter = true;
             this.button21.ImageExpand = new System.Drawing.Point(0, 0);
             this.button21.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button21.ImageTint = System.Drawing.Color.Empty;
+            this.button21.NormalImageTint = System.Drawing.Color.Empty;
             this.button21.Location = new System.Drawing.Point(336, 63);
             this.button21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button21.Name = "button21";
@@ -958,7 +958,7 @@
             this.button22.ImageAutoCenter = true;
             this.button22.ImageExpand = new System.Drawing.Point(0, 0);
             this.button22.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button22.ImageTint = System.Drawing.Color.Empty;
+            this.button22.NormalImageTint = System.Drawing.Color.Empty;
             this.button22.Location = new System.Drawing.Point(0, 93);
             this.button22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button22.Name = "button22";
@@ -993,7 +993,7 @@
             this.button23.ImageAutoCenter = true;
             this.button23.ImageExpand = new System.Drawing.Point(0, 0);
             this.button23.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button23.ImageTint = System.Drawing.Color.Empty;
+            this.button23.NormalImageTint = System.Drawing.Color.Empty;
             this.button23.Location = new System.Drawing.Point(56, 93);
             this.button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button23.Name = "button23";
@@ -1028,7 +1028,7 @@
             this.button24.ImageAutoCenter = true;
             this.button24.ImageExpand = new System.Drawing.Point(0, 0);
             this.button24.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button24.ImageTint = System.Drawing.Color.Empty;
+            this.button24.NormalImageTint = System.Drawing.Color.Empty;
             this.button24.Location = new System.Drawing.Point(112, 93);
             this.button24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button24.Name = "button24";
@@ -1063,7 +1063,7 @@
             this.button25.ImageAutoCenter = true;
             this.button25.ImageExpand = new System.Drawing.Point(0, 0);
             this.button25.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button25.ImageTint = System.Drawing.Color.Empty;
+            this.button25.NormalImageTint = System.Drawing.Color.Empty;
             this.button25.Location = new System.Drawing.Point(168, 93);
             this.button25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button25.Name = "button25";
@@ -1098,7 +1098,7 @@
             this.button26.ImageAutoCenter = true;
             this.button26.ImageExpand = new System.Drawing.Point(0, 0);
             this.button26.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button26.ImageTint = System.Drawing.Color.Empty;
+            this.button26.NormalImageTint = System.Drawing.Color.Empty;
             this.button26.Location = new System.Drawing.Point(225, 93);
             this.button26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button26.Name = "button26";
@@ -1133,7 +1133,7 @@
             this.button27.ImageAutoCenter = true;
             this.button27.ImageExpand = new System.Drawing.Point(0, 0);
             this.button27.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button27.ImageTint = System.Drawing.Color.Empty;
+            this.button27.NormalImageTint = System.Drawing.Color.Empty;
             this.button27.Location = new System.Drawing.Point(281, 93);
             this.button27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button27.Name = "button27";
@@ -1168,7 +1168,7 @@
             this.button28.ImageAutoCenter = true;
             this.button28.ImageExpand = new System.Drawing.Point(0, 0);
             this.button28.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button28.ImageTint = System.Drawing.Color.Empty;
+            this.button28.NormalImageTint = System.Drawing.Color.Empty;
             this.button28.Location = new System.Drawing.Point(336, 93);
             this.button28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button28.Name = "button28";
@@ -1203,7 +1203,7 @@
             this.button29.ImageAutoCenter = true;
             this.button29.ImageExpand = new System.Drawing.Point(0, 0);
             this.button29.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button29.ImageTint = System.Drawing.Color.Empty;
+            this.button29.NormalImageTint = System.Drawing.Color.Empty;
             this.button29.Location = new System.Drawing.Point(0, 123);
             this.button29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button29.Name = "button29";
@@ -1238,7 +1238,7 @@
             this.button30.ImageAutoCenter = true;
             this.button30.ImageExpand = new System.Drawing.Point(0, 0);
             this.button30.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button30.ImageTint = System.Drawing.Color.Empty;
+            this.button30.NormalImageTint = System.Drawing.Color.Empty;
             this.button30.Location = new System.Drawing.Point(56, 123);
             this.button30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button30.Name = "button30";
@@ -1273,7 +1273,7 @@
             this.button31.ImageAutoCenter = true;
             this.button31.ImageExpand = new System.Drawing.Point(0, 0);
             this.button31.ImageOffset = new System.Drawing.Point(0, 0);
-            this.button31.ImageTint = System.Drawing.Color.Empty;
+            this.button31.NormalImageTint = System.Drawing.Color.Empty;
             this.button31.Location = new System.Drawing.Point(112, 123);
             this.button31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button31.Name = "button31";
@@ -1312,7 +1312,7 @@
             this.rightMonthButton.ImageAutoCenter = true;
             this.rightMonthButton.ImageExpand = new System.Drawing.Point(2, 2);
             this.rightMonthButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.rightMonthButton.ImageTint = System.Drawing.Color.Gray;
+            this.rightMonthButton.NormalImageTint = System.Drawing.Color.Gray;
             this.rightMonthButton.Location = new System.Drawing.Point(349, 167);
             this.rightMonthButton.Name = "rightMonthButton";
             this.rightMonthButton.NormalBackground = System.Drawing.Color.Empty;
@@ -1351,7 +1351,7 @@
             this.leftMonthButton.ImageAutoCenter = true;
             this.leftMonthButton.ImageExpand = new System.Drawing.Point(2, 2);
             this.leftMonthButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.leftMonthButton.ImageTint = System.Drawing.Color.Gray;
+            this.leftMonthButton.NormalImageTint = System.Drawing.Color.Gray;
             this.leftMonthButton.Location = new System.Drawing.Point(314, 167);
             this.leftMonthButton.Name = "leftMonthButton";
             this.leftMonthButton.NormalBackground = System.Drawing.Color.Empty;

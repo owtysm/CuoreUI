@@ -1,9 +1,9 @@
-﻿using CuoreUI.TabControlStuff;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using CuoreUI.TabControlStuff;
 
 namespace CuoreUI.Controls
 {
@@ -190,6 +190,20 @@ namespace CuoreUI.Controls
             }
         }
 
+        private bool privateShowAddTabButton = true;
+        public bool ShowAddTabButton
+        {
+            get
+            {
+                return privateShowAddTabButton;
+            }
+            set
+            {
+                privateShowAddTabButton = value;
+                Refresh();
+            }
+        }
+
         #region VisualProperties
         public object HoveredTab_ => null;
 
@@ -273,7 +287,7 @@ namespace CuoreUI.Controls
                     }
                 }
 
-                if (i == (TabPages.Count - 1) && i != TabSelectedToDeletion)
+                if (ShowAddTabButton && i == (TabPages.Count - 1) && i != TabSelectedToDeletion)
                 {
                     //last tab, draw plus button
                     Rectangle rect = GetTabRect(i);
@@ -432,7 +446,7 @@ namespace CuoreUI.Controls
             {
                 for (int i = 0; i < TabCount; i++)
                 {
-                    if (i != TabSelectedToDeletion && addTabRectangle.Contains(e.Location) && i == HoveredTabIndex)
+                    if (ShowAddTabButton && i != TabSelectedToDeletion && addTabRectangle.Contains(e.Location) && i == HoveredTabIndex)
                     {
                         AddTab();
                         return;

@@ -123,6 +123,8 @@ namespace CuoreUI.Controls
         {
             base.OnMouseDown(e);
 
+            Focus();
+
             lastMousePoint = new Point(-1, -1);
 
             dragTimer.Interval = 1000 / CuoreUI.Drawing.GetHighestRefreshRate();

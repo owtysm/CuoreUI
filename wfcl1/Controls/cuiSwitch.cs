@@ -411,5 +411,11 @@ namespace CuoreUI.Controls
         {
             Invalidate();
         }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            Focus();
+        }
     }
 }

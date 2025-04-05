@@ -26,7 +26,7 @@ namespace CuoreUI.Controls
         {
             isDragging = true;
             UpdateValueFromMouse(e.Location);
-
+            Focus();
             base.OnMouseDown(e);
         }
 

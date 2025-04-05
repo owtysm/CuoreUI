@@ -62,7 +62,7 @@
             this.cuiButtonGroup1.ImageAutoCenter = true;
             this.cuiButtonGroup1.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup1.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup1.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup1.Location = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup1.Name = "cuiButtonGroup1";
@@ -97,7 +97,7 @@
             this.cuiButtonGroup2.ImageAutoCenter = true;
             this.cuiButtonGroup2.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup2.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup2.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup2.Location = new System.Drawing.Point(76, 0);
             this.cuiButtonGroup2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup2.Name = "cuiButtonGroup2";
@@ -132,7 +132,7 @@
             this.cuiButtonGroup3.ImageAutoCenter = true;
             this.cuiButtonGroup3.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup3.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup3.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup3.Location = new System.Drawing.Point(152, 0);
             this.cuiButtonGroup3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup3.Name = "cuiButtonGroup3";
@@ -167,7 +167,7 @@
             this.cuiButtonGroup4.ImageAutoCenter = true;
             this.cuiButtonGroup4.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup4.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup4.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup4.Location = new System.Drawing.Point(228, 0);
             this.cuiButtonGroup4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup4.Name = "cuiButtonGroup4";
@@ -202,7 +202,7 @@
             this.cuiButtonGroup5.ImageAutoCenter = true;
             this.cuiButtonGroup5.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup5.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup5.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup5.Location = new System.Drawing.Point(304, 0);
             this.cuiButtonGroup5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup5.Name = "cuiButtonGroup5";
@@ -237,7 +237,7 @@
             this.cuiButtonGroup6.ImageAutoCenter = true;
             this.cuiButtonGroup6.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup6.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup6.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup6.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup6.Location = new System.Drawing.Point(0, 84);
             this.cuiButtonGroup6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup6.Name = "cuiButtonGroup6";
@@ -272,7 +272,7 @@
             this.cuiButtonGroup7.ImageAutoCenter = true;
             this.cuiButtonGroup7.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup7.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup7.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup7.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup7.Location = new System.Drawing.Point(76, 84);
             this.cuiButtonGroup7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup7.Name = "cuiButtonGroup7";
@@ -307,7 +307,7 @@
             this.cuiButtonGroup8.ImageAutoCenter = true;
             this.cuiButtonGroup8.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup8.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup8.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup8.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup8.Location = new System.Drawing.Point(152, 84);
             this.cuiButtonGroup8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup8.Name = "cuiButtonGroup8";
@@ -342,7 +342,7 @@
             this.cuiButtonGroup9.ImageAutoCenter = true;
             this.cuiButtonGroup9.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup9.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup9.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup9.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup9.Location = new System.Drawing.Point(228, 84);
             this.cuiButtonGroup9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup9.Name = "cuiButtonGroup9";
@@ -377,7 +377,7 @@
             this.cuiButtonGroup10.ImageAutoCenter = true;
             this.cuiButtonGroup10.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButtonGroup10.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButtonGroup10.ImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup10.NormalImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup10.Location = new System.Drawing.Point(304, 84);
             this.cuiButtonGroup10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuiButtonGroup10.Name = "cuiButtonGroup10";
@@ -416,7 +416,7 @@
             this.leftMonthButton.ImageAutoCenter = true;
             this.leftMonthButton.ImageExpand = new System.Drawing.Point(2, 2);
             this.leftMonthButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.leftMonthButton.ImageTint = System.Drawing.Color.Gray;
+            this.leftMonthButton.NormalImageTint = System.Drawing.Color.Gray;
             this.leftMonthButton.Location = new System.Drawing.Point(314, 167);
             this.leftMonthButton.Name = "leftMonthButton";
             this.leftMonthButton.NormalBackground = System.Drawing.Color.Empty;
@@ -454,7 +454,7 @@
             this.rightMonthButton.ImageAutoCenter = true;
             this.rightMonthButton.ImageExpand = new System.Drawing.Point(2, 2);
             this.rightMonthButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.rightMonthButton.ImageTint = System.Drawing.Color.Gray;
+            this.rightMonthButton.NormalImageTint = System.Drawing.Color.Gray;
             this.rightMonthButton.Location = new System.Drawing.Point(349, 167);
             this.rightMonthButton.Name = "rightMonthButton";
             this.rightMonthButton.NormalBackground = System.Drawing.Color.Empty;

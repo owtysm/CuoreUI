@@ -224,6 +224,12 @@ namespace CuoreUI.Controls
             base.OnMouseClick(e);
         }
 
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            Focus();
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             symbolsOffset = new Point(0, 1);

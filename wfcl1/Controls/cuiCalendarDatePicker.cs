@@ -82,6 +82,7 @@ namespace CuoreUI.Controls
 
         protected override void OnClick(EventArgs e)
         {
+            Focus();
             ShowDialog();
             base.OnClick(e);
         }

@@ -1,10 +1,10 @@
-﻿using CuoreUI.Components.cuiFormRounderV2Resources;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CuoreUI.Components.cuiFormRounderV2Resources;
 using Color = System.Drawing.Color;
 
 namespace CuoreUI.Components
@@ -147,39 +147,29 @@ namespace CuoreUI.Components
 
         public void FakeForm_Activated(object sender, EventArgs e)
         {
-            if (shouldCloseDown || wasFormClosingCalled || TargetForm == null || TargetForm.IsDisposed)
+            if (shouldCloseDown || wasFormClosingCalled || DesignMode || TargetForm == null || TargetForm.IsDisposed)
             {
                 return;
             }
 
-            if (!DesignMode && TargetForm != null)
+            if (roundedFormObj != null && !roundedFormObj.IsDisposed)
             {
-                try
+                roundedFormObj.Tag = TargetForm.Opacity;
+                roundedFormObj.InvalidateNextDrawCall = true;
+
+                // https://github.com/1Kxhu/CuoreUI/issues/11 fix #3
+                if (roundedFormObj.WindowState != FormWindowState.Minimized)
                 {
-                    // may crash if roundedFormObject is disposed or null
-                    roundedFormObj.Tag = TargetForm.Opacity;
-
-                    roundedFormObj.InvalidateNextDrawCall = true;
-
-                    // https://github.com/1Kxhu/CuoreUI/issues/11 fix #3
-                    if (roundedFormObj.WindowState != FormWindowState.Minimized)
+                    if (!wasFormClosingCalled && !shouldCloseDown)
                     {
-                        if (!wasFormClosingCalled && !shouldCloseDown)
+                        if (TargetForm.WindowState != FormWindowState.Minimized)
                         {
-                            if (TargetForm.WindowState != FormWindowState.Minimized)
-                            {
-                                SetWindowPos(roundedFormObj.Handle, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-                                SetWindowPos(TargetForm.Handle, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-                            }
-
-                            TargetForm.BringToFront();
+                            SetWindowPos(roundedFormObj.Handle, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
+                            SetWindowPos(TargetForm.Handle, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
                         }
+
+                        TargetForm.BringToFront();
                     }
-                }
-                catch
-                {
-                    // ComboBoxDropDown raises an exception here
-                    // but we can just not care about this, since it's opacity is ALWAYS 100%
                 }
             }
 

@@ -142,9 +142,9 @@ namespace CuoreUI.Controls.Forms
                         cuiButton2.ForeColor = Color.Black;
 
                         cuiButton1.NormalBackground = Color.FromArgb(20, 0, 0, 0);
-                        cuiButton1.ImageTint = Color.Black;
-                        cuiButton1.HoveredImageTint = cuiButton1.ImageTint;
-                        cuiButton1.PressedImageTint = cuiButton1.ImageTint;
+                        cuiButton1.NormalImageTint = Color.Black;
+                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
+                        cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 0, 0, 0);
                         cuiLabel3.ForeColor = Color.FromArgb(84, 84, 84);
@@ -171,9 +171,9 @@ namespace CuoreUI.Controls.Forms
                         cuiButton2.ForeColor = Color.White;
 
                         cuiButton1.NormalBackground = Color.FromArgb(20, 255, 255, 255);
-                        cuiButton1.ImageTint = Color.White;
-                        cuiButton1.HoveredImageTint = cuiButton1.ImageTint;
-                        cuiButton1.PressedImageTint = cuiButton1.ImageTint;
+                        cuiButton1.NormalImageTint = Color.White;
+                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
+                        cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 255, 255, 255);
                         cuiLabel3.ForeColor = Color.FromArgb(171, 171, 171);
@@ -206,8 +206,8 @@ namespace CuoreUI.Controls.Forms
             cuiButton3.HoverForeColor = cuiButton2.ForeColor;
             cuiButton3.PressedForeColor = cuiButton2.ForeColor;
 
-            cuiButton2.ImageTint = cuiButton2.ForeColor;
-            cuiButton3.ImageTint = cuiButton2.ForeColor;
+            cuiButton2.NormalImageTint = cuiButton2.ForeColor;
+            cuiButton3.NormalImageTint = cuiButton2.ForeColor;
             cuiButton2.HoveredImageTint = cuiButton2.ForeColor;
             cuiButton3.HoveredImageTint = cuiButton2.ForeColor;
             cuiButton2.PressedImageTint = cuiButton2.ForeColor;

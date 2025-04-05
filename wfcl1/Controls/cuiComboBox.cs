@@ -64,6 +64,12 @@ namespace CuoreUI.Controls
             GlobalMouseHook.OnGlobalMouseClick += HandleGlobalMouseClick; // Subscribe to global mouse clicks
         }
 
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            Focus();
+        }
+
         private void HandleGlobalMouseClick()
         {
             if (DesignMode || tempdropdown == null)

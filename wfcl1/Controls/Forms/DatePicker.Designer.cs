@@ -71,7 +71,7 @@
             this.cuiButton5.ImageAutoCenter = true;
             this.cuiButton5.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton5.ImageTint = System.Drawing.Color.Gray;
+            this.cuiButton5.NormalImageTint = System.Drawing.Color.Gray;
             this.cuiButton5.Location = new System.Drawing.Point(16, 10);
             this.cuiButton5.Name = "cuiButton5";
             this.cuiButton5.NormalBackground = System.Drawing.Color.Empty;
@@ -109,7 +109,7 @@
             this.cuiButton3.ImageAutoCenter = true;
             this.cuiButton3.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton3.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.cuiButton3.ImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.cuiButton3.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.Location = new System.Drawing.Point(202, 258);
             this.cuiButton3.Name = "cuiButton3";
             this.cuiButton3.NormalBackground = System.Drawing.Color.Empty;
@@ -147,7 +147,7 @@
             this.cuiButton2.ImageAutoCenter = true;
             this.cuiButton2.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton2.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.cuiButton2.ImageTint = System.Drawing.Color.White;
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton2.Location = new System.Drawing.Point(10, 258);
             this.cuiButton2.Name = "cuiButton2";
             this.cuiButton2.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -185,7 +185,7 @@
             this.cuiButton4.ImageAutoCenter = true;
             this.cuiButton4.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton4.ImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cuiButton4.Location = new System.Drawing.Point(306, 1);
             this.cuiButton4.Name = "cuiButton4";
             this.cuiButton4.NormalBackground = System.Drawing.Color.Empty;
@@ -222,7 +222,7 @@
             this.cuiButton1.ImageAutoCenter = true;
             this.cuiButton1.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.ImageTint = System.Drawing.Color.White;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton1.Location = new System.Drawing.Point(355, 1);
             this.cuiButton1.Name = "cuiButton1";
             this.cuiButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));

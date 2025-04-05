@@ -18,8 +18,8 @@ namespace CuoreUI.Controls
             public const int Normal = 1;
             public const int Hovered = 2;
             public const int Pressed = 3;
-
         }
+
         public cuiButton()
         {
             InitializeComponent();
@@ -302,7 +302,17 @@ namespace CuoreUI.Controls
             }
         }
 
-        public Color NormalForeColor => ForeColor;
+        public Color NormalForeColor
+        {
+            get
+            {
+                return ForeColor;
+            }
+            set
+            {
+                ForeColor = value;
+            }
+        }
 
         Color privateHoverForeColor = Color.White;
         public Color HoverForeColor
@@ -330,7 +340,7 @@ namespace CuoreUI.Controls
 
             Color renderedBackgroundColor = Color.Empty;
             Color renderedOutlineColor = Color.Empty;
-            Color renderedTint = ImageTint;
+            Color renderedTint = NormalImageTint;
             Color renderedForeColor = Color.Empty;
 
             if (CheckButton && Checked)
@@ -434,7 +444,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateImageTint = Color.White;
-        public Color ImageTint
+        public Color NormalImageTint
         {
             get
             {
@@ -567,6 +577,7 @@ namespace CuoreUI.Controls
                 }
             }
 
+            Focus();
             Invalidate();
         }
 

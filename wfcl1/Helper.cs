@@ -469,6 +469,22 @@ namespace CuoreUI
             return new PointF(x, y);
         }
 
+        internal static GraphicsPath UpArrow(Rectangle rect)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            Point[] points =
+            {
+            new Point(rect.Left, rect.Bottom),
+            new Point(rect.Left + rect.Width / 2, rect.Top),
+            new Point(rect.Right, rect.Bottom)
+        };
+
+            path.AddPolygon(points);
+
+            return path;
+        }
+
         public static class Win32
         {
             [DllImport("user32.dll")]
@@ -504,7 +520,7 @@ namespace CuoreUI
 
             [DllImport("user32.dll")]
             public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-          
+
 
             public const int WM_SYSCOMMAND = 0x0112;
             public const int SC_CLOSE = 0xF060;

@@ -171,6 +171,7 @@ namespace CuoreUI.Controls
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+            Focus();
             OnMouseMove(e);
         }
     }

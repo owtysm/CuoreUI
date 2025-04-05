@@ -19,14 +19,16 @@ namespace CuoreUI.Controls
     [DefaultEvent("ContentChanged")]
     public partial class cuiTextBox2 : UserControl
     {
+        private Color privateBackgroundColor = Color.FromArgb(10, 10, 10);
+        private Color privateFocusBackgroundColor = Color.FromArgb(10, 10, 10);
+
         private Color privateBorderColor = Color.FromArgb(64, 64, 64);
-        private Color privateBorderFocusColor = Color.FromArgb(255, 106, 0);
+        private Color privateFocusBorderColor = Color.FromArgb(255, 106, 0);
         private int privateBorderSize = 1;
         private bool privateUnderlinedStyle = false;
         private bool privateIsFocused = false;
 
-        private int privateBorderRadius = 8;
-        private Color privatePlaceholderColor = Color.DimGray;
+        private Padding privateBorderRadius = new System.Windows.Forms.Padding(8, 8, 8, 8);
         private string privatePlaceholderText = "";
         private bool privateIsPlaceholder = false;
         private bool privateIsPasswordChar = false;
@@ -36,12 +38,11 @@ namespace CuoreUI.Controls
         public cuiTextBox2()
         {
             InitializeComponent();
-            BackColor = Color.FromArgb(10, 10, 10);
+            base.BackColor = BackgroundColor;
             ForeColor = Color.Gray;
             Multiline = false;
             Load += OnLoad;
             GotFocus += OnLoad;
-            GlobalMouseHook.OnGlobalMouseClick += HandleGlobalMouseClick; // Subscribe to global mouse clicks
         }
 
         private void OnLoad(object sender, EventArgs e)
@@ -49,35 +50,30 @@ namespace CuoreUI.Controls
             this.privateIsFocused = false;
         }
 
-        private void HandleGlobalMouseClick()
+        [Category("CuoreUI")]
+        public Color BackgroundColor
         {
-            if (DesignMode)
-            {
-                return;
+            get
+            { 
+                return privateBackgroundColor;
             }
+            set 
+            {
+                privateBackgroundColor = value;
+                Refresh();
+            }
+        }
 
-            // Check if the mouse click is outside this control
-            Point mousePosition = Control.MousePosition;
-            if (!this.Bounds.Contains(mousePosition) && privateIsFocused == true)
+        [Category("CuoreUI")]
+        public Color FocusBackgroundColor
+        {
+            get
             {
-                ActiveControl = panel1;
-                privateIsFocused = false; // Set to false if the click is outside
-                Refresh(); // Refresh to update the visual state
-                SetPlaceholder(); // Optionally reset placeholder
+                return privateFocusBackgroundColor;
             }
-            else if (this.Bounds.Contains(mousePosition))
+            set
             {
-                privateIsFocused = true;
-                Refresh(); // Refresh to update the visual state
-            }
-            if (GlobalMouseHook.isHooked)
-            {
-                GlobalMouseHook.Stop();
-            }
-            Refresh();
-            if (GlobalMouseHook.isHooked)
-            {
-                GlobalMouseHook.Stop();
+                privateFocusBackgroundColor = value;
             }
         }
 
@@ -96,15 +92,15 @@ namespace CuoreUI.Controls
         }
 
         [Category("CuoreUI")]
-        public Color BorderFocusColor
+        public Color FocusBorderColor
         {
             get
             {
-                return privateBorderFocusColor;
+                return privateFocusBorderColor;
             }
             set
             {
-                privateBorderFocusColor = value;
+                privateFocusBorderColor = value;
             }
         }
 
@@ -150,7 +146,7 @@ namespace CuoreUI.Controls
             {
                 privateIsPasswordChar = value;
                 if (!privateIsPlaceholder)
-                    textBox1.UseSystemPasswordChar = value;
+                    contentTextField.UseSystemPasswordChar = value;
             }
         }
 
@@ -159,17 +155,17 @@ namespace CuoreUI.Controls
         {
             get
             {
-                return textBox1.Multiline;
+                return contentTextField.Multiline;
             }
             set
             {
-                textBox1.Multiline = value;
-                textBox2.Multiline = value;
+                contentTextField.Multiline = value;
+                placeholderTextField.Multiline = value;
             }
         }
 
         [Category("CuoreUI")]
-        public override Color BackColor
+        private new Color BackColor
         {
             get
             {
@@ -177,9 +173,11 @@ namespace CuoreUI.Controls
             }
             set
             {
+                value = Color.FromArgb(255, value); // prevent transparency crashes
+
                 base.BackColor = value;
-                textBox1.BackColor = value;
-                textBox2.BackColor = value;
+                contentTextField.BackColor = value;
+                placeholderTextField.BackColor = value;
             }
         }
 
@@ -188,12 +186,13 @@ namespace CuoreUI.Controls
         {
             get
             {
-                return base.ForeColor;
+                return contentTextField.ForeColor;
             }
             set
             {
                 base.ForeColor = value;
-                textBox1.ForeColor = value;
+                contentTextField.ForeColor = value;
+                contentTextField.Refresh();
             }
         }
 
@@ -207,12 +206,12 @@ namespace CuoreUI.Controls
             set
             {
                 base.Font = value;
-                textBox1.Font = value;
-                textBox2.Font = value;
+                contentTextField.Font = value;
+                placeholderTextField.Font = value;
             }
         }
 
-        private string actualText = "";
+        protected string actualText = "";
 
         [Category("CuoreUI")]
         public string Content
@@ -224,14 +223,14 @@ namespace CuoreUI.Controls
             set
             {
                 actualText = value;
-                textBox1.Text = value;
+                contentTextField.Text = value;
 
                 SetPlaceholder();
             }
         }
 
         [Category("CuoreUI")]
-        public int Rounding
+        public Padding Rounding
         {
             get
             {
@@ -239,7 +238,7 @@ namespace CuoreUI.Controls
             }
             set
             {
-                if (value >= 0)
+                if (value.All >= 0 || value.All == -1)
                 {
                     privateBorderRadius = value;
                     Invalidate();//Redraw control
@@ -252,12 +251,11 @@ namespace CuoreUI.Controls
         {
             get
             {
-                return privatePlaceholderColor;
+                return placeholderTextField.ForeColor;
             }
             set
             {
-                privatePlaceholderColor = value;
-                textBox2.ForeColor = value;
+                placeholderTextField.ForeColor = value;
             }
         }
 
@@ -292,23 +290,13 @@ namespace CuoreUI.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (privateIsPlaceholder)
-            {
-                textBox2.Visible = true;
-            }
-            else
-            {
-                textBox2.Visible = false;
-            }
-
-            base.OnPaint(e);
+            placeholderTextField.Visible = privateIsPlaceholder;
             Graphics graph = e.Graphics;
-
             Padding newPadding;
 
             if (Multiline)
             {
-                int b = (Rounding / 2) + (Font.Height / 8);
+                int b = (Rounding.All / 2) + (Font.Height / 8);
                 newPadding = new Padding(Font.Height, b, Font.Height, b);
             }
             else
@@ -328,7 +316,7 @@ namespace CuoreUI.Controls
 
             Padding = newPadding;
 
-            if (privateBorderRadius > 1)//Rounded TextBox
+            if (privateBorderRadius.All > 1 || privateBorderRadius.All == -1)//Rounded TextBox
             {
                 //-Fields
                 var rectBorderSmooth = ClientRectangle;
@@ -336,7 +324,7 @@ namespace CuoreUI.Controls
                 int smoothSize = privateBorderSize > 0 ? privateBorderSize : 1;
 
                 using (GraphicsPath pathBorderSmooth = Helper.RoundRect(rectBorderSmooth, Rounding))
-                using (GraphicsPath pathBorder = Helper.RoundRect(rectBorder, Rounding - BorderSize))
+                using (GraphicsPath pathBorder = Helper.RoundRect(rectBorder, Rounding - new Padding(BorderSize, BorderSize, BorderSize, BorderSize) - new Padding(1, 1, 1, 1)))
                 using (Pen penBorderSmooth = new Pen(Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(BorderColor, BorderSize))
                 {
@@ -352,7 +340,14 @@ namespace CuoreUI.Controls
                     graph.SmoothingMode = SmoothingMode.AntiAlias;
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
                     if (privateIsFocused)
-                        penBorder.Color = BorderFocusColor;
+                    {
+                        BackColor = FocusBackgroundColor;
+                        penBorder.Color = FocusBorderColor;
+                    }
+                    else
+                    {
+                        BackColor = BackgroundColor;
+                    }
 
                     if (UnderlinedStyle) //Line Style
                     {
@@ -379,7 +374,7 @@ namespace CuoreUI.Controls
                     Region = new Region(ClientRectangle);
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                     if (privateIsFocused)
-                        penBorder.Color = BorderFocusColor;
+                        penBorder.Color = FocusBorderColor;
 
                     if (UnderlinedStyle) //Line Style
                         graph.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
@@ -391,17 +386,17 @@ namespace CuoreUI.Controls
             base.OnPaint(e);
         }
 
-        private void SetPlaceholder()
+        protected void SetPlaceholder()
         {
-            textBox2.Text = PlaceholderText;
+            placeholderTextField.Text = PlaceholderText;
             if (privateIsPasswordChar)
             {
-                textBox2.UseSystemPasswordChar = false;
+                placeholderTextField.UseSystemPasswordChar = false;
             }
 
             if (actualText == "")
             {
-                textBox2.Visible = true;
+                placeholderTextField.Visible = true;
                 privateIsPlaceholder = true;
             }
             else
@@ -414,24 +409,22 @@ namespace CuoreUI.Controls
         {
             if (actualText == "")
             {
-                textBox2.Visible = false;
+                placeholderTextField.Visible = false;
                 privateIsPlaceholder = false;
-                textBox2.Text = actualText;
-                textBox2.ForeColor = ForeColor;
+                //textBox2.ForeColor = ForeColor;
                 if (privateIsPasswordChar)
-                    textBox2.UseSystemPasswordChar = true;
+                    placeholderTextField.UseSystemPasswordChar = true;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            actualText = textBox1.Text;
+            actualText = contentTextField.Text;
             ContentChanged?.Invoke(this, e);
         }
         private void textBox1_Click(object sender, EventArgs e)
         {
             OnClick(e);
-            GlobalMouseHook.Start(); // Start the global mouse hook
         }
 
         private void textBox1_MouseEnter(object sender, EventArgs e)
@@ -462,8 +455,7 @@ namespace CuoreUI.Controls
 
         private void cuiTextBox2_Click(object sender, EventArgs e)
         {
-            textBox1.Focus();
-            GlobalMouseHook.Start(); // Start the global mouse hook
+            contentTextField.Focus();
             Refresh();
         }
 
@@ -474,9 +466,9 @@ namespace CuoreUI.Controls
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text != PlaceholderText)
+            if (placeholderTextField.Text != PlaceholderText)
             {
-                textBox2.Text = PlaceholderText;
+                placeholderTextField.Text = PlaceholderText;
             }
         }
     }

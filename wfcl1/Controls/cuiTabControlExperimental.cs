@@ -1,9 +1,9 @@
-﻿using CuoreUI.TabControlStuff;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using CuoreUI.TabControlStuff;
 using static System.Windows.Forms.TabControl;
 
 namespace CuoreUI.Controls
@@ -198,7 +198,11 @@ namespace CuoreUI.Controls
             set => tabControl.AddButtonBackgroundColor = value;
         }
 
-
+        public bool ShowAddTabButton
+        {
+            get => tabControl.ShowAddTabButton;
+            set => tabControl.ShowAddTabButton = value;
+        }
 
         private void panelClick(object sender, MouseEventArgs e)
         {

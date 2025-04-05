@@ -264,7 +264,17 @@ namespace CuoreUI.Controls
             }
         }
 
-        public Color NormalForeColor => ForeColor;
+        public Color NormalForeColor
+        {
+            get
+            {
+                return ForeColor;
+            }
+            set
+            {
+                ForeColor = value;
+            }
+        }
 
         Color privateHoverForeColor = Color.White;
         public Color HoverForeColor
@@ -298,7 +308,7 @@ namespace CuoreUI.Controls
 
             Color renderedBackgroundColor;
             Color renderedOutlineColor;
-            Color tint = ImageTint;
+            Color tint = NormalImageTint;
             Color renderedForeColor = Color.Empty;
 
             switch (state)
@@ -411,7 +421,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateImageTint = Color.White;
-        public Color ImageTint
+        public Color NormalImageTint
         {
             get
             {
@@ -513,6 +523,7 @@ namespace CuoreUI.Controls
         protected override void OnMouseDown(MouseEventArgs e)
         {
             state = 3;
+            Focus();
             Invalidate();
         }
 

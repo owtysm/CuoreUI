@@ -40,26 +40,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contentTextField = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.placeholderTextField = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // contentTextField
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(10, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 15);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
-            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            this.contentTextField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contentTextField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentTextField.Location = new System.Drawing.Point(10, 7);
+            this.contentTextField.Name = "contentTextField";
+            this.contentTextField.Size = new System.Drawing.Size(246, 15);
+            this.contentTextField.TabIndex = 0;
+            this.contentTextField.Click += new System.EventHandler(this.textBox1_Click);
+            this.contentTextField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.contentTextField.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.contentTextField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.contentTextField.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.contentTextField.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
+            this.contentTextField.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
             // 
             // panel1
             // 
@@ -68,25 +68,25 @@
             this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 1;
             // 
-            // textBox2
+            // placeholderTextField
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(10, 7);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 15);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
+            this.placeholderTextField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.placeholderTextField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.placeholderTextField.Location = new System.Drawing.Point(10, 7);
+            this.placeholderTextField.Name = "placeholderTextField";
+            this.placeholderTextField.ReadOnly = true;
+            this.placeholderTextField.Size = new System.Drawing.Size(246, 15);
+            this.placeholderTextField.TabIndex = 2;
+            this.placeholderTextField.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.placeholderTextField.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
             // 
             // cuiTextBox2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.placeholderTextField);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.contentTextField);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -101,9 +101,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox placeholderTextField;
+        public System.Windows.Forms.TextBox contentTextField;
     }
 }

@@ -1,8 +1,8 @@
-﻿using CuoreUI.Components.Forms;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CuoreUI.Components.Forms;
 using static CuoreUI.Components.Forms.ColorPickerForm;
 
 namespace CuoreUI.Components
@@ -62,8 +62,7 @@ namespace CuoreUI.Components
 
         public async Task<DialogResult> ShowDialog()
         {
-            PickerForm = new ColorPickerForm();
-            PickerForm.Theme = Theme;
+            PickerForm = new ColorPickerForm() { Theme = this.Theme };
             PickerForm?.ToggleThemeSwitchButton(privateEnableThemeChangeButton);
             PickerForm.Show();
 
