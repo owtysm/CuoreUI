@@ -2,7 +2,8 @@
 ![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
 
 > [!NOTE]
-> CuoreUI is in development
+> CuoreUI is in development<br>
+> There's no documentation yet
 
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
