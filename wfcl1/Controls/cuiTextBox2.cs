@@ -31,7 +31,6 @@ namespace CuoreUI.Controls
         private Padding privateBorderRadius = new System.Windows.Forms.Padding(8, 8, 8, 8);
         private string privatePlaceholderText = "";
         private bool privateIsPlaceholder = false;
-        private bool privateIsPasswordChar = false;
 
         public event EventHandler ContentChanged;
 
@@ -54,10 +53,10 @@ namespace CuoreUI.Controls
         public Color BackgroundColor
         {
             get
-            { 
+            {
                 return privateBackgroundColor;
             }
-            set 
+            set
             {
                 privateBackgroundColor = value;
                 Refresh();
@@ -140,13 +139,11 @@ namespace CuoreUI.Controls
         {
             get
             {
-                return privateIsPasswordChar;
+                return contentTextField.UseSystemPasswordChar;
             }
             set
             {
-                privateIsPasswordChar = value;
-                if (!privateIsPlaceholder)
-                    contentTextField.UseSystemPasswordChar = value;
+                contentTextField.UseSystemPasswordChar = value;
             }
         }
 
@@ -238,6 +235,10 @@ namespace CuoreUI.Controls
             }
             set
             {
+                if (value == new Padding(0, 0, 0, 0))
+                {
+                    value = new Padding(1, 1, 1, 1);
+                }
                 if (value.All >= 0 || value.All == -1)
                 {
                     privateBorderRadius = value;
@@ -389,7 +390,7 @@ namespace CuoreUI.Controls
         protected void SetPlaceholder()
         {
             placeholderTextField.Text = PlaceholderText;
-            if (privateIsPasswordChar)
+            if (PasswordChar)
             {
                 placeholderTextField.UseSystemPasswordChar = false;
             }
@@ -411,9 +412,6 @@ namespace CuoreUI.Controls
             {
                 placeholderTextField.Visible = false;
                 privateIsPlaceholder = false;
-                //textBox2.ForeColor = ForeColor;
-                if (privateIsPasswordChar)
-                    placeholderTextField.UseSystemPasswordChar = true;
             }
         }
 

@@ -1,9 +1,9 @@
-﻿using CuoreUI.Controls;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CuoreUI.Controls;
 using static CuoreUI.Drawing;
 
 namespace CuoreUI.Components
@@ -11,9 +11,25 @@ namespace CuoreUI.Components
     [ToolboxBitmap(typeof(TrackBar))]
     public partial class cuiControlAnimator : Component
     {
+        private PaintEventHandler paintHandler;
+
         public cuiControlAnimator()
         {
             InitializeComponent();
+            paintHandler = (sender, e) =>
+            {
+                if (animationFinished || !AnimateOpacity || currentControlOpacity > 254 || sender is cuiPictureBox)
+                    return;
+
+                Rectangle expandedRect = TargetControl.ClientRectangle;
+                expandedRect.Inflate(2, 2);
+
+                using (SolidBrush br = new SolidBrush(Color.FromArgb(currentControlOpacity, TargetControl.BackColor)))
+                {
+                    e.Graphics.FillRectangle(br, expandedRect);
+                }
+            };
+
         }
 
         private Control privateTargetControl = null;
@@ -109,6 +125,21 @@ namespace CuoreUI.Components
             set;
         } = true;
 
+        private OpacityEnum privateTargetOpacity = OpacityEnum.Visible;
+
+        [Description("Target opacity (0 - 255) for the control when animation completes.")]
+        public OpacityEnum TargetOpacity
+        {
+            get => privateTargetOpacity;
+            set => privateTargetOpacity = value;
+        }
+
+        public enum OpacityEnum
+        {
+            Visible = 255,
+            Transparent = 0
+        }
+
         private int startX;
         private int startY;
         private double xDistance;
@@ -127,21 +158,7 @@ namespace CuoreUI.Components
                 return;
             animating = true;
 
-            TargetControl.Paint += (sender, e) =>
-            {
-                if (animationFinished || AnimateOpacity == false || currentControlOpacity > 254 || sender is cuiPictureBox)
-                {
-                    return;
-                }
-
-                Rectangle expandedRect = TargetControl.ClientRectangle;
-                expandedRect.Inflate(2, 2); // both tl and br
-
-                using (SolidBrush br = new SolidBrush(Color.FromArgb(currentControlOpacity, TargetControl.BackColor)))
-                {
-                    e.Graphics.FillRectangle(br, expandedRect);
-                }
-            };
+            TargetControl.Paint += paintHandler;
 
             startX = TargetControl.Left;
             startY = TargetControl.Top;
@@ -160,16 +177,16 @@ namespace CuoreUI.Components
             bool shouldAnimateLocationNow = AnimateLocation;
             EmergencySetLocation(Duration, shouldAnimateLocationNow);
 
-
             animationFinished = false;
             AnimationStarted?.Invoke(this, EventArgs.Empty);
+
+            bool animateTowardsVisible = TargetOpacity == OpacityEnum.Visible;
 
             while (true)
             {
 
                 DateTime rightnow = DateTime.Now;
                 double elapsedMilliseconds = (rightnow - lastFrameTime).TotalMilliseconds;
-                lastFrameTime = rightnow;
 
                 // uhhhhh this is so weird but it works..
                 elapsedTime += (elapsedMilliseconds / Duration);
@@ -179,6 +196,7 @@ namespace CuoreUI.Components
                     animating = false;
                     animationFinished = false;
                     elapsedTime = 0;
+                    TargetControl.Paint -= paintHandler;
                     //MessageBox.Show($"{elapsedTime}, {privateDuration}");
                     return;
                 }
@@ -193,12 +211,21 @@ namespace CuoreUI.Components
 
                 if (AnimateOpacity)
                 {
-                    currentControlOpacity = (byte)((1 - (progress * 100)) * 2.5f);
+                    if (animateTowardsVisible)
+                    {
+                        currentControlOpacity = (byte)((1 - (progress * 100)) * 2.5d);
+                    }
+                    else
+                    {
+                        currentControlOpacity = (byte)((progress * 100) * 2.5d);
+                    }
                     TargetControl.Invalidate();
                 }
 
+                lastFrameTime = rightnow;
                 await Task.Delay(1000 / Drawing.GetHighestRefreshRate());
             }
+
         }
 
         public bool IsAnimationFinished()
