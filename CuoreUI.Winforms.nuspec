@@ -8,8 +8,8 @@
     <description>THE Free WinForms UI/UX Library.</description>
     <icon>icon.png</icon>
     <license type="expression">Unlicense</license>
-    <tags>winforms modern ui telerik siticone cui theme bunifu guna cuoreui</tags>
-    <repository type="git" url="https://github.com/1Kxhu/CuoreUI" />
+    <tags>winforms modern ui telerik siticone cui theme bunifu guna cuoreui 7ow 7owh</tags>
+    <repository type="git" url="https://github.com/7owh/CuoreUI" />
   </metadata>
   <files>
     <file src="wfcl1\bin\Release\net472\CuoreUI.dll" target="lib\netstandard2.0" />
