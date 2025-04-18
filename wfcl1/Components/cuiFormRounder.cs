@@ -215,13 +215,15 @@ namespace CuoreUI.Components
 
         private async void TargetForm_LocationChanged(object sender, EventArgs e)
         {
-            if (shouldCloseDown)
-            {
-                return;
-            }
+            // inlined not to repeat ourselves later
+            bool IsSafeToEditRoundedForm() =>
+                !shouldCloseDown &&
+                !DesignMode &&
+                roundedFormObj != null &&
+                TargetForm != null &&
+                !roundedFormObj.IsDisposed;
 
-            // update Location with a 2,2 offset caused by RoundedForm in mind
-            if (!DesignMode && roundedFormObj != null && TargetForm != null && roundedFormObj != null && roundedFormObj.IsDisposed == false)
+            if (IsSafeToEditRoundedForm())
             {
                 roundedFormObj.Location = PointSubtract(TargetForm.Location, new Point(1, 1));
                 UpdateRoundedFormRegion();
@@ -234,10 +236,16 @@ namespace CuoreUI.Components
                 else
                 {
                     await Task.Delay(1000 / Drawing.GetHighestRefreshRate());
-                    roundedFormObj?.Show();
+
+                    // check same flags again because some time had passed
+                    if (IsSafeToEditRoundedForm())
+                    {
+                        roundedFormObj?.Show();
+                    }
                 }
             }
         }
+
 
         private Color privateOutlineColor = Color.FromArgb(30, 255, 255, 255);
         public Color OutlineColor

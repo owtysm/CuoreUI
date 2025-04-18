@@ -7,6 +7,7 @@ using System.Windows.Forms;
 namespace CuoreUI.Controls
 {
     [ToolboxBitmap(typeof(CheckBox))]
+    [DefaultEvent("CheckedChanged")]
     public partial class cuiCheckbox : Control
     {
         public cuiCheckbox()

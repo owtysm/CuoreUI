@@ -9,7 +9,7 @@ using static CuoreUI.Drawing;
 namespace CuoreUI.Controls
 {
     [ToolboxBitmap(typeof(ProgressBar))]
-    [DefaultEvent("Click")]
+    [DefaultEvent("CheckedChanged")]
     public partial class cuiSwitch : UserControl
     {
         public cuiSwitch()
@@ -52,11 +52,11 @@ namespace CuoreUI.Controls
 
             if (Checked)
             {
-                targetX = Width - 3.5f - (Height - 7);
+                targetX = Width - 3.5f - (Height - 7) - (OutlineThickness / 2) + 0.5f; // lines 55 & 332
             }
             else
             {
-                targetX = OutlineThickness + 1;
+                targetX = (Height / 2f) - (thumbRectangleInt.Height / 2f) + (OutlineThickness / 2) - 1.5f; // lines 59 & 336
             }
 
             xDistance = -(startX - targetX);
@@ -68,7 +68,8 @@ namespace CuoreUI.Controls
 
             DateTime lastFrameTime = DateTime.Now;
 
-            EmergencySetLocation(Duration);
+            int desiredFrameInterval = 1000 / Drawing.GetHighestRefreshRate();
+            EmergencySetLocation(Duration + desiredFrameInterval);
 
             while (true)
             {
@@ -86,7 +87,7 @@ namespace CuoreUI.Controls
                         _ = AnimateThumbLocation();
                     }
 
-                    thumbX = (int)targetX;
+                    //thumbX = (int)targetX;
                     animating = false;
                     animationFinished = false;
                     elapsedTime = 0;
@@ -94,17 +95,13 @@ namespace CuoreUI.Controls
                     return;
                 }
 
-                double quad = CuoreUI.Drawing.EasingFunctions.FromEasingType(EasingTypes.SextOut, elapsedTime, Duration / (double)1000) * durationRatio;
-                //MessageBox.Show($"quad: {quad}\n elapsedTime: {elapsedTime}\n durationRatio: {durationRatio}");
-                thumbX = (int)(startX + (int)(xDistance * quad));
+                // sextic easing function
+                double easing = CuoreUI.Drawing.EasingFunctions.FromEasingType(EasingTypes.SextOut, elapsedTime, Duration / (double)1000) * durationRatio;
+
+                thumbX = (int)(startX + (xDistance * easing));
                 Refresh();
 
-                await Task.Delay(1000 / Drawing.GetHighestRefreshRate());
-
-                if (!Checked)
-                {
-                    targetX = OutlineThickness * 2;
-                }
+                await Task.Delay(desiredFrameInterval);
             }
         }
 
@@ -243,6 +240,36 @@ namespace CuoreUI.Controls
             }
         }
 
+        private Color privateSymbolColor = Color.FromArgb(34, 34, 34);
+        [Description("The color of the outline.")]
+        public Color UncheckedSymbolColor
+        {
+            get
+            {
+                return privateSymbolColor;
+            }
+            set
+            {
+                privateSymbolColor = value;
+                Invalidate();
+            }
+        }
+
+        private Color privateCheckedSymbolColor = CuoreUI.Drawing.PrimaryColor;
+        [Description("The color of the checked outline.")]
+        public Color CheckedSymbolColor
+        {
+            get
+            {
+                return privateCheckedSymbolColor;
+            }
+            set
+            {
+                privateCheckedSymbolColor = value;
+                Invalidate();
+            }
+        }
+
         private float privateOutlineThickness = 1f;
         [Description("The thickness of the outline.")]
         public float OutlineThickness
@@ -302,11 +329,11 @@ namespace CuoreUI.Controls
             {
                 if (Checked)
                 {
-                    thumbX = (int)(Width - 3.5f - (Height - 7));
+                    thumbX = (int)(Width - 3.5f - (Height - 7) - (OutlineThickness / 2));
                 }
                 else
                 {
-                    thumbX = (int)(OutlineThickness * 2);
+                    thumbX = (int)((Height / 2f) - (thumbRectangleInt.Height / 2f) + (OutlineThickness / 2) - 2);
                 }
             }
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -346,25 +373,27 @@ namespace CuoreUI.Controls
 
             temporaryThumbRect.Height = temporaryThumbRect.Width;
 
-            using (Pen graphicsPen = new Pen(CheckedBackground, Height / 10))
+
+            using (SolidBrush brush = new SolidBrush(Checked ? CheckedForeground : UncheckedForeground))
+            {
+                e.Graphics.FillEllipse(brush, thumbRect);
+            }
+
+            using (Pen outlinePen = new Pen(Checked ? CheckedOutlineColor : UncheckedOutlineColor, OutlineThickness))
+            {
+                e.Graphics.DrawPath(outlinePen, roundBackground);
+            }
+
+            using (Pen graphicsPen = new Pen(UncheckedSymbolColor, Height / 10))
             {
                 graphicsPen.StartCap = LineCap.Round;
                 graphicsPen.EndCap = LineCap.Round;
-
-                using (SolidBrush brush = new SolidBrush(Checked ? CheckedForeground : UncheckedForeground))
-                {
-                    e.Graphics.FillEllipse(brush, thumbRect);
-                }
-
-                using (Pen outlinePen = new Pen(Checked ? CheckedOutlineColor : UncheckedOutlineColor, OutlineThickness))
-                {
-                    e.Graphics.DrawPath(outlinePen, roundBackground);
-                }
-
                 if (ShowSymbols)
                 {
                     if (Checked)
                     {
+                        graphicsPen.Color = CheckedSymbolColor;
+
                         temporaryThumbRect.Offset(0, 1);
                         e.Graphics.DrawPath(graphicsPen, Helper.Checkmark(temporaryThumbRect));
                     }

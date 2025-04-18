@@ -7,6 +7,7 @@ namespace CuoreUI.Controls.Forms
     public partial class ComboBoxDropDown : Form
     {
         public cuiComboBox caller;
+        public Cursor ButtonCursor = Cursors.Arrow;
 
         private string[] privateItems = new string[0];
         public string[] Items
@@ -52,8 +53,10 @@ namespace CuoreUI.Controls.Forms
                 }
                 else
                 {
-                    cuiButton.Width = 1 + Width + Rounding.All;
+                    cuiButton.Width = Width - 4;
                 }
+
+                cuiButton.Cursor = ButtonCursor;
                 cuiButton.Content = item;
                 cuiButton.Location = new Point(1, 1 + i * cuiButton.Height);
                 defaultHeight = cuiButton.Height;
@@ -81,19 +84,8 @@ namespace CuoreUI.Controls.Forms
 
                 cuiButton.Click += (e, s) =>
                 {
-                    // Ensure the caller's SelectedItem is updated correctly
-                    if (caller != null)
-                    {
-                        caller.SelectedItem = item;
-                    }
-
-                    // Ensure the dropdown's SelectedItem is updated correctly
                     SelectedItem = item;
-
-                    // Hide the dropdown
                     Visible = false;
-
-                    // Invoke the SelectedIndexChanged event
                     SelectedIndexChanged?.Invoke(this, EventArgs.Empty);
 
                     Close();
@@ -113,29 +105,32 @@ namespace CuoreUI.Controls.Forms
             {
                 Size = new Size(Width, 1 + i * defaultHeight);
             }
+
             Controls.Clear();
-            cuiLabel label = new cuiLabel();
 
             if (i < 1)
             {
-                label.Content = "*Nothing Here*";
+                cuiLabel label = new cuiLabel();
+                label.Content = NoSelectionDropdownText;
                 label.ForeColor = NoItemsForeColor;
                 label.Font = new Font("Segoe UI", 9, FontStyle.Regular, GraphicsUnit.Point);
+                label.Width = Width;
+
                 Controls.Add(label);
+
+                Visible = true;
+                Opacity = 1;
+                ResumeLayout();
+
+                label.Location = new Point(0, -2 + (Height / 2) - (Font.Height / 2));
+                label.HorizontalAlignment = cuiLabel.HorizontalAlignments.Center;
             }
             else
             {
                 Controls.AddRange(options);
-            }
-
-            Visible = true;
-            Opacity = 1;
-            ResumeLayout();
-
-            if (i < 1)
-            {
-                label.Width = Width;
-                label.Location = new Point(label.Location.X, label.Location.Y + (Height / 2) - (Font.Height / 2));
+                Visible = true;
+                Opacity = 1;
+                ResumeLayout();
             }
 
             Invalidate();
@@ -162,7 +157,7 @@ namespace CuoreUI.Controls.Forms
             }
         }
 
-        public EventHandler SelectedIndexChanged;
+        public event EventHandler SelectedIndexChanged;
 
         internal void GoTo(Point position)
         {
@@ -181,9 +176,14 @@ namespace CuoreUI.Controls.Forms
             ShowInTaskbar = false;
         }
 
-        public ComboBoxDropDown(string[] userItems, int userWidth, Color bg, Color outline, cuiComboBox userCaller, int roundingArg, bool visible = true)
+        public string NoSelectionDropdownText { get; set; } = "Empty";
+
+        public ComboBoxDropDown(string[] userItems, int userWidth, Color bg, Color outline, cuiComboBox userCaller, int roundingArg, Cursor cursorForButtons, string textWhenNothingSelected, bool visible = true)
         {
             InitializeComponent();
+
+            ButtonCursor = cursorForButtons;
+            NoSelectionDropdownText = textWhenNothingSelected;
 
             Rounding = new Padding(roundingArg, roundingArg, roundingArg, roundingArg);
             cuiFormRounder1.Rounding = Rounding.All;
@@ -271,7 +271,7 @@ namespace CuoreUI.Controls.Forms
             }
         }
 
-        private Color privateNormalOutline = CuoreUI.Drawing.PrimaryColor;
+        private Color privateNormalOutline = Color.Empty;
         public Color NormalOutline
         {
             get
@@ -285,7 +285,7 @@ namespace CuoreUI.Controls.Forms
             }
         }
 
-        private Color privateHoverOutline = CuoreUI.Drawing.PrimaryColor;
+        private Color privateHoverOutline = Color.Empty;
         public Color HoverOutline
         {
             get
@@ -299,7 +299,7 @@ namespace CuoreUI.Controls.Forms
             }
         }
 
-        private Color privatePressedOutline = CuoreUI.Drawing.PrimaryColor;
+        private Color privatePressedOutline = Color.Empty;
         public Color PressedOutline
         {
             get

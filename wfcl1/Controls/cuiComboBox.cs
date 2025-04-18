@@ -1,13 +1,14 @@
-﻿using CuoreUI.Controls.Forms;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
+using CuoreUI.Controls.Forms;
 
 namespace CuoreUI.Controls
 {
+    [DefaultEvent("SelectedIndexChanged")]
     [ToolboxBitmap(typeof(ComboBox))]
     public partial class cuiComboBox : UserControl
     {
@@ -27,6 +28,9 @@ namespace CuoreUI.Controls
 
         DateTime lastClosed = DateTime.MinValue;
 
+        public event EventHandler SelectedIndexChanged;
+        public Cursor ButtonCursor { get; set; } = Cursors.Arrow;
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string SelectedItem
         {
@@ -34,14 +38,16 @@ namespace CuoreUI.Controls
             set
             {
                 value = value.Trim();
-                if (Items.Contains(value))
+                if (Items.Contains(value) && privateSelectedItem != value)
                 {
                     privateSelectedItem = value;
-                    Invalidate();
+                    SelectedIndexChanged?.Invoke(this, EventArgs.Empty);
+                    Refresh();
                 }
                 else
                 {
-                    SelectedItem = string.Empty;
+                    privateSelectedItem = string.Empty;
+                    Refresh();
                 }
             }
         }
@@ -80,7 +86,7 @@ namespace CuoreUI.Controls
             // Check if the mouse click is outside this control
             Point mousePosition = Control.MousePosition;
             bool flag1 = this.Bounds.Contains(mousePosition) == false;
-            bool flag2 = tempdropdown?.Bounds.Contains(mousePosition) == false; 
+            bool flag2 = tempdropdown?.Bounds.Contains(mousePosition) == false;
             if (flag1 && flag2)
             {
                 CloseDropDown(null, EventArgs.Empty);
@@ -224,6 +230,40 @@ namespace CuoreUI.Controls
 
         public bool isBrowsingOptions = false;
 
+        private string privateNoSelectionText = "None";
+        public string NoSelectionText
+        {
+            get
+            {
+                return privateNoSelectionText;
+            }
+            set
+            {
+                privateNoSelectionText = value;
+                if (SelectedIndex == -1)
+                {
+                    Refresh();
+                }
+            }
+        }
+
+        private string privateNoSelectionDropdownText = "Empty";
+        public string NoSelectionDropdownText
+        {
+            get
+            {
+                return privateNoSelectionDropdownText;
+            }
+            set
+            {
+                privateNoSelectionDropdownText = value;
+                if (SelectedIndex == -1)
+                {
+                    Refresh();
+                }
+            }
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             if (SelectedIndex == -1 && privateSelectedItem != string.Empty)
@@ -251,9 +291,9 @@ namespace CuoreUI.Controls
 
             string tempItemString = privateSelectedItem;
 
-            if (privateSelectedItem.Trim() == string.Empty)
+            if (SelectedItem == "")
             {
-                tempItemString = "None";
+                tempItemString = NoSelectionText;
             }
 
             e.Graphics.DrawString(tempItemString, Font, new SolidBrush(ForeColor), new Point(Width / 2, (Height / 2) - (Font.Height / 2)), centerText);
@@ -351,7 +391,8 @@ namespace CuoreUI.Controls
                 try
                 {
 
-                    ComboBoxDropDown DropDown = new ComboBoxDropDown(Items, Width, DropDownBackgroundColor, DropDownOutlineColor, this, Rounding);
+                    ComboBoxDropDown DropDown = new ComboBoxDropDown(Items, Width, DropDownBackgroundColor, DropDownOutlineColor, this, Rounding, ButtonCursor, NoSelectionDropdownText);
+                    DropDown.ButtonCursor = ButtonCursor;
 
                     DropDown.NormalBackground = ButtonNormalBackground;
                     DropDown.HoverBackground = ButtonHoverBackground;
@@ -419,7 +460,7 @@ namespace CuoreUI.Controls
                 isBrowsingOptions = false;
                 Refresh();
             }
-            else if (sender is null) 
+            else if (sender is null)
             // null sender means either something REALLY wants to close it
             // or the user had clicked off of the dropdown menu and/or control
             {
