@@ -1,4 +1,4 @@
-const message = "I love y'all, thanks for the support.";
+const message = "10'000 DOWNLOADS !!!";
 
 let isChristmas = new Date().getMonth() === 11; // thanks javascript for offsetting months by -1!!! (AGAIN)
 
