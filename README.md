@@ -3,7 +3,9 @@
 
 > [!NOTE]
 > CuoreUI is in development<br>
-> There's no documentation yet
+> Documentation is being worked on.
+
+Repository source updates ahead of release binarys on NuGet. 
 
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
