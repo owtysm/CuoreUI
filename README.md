@@ -6,6 +6,7 @@
 > Documentation is being worked on.
 
 The repository source updates faster than the release binaries on NuGet.
+
 NuGet may get updates days after the repository does.
 
 # A WinForms library.. 
