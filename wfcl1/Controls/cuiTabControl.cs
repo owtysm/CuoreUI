@@ -35,7 +35,7 @@ namespace CuoreUI.Controls
 
         public bool AllowNoTabs { get; set; } = false;
 
-        private Color privateBackgroundColor = Color.FromArgb(10, 10, 10);
+        private Color privateBackgroundColor = Color.Empty;
         public Color BackgroundColor
         {
             get
@@ -63,7 +63,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateUnselectedTabBackColor = Color.FromArgb(24, 24, 24);
+        private Color privateUnselectedTabBackColor = Color.FromArgb(32, 128, 128, 128);
         public Color UnselectedTabBackColor
         {
             get
@@ -91,7 +91,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoveredTabBackColor = Color.FromArgb(38, 38, 38);
+        private Color privateHoveredTabBackColor = Color.FromArgb(64, 128, 128, 128);
         public Color HoveredTabBackColor
         {
             get
@@ -107,7 +107,7 @@ namespace CuoreUI.Controls
 
         //
 
-        private Color privateUnselectedTabTextBackColor = Color.FromArgb(64, 64, 64);
+        private Color privateUnselectedTabTextBackColor = Color.Gray;
         public Color UnselectedTabTextBackColor
         {
             get
@@ -131,11 +131,12 @@ namespace CuoreUI.Controls
             set
             {
                 privateSelectedTabTextBackColor = value;
+                privateSelectedTabTextBackColor = value;
                 Invalidate();
             }
         }
 
-        private Color privateHoveredTabTextBackColor = Color.FromArgb(92, 92, 92);
+        private Color privateHoveredTabTextBackColor = Color.FromArgb(64, 64, 64);
         public Color HoveredTabTextBackColor
         {
             get
@@ -177,7 +178,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateAddButtonBackgroundColor = Color.White;
+        private Color privateAddButtonBackgroundColor = Color.FromArgb(128, 0, 0, 0);
         public Color AddButtonBackgroundColor
         {
             get
@@ -187,6 +188,19 @@ namespace CuoreUI.Controls
             set
             {
                 privateAddButtonBackgroundColor = value;
+            }
+        }
+
+        private Color privateAddButtonColor = Color.White;
+        public Color AddButtonColor
+        {
+            get
+            {
+                return privateAddButtonColor;
+            }
+            set
+            {
+                privateAddButtonColor = value;
             }
         }
 
@@ -203,6 +217,8 @@ namespace CuoreUI.Controls
                 Refresh();
             }
         }
+
+        public Cursor HoverCursor { get; set; } = Cursors.Hand;
 
         #region VisualProperties
         public object HoveredTab_ => null;
@@ -300,7 +316,7 @@ namespace CuoreUI.Controls
                     addTabRectangle.Inflate(-scaleDown, -scaleDown);
 
                     using (GraphicsPath plusBackground = Helper.RoundRect(addTabRectangle, Rounding / 2))
-                    using (SolidBrush addButtonBrush = new SolidBrush(tempAddButtonColor))
+                    using (SolidBrush addButtonBrush = new SolidBrush(AddButtonBackgroundColor))
                     {
                         e.Graphics.FillPath(addButtonBrush, plusBackground);
                     }
@@ -309,7 +325,7 @@ namespace CuoreUI.Controls
                     addTabRectangle.Inflate(-4, -3);
 
                     using (GraphicsPath plusSymbol = Helper.Plus(addTabRectangle))
-                    using (Pen addSymbolPen = new Pen(tempTabColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round, LineJoin = LineJoin.Round })
+                    using (Pen addSymbolPen = new Pen(AddButtonColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round, LineJoin = LineJoin.Round })
                     {
                         e.Graphics.DrawPath(addSymbolPen, plusSymbol);
                     }
@@ -330,6 +346,8 @@ namespace CuoreUI.Controls
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
+
+            bool showHoverCursor = false;
             for (int i = 0; i < TabCount; i++)
             {
                 if (GetTabRect(i).Contains(e.Location))
@@ -338,10 +356,14 @@ namespace CuoreUI.Controls
                     {
                         HoveredTabIndex = i;
                         Invalidate();
+                        return;
                     }
                     break;
                 }
             }
+
+            Cursor = showHoverCursor ? HoverCursor : Cursors.Default;
+
         }
 
         public string tabNamingConvention
@@ -381,7 +403,6 @@ namespace CuoreUI.Controls
 
             return finalUniqueName;
         }
-
 
         public int TabSelectedToDeletion = -1;
 

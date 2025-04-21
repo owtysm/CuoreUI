@@ -92,7 +92,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateBackgroundColor = Color.FromArgb(34, 34, 34);
+        private Color privateBackgroundColor = Color.Empty;
         public Color BackgroundColor
         {
             get
@@ -106,8 +106,8 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateItemHoveredBackgroundColor = Color.FromArgb(46, 46, 46);
-        public Color ItemHoveredBackgroundColor
+        private Color privateItemHoveredBackgroundColor = Color.FromArgb(64, 128, 128, 128);
+        public Color ItemHoverBackgroundColor
         {
             get
             {
@@ -121,7 +121,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateItemHoveredForegroundColor = Color.Gray;
-        public Color ItemHoveredForegroundColor
+        public Color ItemHoverForegroundColor
         {
             get
             {
@@ -228,13 +228,13 @@ namespace CuoreUI.Controls
                 }
                 else if (HoveredIndex == i)
                 {
-                    using (Brush itemBrush = new SolidBrush(ItemHoveredBackgroundColor))
+                    using (Brush itemBrush = new SolidBrush(ItemHoverBackgroundColor))
                     {
                         g.FillPath(itemBrush, path);
                     }
 
                     string itemText = Items[i].ToString();
-                    using (Brush textBrush = new SolidBrush(ItemHoveredForegroundColor))
+                    using (Brush textBrush = new SolidBrush(ItemHoverForegroundColor))
                     {
                         g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
                     }

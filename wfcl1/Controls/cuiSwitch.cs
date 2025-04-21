@@ -285,7 +285,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         private int thumbX = 2;
 
         private bool animating = false;
@@ -372,7 +371,6 @@ namespace CuoreUI.Controls
             temporaryThumbRect.Offset(1, 0);
 
             temporaryThumbRect.Height = temporaryThumbRect.Width;
-
 
             using (SolidBrush brush = new SolidBrush(Checked ? CheckedForeground : UncheckedForeground))
             {

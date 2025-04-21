@@ -183,10 +183,11 @@ namespace CuoreUI.Controls
         public enum KnobStyles
         {
             Thumb,
-            Arc
+            Arc,
+            Combined
         }
 
-        private KnobStyles privateKnobStyle = KnobStyles.Arc;
+        private KnobStyles privateKnobStyle = KnobStyles.Combined;
         public KnobStyles KnobStyle
         {
             get
@@ -230,21 +231,22 @@ namespace CuoreUI.Controls
             modifiedCR.Inflate(-Height / 8, -Height / 8);
 
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
             using (Pen p = new Pen(TrackColor, privateTrackThickness))
             {
                 e.Graphics.DrawEllipse(p, modifiedCR);
             }
 
-
-            if (KnobStyle == KnobStyles.Thumb)
+            void DrawThumbStyle()
             {
                 using (SolidBrush br = new SolidBrush(ThumbColor))
                 {
                     e.Graphics.FillEllipse(br, thumbRectangle);
                 }
             }
-            else if (KnobStyle == KnobStyles.Arc)
+
+            void DrawArcStyle()
             {
                 float angle = (Value - MinValue) / (MaxValue - MinValue) * 360f;
 
@@ -254,14 +256,31 @@ namespace CuoreUI.Controls
                 }
             }
 
-            using (StringFormat sf = new StringFormat()
+            if (KnobStyle == KnobStyles.Thumb)
             {
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            })
-            using (SolidBrush br = new SolidBrush(ForeColor))
+                DrawThumbStyle();
+            }
+            else if (KnobStyle == KnobStyles.Arc)
             {
-                e.Graphics.DrawString(Value.ToString(), Font, br, modifiedCR, sf);
+                DrawArcStyle();
+            }
+            else if (KnobStyle == KnobStyles.Combined)
+            {
+                DrawArcStyle();
+                DrawThumbStyle();
+            }
+
+            if (ShowValueText)
+            {
+                using (StringFormat sf = new StringFormat()
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                })
+                using (SolidBrush br = new SolidBrush(ForeColor))
+                {
+                    e.Graphics.DrawString(Value.ToString(), Font, br, modifiedCR, sf);
+                }
             }
 
             base.OnPaint(e);

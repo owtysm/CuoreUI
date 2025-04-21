@@ -10,10 +10,10 @@ namespace CuoreUI.Controls
         public cuiSeparator()
         {
             InitializeComponent();
-            ForeColor = Color.FromArgb(34, 34, 34);
+            ForeColor = Color.FromArgb(128, 128, 128, 128);
         }
 
-        private float privateThickness = 1f;
+        private float privateThickness = 0.5f;
         public float Thickness
         {
             get

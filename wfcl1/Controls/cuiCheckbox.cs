@@ -14,13 +14,15 @@ namespace CuoreUI.Controls
         {
             InitializeComponent();
 
-            Size = new Size(16, 16);
+            Size = new Size(90, 16);
+            MinimumSize = new Size(16, 16);
+
+            Cursor = Cursors.Hand;
 
             DoubleBuffered = true;
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            MinimumSize = new Size(16, 16);
 
             Content = this.Name;
         }
@@ -62,7 +64,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateUncheckedForeground = Color.FromArgb(34, 34, 34);
+        private Color privateUncheckedForeground = Color.Empty;
         [Description("The unchecked foreground.")]
         public Color UncheckedForeground
         {
@@ -92,7 +94,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateOutlineColor = Color.FromArgb(34, 34, 34);
+        private Color privateOutlineColor = Color.Gray;
         [Description("The color of the outline.")]
         public Color UncheckedOutlineColor
         {
@@ -107,7 +109,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateCheckedOutlineColor = CuoreUI.Drawing.PrimaryColor;
+        private Color privateCheckedOutlineColor = Drawing.PrimaryColor;
         [Description("The color of the checked outline.")]
         public Color CheckedOutlineColor
         {
@@ -151,7 +153,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        public float CheckmarkThickness
+        private float CheckmarkThickness
         {
             get
             {
@@ -175,7 +177,7 @@ namespace CuoreUI.Controls
 
         public Point symbolsOffset = new Point(0, 1);
 
-        Color SymbolColor = Color.FromArgb(64, 255, 255, 255);
+        Color SymbolColor = Color.Empty;
         [Description("The color of the symbol when NOT checked.")]
         public Color UncheckedSymbolColor
         {
@@ -304,13 +306,15 @@ namespace CuoreUI.Controls
                     }
                 }
 
+                using (StringFormat sf = new StringFormat() { LineAlignment = StringAlignment.Center })
                 using (SolidBrush brush = new SolidBrush(ForeColor))
                 {
                     e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
-                    textRect.Offset(textRect.Width + 4, 0.5f);
+                    textRect.Offset(textRect.Width + 4 + (OutlineThickness * 1.5f), -(OutlineThickness * 1.5f));
                     textRect.Width = Width;
-                    e.Graphics.DrawString(Content, Font, brush, textRect);
+                    textRect.Height = Height;
+                    e.Graphics.DrawString(Content, Font, brush, textRect, sf);
                 }
             }
 

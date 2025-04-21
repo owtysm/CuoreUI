@@ -1,8 +1,7 @@
 ﻿namespace CuoreUI.Controls
 {
 
-
-    partial class cuiTextBox2
+    partial class cuiTextBox
     {
         /// <summary> 
         /// Required designer variable.
@@ -20,10 +19,6 @@
         {
             if (disposing)
             {
-                if (GlobalMouseHook.isHooked && DesignMode == false)
-                {
-                    GlobalMouseHook.Stop();
-                }
                 if ((components != null))
                 {
                     components.Dispose();
@@ -80,7 +75,7 @@
             this.placeholderTextField.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.placeholderTextField.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
             // 
-            // cuiTextBox2
+            // cuiTextBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -88,10 +83,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.contentTextField);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "cuiTextBox2";
+            this.Name = "cuiTextBox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.Size = new System.Drawing.Size(266, 45);
             this.Click += new System.EventHandler(this.cuiTextBox2_Click);

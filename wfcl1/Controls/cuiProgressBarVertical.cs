@@ -54,7 +54,6 @@ namespace CuoreUI.Controls
                 base.OnPaint(e);
             }
 
-
             if (Flipped)
             {
                 tempBitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);

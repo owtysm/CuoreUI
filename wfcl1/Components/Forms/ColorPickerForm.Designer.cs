@@ -32,6 +32,7 @@ namespace CuoreUI.Components.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorPickerForm));
+            this.cuiFormRounder1 = new CuoreUI.Components.cuiFormRounder();
             this.cuiButton4 = new CuoreUI.Controls.cuiButton();
             this.cuiLabel7 = new CuoreUI.Controls.cuiLabel();
             this.cuiLabel6 = new CuoreUI.Controls.cuiLabel();
@@ -44,15 +45,21 @@ namespace CuoreUI.Components.Forms
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.cuiLabel1 = new CuoreUI.Controls.cuiLabel();
             this.cuiLabel2 = new CuoreUI.Controls.cuiLabel();
-            this.cuiBorder1 = new CuoreUI.Controls.cuiBorder();
-            this.cuiTextBox5 = new CuoreUI.Controls.cuiTextBox2();
-            this.cuiTextBox4 = new CuoreUI.Controls.cuiTextBox2();
-            this.cuiTextBox3 = new CuoreUI.Controls.cuiTextBox2();
-            this.cuiTextBox2 = new CuoreUI.Controls.cuiTextBox2();
-            this.cuiTextBox1 = new CuoreUI.Controls.cuiTextBox2();
-            this.cuiFormRounder1 = new CuoreUI.Components.cuiFormRounder();
+            this.cuiBorder1 = new CuoreUI.Controls.cuiPanel();
+            this.cuiTextBox5 = new CuoreUI.Controls.cuiTextBox();
+            this.cuiTextBox4 = new CuoreUI.Controls.cuiTextBox();
+            this.cuiTextBox3 = new CuoreUI.Controls.cuiTextBox();
+            this.cuiTextBox2 = new CuoreUI.Controls.cuiTextBox();
+            this.cuiTextBox1 = new CuoreUI.Controls.cuiTextBox();
             this.cuiFormDrag1 = new CuoreUI.cuiFormDrag(this.components);
             this.SuspendLayout();
+            // 
+            // cuiFormRounder1
+            // 
+            this.cuiFormRounder1.EnhanceCorners = false;
+            this.cuiFormRounder1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiFormRounder1.Rounding = 8;
+            this.cuiFormRounder1.TargetForm = this;
             // 
             // cuiButton4
             // 
@@ -64,6 +71,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton4.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton4.CheckedOutline = System.Drawing.Color.Empty;
             this.cuiButton4.Content = "";
+            this.cuiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton4.ForeColor = System.Drawing.Color.White;
@@ -75,10 +83,11 @@ namespace CuoreUI.Components.Forms
             this.cuiButton4.ImageAutoCenter = true;
             this.cuiButton4.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cuiButton4.Location = new System.Drawing.Point(305, 1);
             this.cuiButton4.Name = "cuiButton4";
             this.cuiButton4.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton4.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cuiButton4.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton4.OutlineThickness = 1.6F;
             this.cuiButton4.PressedBackground = System.Drawing.Color.Empty;
@@ -88,6 +97,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton4.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton4.Size = new System.Drawing.Size(43, 43);
             this.cuiButton4.TabIndex = 20;
+            this.cuiButton4.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton4.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton4.Click += new System.EventHandler(this.cuiButton4_Click);
             // 
@@ -169,6 +179,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton3.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton3.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton3.Content = "Cancel";
+            this.cuiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -180,10 +191,11 @@ namespace CuoreUI.Components.Forms
             this.cuiButton3.ImageAutoCenter = true;
             this.cuiButton3.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton3.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.cuiButton3.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.Location = new System.Drawing.Point(202, 408);
             this.cuiButton3.Name = "cuiButton3";
             this.cuiButton3.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton3.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.cuiButton3.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cuiButton3.OutlineThickness = 1.6F;
             this.cuiButton3.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -193,6 +205,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton3.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton3.Size = new System.Drawing.Size(186, 43);
             this.cuiButton3.TabIndex = 13;
+            this.cuiButton3.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton3.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton3.Click += new System.EventHandler(this.cuiButton3_Click);
             // 
@@ -206,6 +219,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton2.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton2.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton2.Content = "Done";
+            this.cuiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton2.ForeColor = System.Drawing.Color.White;
@@ -217,10 +231,11 @@ namespace CuoreUI.Components.Forms
             this.cuiButton2.ImageAutoCenter = true;
             this.cuiButton2.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton2.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton2.Location = new System.Drawing.Point(10, 408);
             this.cuiButton2.Name = "cuiButton2";
             this.cuiButton2.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton2.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton2.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton2.OutlineThickness = 1.6F;
             this.cuiButton2.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -230,6 +245,7 @@ namespace CuoreUI.Components.Forms
             this.cuiButton2.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton2.Size = new System.Drawing.Size(186, 43);
             this.cuiButton2.TabIndex = 12;
+            this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton2.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton2.ForeColorChanged += new System.EventHandler(this.cuiButton2_ForeColorChanged);
             this.cuiButton2.Click += new System.EventHandler(this.cuiButton2_Click);
@@ -244,30 +260,33 @@ namespace CuoreUI.Components.Forms
             this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton1.Content = "";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton1.ForeColor = System.Drawing.Color.White;
-            this.cuiButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.cuiButton1.HoveredImageTint = System.Drawing.Color.White;
-            this.cuiButton1.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton1.HoverBackground = System.Drawing.Color.Empty;
+            this.cuiButton1.HoveredImageTint = System.Drawing.Color.Gray;
+            this.cuiButton1.HoverForeColor = System.Drawing.Color.Empty;
             this.cuiButton1.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton1.Image = global::CuoreUI.Properties.Resources.crossmark;
             this.cuiButton1.ImageAutoCenter = true;
             this.cuiButton1.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton1.Location = new System.Drawing.Point(354, 1);
             this.cuiButton1.Name = "cuiButton1";
-            this.cuiButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton1.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton1.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton1.OutlineThickness = 1.6F;
-            this.cuiButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.cuiButton1.PressedBackground = System.Drawing.Color.Empty;
             this.cuiButton1.PressedForeColor = System.Drawing.Color.White;
-            this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.PressedImageTint = System.Drawing.Color.Gray;
             this.cuiButton1.PressedOutline = System.Drawing.Color.Empty;
             this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton1.Size = new System.Drawing.Size(43, 43);
             this.cuiButton1.TabIndex = 10;
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton1.Click += new System.EventHandler(this.cuiButton1_Click);
             // 
@@ -306,143 +325,161 @@ namespace CuoreUI.Components.Forms
             // 
             // cuiTextBox5
             // 
-            this.cuiTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cuiTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cuiTextBox5.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiTextBox5.BorderSize = 1;
+            this.cuiTextBox5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiTextBox5.Content = "";
             this.cuiTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cuiTextBox5.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox5.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiTextBox5.FocusImageTint = System.Drawing.Color.White;
             this.cuiTextBox5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiTextBox5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cuiTextBox5.Image = null;
+            this.cuiTextBox5.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiTextBox5.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiTextBox5.Location = new System.Drawing.Point(106, 343);
             this.cuiTextBox5.Margin = new System.Windows.Forms.Padding(4);
             this.cuiTextBox5.Multiline = false;
             this.cuiTextBox5.Name = "cuiTextBox5";
+            this.cuiTextBox5.NormalImageTint = System.Drawing.Color.White;
             this.cuiTextBox5.Padding = new System.Windows.Forms.Padding(14, 10, 14, 0);
             this.cuiTextBox5.PasswordChar = false;
             this.cuiTextBox5.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cuiTextBox5.PlaceholderText = "Hexadecimal (try \'red\' or \'#ff0000\')";
-            this.cuiTextBox5.Rounding = new System.Windows.Forms.Padding(8,8,8,8);
+            this.cuiTextBox5.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiTextBox5.Size = new System.Drawing.Size(282, 34);
             this.cuiTextBox5.TabIndex = 5;
             this.cuiTextBox5.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox5.UnderlinedStyle = false;
+            this.cuiTextBox5.UnderlinedStyle = true;
             this.cuiTextBox5.ContentChanged += new System.EventHandler(this.hexInput_ContentChanged);
             // 
             // cuiTextBox4
             // 
             this.cuiTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cuiTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cuiTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cuiTextBox4.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiTextBox4.BorderSize = 1;
+            this.cuiTextBox4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiTextBox4.Content = "";
             this.cuiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cuiTextBox4.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox4.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiTextBox4.FocusImageTint = System.Drawing.Color.White;
             this.cuiTextBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiTextBox4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cuiTextBox4.Image = null;
+            this.cuiTextBox4.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiTextBox4.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiTextBox4.Location = new System.Drawing.Point(298, 303);
             this.cuiTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.cuiTextBox4.Multiline = false;
             this.cuiTextBox4.Name = "cuiTextBox4";
+            this.cuiTextBox4.NormalImageTint = System.Drawing.Color.White;
             this.cuiTextBox4.Padding = new System.Windows.Forms.Padding(14, 10, 14, 0);
             this.cuiTextBox4.PasswordChar = false;
             this.cuiTextBox4.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cuiTextBox4.PlaceholderText = "Blue";
-            this.cuiTextBox4.Rounding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.cuiTextBox4.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiTextBox4.Size = new System.Drawing.Size(90, 34);
             this.cuiTextBox4.TabIndex = 4;
             this.cuiTextBox4.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox4.UnderlinedStyle = false;
+            this.cuiTextBox4.UnderlinedStyle = true;
             this.cuiTextBox4.ContentChanged += new System.EventHandler(this.ContentChanged);
             // 
             // cuiTextBox3
             // 
             this.cuiTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cuiTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cuiTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cuiTextBox3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiTextBox3.BorderSize = 1;
+            this.cuiTextBox3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiTextBox3.Content = "";
             this.cuiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cuiTextBox3.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiTextBox3.FocusImageTint = System.Drawing.Color.White;
             this.cuiTextBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiTextBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cuiTextBox3.Image = null;
+            this.cuiTextBox3.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiTextBox3.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiTextBox3.Location = new System.Drawing.Point(202, 303);
             this.cuiTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.cuiTextBox3.Multiline = false;
             this.cuiTextBox3.Name = "cuiTextBox3";
+            this.cuiTextBox3.NormalImageTint = System.Drawing.Color.White;
             this.cuiTextBox3.Padding = new System.Windows.Forms.Padding(14, 10, 14, 0);
             this.cuiTextBox3.PasswordChar = false;
             this.cuiTextBox3.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cuiTextBox3.PlaceholderText = "Green";
-            this.cuiTextBox3.Rounding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.cuiTextBox3.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiTextBox3.Size = new System.Drawing.Size(90, 34);
             this.cuiTextBox3.TabIndex = 3;
             this.cuiTextBox3.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox3.UnderlinedStyle = false;
+            this.cuiTextBox3.UnderlinedStyle = true;
             this.cuiTextBox3.ContentChanged += new System.EventHandler(this.ContentChanged);
             // 
             // cuiTextBox2
             // 
             this.cuiTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cuiTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cuiTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cuiTextBox2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiTextBox2.BorderSize = 1;
+            this.cuiTextBox2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiTextBox2.Content = "";
             this.cuiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cuiTextBox2.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiTextBox2.FocusImageTint = System.Drawing.Color.White;
             this.cuiTextBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiTextBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cuiTextBox2.Image = null;
+            this.cuiTextBox2.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiTextBox2.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiTextBox2.Location = new System.Drawing.Point(106, 303);
             this.cuiTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.cuiTextBox2.Multiline = false;
             this.cuiTextBox2.Name = "cuiTextBox2";
+            this.cuiTextBox2.NormalImageTint = System.Drawing.Color.White;
             this.cuiTextBox2.Padding = new System.Windows.Forms.Padding(14, 10, 14, 0);
             this.cuiTextBox2.PasswordChar = false;
             this.cuiTextBox2.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cuiTextBox2.PlaceholderText = "Red";
-            this.cuiTextBox2.Rounding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.cuiTextBox2.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiTextBox2.Size = new System.Drawing.Size(90, 34);
             this.cuiTextBox2.TabIndex = 2;
             this.cuiTextBox2.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox2.UnderlinedStyle = false;
+            this.cuiTextBox2.UnderlinedStyle = true;
             this.cuiTextBox2.ContentChanged += new System.EventHandler(this.ContentChanged);
             // 
             // cuiTextBox1
             // 
             this.cuiTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cuiTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cuiTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cuiTextBox1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiTextBox1.BorderSize = 1;
+            this.cuiTextBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiTextBox1.Content = "";
             this.cuiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cuiTextBox1.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiTextBox1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiTextBox1.FocusImageTint = System.Drawing.Color.White;
             this.cuiTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiTextBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cuiTextBox1.Image = null;
+            this.cuiTextBox1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiTextBox1.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiTextBox1.Location = new System.Drawing.Point(10, 303);
             this.cuiTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.cuiTextBox1.Multiline = false;
             this.cuiTextBox1.Name = "cuiTextBox1";
+            this.cuiTextBox1.NormalImageTint = System.Drawing.Color.White;
             this.cuiTextBox1.Padding = new System.Windows.Forms.Padding(14, 10, 14, 0);
             this.cuiTextBox1.PasswordChar = false;
             this.cuiTextBox1.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cuiTextBox1.PlaceholderText = "Alpha";
-            this.cuiTextBox1.Rounding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.cuiTextBox1.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiTextBox1.Size = new System.Drawing.Size(90, 34);
             this.cuiTextBox1.TabIndex = 1;
             this.cuiTextBox1.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox1.UnderlinedStyle = false;
+            this.cuiTextBox1.UnderlinedStyle = true;
             this.cuiTextBox1.ContentChanged += new System.EventHandler(this.ContentChanged);
-            // 
-            // cuiFormRounder1
-            // 
-            this.cuiFormRounder1.EnhanceCorners = false;
-            this.cuiFormRounder1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiFormRounder1.Rounding = 8;
-            this.cuiFormRounder1.TargetForm = this;
             // 
             // cuiFormDrag1
             // 
@@ -480,11 +517,11 @@ namespace CuoreUI.Components.Forms
         }
 
         #endregion
-        private cuiTextBox2 cuiTextBox5;
-        private cuiTextBox2 cuiTextBox4;
-        private cuiTextBox2 cuiTextBox3;
-        private cuiTextBox2 cuiTextBox2;
-        private cuiTextBox2 cuiTextBox1;
+        private cuiTextBox cuiTextBox5;
+        private cuiTextBox cuiTextBox4;
+        private cuiTextBox cuiTextBox3;
+        private cuiTextBox cuiTextBox2;
+        private cuiTextBox cuiTextBox1;
         private cuiFormDrag cuiFormDrag1;
         private cuiFormRounder cuiFormRounder1;
         private Controls.cuiLabel cuiLabel1;
@@ -493,7 +530,7 @@ namespace CuoreUI.Components.Forms
         private Controls.cuiButton cuiButton3;
         private Controls.cuiButton cuiButton2;
         private Controls.cuiLabel cuiLabel3;
-        private Controls.cuiBorder cuiBorder1;
+        private Controls.cuiPanel cuiBorder1;
         private Controls.ColorPickerWheel colorPickerWheel1;
         private cuiLabel cuiLabel7;
         private cuiLabel cuiLabel6;

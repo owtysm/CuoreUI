@@ -173,7 +173,6 @@ namespace CuoreUI.Controls.Forms
         {
             InitializeComponent();
             Location = new Point(x, y);
-            ShowInTaskbar = false;
         }
 
         public string NoSelectionDropdownText { get; set; } = "Empty";
@@ -193,7 +192,6 @@ namespace CuoreUI.Controls.Forms
             BackColor = Color.FromArgb(255, bg.R, bg.G, bg.B);
             caller = userCaller;
             Items = userItems;
-            ShowInTaskbar = false;
 
             if (caller == null || !visible)
             {
@@ -326,7 +324,6 @@ namespace CuoreUI.Controls.Forms
                 Invalidate();
             }
         }
-
 
         private Color privateHoverForeColor = Color.White;
         public Color HoverForeColor

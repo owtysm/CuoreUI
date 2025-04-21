@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -70,7 +69,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateNormalColor = Color.FromArgb(34, 34, 34);
+        private Color privateNormalColor = Color.FromArgb(64, 128, 128, 128);
         public Color NormalColor
         {
             get
@@ -123,7 +122,7 @@ namespace CuoreUI.Controls
             {
                 return;
             }
-            
+
             int circleWidth = Width - BorderWidth - 1;
             int circleHeight = Height - BorderWidth - 1;
             int borderHalf = BorderWidth / 2;

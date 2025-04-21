@@ -1,7 +1,7 @@
-﻿using CuoreUI.Properties;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using CuoreUI.Properties;
 using static CuoreUI.Components.Forms.ColorPickerForm;
 
 namespace CuoreUI.Controls

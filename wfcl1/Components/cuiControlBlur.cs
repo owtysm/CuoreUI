@@ -90,7 +90,6 @@ namespace CuoreUI.Components
                 using (Graphics g = Graphics.FromImage(cachedBitmap))
                 {
 
-
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
                     g.PixelOffsetMode = PixelOffsetMode.None;
                     g.InterpolationMode = InterpolationMode.Low;

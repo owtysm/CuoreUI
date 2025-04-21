@@ -73,7 +73,7 @@
     <Compile Update="Controls\cuiSvgBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\cuiBorder.cs">
+    <Compile Update="Controls\cuiPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\cuiLabel.cs">

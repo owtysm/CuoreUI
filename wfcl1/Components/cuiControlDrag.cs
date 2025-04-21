@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CuoreUI
@@ -10,6 +9,7 @@ namespace CuoreUI
     {
         private Control targetControl;
         private Point previousMousePosition;
+        private Form parentForm;
 
         public cuiControlDrag(IContainer container)
         {
@@ -18,10 +18,7 @@ namespace CuoreUI
 
         public Control TargetControl
         {
-            get
-            {
-                return targetControl;
-            }
+            get => targetControl;
             set
             {
                 if (targetControl != null)
@@ -40,28 +37,28 @@ namespace CuoreUI
             }
         }
 
-        private void MouseMove(object sender, MouseEventArgs e)
+        private void MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
+            {
+                previousMousePosition = Cursor.Position;
+                parentForm = targetControl?.FindForm();
+            }
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && parentForm != null)
             {
                 Point currentMousePosition = Cursor.Position;
                 int deltaX = currentMousePosition.X - previousMousePosition.X;
                 int deltaY = currentMousePosition.Y - previousMousePosition.Y;
 
-                if (targetControl.Parent != null && targetControl.Parent is Form controlParent)
-                {
-                    controlParent.Left += deltaX;
-                    controlParent.Top += deltaY;
-                }
+                parentForm.Left += deltaX;
+                parentForm.Top += deltaY;
 
                 previousMousePosition = currentMousePosition;
             }
         }
-
-        private void MouseDown(object sender, MouseEventArgs e)
-        {
-            previousMousePosition = Cursor.Position;
-        }
-
     }
 }

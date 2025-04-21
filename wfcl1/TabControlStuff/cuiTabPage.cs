@@ -11,7 +11,7 @@ namespace CuoreUI.TabControlStuff
         public cuiTabPage()
         {
             InitializeComponent();
-            BackColor = Color.Black;
+            ForeColor = Color.FromArgb(64, 128, 128, 128);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -25,7 +25,6 @@ namespace CuoreUI.TabControlStuff
                 e.Graphics.FillPath(brush, Helper.RoundRect(ClientRectangle, Rounding));
             }
         }
-
 
     }
 }

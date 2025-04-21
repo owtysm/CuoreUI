@@ -25,8 +25,8 @@ namespace CuoreUI.Controls.Charts
         private List<float> privateDataValuePoints = new List<float>();
         private List<string> privateDataNamePoints = new List<string>();
 
-        private Color _segmentColor = Color.FromArgb(64, Color.FromArgb(255, 106, 0));
-        private Color _segmentBorderColor = Color.FromArgb(255, 106, 0);
+        private Color _segmentColor = Color.FromArgb(64, CuoreUI.Drawing.PrimaryColor);
+        private Color _segmentBorderColor = CuoreUI.Drawing.PrimaryColor;
         private int privateChartPadding = 30;
         private bool privateShowPopup = true;
 
@@ -156,7 +156,7 @@ namespace CuoreUI.Controls.Charts
 
         // Properties to expose
         public Color SliceBorderColor { get; set; } = Color.FromArgb(64, 255, 255, 255);  // Default color for slice borders
-        public Color ChartBorderColor { get; set; } = Color.FromArgb(255, 106, 0);   // Default color for chart border
+        public Color ChartBorderColor { get; set; } = CuoreUI.Drawing.PrimaryColor;   // Default color for chart border
 
         public float SliceBorderThickness { get; set; } = 1;         // Thickness of the slice border
         public float ChartBorderThickness { get; set; } = 1.6f;         // Thickness of the chart border
@@ -255,7 +255,6 @@ namespace CuoreUI.Controls.Charts
 
             base.OnPaint(e);
         }
-
 
         bool mouseIn = false;
 

@@ -107,13 +107,19 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
 
                 // workaround to get rid of the win7 style window when app launches
                 cp.ExStyle |= WS_EX_LAYERED;
-                cp.ExStyle |= WS_EX_TRANSPARENT;
+                cp.ExStyle |= WS_EX_TRANSPARENT | 0x20 | 0x08000000;
                 return cp;
             }
         }
 
         private Bitmap targetFormBt = null;
         public Form TargetForm = null;
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            InitializeWindowFix();
+        }
         public void DrawForm(object sender, EventArgs e)
         {
             if (stop)
@@ -133,10 +139,6 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
             SuspendLayout();
             try
             {
-                if (!initialized)
-                {
-                    InitializeWindowFix();
-                }
 
                 if (backImage == null || backImage.Size != Size || BackgroundColor != TargetForm?.BackColor || InvalidateNextDrawCall)
                 {
@@ -195,7 +197,7 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
                 // Tag should ALWAYS be a double.
                 // if not - it's either not initialized yet, or Tag was intentionally set to an unsupported value by the dev
                 byte opacity = (byte)((double)Tag * 255);
-                PerPixelAlphaBlend.SetBitmap(backImage, initialized ? opacity : (byte)0, Left, Top, Handle);
+                PerPixelAlphaBlend.SetBitmap(initialized ? backImage : null, initialized ? opacity : (byte)0, Left, Top, Handle);
             }
             finally
             {
@@ -215,14 +217,14 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
 
             initialized = true;
 
-            Location = TargetForm.Location - new Size(1, 1);
+            //Location = TargetForm.Location - new Size(1, 1);
+            //Opacity = opacityBefore;
         }
 
         TextureBrush backgroundImageTextureBrush = null;
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
             if (!DesignMode)
             {
                 var cp = NativeMethods.GetWindowLong(Handle, NativeMethods.GWL_EXSTYLE);

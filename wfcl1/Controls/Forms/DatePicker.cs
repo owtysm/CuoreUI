@@ -1,7 +1,7 @@
-﻿using CuoreUI.Controls.Forms.DatePickerPages;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using CuoreUI.Controls.Forms.DatePickerPages;
 
 namespace CuoreUI.Controls.Forms
 {
@@ -125,7 +125,7 @@ namespace CuoreUI.Controls.Forms
                         BackColor = SystemColors.Control;
                         foreach (Control ct in Controls)
                         {
-                            if (ct is cuiTextBox2 ctb)
+                            if (ct is cuiTextBox ctb)
                             {
                                 ctb.ForeColor = Color.Black;
                                 ctb.BackColor = SystemColors.Control;
@@ -154,7 +154,7 @@ namespace CuoreUI.Controls.Forms
                         BackColor = Color.Black;
                         foreach (Control ct in Controls)
                         {
-                            if (ct is cuiTextBox2 ctb)
+                            if (ct is cuiTextBox ctb)
                             {
                                 ctb.ForeColor = SystemColors.ButtonFace;
                                 ctb.BackColor = Color.Black;

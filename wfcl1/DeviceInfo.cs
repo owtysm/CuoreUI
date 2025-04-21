@@ -37,7 +37,6 @@ namespace CuoreUI
             return cpus.ToList();
         }
 
-
         public static List<GPU> GetGPUs()
         {
             var gpus = new List<GPU>();

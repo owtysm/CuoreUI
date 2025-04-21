@@ -26,7 +26,7 @@ namespace CuoreUI.Controls.Shapes
             }
         }
 
-        private Color privatePanelColor = Color.FromArgb(255, 106, 0);
+        private Color privatePanelColor = CuoreUI.Drawing.PrimaryColor;
         public Color PanelColor
         {
             get

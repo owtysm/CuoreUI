@@ -1,6 +1,6 @@
 ﻿namespace CuoreUI.Controls
 {
-    partial class cuiBorder
+    partial class cuiPanel
     {
         private System.ComponentModel.IContainer components = null;
 

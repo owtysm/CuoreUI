@@ -84,7 +84,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateRingColor = Color.FromArgb(34, 34, 34);
+        private Color privateRingColor = Color.FromArgb(64, 128, 128, 128);
         public Color RingColor
         {
             get

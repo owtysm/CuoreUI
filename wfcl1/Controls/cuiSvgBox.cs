@@ -1,11 +1,11 @@
-﻿using Svg;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Svg;
 
 namespace CuoreUI.Controls
 {
@@ -73,7 +73,6 @@ namespace CuoreUI.Controls
 
                 string strokeRegex = @"stroke=""([^""]+)""";
 
-
                 for (int i = 0; i < tempSVGCODE.Length; i++)
                 {
                     tempSVGCODE[i] = Regex.Replace(tempSVGCODE[i], strokeRegex, $"stroke=\"{strokeColor}\"");
@@ -85,7 +84,6 @@ namespace CuoreUI.Controls
                 string fillColor = ColorToHexString(OverrideFill);
 
                 string fillRegex = @"fill=""([^""]+)""";
-
 
                 for (int i = 0; i < tempSVGCODE.Length; i++)
                 {

@@ -122,12 +122,12 @@ namespace CuoreUI.Components.Forms
 
         private void ContentChanged(object sender, EventArgs e)
         {
-            if ((sender is cuiTextBox2) == false || currentlyChangingColor)
+            if ((sender is cuiTextBox) == false || currentlyChangingColor)
             {
                 return;
             }
 
-            cuiTextBox2 textbox = sender as cuiTextBox2;
+            cuiTextBox textbox = sender as cuiTextBox;
 
             if (textbox.Content.Trim() == string.Empty)
             {
@@ -164,7 +164,7 @@ namespace CuoreUI.Components.Forms
 
         private void hexInput_ContentChanged(object sender, EventArgs e)
         {
-            if ((sender is cuiTextBox2) == false)
+            if ((sender is cuiTextBox) == false)
             {
                 return;
             }
@@ -218,11 +218,12 @@ namespace CuoreUI.Components.Forms
                         BackColor = SystemColors.Control;
                         foreach (Control ct in Controls)
                         {
-                            if (ct is cuiTextBox2 ctb)
+                            if (ct is cuiTextBox ctb)
                             {
+                                ctb.BackColor = BackColor;
                                 ctb.ForeColor = Color.Black;
-                                ctb.BackColor = SystemColors.Control;
-                                ctb.BorderColor = Color.FromArgb(221, 221, 221);
+                                ctb.BackgroundColor = Color.White;
+                                ctb.FocusBackgroundColor = ctb.BackgroundColor;
                             }
                             else if (ct is cuiLabel cl && cl != cuiLabel3)
                             {
@@ -235,10 +236,7 @@ namespace CuoreUI.Components.Forms
                         cuiButton2.ForeColor = Color.Black;
                         cuiBorder1.PanelOutlineColor = Color.FromArgb(30, 0, 0, 0);
 
-                        cuiButton1.NormalBackground = Color.FromArgb(20, 0, 0, 0);
                         cuiButton1.NormalImageTint = Color.Black;
-                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
-                        cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 0, 0, 0);
                         cuiLabel3.ForeColor = Color.FromArgb(84, 84, 84);
@@ -248,11 +246,12 @@ namespace CuoreUI.Components.Forms
                         BackColor = Color.Black;
                         foreach (Control ct in Controls)
                         {
-                            if (ct is cuiTextBox2 ctb)
+                            if (ct is cuiTextBox ctb)
                             {
-                                ctb.ForeColor = SystemColors.ButtonFace;
-                                ctb.BackColor = Color.Black;
-                                ctb.BorderColor = Color.FromArgb(34, 34, 34);
+                                ctb.BackColor = BackColor;
+                                ctb.ForeColor = Color.White;
+                                ctb.BackgroundColor = Color.FromArgb(16, 16, 16);
+                                ctb.FocusBackgroundColor = ctb.BackgroundColor;
                             }
                             else if (ct is cuiLabel cl && cl != cuiLabel3)
                             {
@@ -265,10 +264,7 @@ namespace CuoreUI.Components.Forms
                         cuiButton2.ForeColor = Color.White;
                         cuiBorder1.PanelOutlineColor = Color.FromArgb(30, 255, 255, 255);
 
-                        cuiButton1.NormalBackground = Color.FromArgb(20, 255, 255, 255);
                         cuiButton1.NormalImageTint = Color.White;
-                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
-                        cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 255, 255, 255);
                         cuiLabel3.ForeColor = Color.FromArgb(171, 171, 171);

@@ -53,7 +53,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoverBackground = Color.FromArgb(200, 255, 106, 0);
+        private Color privateHoverBackground = CuoreUI.Drawing.TranslucentPrimaryColor;
         public Color HoverBackground
         {
             get

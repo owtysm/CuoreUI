@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static CuoreUI.Helper.Win32;
 
 namespace CuoreUI.Controls
 {
@@ -38,7 +30,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateBorderColor = Color.FromArgb(30, 255, 255, 255);
+        private Color privateBorderColor = Color.FromArgb(64, 128, 128, 128);
         [Category("CuoreUI")]
         [Description("The color of the inner border.")]
         public Color BorderColor

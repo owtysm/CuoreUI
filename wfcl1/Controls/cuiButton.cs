@@ -12,7 +12,6 @@ namespace CuoreUI.Controls
     [DefaultEvent("Click")]
     public partial class cuiButton : UserControl
     {
-
         public static class States
         {
             public const int Normal = 1;
@@ -24,7 +23,7 @@ namespace CuoreUI.Controls
         {
             InitializeComponent();
             DoubleBuffered = true;
-            ForeColor = Color.White;
+            ForeColor = Color.Black;
             Font = new Font("Microsoft Sans Serif", 9.75f);
         }
 
@@ -70,7 +69,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateNormalBackground = CuoreUI.Drawing.PrimaryColor;
+        private Color privateNormalBackground = Color.White;
         public Color NormalBackground
         {
             get
@@ -84,7 +83,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoverBackground = Color.FromArgb(200, 255, 106, 0);
+        private Color privateHoverBackground = Color.White;
         public Color HoverBackground
         {
             get
@@ -98,7 +97,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privatePressedBackground = CuoreUI.Drawing.PrimaryColor;
+        private Color privatePressedBackground = Color.WhiteSmoke;
         public Color PressedBackground
         {
             get
@@ -112,7 +111,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateNormalOutline = Color.Empty;
+        private Color privateNormalOutline = Color.FromArgb(64, 128, 128, 128);
         public Color NormalOutline
         {
             get
@@ -126,7 +125,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoverOutline = Color.Empty;
+        private Color privateHoverOutline = Color.FromArgb(32, 128, 128, 128);
         public Color HoverOutline
         {
             get
@@ -140,7 +139,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privatePressedOutline = Color.Empty;
+        private Color privatePressedOutline = Color.FromArgb(64, 128, 128, 128);
         public Color PressedOutline
         {
             get
@@ -202,7 +201,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         private Color privateCheckedBackground = CuoreUI.Drawing.PrimaryColor;
         public Color CheckedBackground
         {
@@ -232,7 +230,6 @@ namespace CuoreUI.Controls
         }
 
         private bool privateImageAutoCenter = true;
-
         public bool ImageAutoCenter
         {
             get
@@ -246,7 +243,22 @@ namespace CuoreUI.Controls
             }
         }
 
-        private float privateOutlineThickness = 1.6f;
+        private StringAlignment privateTextAlignment = StringAlignment.Center;
+        public StringAlignment TextAlignment
+        {
+            get
+            {
+                return privateTextAlignment;
+            }
+
+            set
+            {
+                privateTextAlignment = value;
+                Refresh();
+            }
+        }
+
+        private float privateOutlineThickness = 1f;
         public float OutlineThickness
         {
             get
@@ -288,7 +300,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        Color privatePressedForeColor = Color.White;
+        Color privatePressedForeColor = Color.FromArgb(32, 32, 32);
         public Color PressedForeColor
         {
             get
@@ -314,7 +326,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        Color privateHoverForeColor = Color.White;
+        Color privateHoverForeColor = Color.Black;
         public Color HoverForeColor
         {
             get
@@ -330,6 +342,10 @@ namespace CuoreUI.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            stringFormat.Trimming = StringTrimming.None;
+            stringFormat.FormatFlags |= StringFormatFlags.NoWrap | StringFormatFlags.FitBlackBox;
+            stringFormat.Alignment = TextAlignment;
+
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             Rectangle modifiedCR = ClientRectangle;
@@ -400,6 +416,10 @@ namespace CuoreUI.Controls
                 int TextOffsetFromImage = (int)e.Graphics.MeasureString(Content, Font, textRectangle.Width, stringFormat).Width;
                 imageRectangle.X -= TextOffsetFromImage / 2;
                 textRectangle.X += imageRectangle.Width / 2;
+            }
+            else if (privateImage != null)
+            {
+                textRectangle.X += imageRectangle.Width;
             }
 
             textRectangle.Offset(privateTextOffset);

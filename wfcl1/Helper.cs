@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static CuoreUI.Helper.Win32;
 
 namespace CuoreUI
 {
@@ -485,6 +486,23 @@ namespace CuoreUI
             return path;
         }
 
+        public static void ToggleFormVisibilityWithoutActivating(Form form, bool show)
+        {
+            if (form == null || form.IsDisposed)
+                return;
+
+            if (show)
+            {
+                if (!form.Visible)
+                    NativeMethods.ShowWindow(form.Handle, NativeMethods.SW_SHOWNOACTIVATE);
+            }
+            else
+            {
+                if (form.Visible)
+                    NativeMethods.ShowWindow(form.Handle, NativeMethods.SW_HIDE);
+            }
+        }
+
         public static class Win32
         {
             [DllImport("user32.dll")]
@@ -507,7 +525,6 @@ namespace CuoreUI
                 return (GetAsyncKeyState(0x01) & 0x8000) != 0;
             }
 
-
             [StructLayout(LayoutKind.Sequential)]
             public struct POINT
             {
@@ -521,9 +538,13 @@ namespace CuoreUI
             [DllImport("user32.dll")]
             public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-
             public const int WM_SYSCOMMAND = 0x0112;
             public const int SC_CLOSE = 0xF060;
+
+            public const int GWL_EXSTYLE = -20;
+            public const int WS_EX_TRANSPARENT = 0x00000020;
+            public const int WS_EX_LAYERED = 0x00080000;
+            public const int WS_EX_NOACTIVATE = 0x08000000;
 
             [StructLayout(LayoutKind.Sequential)]
             public struct DEVMODE
@@ -655,6 +676,12 @@ namespace CuoreUI
                 internal static extern bool SetLayeredWindowAttributes(IntPtr hwnd, int crKey, byte bAlpha, int dwFlags);
 
                 internal const int LWA_ALPHA = 0x2;
+
+                [DllImport("user32.dll")]
+                public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+                public const int SW_SHOWNOACTIVATE = 4;
+                public const int SW_HIDE = 0;
             }
 
             internal static class PerPixelAlphaBlend
@@ -668,7 +695,6 @@ namespace CuoreUI
                 {
                     if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
                         throw new ApplicationException("The bitmap must be 32ppp with alpha-channel.");
-
 
                     IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
                     IntPtr memDc = Win32.CreateCompatibleDC(screenDc);
@@ -715,7 +741,6 @@ namespace CuoreUI
                         True
                     };
 
-
                     [StructLayout(LayoutKind.Sequential)]
                     public struct Point
                     {
@@ -728,7 +753,6 @@ namespace CuoreUI
                             this.y = y;
                         }
                     }
-
 
                     [StructLayout(LayoutKind.Sequential)]
                     public struct Size
@@ -743,7 +767,6 @@ namespace CuoreUI
                         }
                     }
 
-
                     [StructLayout(LayoutKind.Sequential, Pack = 1)]
                     struct ARGB
                     {
@@ -752,7 +775,6 @@ namespace CuoreUI
                         public byte Red;
                         public byte Alpha;
                     }
-
 
                     [StructLayout(LayoutKind.Sequential, Pack = 1)]
                     public struct BLENDFUNCTION
@@ -763,14 +785,12 @@ namespace CuoreUI
                         public byte AlphaFormat;
                     }
 
-
                     public const Int32 ULW_COLORKEY = 0x00000001;
                     public const Int32 ULW_ALPHA = 0x00000002;
                     public const Int32 ULW_OPAQUE = 0x00000004;
 
                     public const byte AC_SRC_OVER = 0x00;
                     public const byte AC_SRC_ALPHA = 0x01;
-
 
                     [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
                     public static extern Bool UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point pprSrc, Int32 crKey, ref BLENDFUNCTION pblend, Int32 dwFlags);

@@ -1,8 +1,9 @@
-﻿using CuoreUI.Components.Forms;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CuoreUI.Components.Forms;
+using static CuoreUI.Helper;
 
 namespace CuoreUI.Components
 {
@@ -66,25 +67,16 @@ namespace CuoreUI.Components
             set
             {
                 tooltipForm.BackColor = value;
-                tooltipForm.cuiFormRounder.OutlineColor = value;
             }
         }
 
         private async void MouseHover(object sender, System.EventArgs e)
         {
-            tooltipForm.Show();
-            tooltipForm.Hide();
-
             tooltipForm.Text = privateContent;
 
             tooltipForm.Location = Cursor.Position - new Size((tooltipForm.Width / 2), -1);
 
-            tooltipForm.Show();
-            TargetControl.Focus();
-
-            tooltipForm.BringToFront();
-
-            tooltipForm.ToggleRoundedObj(true);
+            ToggleFormVisibilityWithoutActivating(tooltipForm, true);
 
             while (true)
             {
@@ -97,8 +89,7 @@ namespace CuoreUI.Components
                 tooltipForm.Location = Cursor.Position - new Size((tooltipForm.Width / 2), -1);
             }
 
-            tooltipForm.ToggleRoundedObj(false);
-            tooltipForm.Hide();
+            ToggleFormVisibilityWithoutActivating(tooltipForm, false);
         }
     }
 }

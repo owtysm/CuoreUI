@@ -25,7 +25,7 @@ namespace CuoreUI.Controls
         private Color bgColorCell = Color.White;
         private Color bgColorCell2 = Color.LightGray;
         private Color bgColorCellHovered = Color.Gray;
-        private Color bgColorCellSelected = Color.FromArgb(255, 106, 0);
+        private Color bgColorCellSelected = CuoreUI.Drawing.PrimaryColor;
         private Color borderColor = Color.Black;
 
         [Browsable(true)]
@@ -163,8 +163,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
-
         private string[] headers;
 
         private void DataSourceChanged(object sender, EventArgs e)
@@ -200,7 +198,6 @@ namespace CuoreUI.Controls
             }
             Refresh();
         }
-
 
         private void HiddenDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -286,7 +283,7 @@ namespace CuoreUI.Controls
             base.OnPaint(e);
         }
 
-        private Color privateHeaderColor = Color.FromArgb(64, 64, 64);
+        private Color privateHeaderColor = Color.Gray;
 
         [Browsable(true)]
         [Category("CuoreUI")]
@@ -367,7 +364,6 @@ namespace CuoreUI.Controls
                 return (RowId, ColumnId).GetHashCode();
             }
         }
-
 
         private void DrawRows(Graphics g)
         {
@@ -455,7 +451,6 @@ namespace CuoreUI.Controls
 
         private List<CellClass> selectedCells = new List<CellClass>();
 
-
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
@@ -500,8 +495,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
-
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -522,7 +515,6 @@ namespace CuoreUI.Controls
 
             Refresh();
         }
-
 
         protected override void OnMouseWheel(MouseEventArgs e)
         {

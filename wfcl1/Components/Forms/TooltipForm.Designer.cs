@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cuiLabel1 = new CuoreUI.Controls.cuiLabel();
-            this.cuiFormRounder1 = new CuoreUI.Components.cuiFormRounder();
             this.SuspendLayout();
             // 
             // cuiLabel1
@@ -45,12 +44,6 @@
             this.cuiLabel1.Name = "cuiLabel1";
             this.cuiLabel1.Size = new System.Drawing.Size(80, 20);
             this.cuiLabel1.TabIndex = 0;
-            // 
-            // cuiFormRounder1
-            // 
-            this.cuiFormRounder1.OutlineColor = System.Drawing.Color.Black;
-            this.cuiFormRounder1.Rounding = 8;
-            this.cuiFormRounder1.TargetForm = this;
             // 
             // TooltipForm
             // 
@@ -77,8 +70,6 @@
         }
 
         #endregion
-
-        private cuiFormRounder cuiFormRounder1;
         private Controls.cuiLabel cuiLabel1;
     }
 }

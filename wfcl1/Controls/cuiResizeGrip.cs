@@ -1,5 +1,4 @@
-﻿using CuoreUI.Properties;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -26,7 +25,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateGripColor = Color.White;
+        private Color privateGripColor = Color.Gray;
         public Color GripColor
         {
             get
@@ -101,7 +100,6 @@ namespace CuoreUI.Controls
                     Point mouseDelta = GetDelta(currentMousePoint, lastMousePoint);
                     lastMousePoint = currentMousePoint;
                     TargetForm.Size = Size.Subtract(TargetForm.Size, (Size)mouseDelta);
-
 
                 }
             }

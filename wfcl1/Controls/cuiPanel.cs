@@ -6,9 +6,9 @@ using System.Windows.Forms;
 namespace CuoreUI.Controls
 {
     [ToolboxBitmap(typeof(Panel))]
-    public partial class cuiBorder : Panel
+    public partial class cuiPanel : Panel
     {
-        public cuiBorder()
+        public cuiPanel()
         {
             InitializeComponent();
             DoubleBuffered = true;
@@ -62,7 +62,6 @@ namespace CuoreUI.Controls
                 Invalidate();
             }
         }
-
 
         private Padding privateRounding = new Padding(8, 8, 8, 8);
         public Padding Rounding

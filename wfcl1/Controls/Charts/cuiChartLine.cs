@@ -35,7 +35,7 @@ namespace CuoreUI.Controls.Charts
         {
             Array.Sort(nums);
             for (int i = 0; i < nums.Length; i++)
-        {
+            {
                 if (nums[i] == nums[i - 1])
                 {
                     return true;
@@ -65,7 +65,7 @@ namespace CuoreUI.Controls.Charts
             }
         }
 
-        private Color privatePointColor = Color.FromArgb(255, 106, 0);
+        private Color privatePointColor = CuoreUI.Drawing.PrimaryColor;
 
         [Browsable(true)]
         [Category("CuoreUI Chart Colors")]
@@ -198,7 +198,7 @@ namespace CuoreUI.Controls.Charts
             }
         }
 
-        private Color privateChartLineColor = Color.FromArgb(255, 106, 0);
+        private Color privateChartLineColor = CuoreUI.Drawing.PrimaryColor;
 
         [Browsable(true)]
         [Category("CuoreUI Chart Colors")]
@@ -491,7 +491,6 @@ namespace CuoreUI.Controls.Charts
                 }
             }
         }
-
 
         private void OnMouseMove(object sender, MouseEventArgs e)
         {

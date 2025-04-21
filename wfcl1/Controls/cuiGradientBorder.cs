@@ -48,7 +48,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         Color privatePanelOutlineColor1 = CuoreUI.Drawing.PrimaryColor;
         public Color PanelOutlineColor1
         {
@@ -77,7 +76,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         float privateOutlineThickness = 1;
         public float OutlineThickness
         {
@@ -91,7 +89,6 @@ namespace CuoreUI.Controls
                 Invalidate();
             }
         }
-
 
         Padding privateRounding = new Padding(8, 8, 8, 8);
         public Padding Rounding

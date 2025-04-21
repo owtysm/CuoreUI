@@ -14,9 +14,9 @@ namespace CuoreUI
                 return max;
             return value;
         }
+
         public static class GaussianBlur
         {
-
             public unsafe static void Apply(ref Bitmap bitmap, float radius)
             {
                 if (radius < 0.1f)
@@ -116,8 +116,6 @@ namespace CuoreUI
 
                 return kernel;
             }
-
-
         }
 
         public static class QuadraticBlur

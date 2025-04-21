@@ -93,7 +93,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         public void AddTab()
         {
             tabControl.AddTab();
@@ -118,7 +117,6 @@ namespace CuoreUI.Controls
         {
             TabAdded?.Invoke(sender, EventArgs.Empty);
         }
-
 
         [Description("sender is the added tab!")]
         [Browsable(true)]
@@ -255,7 +253,6 @@ namespace CuoreUI.Controls
 
         Rectangle leftRect = Rectangle.Empty;
         Rectangle rightRect = Rectangle.Empty;
-
 
         protected override void OnPaint(PaintEventArgs e)
         {

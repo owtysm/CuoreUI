@@ -1,11 +1,11 @@
-﻿using CuoreUI.Controls.Forms;
-using CuoreUI.Properties;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using CuoreUI.Controls.Forms;
+using CuoreUI.Properties;
 using static CuoreUI.Controls.Forms.DatePicker;
 
 namespace CuoreUI.Controls
@@ -21,7 +21,7 @@ namespace CuoreUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.ResizeRedraw, true);
         }
 
-        private Themes privateTheme = Themes.Dark;
+        private Themes privateTheme = Themes.Light;
         public Themes Theme
         {
             get
@@ -181,7 +181,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         private bool privateShowIcon = true;
         public bool ShowIcon
         {
@@ -306,7 +305,6 @@ namespace CuoreUI.Controls
                 e.Graphics.FillPath(br, bgPath);
                 e.Graphics.DrawPath(outlinePen, bgPath);
             }
-
 
             if (ShowIcon && privateIcon != null)
             {

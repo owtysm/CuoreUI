@@ -62,6 +62,11 @@ namespace CuoreUI.Components
 
         public async Task<DialogResult> ShowDialog()
         {
+            if (isShowingDialog)
+            {
+                PickerForm.Close();
+            }
+
             PickerForm = new ColorPickerForm() { Theme = this.Theme };
             PickerForm?.ToggleThemeSwitchButton(privateEnableThemeChangeButton);
             PickerForm.Show();
@@ -74,7 +79,7 @@ namespace CuoreUI.Components
                 canExitLoop = true;
             };
 
-            while (!canExitLoop) //sorry
+            while (!canExitLoop)
             {
                 await Task.Delay(100);
             }
@@ -82,8 +87,7 @@ namespace CuoreUI.Components
             return PickerForm.DialogResult;
         }
 
-
-        private Themes privateTheme = Themes.Dark;
+        private Themes privateTheme = Themes.Light;
         public Themes Theme
         {
             get

@@ -113,7 +113,7 @@ namespace CuoreUI.Components
             get; set;
         } = EasingTypes.QuadOut;
 
-        public void AnimateForm()
+        public void PlayAnimation()
         {
             TargetForm.Opacity = StartOpacity;
             lastKnownOpacity = StartOpacity;

@@ -1,7 +1,7 @@
-﻿using Microsoft.WindowsAPICodePack.Taskbar;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace CuoreUI.Components
 {

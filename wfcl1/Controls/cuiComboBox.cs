@@ -58,7 +58,7 @@ namespace CuoreUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
 
-            ForeColor = SystemColors.Control;
+            ForeColor = Color.Gray;
 
             Timer timer = new Timer();
             timer.Interval = 100;
@@ -156,8 +156,7 @@ namespace CuoreUI.Controls
             }
         }
 
-
-        private Color privateBackgroundColor = Color.FromArgb(10, 10, 10);
+        private Color privateBackgroundColor = Color.FromArgb(255, 255, 255);
         public Color BackgroundColor
         {
             get
@@ -171,7 +170,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateOutlineColor = Color.FromArgb(35, 255, 255, 255);
+        private Color privateOutlineColor = Color.FromArgb(64, 128, 128, 128);
         public Color OutlineColor
         {
             get
@@ -185,7 +184,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateDropDownBackgroundColor = Color.FromArgb(14, 14, 14);
+        private Color privateDropDownBackgroundColor = Color.White;
         public Color DropDownBackgroundColor
         {
             get
@@ -198,7 +197,6 @@ namespace CuoreUI.Controls
                 Invalidate();
             }
         }
-
 
         private Color privateDropDownOutlineColor = Color.FromArgb(30, 255, 255, 255);
         public Color DropDownOutlineColor
@@ -330,7 +328,7 @@ namespace CuoreUI.Controls
             base.OnPaint(e);
         }
 
-        private Color privateExpandColor = Color.White;
+        private Color privateExpandColor = Color.Gray;
         public Color ExpandArrowColor
         {
             get
@@ -343,7 +341,6 @@ namespace CuoreUI.Controls
                 Invalidate();
             }
         }
-
 
         public void AddItem(string itemToAdd)
         {
@@ -516,8 +513,6 @@ namespace CuoreUI.Controls
             {
                 throw new Exception($"Invalid sender\n{sender}");
             }
-
-
         }
 
         // dropdown buttons
@@ -535,7 +530,7 @@ namespace CuoreUI.Controls
         public Color ButtonHoverBackground
         {
             get; set;
-        } = Color.FromArgb(200, 255, 106, 0);
+        } = CuoreUI.Drawing.TranslucentPrimaryColor;
 
         public Color ButtonPressedBackground
         {
@@ -545,16 +540,16 @@ namespace CuoreUI.Controls
         public Color ButtonNormalOutline
         {
             get; set;
-        } = CuoreUI.Drawing.PrimaryColor;
+        } = Color.Empty;
 
         public Color ButtonHoverOutline
         {
             get; set;
-        } = CuoreUI.Drawing.PrimaryColor;
+        } = Color.Empty;
 
         public Color ButtonPressedOutline
         {
             get; set;
-        } = CuoreUI.Drawing.PrimaryColor;
+        } = Color.Empty;
     }
 }

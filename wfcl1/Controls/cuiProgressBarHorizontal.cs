@@ -59,7 +59,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateBackground = Color.FromArgb(34, 34, 34);
+        private Color privateBackground = Color.FromArgb(64, 128, 128, 128);
         public Color Background
         {
             get
@@ -109,7 +109,6 @@ namespace CuoreUI.Controls
             }
         }
 
-
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -131,12 +130,10 @@ namespace CuoreUI.Controls
                 RectangleF foreHalf = new RectangleF(0, 0, foreWidth, ClientRectangle.Height * 2 + 1);
                 RectangleF client = new RectangleF(foreWidth - Rounding - (foreWidth / 4), 0, ClientRectangle.Width * 2 - foreWidth + (Rounding * 2) + (foreWidth / 4), ClientRectangle.Height * 2);
 
-
                 using (SolidBrush brush = new SolidBrush(Background))
                 {
                     tempGraphics.FillRectangle(brush, client);
                 }
-
 
                 GraphicsPath graphicsPath = Helper.RoundRect(foreHalf, Rounding * 2);
 
@@ -150,7 +147,6 @@ namespace CuoreUI.Controls
             {
                 tempBitmap.RotateFlip(RotateFlipType.RotateNoneFlipX);
             }
-
 
             e.Graphics.DrawImage(tempBitmap, ClientRectangle);
 

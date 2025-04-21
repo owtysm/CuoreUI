@@ -121,17 +121,50 @@
   <data name="all_colours" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\all colours.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="americanexpress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\americanexpress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="credit_card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\credit-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="crossmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crossmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dinersclub" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dinersclub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="discover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="half_moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\half-moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jcb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jcb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maestro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maestro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mastercard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mastercard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rupay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rupay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sun_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sun-light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uatp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uatp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unionpay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unionpay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

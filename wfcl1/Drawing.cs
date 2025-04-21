@@ -10,13 +10,7 @@ namespace CuoreUI
     public static class Drawing
     {
         public static readonly Color PrimaryColor = Color.FromArgb(255, 106, 0);
-        public static Color TranslucentPrimaryColor
-        {
-            get
-            {
-                return Color.FromArgb(200, PrimaryColor.R, PrimaryColor.G, PrimaryColor.B);
-            }
-        }
+        public static Color TranslucentPrimaryColor => Color.FromArgb(192, PrimaryColor);
 
         private static Timer RefreshRateTimer;
         public static event EventHandler FrameDrawn;
@@ -174,8 +168,6 @@ namespace CuoreUI
                 }
             }
         }
-
-
 
         public enum EasingTypes
         {
