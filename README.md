@@ -7,6 +7,8 @@
 
 The repository source updates faster than the release binaries on NuGet.
 
+NuGet may get updates days after the repository does.
+
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
 
