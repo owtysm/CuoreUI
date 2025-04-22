@@ -135,7 +135,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateBackground = Color.Black;
+        private Color privateBackground = Color.FromArgb(64, Drawing.PrimaryColor);
         [Description("The rounded background for the CHECKED switch.")]
         public Color CheckedBackground
         {
@@ -150,7 +150,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateUncheckedBackground = Color.Black;
+        private Color privateUncheckedBackground = Color.FromArgb(32, 128, 128, 128);
         [Description("The rounded background for the UNCHECKED switch.")]
         public Color UncheckedBackground
         {
@@ -165,7 +165,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateCheckedForeground = CuoreUI.Drawing.PrimaryColor;
+        private Color privateCheckedForeground = Color.Empty;
         [Description("The checked foreground.")]
         public Color CheckedForeground
         {
@@ -180,7 +180,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateUncheckedForeground = Color.FromArgb(34, 34, 34);
+        private Color privateUncheckedForeground = Color.Empty;
         [Description("The unchecked foreground.")]
         public Color UncheckedForeground
         {
@@ -195,22 +195,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private bool privateOutlineStyle = true;
-        [Description("The style of the outline.")]
-        public bool OutlineStyle
-        {
-            get
-            {
-                return privateOutlineStyle;
-            }
-            set
-            {
-                privateOutlineStyle = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateOutlineColor = Color.FromArgb(34, 34, 34);
+        private Color privateOutlineColor = Color.Empty;
         [Description("The color of the outline.")]
         public Color UncheckedOutlineColor
         {
@@ -225,7 +210,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateCheckedOutlineColor = CuoreUI.Drawing.PrimaryColor;
+        private Color privateCheckedOutlineColor = Color.Empty;
         [Description("The color of the checked outline.")]
         public Color CheckedOutlineColor
         {
@@ -240,7 +225,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateSymbolColor = Color.FromArgb(34, 34, 34);
+        private Color privateSymbolColor = Color.Gray;
         [Description("The color of the outline.")]
         public Color UncheckedSymbolColor
         {
