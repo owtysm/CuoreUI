@@ -22,6 +22,7 @@ namespace CuoreUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             Size = new Size(48, 24);
+            Cursor = Cursors.Hand;
 
             if (DesignMode)
             {
