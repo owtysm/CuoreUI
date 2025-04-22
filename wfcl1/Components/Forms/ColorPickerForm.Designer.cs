@@ -106,7 +106,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel7.Content = "Blue";
             this.cuiLabel7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cuiLabel7.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
+            this.cuiLabel7.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.cuiLabel7.Location = new System.Drawing.Point(298, 286);
             this.cuiLabel7.Name = "cuiLabel7";
             this.cuiLabel7.Size = new System.Drawing.Size(88, 15);
@@ -117,7 +117,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel6.Content = "Green";
             this.cuiLabel6.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cuiLabel6.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
+            this.cuiLabel6.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.cuiLabel6.Location = new System.Drawing.Point(202, 286);
             this.cuiLabel6.Name = "cuiLabel6";
             this.cuiLabel6.Size = new System.Drawing.Size(88, 15);
@@ -128,7 +128,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel5.Content = "Red";
             this.cuiLabel5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cuiLabel5.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
+            this.cuiLabel5.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.cuiLabel5.Location = new System.Drawing.Point(106, 286);
             this.cuiLabel5.Name = "cuiLabel5";
             this.cuiLabel5.Size = new System.Drawing.Size(88, 15);
@@ -139,7 +139,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel4.Content = "Alpha";
             this.cuiLabel4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cuiLabel4.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
+            this.cuiLabel4.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.cuiLabel4.Location = new System.Drawing.Point(12, 286);
             this.cuiLabel4.Name = "cuiLabel4";
             this.cuiLabel4.Size = new System.Drawing.Size(88, 15);
@@ -163,7 +163,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel3.Content = "Hex:\\ ";
             this.cuiLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cuiLabel3.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Right;
+            this.cuiLabel3.HorizontalAlignment = System.Drawing.StringAlignment.Far;
             this.cuiLabel3.Location = new System.Drawing.Point(12, 353);
             this.cuiLabel3.Name = "cuiLabel3";
             this.cuiLabel3.Size = new System.Drawing.Size(88, 24);
@@ -295,7 +295,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel1.Content = "Preview";
             this.cuiLabel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.cuiLabel1.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.cuiLabel1.Location = new System.Drawing.Point(202, 61);
             this.cuiLabel1.Name = "cuiLabel1";
             this.cuiLabel1.Size = new System.Drawing.Size(186, 19);
@@ -306,7 +306,7 @@ namespace CuoreUI.Components.Forms
             this.cuiLabel2.Content = "Color\\ Picker";
             this.cuiLabel2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.cuiLabel2.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.cuiLabel2.Location = new System.Drawing.Point(10, 61);
             this.cuiLabel2.Name = "cuiLabel2";
             this.cuiLabel2.Size = new System.Drawing.Size(186, 19);

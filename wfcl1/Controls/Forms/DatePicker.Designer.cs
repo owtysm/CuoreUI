@@ -243,7 +243,7 @@
             this.cuiLabel3.Content = "yyyy,\\ xxxxxxxxx";
             this.cuiLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cuiLabel3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cuiLabel3.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
+            this.cuiLabel3.HorizontalAlignment = System.Drawing.StringAlignment.Near;
             this.cuiLabel3.Location = new System.Drawing.Point(51, 16);
             this.cuiLabel3.Name = "cuiLabel3";
             this.cuiLabel3.Size = new System.Drawing.Size(261, 15);

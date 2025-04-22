@@ -34,21 +34,8 @@ namespace CuoreUI.Controls
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            StringFormat stringFormat = new StringFormat();
 
-            switch (HorizontalAlignment)
-            {
-                case HorizontalAlignments.Left:
-                    stringFormat.Alignment = StringAlignment.Near;
-                    break;
-                case HorizontalAlignments.Center:
-                    stringFormat.Alignment = StringAlignment.Center;
-                    break;
-                case HorizontalAlignments.Right:
-                    stringFormat.Alignment = StringAlignment.Far;
-                    break;
-            }
-
+            using (StringFormat stringFormat = new StringFormat() { Alignment = HorizontalAlignment, LineAlignment = VerticalAlignment })
             using (SolidBrush brush = new SolidBrush(ForeColor))
             {
                 e.Graphics.DrawString(privateContent, Font, brush, ClientRectangle, stringFormat);
@@ -57,9 +44,10 @@ namespace CuoreUI.Controls
             base.OnPaint(e);
         }
 
-        private HorizontalAlignments privateHorizontalAlignment = HorizontalAlignments.Center;
+        private StringAlignment privateHorizontalAlignment = StringAlignment.Center;
+        private StringAlignment privateVerticalAlignment = StringAlignment.Near;
 
-        public HorizontalAlignments HorizontalAlignment
+        public StringAlignment HorizontalAlignment
         {
             get
             {
@@ -72,11 +60,17 @@ namespace CuoreUI.Controls
             }
         }
 
-        public enum HorizontalAlignments
+        public StringAlignment VerticalAlignment
         {
-            Left,
-            Center,
-            Right
+            get
+            {
+                return privateVerticalAlignment;
+            }
+            set
+            {
+                privateVerticalAlignment = value;
+                Invalidate();
+            }
         }
     }
 }

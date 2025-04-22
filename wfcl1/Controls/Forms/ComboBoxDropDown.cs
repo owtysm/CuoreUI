@@ -123,7 +123,7 @@ namespace CuoreUI.Controls.Forms
                 ResumeLayout();
 
                 label.Location = new Point(0, -2 + (Height / 2) - (Font.Height / 2));
-                label.HorizontalAlignment = cuiLabel.HorizontalAlignments.Center;
+                label.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             }
             else
             {

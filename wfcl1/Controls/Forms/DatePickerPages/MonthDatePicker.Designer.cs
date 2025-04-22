@@ -80,7 +80,7 @@
             this.sundayLabel.Content = "S";
             this.sundayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sundayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.sundayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.sundayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.sundayLabel.Location = new System.Drawing.Point(0, 2);
             this.sundayLabel.Name = "sundayLabel";
             this.sundayLabel.Size = new System.Drawing.Size(41, 15);
@@ -91,7 +91,7 @@
             this.mondayLabel.Content = "S";
             this.mondayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mondayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.mondayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.mondayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.mondayLabel.Location = new System.Drawing.Point(56, 2);
             this.mondayLabel.Name = "mondayLabel";
             this.mondayLabel.Size = new System.Drawing.Size(41, 15);
@@ -102,7 +102,7 @@
             this.wednesdayLabel.Content = "S";
             this.wednesdayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.wednesdayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.wednesdayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.wednesdayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.wednesdayLabel.Location = new System.Drawing.Point(168, 2);
             this.wednesdayLabel.Name = "wednesdayLabel";
             this.wednesdayLabel.Size = new System.Drawing.Size(41, 15);
@@ -113,7 +113,7 @@
             this.tuesdayLabel.Content = "S";
             this.tuesdayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tuesdayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tuesdayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.tuesdayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.tuesdayLabel.Location = new System.Drawing.Point(112, 2);
             this.tuesdayLabel.Name = "tuesdayLabel";
             this.tuesdayLabel.Size = new System.Drawing.Size(41, 15);
@@ -124,7 +124,7 @@
             this.fridayLabel.Content = "S";
             this.fridayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fridayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.fridayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.fridayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.fridayLabel.Location = new System.Drawing.Point(281, 2);
             this.fridayLabel.Name = "fridayLabel";
             this.fridayLabel.Size = new System.Drawing.Size(41, 15);
@@ -135,7 +135,7 @@
             this.thursdayLabel.Content = "S";
             this.thursdayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.thursdayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.thursdayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.thursdayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.thursdayLabel.Location = new System.Drawing.Point(225, 2);
             this.thursdayLabel.Name = "thursdayLabel";
             this.thursdayLabel.Size = new System.Drawing.Size(41, 15);
@@ -146,7 +146,7 @@
             this.saturdayLabel.Content = "S";
             this.saturdayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.saturdayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.saturdayLabel.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Center;
+            this.saturdayLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
             this.saturdayLabel.Location = new System.Drawing.Point(336, 2);
             this.saturdayLabel.Name = "saturdayLabel";
             this.saturdayLabel.Size = new System.Drawing.Size(41, 15);

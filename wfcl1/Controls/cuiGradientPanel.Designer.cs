@@ -1,6 +1,6 @@
 ﻿namespace CuoreUI.Controls
 {
-    partial class cuiGradientBorder
+    partial class cuiGradientPanel
     {
         /// <summary> 
         /// Required designer variable.

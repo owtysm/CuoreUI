@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
-    public partial class cuiGradientBorder : UserControl
+    public partial class cuiGradientPanel : UserControl
     {
-        public cuiGradientBorder()
+        public cuiGradientPanel()
         {
             InitializeComponent();
             DoubleBuffered = true;
