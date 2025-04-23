@@ -364,6 +364,7 @@ namespace CuoreUI.Controls
                 renderedBackgroundColor = CheckedBackground;
                 renderedOutlineColor = CheckedOutline;
                 renderedTint = CheckedImageTint;
+                renderedForeColor = CheckedForeColor;
             }
             else
             {
@@ -373,6 +374,7 @@ namespace CuoreUI.Controls
                         renderedBackgroundColor = NormalBackground;
                         renderedOutlineColor = NormalOutline;
                         renderedForeColor = NormalForeColor;
+                        renderedTint = NormalImageTint;
                         break;
 
                     case States.Hovered:

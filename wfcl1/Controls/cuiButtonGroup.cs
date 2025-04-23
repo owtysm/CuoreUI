@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using static CuoreUI.Controls.cuiButton;
 
 namespace CuoreUI.Controls
 {
@@ -15,7 +16,7 @@ namespace CuoreUI.Controls
         {
             InitializeComponent();
             DoubleBuffered = true;
-            ForeColor = Color.White;
+            ForeColor = Color.Black;
             Font = new Font("Microsoft Sans Serif", 9.75f);
         }
 
@@ -47,7 +48,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateNormalBackground = CuoreUI.Drawing.PrimaryColor;
+        private Color privateNormalBackground = Color.White;
         public Color NormalBackground
         {
             get
@@ -61,7 +62,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoverBackground = CuoreUI.Drawing.TranslucentPrimaryColor;
+        private Color privateHoverBackground = Color.White;
         public Color HoverBackground
         {
             get
@@ -75,7 +76,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privatePressedBackground = CuoreUI.Drawing.PrimaryColor;
+        private Color privatePressedBackground = Color.WhiteSmoke;
         public Color PressedBackground
         {
             get
@@ -89,7 +90,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateNormalOutline = Color.Empty;
+        private Color privateNormalOutline = Color.FromArgb(64, 128, 128, 128);
         public Color NormalOutline
         {
             get
@@ -103,7 +104,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoverOutline = Color.Empty;
+        private Color privateHoverOutline = Color.FromArgb(32, 128, 128, 128);
         public Color HoverOutline
         {
             get
@@ -117,7 +118,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privatePressedOutline = Color.Empty;
+        private Color privatePressedOutline = Color.FromArgb(64, 128, 128, 128);
         public Color PressedOutline
         {
             get
@@ -148,7 +149,7 @@ namespace CuoreUI.Controls
         private int state = 1;
         private SolidBrush privateBrush = new SolidBrush(Color.Black);
         private Pen privatePen = new Pen(Color.Black);
-        StringFormat stringFormat = new StringFormat();
+        StringFormat stringFormat = new StringFormat() { Alignment = StringAlignment.Center };
 
         private Image privateImage = null;
         public Image Image
@@ -193,7 +194,6 @@ namespace CuoreUI.Controls
         }
 
         private bool privateImageAutoCenter = true;
-
         public bool ImageAutoCenter
         {
             get
@@ -264,7 +264,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        Color privatePressedForeColor = Color.White;
+        Color privatePressedForeColor = Color.FromArgb(32, 32, 32);
         public Color PressedForeColor
         {
             get
@@ -290,7 +290,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        Color privateHoverForeColor = Color.White;
+        Color privateHoverForeColor = Color.Black;
         public Color HoverForeColor
         {
             get
@@ -323,50 +323,43 @@ namespace CuoreUI.Controls
 
             GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding);
 
-            Color renderedBackgroundColor;
-            Color renderedOutlineColor;
-            Color tint = NormalImageTint;
+            Color renderedBackgroundColor = Color.Empty;
+            Color renderedOutlineColor = Color.Empty;
+            Color renderedTint = NormalImageTint;
             Color renderedForeColor = Color.Empty;
 
-            switch (state)
-            {
-                case 2:
-                    renderedBackgroundColor = HoverBackground;
-                    renderedOutlineColor = HoverOutline;
-                    renderedForeColor = HoverForeColor;
-                    break;
-
-                case 3:
-                    renderedBackgroundColor = PressedBackground;
-                    renderedOutlineColor = PressedOutline;
-                    renderedForeColor = PressedForeColor;
-                    break;
-
-                case 1:
-                    renderedBackgroundColor = NormalBackground;
-                    renderedOutlineColor = NormalOutline;
-                    renderedForeColor = NormalForeColor;
-                    break;
-
-                default:
-                    renderedBackgroundColor = Color.Black;
-                    renderedOutlineColor = Color.Black;
-                    break;
-            }
             if (Checked)
             {
-                tint = CheckedImageTint;
                 renderedBackgroundColor = CheckedBackground;
                 renderedOutlineColor = CheckedOutline;
+                renderedTint = CheckedImageTint;
                 renderedForeColor = CheckedForeColor;
             }
-            else if (state == 2)
+            else
             {
-                tint = HoveredImageTint;
-            }
-            else if (state == 3)
-            {
-                tint = PressedImageTint;
+                switch (state)
+                {
+                    case States.Normal:
+                        renderedBackgroundColor = NormalBackground;
+                        renderedOutlineColor = NormalOutline;
+                        renderedForeColor = NormalForeColor;
+                        renderedTint = NormalImageTint;
+                        break;
+
+                    case States.Hovered:
+                        renderedBackgroundColor = HoverBackground;
+                        renderedOutlineColor = HoverOutline;
+                        renderedTint = HoveredImageTint;
+                        renderedForeColor = HoverForeColor;
+                        break;
+
+                    case States.Pressed:
+                        renderedBackgroundColor = PressedBackground;
+                        renderedOutlineColor = PressedOutline;
+                        renderedTint = PressedImageTint;
+                        renderedForeColor = PressedForeColor;
+                        break;
+                }
             }
 
             privateBrush.Color = renderedBackgroundColor;
@@ -410,10 +403,10 @@ namespace CuoreUI.Controls
 
             if (privateImage != null)
             {
-                float tintR = tint.R / 255f;
-                float tintG = tint.G / 255f;
-                float tintB = tint.B / 255f;
-                float tintA = tint.A / 255f;
+                float tintR = renderedTint.R / 255f;
+                float tintG = renderedTint.G / 255f;
+                float tintB = renderedTint.B / 255f;
+                float tintA = renderedTint.A / 255f;
 
                 // Create a color matrix that will apply the tint color
                 ColorMatrix colorMatrix = new ColorMatrix(new float[][]
