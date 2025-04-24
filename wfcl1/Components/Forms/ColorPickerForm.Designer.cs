@@ -1,4 +1,5 @@
-﻿using CuoreUI.Controls;
+﻿using System.Windows.Forms;
+using CuoreUI.Controls;
 
 namespace CuoreUI.Components.Forms
 {
@@ -148,7 +149,7 @@ namespace CuoreUI.Components.Forms
             // colorPickerWheel1
             // 
             this.colorPickerWheel1.Content = ((System.Drawing.Image)(resources.GetObject("colorPickerWheel1.Content")));
-            this.colorPickerWheel1.CornerRadius = 8;
+            this.colorPickerWheel1.Rounding = new Padding(8, 8, 8, 8);
             this.colorPickerWheel1.ImageTint = System.Drawing.Color.White;
             this.colorPickerWheel1.Location = new System.Drawing.Point(9, 85);
             this.colorPickerWheel1.Name = "colorPickerWheel1";

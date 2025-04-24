@@ -68,8 +68,8 @@ namespace CuoreUI.Controls
             target = null;
         }
 
-        private int privateCornerRadius = 8;
-        public int CornerRadius
+        private Padding privateCornerRadius = new Padding(8, 8, 8, 8);
+        public Padding Rounding
         {
             get
             {
@@ -156,7 +156,7 @@ namespace CuoreUI.Controls
             fixedCR.Inflate(-1, -1);
 
             using (Pen pen = new Pen(PanelOutlineColor, OutlineThickness))
-            using (GraphicsPath roundBg = Helper.RoundRect(fixedCR, CornerRadius))
+            using (GraphicsPath roundBg = Helper.RoundRect(fixedCR, Rounding))
             {
                 GenerateTransformMatrix();
 
