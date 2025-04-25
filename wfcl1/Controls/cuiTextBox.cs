@@ -20,8 +20,8 @@ namespace CuoreUI.Controls
     [DefaultEvent("ContentChanged")]
     public partial class cuiTextBox : UserControl
     {
-        private Color privateBackgroundColor = Color.FromArgb(16, 16, 16);
-        private Color privateFocusBackgroundColor = Color.FromArgb(16, 16, 16);
+        private Color privateBackgroundColor = Color.White;
+        private Color privateFocusBackgroundColor = Color.White;
 
         private Color privateBorderColor = Color.FromArgb(128, 128, 128, 128);
         private Color privateFocusBorderColor = CuoreUI.Drawing.PrimaryColor;

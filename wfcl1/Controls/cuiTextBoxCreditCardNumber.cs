@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Linq;
 using CuoreUI.Properties;
 
@@ -26,7 +25,7 @@ namespace CuoreUI.Controls
             string formatted = string.Join(" ", Enumerable.Range(0, (cleaned.Length + 3) / 4)
                 .Select(i => cleaned.Substring(i * 4, Math.Min(4, cleaned.Length - i * 4))));
 
-            // Only set if different from current
+            // only set if different from current
             if (actualText != formatted)
             {
                 int spacesBeforeCaret = actualText.Substring(0, Math.Min(caretPositionBeforeFormat, actualText.Length)).Count(c => c == ' ');
