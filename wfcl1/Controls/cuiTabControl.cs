@@ -270,36 +270,37 @@ namespace CuoreUI.Controls
                     tempAddButtonColor = UnselectedTabTextBackColor;
                 }
 
-                GraphicsPath roundedRectanglePath = Helper.RoundRect(tabRectangle, Rounding);
-
-                if (TabSelectedToDeletion == i)
+                using (GraphicsPath roundedRectanglePath = Helper.RoundRect(tabRectangle, Rounding))
                 {
-                    //deletion
-                    tempTabColor = DeletionTabBackgroundColor;
-
-                    Rectangle crossmarkRectangle = tabRectangle;
-                    crossmarkRectangle.Width = Font.Height;
-                    crossmarkRectangle.Height = crossmarkRectangle.Width;
-                    crossmarkRectangle.X = tabRectangle.X + ((tabRectangle.Width / 2) - (crossmarkRectangle.Width / 2));
-                    crossmarkRectangle.Y = (tabRectangle.Height / 2) - (crossmarkRectangle.Height / 2);
-                    using (GraphicsPath crossmark = Helper.Crossmark(crossmarkRectangle))
-                    using (SolidBrush deletionBrush = new SolidBrush(DeletionTabBackgroundColor))
-                    using (Pen deletionCrossmarkPen = new Pen(DeletionColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round })
+                    if (TabSelectedToDeletion == i)
                     {
-                        e.Graphics.FillPath(deletionBrush, roundedRectanglePath);
-                        e.Graphics.DrawPath(deletionCrossmarkPen, crossmark);
+                        //deletion
+                        tempTabColor = DeletionTabBackgroundColor;
+
+                        Rectangle crossmarkRectangle = tabRectangle;
+                        crossmarkRectangle.Width = Font.Height;
+                        crossmarkRectangle.Height = crossmarkRectangle.Width;
+                        crossmarkRectangle.X = tabRectangle.X + ((tabRectangle.Width / 2) - (crossmarkRectangle.Width / 2));
+                        crossmarkRectangle.Y = (tabRectangle.Height / 2) - (crossmarkRectangle.Height / 2);
+                        using (GraphicsPath crossmark = Helper.Crossmark(crossmarkRectangle))
+                        using (SolidBrush deletionBrush = new SolidBrush(DeletionTabBackgroundColor))
+                        using (Pen deletionCrossmarkPen = new Pen(DeletionColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round })
+                        {
+                            e.Graphics.FillPath(deletionBrush, roundedRectanglePath);
+                            e.Graphics.DrawPath(deletionCrossmarkPen, crossmark);
+                        }
                     }
-                }
-                else
-                {
-                    using (SolidBrush tabBrush = new SolidBrush(tempTabColor))
-                    using (SolidBrush textBrush = new SolidBrush(tempTextColor))
-                    using (StringFormat stringFormat = new StringFormat { Alignment = StringAlignment.Center })
+                    else
                     {
-                        e.Graphics.FillPath(tabBrush, roundedRectanglePath);
-                        tabRectangle.Offset(0, tabRectangle.Height / 2);
-                        tabRectangle.Offset(0, -1 + -Font.Height / 2);
-                        e.Graphics.DrawString(TabPages[i].Text, Font, textBrush, tabRectangle, stringFormat);
+                        using (SolidBrush tabBrush = new SolidBrush(tempTabColor))
+                        using (SolidBrush textBrush = new SolidBrush(tempTextColor))
+                        using (StringFormat stringFormat = new StringFormat { Alignment = StringAlignment.Center })
+                        {
+                            e.Graphics.FillPath(tabBrush, roundedRectanglePath);
+                            tabRectangle.Offset(0, tabRectangle.Height / 2);
+                            tabRectangle.Offset(0, -1 + -Font.Height / 2);
+                            e.Graphics.DrawString(TabPages[i].Text, Font, textBrush, tabRectangle, stringFormat);
+                        }
                     }
                 }
 

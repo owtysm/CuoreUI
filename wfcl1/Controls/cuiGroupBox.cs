@@ -77,8 +77,10 @@ namespace CuoreUI.Controls
 
             // Draw the border rectangle
             Rectangle modifiedCR = new Rectangle(0, Font.Height / 2, Width - 1, Height - Font.Height / 2 - 1);
-            GraphicsPath roundedPath = Helper.RoundRect(modifiedCR, Rounding);
-            g.DrawPath(borderPen, roundedPath);
+            using (GraphicsPath roundedPath = Helper.RoundRect(modifiedCR, Rounding))
+            {
+                g.DrawPath(borderPen, roundedPath);
+            }
 
             // Draw the text at the top-left of the box
             Size textSize = TextRenderer.MeasureText(Content, Font);

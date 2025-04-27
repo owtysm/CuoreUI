@@ -148,29 +148,30 @@ namespace CuoreUI.Controls
         {
             int halfSize = size;
             size *= 2;
-            GraphicsPath gp = new GraphicsPath();
-
-            void CreateAddRect(int x, int y)
+            using (GraphicsPath gp = new GraphicsPath())
             {
-                gp.AddRectangle(new Rectangle(x + TextureOffset.Width, y + TextureOffset.Height, halfSize, halfSize));
+                void CreateAddRect(int x, int y)
+                {
+                    gp.AddRectangle(new Rectangle(x + TextureOffset.Width, y + TextureOffset.Height, halfSize, halfSize));
+                }
+
+                if (!SkipBottomRightSquare)
+                {
+                    CreateAddRect(Width - size, Height - size); // b r
+                }
+
+                CreateAddRect(Width - size, Height - (size * 2)); // 2/3b r
+
+                CreateAddRect(Width - size, Height - (size * 3)); // 1/3b r
+
+                CreateAddRect(Width - (size * 2), Height - size); // b 2/3b
+
+                CreateAddRect(Width - (size * 3), Height - size); // b 1/3b
+
+                CreateAddRect(Width - (size * 2), Height - (size * 2)); // 2/3b 2/3b
+
+                return gp;
             }
-
-            if (!SkipBottomRightSquare)
-            {
-                CreateAddRect(Width - size, Height - size); // b r
-            }
-
-            CreateAddRect(Width - size, Height - (size * 2)); // 2/3b r
-
-            CreateAddRect(Width - size, Height - (size * 3)); // 1/3b r
-
-            CreateAddRect(Width - (size * 2), Height - size); // b 2/3b
-
-            CreateAddRect(Width - (size * 3), Height - size); // b 1/3b
-
-            CreateAddRect(Width - (size * 2), Height - (size * 2)); // 2/3b 2/3b
-
-            return gp;
         }
 
         private int privateGripSize = 2;
@@ -207,9 +208,11 @@ namespace CuoreUI.Controls
             {
                 using (SolidBrush br = new SolidBrush(GripColor))
                 {
-                    GraphicsPath GP = SquareGripPath(GripSize);
-                    //Region = new Region(GP); // mask support at cost of more user mouse precision needed to drag the resizer
-                    e.Graphics.FillPath(br, GP);
+                    using (GraphicsPath GP = SquareGripPath(GripSize))
+                    {
+                        //Region = new Region(GP); // mask support at cost of more user mouse precision needed to drag the resizer
+                        e.Graphics.FillPath(br, GP);
+                    }
                 }
             }
 

@@ -321,55 +321,56 @@ namespace CuoreUI.Controls
                 modifiedCR.Inflate(-1, 0);
             }
 
-            GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding);
-
             Color renderedBackgroundColor = Color.Empty;
             Color renderedOutlineColor = Color.Empty;
             Color renderedTint = NormalImageTint;
             Color renderedForeColor = Color.Empty;
 
-            if (Checked)
+            using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding))
             {
-                renderedBackgroundColor = CheckedBackground;
-                renderedOutlineColor = CheckedOutline;
-                renderedTint = CheckedImageTint;
-                renderedForeColor = CheckedForeColor;
-            }
-            else
-            {
-                switch (state)
+                if (Checked)
                 {
-                    case States.Normal:
-                        renderedBackgroundColor = NormalBackground;
-                        renderedOutlineColor = NormalOutline;
-                        renderedForeColor = NormalForeColor;
-                        renderedTint = NormalImageTint;
-                        break;
-
-                    case States.Hovered:
-                        renderedBackgroundColor = HoverBackground;
-                        renderedOutlineColor = HoverOutline;
-                        renderedTint = HoveredImageTint;
-                        renderedForeColor = HoverForeColor;
-                        break;
-
-                    case States.Pressed:
-                        renderedBackgroundColor = PressedBackground;
-                        renderedOutlineColor = PressedOutline;
-                        renderedTint = PressedImageTint;
-                        renderedForeColor = PressedForeColor;
-                        break;
+                    renderedBackgroundColor = CheckedBackground;
+                    renderedOutlineColor = CheckedOutline;
+                    renderedTint = CheckedImageTint;
+                    renderedForeColor = CheckedForeColor;
                 }
-            }
+                else
+                {
+                    switch (state)
+                    {
+                        case States.Normal:
+                            renderedBackgroundColor = NormalBackground;
+                            renderedOutlineColor = NormalOutline;
+                            renderedForeColor = NormalForeColor;
+                            renderedTint = NormalImageTint;
+                            break;
 
-            privateBrush.Color = renderedBackgroundColor;
-            privatePen.Color = renderedOutlineColor;
+                        case States.Hovered:
+                            renderedBackgroundColor = HoverBackground;
+                            renderedOutlineColor = HoverOutline;
+                            renderedTint = HoveredImageTint;
+                            renderedForeColor = HoverForeColor;
+                            break;
 
-            e.Graphics.FillPath(privateBrush, roundBackground);
+                        case States.Pressed:
+                            renderedBackgroundColor = PressedBackground;
+                            renderedOutlineColor = PressedOutline;
+                            renderedTint = PressedImageTint;
+                            renderedForeColor = PressedForeColor;
+                            break;
+                    }
+                }
 
-            if (OutlineThickness > 0)
-            {
-                e.Graphics.DrawPath(privatePen, roundBackground);
+                privateBrush.Color = renderedBackgroundColor;
+                privatePen.Color = renderedOutlineColor;
+
+                e.Graphics.FillPath(privateBrush, roundBackground);
+
+                if (OutlineThickness > 0)
+                {
+                    e.Graphics.DrawPath(privatePen, roundBackground);
+                }
             }
 
             Rectangle textRectangle = ClientRectangle;

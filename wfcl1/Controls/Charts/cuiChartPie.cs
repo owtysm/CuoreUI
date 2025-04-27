@@ -191,66 +191,69 @@ namespace CuoreUI.Controls.Charts
             float currentAngle = 0;
 
             // gather all slices of the pie chart in one graphicspath and draw at once
-            GraphicsPath piesPath = new GraphicsPath();
-
-            try
+            using (GraphicsPath piesPath = new GraphicsPath())
             {
-
-                // Draw pie chart segment edges (slice borders)
-                for (int i = 0; i < DataPoints.Length; i++)
+                try
                 {
-                    float sweepAngle = (privateDataValuePoints[i] / privateTotalValue) * 360f;
 
-                    piesPath.AddPie(centerX - chartSize / 2, centerY - chartSize / 2, chartSize, chartSize, currentAngle, sweepAngle);
+                    // Draw pie chart segment edges (slice borders)
+                    for (int i = 0; i < DataPoints.Length; i++)
+                    {
+                        float sweepAngle = (privateDataValuePoints[i] / privateTotalValue) * 360f;
 
-                    // Calculate midpoint angle of the current slice
-                    float midAngle = currentAngle + sweepAngle / 2;
+                        piesPath.AddPie(centerX - chartSize / 2, centerY - chartSize / 2, chartSize, chartSize, currentAngle, sweepAngle);
 
-                    // Convert polar coordinates (midAngle) to Cartesian coordinates
-                    float textX = centerX + (float)((chartSize / 4) * Math.Cos(midAngle * Math.PI / 180));
-                    float textY = centerY + (float)((chartSize / 4) * Math.Sin(midAngle * Math.PI / 180));
+                        // Calculate midpoint angle of the current slice
+                        float midAngle = currentAngle + sweepAngle / 2;
 
-                    // Draw the corresponding value from _dataNamePoints
-                    string text = privateDataNamePoints[i];
-                    SizeF textSize = g.MeasureString(text, Font);
-                    g.DrawString(text, Font, new SolidBrush(ForeColor), textX - textSize.Width / 2, textY - textSize.Height / 2);
+                        // Convert polar coordinates (midAngle) to Cartesian coordinates
+                        float textX = centerX + (float)((chartSize / 4) * Math.Cos(midAngle * Math.PI / 180));
+                        float textY = centerY + (float)((chartSize / 4) * Math.Sin(midAngle * Math.PI / 180));
 
-                    currentAngle += sweepAngle;
+                        // Draw the corresponding value from _dataNamePoints
+                        string text = privateDataNamePoints[i];
+                        SizeF textSize = g.MeasureString(text, Font);
+                        g.DrawString(text, Font, new SolidBrush(ForeColor), textX - textSize.Width / 2, textY - textSize.Height / 2);
+
+                        currentAngle += sweepAngle;
+                    }
                 }
-            }
-            catch
-            {
-                ChartPadding = ChartPadding;
-                DataPoints = DataPoints;
-                return;
-            }
+                catch
+                {
+                    ChartPadding = ChartPadding;
+                    DataPoints = DataPoints;
+                    return;
+                }
 
-            // Draw pie slice edges
-            using (Pen slicePen = new Pen(SliceBorderColor, SliceBorderThickness)) // Using SliceBorderColor
-            {
-                slicePen.MiterLimit = 0;
-                slicePen.DashStyle = DashStyle.Dash;
-                slicePen.DashCap = DashCap.Round;
+                // Draw pie slice edges
+                using (Pen slicePen = new Pen(SliceBorderColor, SliceBorderThickness)) // Using SliceBorderColor
+                {
+                    slicePen.MiterLimit = 0;
+                    slicePen.DashStyle = DashStyle.Dash;
+                    slicePen.DashCap = DashCap.Round;
 
-                slicePen.EndCap = LineCap.Round;
-                slicePen.StartCap = LineCap.Round;
-                g.DrawPath(slicePen, piesPath);
-            }
+                    slicePen.EndCap = LineCap.Round;
+                    slicePen.StartCap = LineCap.Round;
+                    g.DrawPath(slicePen, piesPath);
+                }
 
-            // Draw the overall pie chart border
-            using (Pen chartPen = new Pen(ChartBorderColor, ChartBorderThickness))  // Using ChartBorderColor
-            {
-                g.DrawEllipse(chartPen, centerX - chartSize / 2, centerY - chartSize / 2, chartSize, chartSize);
-            }
+                // Draw the overall pie chart border
+                using (Pen chartPen = new Pen(ChartBorderColor, ChartBorderThickness))  // Using ChartBorderColor
+                {
+                    g.DrawEllipse(chartPen, centerX - chartSize / 2, centerY - chartSize / 2, chartSize, chartSize);
+                }
 
-            // Draw the popup if active
-            if (showPopup && ShowPopup && mouseIn)
-            {
-                SizeF textSize = g.MeasureString(popupText, Font);
-                RectangleF popupRect = new RectangleF(popupLocation.X - textSize.Width / 2, popupLocation.Y - textSize.Height - 10, textSize.Width, textSize.Height);
-                GraphicsPath popupPath = Helper.RoundRect(popupRect, (int)(popupRect.Height / 4));
-                g.FillPath(new SolidBrush(PopupBackground), popupPath);
-                g.DrawString(popupText, Font, new SolidBrush(PopupText), popupRect);
+                // Draw the popup if active
+                if (showPopup && ShowPopup && mouseIn)
+                {
+                    SizeF textSize = g.MeasureString(popupText, Font);
+                    RectangleF popupRect = new RectangleF(popupLocation.X - textSize.Width / 2, popupLocation.Y - textSize.Height - 10, textSize.Width, textSize.Height);
+                    using (GraphicsPath popupPath = Helper.RoundRect(popupRect, (int)(popupRect.Height / 4)))
+                    {
+                        g.FillPath(new SolidBrush(PopupBackground), popupPath);
+                        g.DrawString(popupText, Font, new SolidBrush(PopupText), popupRect);
+                    }
+                }
             }
 
             base.OnPaint(e);

@@ -213,7 +213,7 @@ namespace CuoreUI.Controls
             Brush trackBrush = new SolidBrush(CompletedColor);
             Brush todoBrush = new SolidBrush(TrackColor);
 
-            GraphicsPath RoundedItemPath;
+            GraphicsPath RoundedItemPath = null;
 
             int tempRounding;
             if (AutoRounding)
@@ -264,7 +264,7 @@ namespace CuoreUI.Controls
                     {
                         tempRect.Inflate(0, -1);
                         tempRect.Inflate(-(ActualItemWidth / 10), -(ActualItemWidth / 10));
-                        GraphicsPath checkmarkGP = Helper.Checkmark(tempRect);
+                        using (GraphicsPath checkmarkGP = Helper.Checkmark(tempRect))
                         using (Pen p = new Pen(BackColor, ActualItemWidth / 8) { EndCap = LineCap.Round, StartCap = LineCap.Round })
                         {
                             e.Graphics.DrawPath(p, checkmarkGP);
@@ -312,6 +312,8 @@ namespace CuoreUI.Controls
                     }
                 }
             }
+
+            RoundedItemPath?.Dispose();
 
             base.OnPaint(e);
         }

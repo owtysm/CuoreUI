@@ -155,49 +155,49 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
                 }
 
                 Rectangle gradientRectangle = new Rectangle(0, 0, Width - 2, Height - 2);
-                GraphicsPath roundedRectangle = Helper.RoundRect(gradientRectangle, Rounding);
-
-                Rectangle subtractRectangle = gradientRectangle;
-                subtractRectangle.Offset(1, 1);
-                subtractRectangle.Inflate(-1, -1);
-
-                Rectangle fillinoutlineRectangle = subtractRectangle;
-                fillinoutlineRectangle.Offset(-1, -1);
-
-                GraphicsPath subtractPath = Helper.RoundRect(subtractRectangle, Rounding);
-                GraphicsPath fillinoutlinePath = Helper.RoundRect(fillinoutlineRectangle, Rounding);
-
-                using (Pen BorderPen = new Pen(BorderColor))
+                using (GraphicsPath roundedRectangle = Helper.RoundRect(gradientRectangle, Rounding))
                 {
-                    backGraphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    Rectangle subtractRectangle = gradientRectangle;
+                    subtractRectangle.Offset(1, 1);
+                    subtractRectangle.Inflate(-1, -1);
 
-                    if (Rounding > 0)
+                    Rectangle fillinoutlineRectangle = subtractRectangle;
+                    fillinoutlineRectangle.Offset(-1, -1);
+
+                    using (GraphicsPath subtractPath = Helper.RoundRect(subtractRectangle, Rounding))
+                    using (GraphicsPath fillinoutlinePath = Helper.RoundRect(fillinoutlineRectangle, Rounding))
+                    using (Pen BorderPen = new Pen(BorderColor))
                     {
-                        using (Pen BackgroundPen = new Pen(BackgroundColor, 1))
-                        using (SolidBrush BackgroundBrush = new SolidBrush(BackgroundColor))
-                        {
-                            backGraphics.FillPath(BackgroundBrush, fillinoutlinePath);
-                            backGraphics.DrawPath(BackgroundPen, fillinoutlinePath);
-                        }
+                        backGraphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-                        // means cuiFormRounder's 'EnhanceBorders' property is set to True
-                        if (backgroundImageTextureBrush != null)
+                        if (Rounding > 0)
                         {
-                            using (Pen EnhanceBordersPen = new Pen(backgroundImageTextureBrush, 1))
+                            using (Pen BackgroundPen = new Pen(BackgroundColor, 1))
+                            using (SolidBrush BackgroundBrush = new SolidBrush(BackgroundColor))
                             {
-                                backGraphics.DrawPath(EnhanceBordersPen, fillinoutlinePath);
+                                backGraphics.FillPath(BackgroundBrush, fillinoutlinePath);
+                                backGraphics.DrawPath(BackgroundPen, fillinoutlinePath);
+                            }
+
+                            // means cuiFormRounder's 'EnhanceBorders' property is set to True
+                            if (backgroundImageTextureBrush != null)
+                            {
+                                using (Pen EnhanceBordersPen = new Pen(backgroundImageTextureBrush, 1))
+                                {
+                                    backGraphics.DrawPath(EnhanceBordersPen, fillinoutlinePath);
+                                }
                             }
                         }
+
+                        backGraphics.DrawPath(BorderPen, roundedRectangle);
+                        backGraphics.SmoothingMode = SmoothingMode.None;
                     }
 
-                    backGraphics.DrawPath(BorderPen, roundedRectangle);
-                    backGraphics.SmoothingMode = SmoothingMode.None;
+                    // Tag should ALWAYS be a double.
+                    // if not - it's either not initialized yet, or Tag was intentionally set to an unsupported value by the dev
+                    byte opacity = (byte)((double)Tag * 255);
+                    PerPixelAlphaBlend.SetBitmap(initialized ? backImage : null, initialized ? opacity : (byte)0, Left, Top, Handle);
                 }
-
-                // Tag should ALWAYS be a double.
-                // if not - it's either not initialized yet, or Tag was intentionally set to an unsupported value by the dev
-                byte opacity = (byte)((double)Tag * 255);
-                PerPixelAlphaBlend.SetBitmap(initialized ? backImage : null, initialized ? opacity : (byte)0, Left, Top, Handle);
             }
             finally
             {

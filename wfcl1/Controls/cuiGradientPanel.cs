@@ -124,22 +124,23 @@ namespace CuoreUI.Controls
             Rectangle modifiedCR = ClientRectangle;
             modifiedCR.Inflate(-1, -1);
 
-            GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding);
-
-            using (Pen br = new Pen(BackColor))
-            using (LinearGradientBrush brush = new LinearGradientBrush(
-                modifiedCR, privatePanelColor1, privatePanelColor2, privateGradientAngle, true))
+            using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding))
             {
-                e.Graphics.FillPath(brush, roundBackground);
-                e.Graphics.DrawPath(br, roundBackground); // offset fix
-            }
-
-            using (LinearGradientBrush borderBrush = new LinearGradientBrush(
-                modifiedCR, privatePanelOutlineColor1, privatePanelOutlineColor2, privateGradientAngle, true))
-            {
-                using (Pen pen = new Pen(borderBrush, privateOutlineThickness))
+                using (Pen br = new Pen(BackColor))
+                using (LinearGradientBrush brush = new LinearGradientBrush(
+                    modifiedCR, privatePanelColor1, privatePanelColor2, privateGradientAngle, true))
                 {
-                    e.Graphics.DrawPath(pen, roundBackground);
+                    e.Graphics.FillPath(brush, roundBackground);
+                    e.Graphics.DrawPath(br, roundBackground); // offset fix
+                }
+
+                using (LinearGradientBrush borderBrush = new LinearGradientBrush(
+                    modifiedCR, privatePanelOutlineColor1, privatePanelOutlineColor2, privateGradientAngle, true))
+                {
+                    using (Pen pen = new Pen(borderBrush, privateOutlineThickness))
+                    {
+                        e.Graphics.DrawPath(pen, roundBackground);
+                    }
                 }
             }
 

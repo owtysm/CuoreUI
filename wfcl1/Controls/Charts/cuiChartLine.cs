@@ -542,11 +542,11 @@ namespace CuoreUI.Controls.Charts
             SizeF textSize = CreateGraphics().MeasureString(popupText, Font);
 
             RectangleF popupRect = new RectangleF(popupLocation.X - textSize.Width / 2, popupLocation.Y - textSize.Height - 10, textSize.Width, textSize.Height + 1);
-            GraphicsPath popupPath = Helper.RoundRect(popupRect, (int)(popupRect.Height / 4));
-
-            Region roundedRegion = new Region(popupPath);
-
-            Invalidate(roundedRegion);
+            using (GraphicsPath popupPath = Helper.RoundRect(popupRect, (int)(popupRect.Height / 4)))
+            {
+                Region roundedRegion = new Region(popupPath);
+                Invalidate(roundedRegion);
+            }
         }
     }
 }

@@ -374,6 +374,8 @@ namespace CuoreUI.Controls
                 e.Graphics.DrawPath(outlinePen, bgPath);
                 e.Graphics.FillPath(arrowBrush, arrowPath);
 
+                bgPath.Dispose();
+                arrowPath.Dispose();
                 arrowBrush.Dispose();
                 bgBrush.Dispose();
                 outlinePen.Dispose();

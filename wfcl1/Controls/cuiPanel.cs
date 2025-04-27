@@ -84,7 +84,7 @@ namespace CuoreUI.Controls
             modifiedCR.Width -= 1;
             modifiedCR.Height -= 1;
 
-            GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding);
+            using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding))
             using (SolidBrush brush = new SolidBrush(PanelColor))
             using (Pen pen = new Pen(PanelOutlineColor, OutlineThickness))
             {

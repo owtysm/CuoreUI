@@ -339,53 +339,54 @@ namespace CuoreUI.Controls
             modifiedCR.Inflate(-(int)OutlineThickness, -(int)OutlineThickness);
             int temporaryRounding = Rounding - (int)OutlineThickness;
 
-            GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, temporaryRounding);
-
-            using (SolidBrush brush = new SolidBrush(Checked ? CheckedBackground : UncheckedBackground))
+            using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, temporaryRounding))
             {
-                e.Graphics.FillPath(brush, roundBackground);
-            }
-
-            int thumbDim = Height - 7;
-            thumbRect = new RectangleF(thumbX, 3, thumbDim, thumbDim);
-            thumbRect.Offset(0.5f, 0.5f);
-            thumbRect.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
-
-            thumbRect.Inflate(ThumbSizeModifier);
-
-            Rectangle temporaryThumbRect = thumbRectangleInt;
-            temporaryThumbRect.Offset(1, 0);
-
-            temporaryThumbRect.Height = temporaryThumbRect.Width;
-
-            using (SolidBrush brush = new SolidBrush(Checked ? CheckedForeground : UncheckedForeground))
-            {
-                e.Graphics.FillEllipse(brush, thumbRect);
-            }
-
-            using (Pen outlinePen = new Pen(Checked ? CheckedOutlineColor : UncheckedOutlineColor, OutlineThickness))
-            {
-                e.Graphics.DrawPath(outlinePen, roundBackground);
-            }
-
-            using (Pen graphicsPen = new Pen(UncheckedSymbolColor, Height / 10))
-            {
-                graphicsPen.StartCap = LineCap.Round;
-                graphicsPen.EndCap = LineCap.Round;
-                if (ShowSymbols)
+                using (SolidBrush brush = new SolidBrush(Checked ? CheckedBackground : UncheckedBackground))
                 {
-                    if (Checked)
-                    {
-                        graphicsPen.Color = CheckedSymbolColor;
+                    e.Graphics.FillPath(brush, roundBackground);
+                }
 
-                        temporaryThumbRect.Offset(0, 1);
-                        e.Graphics.DrawPath(graphicsPen, Helper.Checkmark(temporaryThumbRect));
-                    }
-                    else
-                    {
-                        temporaryThumbRect.Inflate(-(int)(Height / 6.2f), -(int)(Height / 6.2f));
+                int thumbDim = Height - 7;
+                thumbRect = new RectangleF(thumbX, 3, thumbDim, thumbDim);
+                thumbRect.Offset(0.5f, 0.5f);
+                thumbRect.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
 
-                        e.Graphics.DrawPath(graphicsPen, Helper.Crossmark(temporaryThumbRect));
+                thumbRect.Inflate(ThumbSizeModifier);
+
+                Rectangle temporaryThumbRect = thumbRectangleInt;
+                temporaryThumbRect.Offset(1, 0);
+
+                temporaryThumbRect.Height = temporaryThumbRect.Width;
+
+                using (SolidBrush brush = new SolidBrush(Checked ? CheckedForeground : UncheckedForeground))
+                {
+                    e.Graphics.FillEllipse(brush, thumbRect);
+                }
+
+                using (Pen outlinePen = new Pen(Checked ? CheckedOutlineColor : UncheckedOutlineColor, OutlineThickness))
+                {
+                    e.Graphics.DrawPath(outlinePen, roundBackground);
+                }
+
+                using (Pen graphicsPen = new Pen(UncheckedSymbolColor, Height / 10))
+                {
+                    graphicsPen.StartCap = LineCap.Round;
+                    graphicsPen.EndCap = LineCap.Round;
+                    if (ShowSymbols)
+                    {
+                        if (Checked)
+                        {
+                            graphicsPen.Color = CheckedSymbolColor;
+
+                            temporaryThumbRect.Offset(0, 1);
+                            e.Graphics.DrawPath(graphicsPen, Helper.Checkmark(temporaryThumbRect));
+                        }
+                        else
+                        {
+                            temporaryThumbRect.Inflate(-(int)(Height / 6.2f), -(int)(Height / 6.2f));
+
+                            e.Graphics.DrawPath(graphicsPen, Helper.Crossmark(temporaryThumbRect));
+                        }
                     }
                 }
             }

@@ -275,8 +275,7 @@ namespace CuoreUI.Controls
             Rectangle cr = ClientRectangle;
             cr.Inflate(-1, -1);
 
-            GraphicsPath roundBackground = Helper.RoundRect(cr, Rounding);
-
+            using (GraphicsPath roundBackground = Helper.RoundRect(cr, Rounding))
             using (SolidBrush brush = new SolidBrush(BackgroundColor))
             using (Pen pen = new Pen(OutlineColor, OutlineThickness))
             {
@@ -309,21 +308,20 @@ namespace CuoreUI.Controls
             expandRect.Height = expandRect.Width;
             expandRect.Offset(-expandRect.Width / 2, (expandRect.Height / 2));
 
-            GraphicsPath expandAvailable;
             if (isBrowsingOptions)
             {
                 expandRect.Height -= 2;
                 expandRect.Y += 1;
-                expandAvailable = Helper.DownArrow(expandRect);
             }
             else
             {
                 expandRect.Width -= 2;
-                expandAvailable = Helper.LeftArrowtest(expandRect);
             }
-            e.Graphics.FillPath(new SolidBrush(ExpandArrowColor), expandAvailable);
-            //e.Graphics.DrawRectangle(new Pen(Color.Red), expandRect);
-            //e.Graphics.DrawRectangle(new Pen(Color.Green), ClientRectangle);
+
+            using (GraphicsPath expandAvailable = isBrowsingOptions ? Helper.DownArrow(expandRect) : Helper.LeftArrowtest(expandRect))
+            {
+                e.Graphics.FillPath(new SolidBrush(ExpandArrowColor), expandAvailable);
+            }
 
             base.OnPaint(e);
         }

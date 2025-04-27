@@ -32,8 +32,8 @@ namespace CuoreUI.Controls
                 tempGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 tempGraphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-                GraphicsPath roundBackground = Helper.RoundRect(new Rectangle(0, 0, ClientSize.Width * 2, ClientSize.Height * 2), Rounding * 2);
-                tempGraphics.SetClip(roundBackground);
+                using (GraphicsPath roundBackground = Helper.RoundRect(new Rectangle(0, 0, ClientSize.Width * 2, ClientSize.Height * 2), Rounding * 2))
+                    tempGraphics.SetClip(roundBackground);
 
                 float filledPercent = (float)Value / MaxValue;
                 float foreHeight = ClientRectangle.Height * filledPercent * 2;
@@ -44,8 +44,8 @@ namespace CuoreUI.Controls
                 {
                     tempGraphics.FillRectangle(brush, client);
                 }
-                GraphicsPath graphicsPath = Helper.RoundRect(foreHalf, Rounding * 2);
 
+                using (GraphicsPath graphicsPath = Helper.RoundRect(foreHalf, Rounding * 2))
                 using (SolidBrush brush = new SolidBrush(Foreground))
                 {
                     tempGraphics.FillPath(brush, graphicsPath);

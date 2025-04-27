@@ -85,10 +85,11 @@ namespace CuoreUI.Controls.Shapes
 
             modifiedCR.Inflate(-OutlineThickness, -OutlineThickness);
 
-            GraphicsPath hexagonPath = Helper.RoundHexagon(modifiedCR, Rounding);
-
-            e.Graphics.FillPath(new SolidBrush(PanelColor), hexagonPath);
-            e.Graphics.DrawPath(new Pen(OutlineColor, OutlineThickness), hexagonPath);
+            using (GraphicsPath hexagonPath = Helper.RoundHexagon(modifiedCR, Rounding))
+            {
+                e.Graphics.FillPath(new SolidBrush(PanelColor), hexagonPath);
+                e.Graphics.DrawPath(new Pen(OutlineColor, OutlineThickness), hexagonPath);
+            }
 
             base.OnPaint(e);
         }

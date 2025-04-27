@@ -307,6 +307,7 @@ namespace CuoreUI.Controls
             {
                 Rectangle headerRect = new Rectangle(col * ((WidthConsideringScrollbar - 1) / columnCount), 0, (WidthConsideringScrollbar - 1) / columnCount, headerHeight);
                 GraphicsPath roundedBackgroundColumn;
+
                 if (col == 0)
                 {
                     roundedBackgroundColumn = Helper.RoundRect(headerRect, rightColumnRounding);
@@ -325,6 +326,8 @@ namespace CuoreUI.Controls
 
                 string headerText = headers != null && headers.Length > col ? headers[col] : $"Header {col + 1}";
                 g.DrawString(headerText, Font, Brushes.White, headerRect, new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
+
+                roundedBackgroundColumn.Dispose();
 
                 if (headerRect.Right > this.Width)
                 {
@@ -440,6 +443,8 @@ namespace CuoreUI.Controls
 
                     var cellValue = hiddenDataGridView.Rows[dataRowIndex].Cells[col].Value?.ToString() ?? string.Empty;
                     g.DrawString(cellValue, Font, new SolidBrush(ForeColor), cellRect, new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
+
+                    roundedBackgroundColumn.Dispose();
 
                     if (cellRect.Right > this.Width)
                     {

@@ -195,7 +195,7 @@ namespace CuoreUI.Controls
                 g.FillRectangle(bgBrush, backgroundRect);
             }
 
-            GraphicsPath path2 = Helper.RoundRect(cr, Rounding);
+            using (GraphicsPath path2 = Helper.RoundRect(cr, Rounding))
 
             using (Brush itemBrush = new SolidBrush(BackgroundColor))
             {
@@ -211,47 +211,47 @@ namespace CuoreUI.Controls
 
                 int yCenterString = itemRect.Y + (ItemHeight / 2) - (Font.Height) + 4;
 
-                GraphicsPath path = Helper.RoundRect(itemRect, ItemRounding);
+                using (GraphicsPath path = Helper.RoundRect(itemRect, ItemRounding))
 
-                if (SelectedIndex == i)
-                {
-                    using (Brush itemBrush = new SolidBrush(ItemSelectedBackgroundColor))
+                    if (SelectedIndex == i)
                     {
-                        g.FillPath(itemBrush, path);
-                    }
+                        using (Brush itemBrush = new SolidBrush(ItemSelectedBackgroundColor))
+                        {
+                            g.FillPath(itemBrush, path);
+                        }
 
-                    string itemText = Items[i].ToString();
-                    using (Brush textBrush = new SolidBrush(SelectedForegroundColor))
-                    {
-                        g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        string itemText = Items[i].ToString();
+                        using (Brush textBrush = new SolidBrush(SelectedForegroundColor))
+                        {
+                            g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        }
                     }
-                }
-                else if (HoveredIndex == i)
-                {
-                    using (Brush itemBrush = new SolidBrush(ItemHoverBackgroundColor))
+                    else if (HoveredIndex == i)
                     {
-                        g.FillPath(itemBrush, path);
-                    }
+                        using (Brush itemBrush = new SolidBrush(ItemHoverBackgroundColor))
+                        {
+                            g.FillPath(itemBrush, path);
+                        }
 
-                    string itemText = Items[i].ToString();
-                    using (Brush textBrush = new SolidBrush(ItemHoverForegroundColor))
-                    {
-                        g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        string itemText = Items[i].ToString();
+                        using (Brush textBrush = new SolidBrush(ItemHoverForegroundColor))
+                        {
+                            g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        }
                     }
-                }
-                else
-                {
-                    using (Brush itemBrush = new SolidBrush(BackgroundColor))
+                    else
                     {
-                        g.FillPath(itemBrush, path);
-                    }
+                        using (Brush itemBrush = new SolidBrush(BackgroundColor))
+                        {
+                            g.FillPath(itemBrush, path);
+                        }
 
-                    string itemText = Items[i].ToString();
-                    using (Brush textBrush = new SolidBrush(ForegroundColor))
-                    {
-                        g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        string itemText = Items[i].ToString();
+                        using (Brush textBrush = new SolidBrush(ForegroundColor))
+                        {
+                            g.DrawString(itemText, Font, textBrush, itemRect.X + 6, yCenterString);
+                        }
                     }
-                }
             }
 
             base.OnPaint(e);
