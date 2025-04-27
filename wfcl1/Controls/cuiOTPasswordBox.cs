@@ -365,11 +365,6 @@ namespace CuoreUI.Controls
                 string clipboardText = Clipboard.GetText();
                 if (clipboardText != null)
                 {
-                    //  6         - 4              >= 10
-                    //  2 >= 10 false
-
-                    //  6         - 2              >= 4
-                    //  4 >= 4 true
                     if (BoxAmount - Content.Length >= clipboardText.Length)
                     {
                         foreach (char c in clipboardText)
@@ -437,8 +432,6 @@ namespace CuoreUI.Controls
             }
 
             Content += char.ToUpper(e.KeyChar);
-            //MessageBox.Show(e.KeyChar.ToString());
-
             e.Handled = true;
 
             base.OnKeyPress(e);
