@@ -136,7 +136,7 @@ namespace CuoreUI.Components
                 double startOpacity = TargetForm.Opacity;
                 double currentOpacity;
 
-                int frameDeltaTime = LazyInt32TimeDelta;
+                int frameDeltaTime = LazyTimeDelta;
                 double durationInMilliseconds = Duration;
                 Stopwatch sw = Stopwatch.StartNew();
 

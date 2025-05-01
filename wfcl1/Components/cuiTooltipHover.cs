@@ -80,7 +80,7 @@ namespace CuoreUI.Components
 
             while (true)
             {
-                await Task.Delay(Drawing.LazyInt32TimeDelta);
+                await Task.Delay(Drawing.LazyTimeDelta);
                 if (TargetControl.ClientRectangle.Contains(TargetControl.PointToClient(Cursor.Position)) == false)
                 {
                     break;

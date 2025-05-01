@@ -253,17 +253,6 @@ namespace CuoreUI.Components.cuiFormRounderV2Resources
 
         private bool stop = false;
 
-        internal void Stop()
-        {
-            stop = true;
-            backImage?.Dispose();
-            backGraphics?.Dispose();
-
-            PaddingChanged -= RoundedForm_PaddingChanged;
-
-            Dispose();
-        }
-
         internal void UpdBitmap()
         {
             targetFormBt?.Dispose();

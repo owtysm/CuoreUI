@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static CuoreUI.Helper.Win32;
@@ -74,13 +73,6 @@ namespace CuoreUI
             return new PointF(point.X / length, point.Y / length);
         }
 
-        public static GraphicsPath RoundRect(int x, int y, int width, int height, int borderRadius)
-        {
-            Rectangle rectangle = new Rectangle(x, y, width, height);
-
-            return RoundRect(rectangle, new Padding(borderRadius));
-        }
-
         public static GraphicsPath RoundRect(Rectangle rectangle, int borderRadius)
         {
             return RoundRect(rectangle, new Padding(borderRadius));
@@ -143,22 +135,6 @@ namespace CuoreUI
             return path;
         }
 
-        public static GraphicsPath Checkmark(RectangleF area)
-        {
-            GraphicsPath path = new GraphicsPath();
-
-            PointF[] points = new PointF[]
-            {
-            new PointF(area.Left + (int)(area.Width * 0.25), area.Top + (int)(area.Height * 0.5)),
-            new PointF(area.Left + (int)(area.Width * 0.45), area.Top + (int)(area.Height * 0.7)),
-            new PointF(area.Right - (int)(area.Width * 0.3), area.Top + (int)(area.Height * 0.3))
-            };
-
-            path.AddLines(points);
-
-            return path;
-        }
-
         public static GraphicsPath Checkmark(RectangleF area, Point symbolsOffset)
         {
             GraphicsPath path = new GraphicsPath();
@@ -180,44 +156,6 @@ namespace CuoreUI
         public static GraphicsPath Crossmark(Rectangle rect)
         {
             Rectangle area = rect;
-            int WidthBeforeScale = area.Width;
-            area.Width = (int)Math.Round(area.Width * 0.7f, 0);
-            area.Height = area.Width;
-
-            int WidthAfterScale = area.Width;
-            int WidthDifference = WidthBeforeScale - WidthAfterScale;
-
-            area.Offset(WidthDifference / 2, 1 + (WidthDifference / 2));
-
-            GraphicsPath path = new GraphicsPath();
-
-            Point[] points = new Point[]
-            {
-            new Point(area.Left, area.Top),
-            new Point(area.Right, area.Bottom)
-            };
-
-            path.AddLines(points);
-
-            GraphicsPath path2 = new GraphicsPath();
-
-            Point[] points2 = new Point[]
-            {
-            new Point(area.Left, area.Bottom),
-            new Point(area.Right, area.Top)
-            };
-
-            path2.AddLines(points2);
-
-            path.AddPath(path2, false);
-
-            return path;
-        }
-
-        public static GraphicsPath Crossmark(Rectangle rect, Point symbolsOffset)
-        {
-            Rectangle area = rect;
-            area.Offset(symbolsOffset);
             int WidthBeforeScale = area.Width;
             area.Width = (int)Math.Round(area.Width * 0.7f, 0);
             area.Height = area.Width;
@@ -398,46 +336,6 @@ namespace CuoreUI
             return path;
         }
 
-        public static void CopyProperties(this object source, object destination)
-        {
-            if (source == null || destination == null)
-                throw new Exception("Source or/and Destination Objects are null");
-
-            Type typeDest = destination.GetType();
-            Type typeSrc = source.GetType();
-
-            PropertyInfo[] srcProps = typeSrc.GetProperties();
-            foreach (PropertyInfo srcProp in srcProps)
-            {
-                if (!srcProp.CanRead)
-                {
-                    continue;
-                }
-                PropertyInfo targetProperty = typeDest.GetProperty(srcProp.Name);
-                if (targetProperty == null)
-                {
-                    continue;
-                }
-                if (!targetProperty.CanWrite)
-                {
-                    continue;
-                }
-                if (targetProperty.GetSetMethod(true) != null && targetProperty.GetSetMethod(true).IsPrivate)
-                {
-                    continue;
-                }
-                if ((targetProperty.GetSetMethod().Attributes & MethodAttributes.Static) != 0)
-                {
-                    continue;
-                }
-                if (!targetProperty.PropertyType.IsAssignableFrom(srcProp.PropertyType))
-                {
-                    continue;
-                }
-                targetProperty.SetValue(destination, srcProp.GetValue(source, null), null);
-            }
-        }
-
         public static GraphicsPath Star(float centerX, float centerY, float outerRadius, float innerRadius, int numPoints)
         {
             if (numPoints % 2 == 0 || numPoints < 5)
@@ -534,9 +432,6 @@ namespace CuoreUI
 
             [DllImport("user32.dll")]
             public static extern int SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
-
-            [DllImport("user32.dll")]
-            public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
             public const int WM_SYSCOMMAND = 0x0112;
             public const int SC_CLOSE = 0xF060;
@@ -672,9 +567,6 @@ namespace CuoreUI
                 [System.Runtime.InteropServices.DllImport("user32.dll")]
                 public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
-                [DllImport("user32.dll", CharSet = CharSet.Auto)]
-                internal static extern bool SetLayeredWindowAttributes(IntPtr hwnd, int crKey, byte bAlpha, int dwFlags);
-
                 internal const int LWA_ALPHA = 0x2;
 
                 [DllImport("user32.dll")]
@@ -686,11 +578,6 @@ namespace CuoreUI
 
             internal static class PerPixelAlphaBlend
             {
-                public static void SetBitmap(Bitmap bitmap, int left, int top, IntPtr handle)
-                {
-                    SetBitmap(bitmap, 255, left, top, handle);
-                }
-
                 public unsafe static void SetBitmap(Bitmap bitmap, byte opacity, int left, int top, IntPtr handle)
                 {
                     if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
@@ -765,15 +652,6 @@ namespace CuoreUI
                             this.cx = cx;
                             this.cy = cy;
                         }
-                    }
-
-                    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-                    struct ARGB
-                    {
-                        public byte Blue;
-                        public byte Green;
-                        public byte Red;
-                        public byte Alpha;
                     }
 
                     [StructLayout(LayoutKind.Sequential, Pack = 1)]

@@ -203,7 +203,7 @@ namespace CuoreUI.Controls
                     Rectangle boxRectangle = new Rectangle(currentPosition, 0, Height - 1, Height - 1);
                     GraphicsPath gp = Helper.RoundRect(boxRectangle, Rounding);
 
-                    if (i == focusedIndex)
+                    if (i == focusedIndex && Focused)
                     {
                         using (SolidBrush focusedBrush = new SolidBrush(FocusedColor))
                         using (Pen focusedPen = new Pen(FocusedBorderColor))
@@ -311,8 +311,17 @@ namespace CuoreUI.Controls
             base.OnMouseMove(e);
         }
 
+        protected override void OnLostFocus(EventArgs e)
+        {
+            Refresh();
+            base.OnLostFocus(e);
+        }
+
         protected override void OnMouseDown(MouseEventArgs e)
         {
+            // this time onmousedown is at the top, because we want to potentially redraw AFTER we got focus
+            base.OnMouseDown(e);
+
             int spacingBetweenBoxes = (Width - (Height * BoxAmount)) / (BoxAmount - 1);
             int boxSizeWithSpacingOffset = spacingBetweenBoxes + Height;
             int currentPosition = 0;
@@ -342,8 +351,6 @@ namespace CuoreUI.Controls
 
                 currentPosition += boxSizeWithSpacingOffset;
             }
-
-            base.OnMouseDown(e);
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -352,6 +359,11 @@ namespace CuoreUI.Controls
             {
                 focusedIndex = BoxAmount;
                 Refresh();
+                return;
+            }
+
+            if (!Focused)
+            {
                 return;
             }
 
@@ -403,38 +415,43 @@ namespace CuoreUI.Controls
 
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            if (!char.IsLetterOrDigit(e.KeyChar))
+            try
             {
+                if (!char.IsLetterOrDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                    return;
+                }
+
+                if (Content.Length > focusedIndex + 1)
+                {
+                    char[] chars = Content.ToCharArray();
+                    chars[focusedIndex] = char.ToUpper(e.KeyChar);
+                    focusedIndex++;
+                    Content = new string(chars);
+
+                    e.Handled = true;
+                    return;
+                }
+
+                if (Content.Length > BoxAmount)
+                {
+                    e.Handled = true;
+                    return;
+                }
+
+                while (Content.Length > focusedIndex - 1)
+                {
+                    focusedIndex++;
+                }
+
+                Content += char.ToUpper(e.KeyChar);
                 e.Handled = true;
-                return;
+
+                base.OnKeyPress(e);
             }
-
-            if (Content.Length > focusedIndex + 1)
-            {
-                char[] chars = Content.ToCharArray();
-                chars[focusedIndex] = char.ToUpper(e.KeyChar);
-                focusedIndex++;
-                Content = new string(chars);
-
-                e.Handled = true;
-                return;
-            }
-
-            if (Content.Length > BoxAmount)
-            {
-                e.Handled = true;
-                return;
-            }
-
-            while (Content.Length > focusedIndex - 1)
-            {
-                focusedIndex++;
-            }
-
-            Content += char.ToUpper(e.KeyChar);
-            e.Handled = true;
-
-            base.OnKeyPress(e);
+            // chars like ;
+            catch (IndexOutOfRangeException) { }
         }
     }
 }

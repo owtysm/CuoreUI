@@ -6,7 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Taskbar;
 
-namespace winforms_taskbar_badge_workaround
+namespace CuoreUI.Components
 {
     public partial class cuiTaskbarBadgeController : Component
     {

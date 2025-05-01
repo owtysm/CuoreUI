@@ -52,7 +52,7 @@ namespace CuoreUI.Components.Forms
             this.cuiTextBox3 = new CuoreUI.Controls.cuiTextBox();
             this.cuiTextBox2 = new CuoreUI.Controls.cuiTextBox();
             this.cuiTextBox1 = new CuoreUI.Controls.cuiTextBox();
-            this.cuiFormDrag1 = new CuoreUI.cuiFormDrag(this.components);
+            this.cuiFormDrag1 = new CuoreUI.Components.cuiFormDrag(this.components);
             this.SuspendLayout();
             // 
             // cuiFormRounder1

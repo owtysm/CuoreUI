@@ -1,4 +1,6 @@
-﻿namespace CuoreUI.Controls.Forms
+﻿using CuoreUI.Components;
+
+namespace CuoreUI.Controls.Forms
 {
     partial class DatePicker
     {
@@ -38,8 +40,8 @@
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.cuiLabel3 = new CuoreUI.Controls.cuiLabel();
             this.cuiFormRounder1 = new CuoreUI.Components.cuiFormRounder();
-            this.cuiFormDrag1 = new CuoreUI.cuiFormDrag(this.components);
-            this.cuiControlDrag1 = new CuoreUI.cuiControlDrag(this.components);
+            this.cuiFormDrag1 = new CuoreUI.Components.cuiFormDrag(this.components);
+            this.cuiControlDrag1 = new CuoreUI.Components.cuiControlDrag(this.components);
             this.SuspendLayout();
             // 
             // pagePanel

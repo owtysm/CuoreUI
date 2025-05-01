@@ -58,7 +58,7 @@ namespace CuoreUI
             }
         }
 
-        public static float LazyTimeDelta
+        public static float LazyTimeDeltaFloat
         {
             get
             {
@@ -66,7 +66,7 @@ namespace CuoreUI
             }
         }
 
-        public static int LazyInt32TimeDelta
+        public static int LazyTimeDelta
         {
             get
             {

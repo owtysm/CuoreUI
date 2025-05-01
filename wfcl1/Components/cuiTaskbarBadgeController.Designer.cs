@@ -1,4 +1,4 @@
-﻿namespace winforms_taskbar_badge_workaround
+﻿namespace CuoreUI.Components
 {
     partial class cuiTaskbarBadgeController
     {

@@ -14,15 +14,6 @@ namespace CuoreUI.Components.Forms
             initTimer();
         }
 
-        public ColorPickerForm(Color primaryColor, int Rounding)
-        {
-            InitializeComponent();
-            initTimer();
-
-            cuiFormRounder1.Rounding = Rounding;
-            SetColor(primaryColor);
-        }
-
         private void initTimer()
         {
             Timer timer = new Timer();
