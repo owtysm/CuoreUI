@@ -40,14 +40,17 @@ namespace CuoreUI.Controls
 
         bool animationFinished = true;
 
-        public async Task AnimateThumbLocation()
+        public async Task AnimateThumbLocation(bool bypassOtherAnimateTasks = false)
         {
-            if (animating)
+            if (initialised && !bypassOtherAnimateTasks)
             {
-                animationsInQueue++;
-                return;
+                if (animating)
+                {
+                    animationsInQueue++;
+                    return;
+                }
+                animating = true;
             }
-            animating = true;
 
             startX = thumbX;
 
@@ -116,6 +119,8 @@ namespace CuoreUI.Controls
             Refresh();
         }
 
+        private bool isUserInteraction = false; // fix "cuiSwitch is unchangeable from code" https://github.com/7owh/CuoreUI/issues/21
+
         private bool privateChecked = false;
         [Description("Whether the switch is on or off.")]
         public bool Checked
@@ -126,7 +131,7 @@ namespace CuoreUI.Controls
             }
             set
             {
-                if (!animating)
+                if (privateChecked != value)
                 {
                     privateChecked = value;
                     CheckedChanged?.Invoke(this, EventArgs.Empty);
@@ -135,6 +140,7 @@ namespace CuoreUI.Controls
                 Invalidate();
             }
         }
+
 
         private Color privateBackground = Color.FromArgb(64, Drawing.PrimaryColor);
         [Description("The rounded background for the CHECKED switch.")]
@@ -417,13 +423,18 @@ namespace CuoreUI.Controls
         {
             if (animating == false)
             {
+                isUserInteraction = true;
                 Checked = !Checked;
+                isUserInteraction = true;
             }
         }
 
-        private void cuiSwitch_Load(object sender, EventArgs e)
+        bool initialised = false;
+
+        private async void cuiSwitch_Load(object sender, EventArgs e)
         {
-            Invalidate();
+            await AnimateThumbLocation(true);
+            initialised = true;
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
