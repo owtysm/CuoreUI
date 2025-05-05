@@ -2,12 +2,11 @@
 ![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
 
 > [!NOTE]
-> CuoreUI is in development<br>
-> Documentation is being worked on.
+> CuoreUI is in development
 
 The repository source updates faster than the release binaries on NuGet.
 
-NuGet may get updates days after the repository does.
+NuGet gets updated days after the repository does.
 
 # A WinForms library.. 
 This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
@@ -29,6 +28,12 @@ CuoreUI will be alive for as long as at least one person uses it!
 Latest Releases: [NuGet](https://www.nuget.org/packages/CuoreUI.Winforms/).
 
 Older Releases (+ DLL): [GitHub](https://github.com/7owh/CuoreUI/releases).
+
+## 📃 Documentation
+View the docs [here](https://itzkxhu.gitbook.io/cuoreui).
+
+(https://itzkxhu.gitbook.io/cuoreui)
+
 ## 📫 Contact?
 
 Don't hesitate to reach out, I respect everyone!
