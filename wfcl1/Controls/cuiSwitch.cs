@@ -40,17 +40,14 @@ namespace CuoreUI.Controls
 
         bool animationFinished = true;
 
-        public async Task AnimateThumbLocation(bool bypassOtherAnimateTasks = false)
+        public async Task AnimateThumbLocation()
         {
-            if (initialised && !bypassOtherAnimateTasks)
+            if (animating)
             {
-                if (animating)
-                {
-                    animationsInQueue++;
-                    return;
-                }
-                animating = true;
+                animationsInQueue++;
+                return;
             }
+            animating = true;
 
             startX = thumbX;
 
@@ -85,16 +82,17 @@ namespace CuoreUI.Controls
 
                 if (elapsedTime >= Duration || animationFinished || animationsInQueue > 0)
                 {
+                    //thumbX = (int)targetX;
+                    animating = false;
+                    animationFinished = false;
+                    elapsedTime = 0;
+
                     if (animationsInQueue > 0)
                     {
                         animationsInQueue--;
                         _ = AnimateThumbLocation();
                     }
 
-                    //thumbX = (int)targetX;
-                    animating = false;
-                    animationFinished = false;
-                    elapsedTime = 0;
                     Refresh();
                     return;
                 }
@@ -118,8 +116,6 @@ namespace CuoreUI.Controls
             animationFinished = true;
             Refresh();
         }
-
-        private bool isUserInteraction = false; // fix "cuiSwitch is unchangeable from code" https://github.com/7owh/CuoreUI/issues/21
 
         private bool privateChecked = false;
         [Description("Whether the switch is on or off.")]
@@ -423,18 +419,13 @@ namespace CuoreUI.Controls
         {
             if (animating == false)
             {
-                isUserInteraction = true;
                 Checked = !Checked;
-                isUserInteraction = true;
             }
         }
 
-        bool initialised = false;
-
-        private async void cuiSwitch_Load(object sender, EventArgs e)
+        private void cuiSwitch_Load(object sender, EventArgs e)
         {
-            await AnimateThumbLocation(true);
-            initialised = true;
+            _ = AnimateThumbLocation();
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
