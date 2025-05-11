@@ -38,9 +38,7 @@ View the docs [here](https://itzkxhu.gitbook.io/cuoreui).
 
 Don't hesitate to reach out, I respect everyone!
 
-![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's talk on Discord: [@svn.ow](https://discord.com/)
-
-![YouTube logo](https://i.imgur.com/OOAQDD5.png) I have a YouTube channel: [@sevenowh](https://www.youtube.com/@sevenowh)
+![Github logo](https://i.imgur.com/Yc7jLwG.png) Let's talk on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
 
 ## 🖋️ Versioning
 **We use the following format:**
