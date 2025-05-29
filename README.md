@@ -29,7 +29,7 @@ Supports control animations, blur controls, and rounded forms for a sleek, moder
 
 ## 📫 Contact
 
-Don't hesitate to reach out.<br>
+If you want to talk, don't hesitate to reach out!<br>
 I respect every race, gender, orientation, or religion.
 
 ![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)<br>
