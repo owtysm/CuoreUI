@@ -1,5 +1,5 @@
 ![CuoreUI Logo](https://i.imgur.com/pWwYDum.jpeg)
-![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
+[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-ff6a00)](https://unlicense.org/)
 
 The repository source updates faster than the release binaries on NuGet.<br>
 NuGet gets updated with a delay.
@@ -9,14 +9,13 @@ NuGet gets updated with a delay.
 > CuoreUI is in development
 
 This is a C# .NET Winforms Library with *modern-looking* controls, components and forms.<br>
-The library features many controls with a sleek design inspired by Xiaomi and modern Web UI design.<br>
-The library does everything *decently* for more special-case controls check out other libraries, like Siticone (or use WPF). 
+The library features many controls with a sleek design inspired by Xiaomi and modern web design.<br>
 
 ## 🗿 Why use Cuore
 Many promise to give you a *"modern design"*, but they can sometimes look old or feel clunky.
 
 So, CuoreUI draws inspiration from the latest modern, *often web* designs.<br>
-We can blur or animate your control, round up your form's corners, yet **look good**, while being lightweight.
+Supports control animations, blur controls, and rounded forms for a sleek, modern look, yet is lightweight.
 
 ## 📦 Installation 
 > `Install-Package CuoreUI.Winforms`
