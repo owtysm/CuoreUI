@@ -34,7 +34,7 @@ Don't hesitate to reach out.<br>
 I respect every race, gender, orientation, or religion.
 
 ![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)<br>
-![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: [@.ow777](https://discord.com/)
+![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**
 
 ## 🖋️ Versions
 **We use the following format:**
