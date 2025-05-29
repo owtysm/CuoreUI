@@ -148,30 +148,29 @@ namespace CuoreUI.Controls
         {
             int halfSize = size;
             size *= 2;
-            using (GraphicsPath gp = new GraphicsPath())
+            GraphicsPath gp = new GraphicsPath();
+
+            void CreateAddRect(int x, int y)
             {
-                void CreateAddRect(int x, int y)
-                {
-                    gp.AddRectangle(new Rectangle(x + TextureOffset.Width, y + TextureOffset.Height, halfSize, halfSize));
-                }
-
-                if (!SkipBottomRightSquare)
-                {
-                    CreateAddRect(Width - size, Height - size); // b r
-                }
-
-                CreateAddRect(Width - size, Height - (size * 2)); // 2/3b r
-
-                CreateAddRect(Width - size, Height - (size * 3)); // 1/3b r
-
-                CreateAddRect(Width - (size * 2), Height - size); // b 2/3b
-
-                CreateAddRect(Width - (size * 3), Height - size); // b 1/3b
-
-                CreateAddRect(Width - (size * 2), Height - (size * 2)); // 2/3b 2/3b
-
-                return gp;
+                gp.AddRectangle(new Rectangle(x + TextureOffset.Width, y + TextureOffset.Height, halfSize, halfSize));
             }
+
+            if (!SkipBottomRightSquare)
+            {
+                CreateAddRect(Width - size, Height - size); // b r
+            }
+
+            CreateAddRect(Width - size, Height - (size * 2)); // 2/3b r
+
+            CreateAddRect(Width - size, Height - (size * 3)); // 1/3b r
+
+            CreateAddRect(Width - (size * 2), Height - size); // b 2/3b
+
+            CreateAddRect(Width - (size * 3), Height - size); // b 1/3b
+
+            CreateAddRect(Width - (size * 2), Height - (size * 2)); // 2/3b 2/3b
+
+            return gp;
         }
 
         private int privateGripSize = 2;

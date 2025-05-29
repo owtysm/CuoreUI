@@ -81,17 +81,13 @@ namespace ControlsTester
 
         void ShowControl(Control control)
         {
-            label1.Text = $"{control.GetType()} ({currentControlIndex+1}/{controlsCount})";
+            label1.Text = $"{control.GetType()} ({currentControlIndex + 1}/{controlsCount})";
 
             control.Anchor = AnchorStyles.None;
             control.Location = new Point(panel1.Width / 2 - control.Width / 2, panel1.Height / 2 - control.Height / 2);
 
             panel1.Controls.Clear();
-
-            if (control.GetType().Name != "cuiResizeGrip")
-            {
-                panel1.Controls.Add(control);
-            }
+            panel1.Controls.Add(control);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
