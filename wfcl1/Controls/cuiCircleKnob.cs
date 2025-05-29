@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
-    [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TrackBar))]
     [DefaultEvent("ValueChanged")]
     public partial class cuiCircleKnob : UserControl

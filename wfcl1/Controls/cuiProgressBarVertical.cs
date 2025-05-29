@@ -19,6 +19,8 @@ namespace CuoreUI.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
+            e.Graphics.Clear(BackColor);
 
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
@@ -50,8 +52,6 @@ namespace CuoreUI.Controls
                 {
                     tempGraphics.FillPath(brush, graphicsPath);
                 }
-
-                base.OnPaint(e);
             }
 
             if (Flipped)
