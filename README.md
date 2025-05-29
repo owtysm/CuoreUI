@@ -1,54 +1,44 @@
-![CuoreUI Logo](https://i.imgur.com/sh8j9cJ.png)
+![CuoreUI Logo](https://i.imgur.com/pWwYDum.jpeg)
 ![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
 
 > [!NOTE]
 > CuoreUI is in development
 
-The repository source updates faster than the release binaries on NuGet.
+The repository source updates faster than the release binaries on NuGet.<br>
+NuGet gets updated with a delay.
 
-NuGet gets updated days after the repository does.
-
-# A WinForms library.. 
-This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
-
-The library features many controls with a sleek design inspired by Xiaomi and modern Web UI design.
-
+# CuoreUI.Winforms
+This is a C# .NET Winforms Library with <ins>modern-looking</ins> controls, components and forms.<br>
+The library features many controls with a sleek design inspired by Xiaomi and modern Web UI design.<br>
 The library does everything <ins>decently</ins>, for more special-case controls check out other libraries, like Siticone (or use WPF). 
 
-## 🗿 Why use CuoreUI?
-Have you ever used a UI Library only to find out you need a license, it is unpolished, or it was abandoned?
+## 🗿 Why use Cuore
+Many promise to give you a *"modern design"*, while, in reality, looking old and feeling clunky.
 
-**CuoreUI might be the solution.**
+So, CuoreUI draws inspiration from the latest modern, *often web* designs.<br>
+We can blur or animate your control, round up your form's corners, yet **look good**, while being lightweight.
 
-CuoreUI will be alive for as long as at least one person uses it!
+## 📦 Installation 
+> `Install-Package CuoreUI.Winforms`
 
-## 💾 Where to install? 
-`dotnet add package CuoreUI.Winforms`
-
-Latest Releases: [NuGet](https://www.nuget.org/packages/CuoreUI.Winforms/).
-
-Older Releases (+ DLL): [GitHub](https://github.com/7owh/CuoreUI/releases).
+![NuGet logo](https://i.imgur.com/6aPyVAg.png) Nuget [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).<br>
 
 ## 📃 Documentation
-View the docs [here](https://itzkxhu.gitbook.io/cuoreui).
+> They're on `itzkxhu.gitbook.io/cuoreui`<br>
 
-(https://itzkxhu.gitbook.io/cuoreui)
+![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
-## 📫 Contact?
+## 📫 Contact
 
-Don't hesitate to reach out, I respect everyone!
+Don't hesitate to reach out.<br>
+I respect every race, gender, orientation, or religion.
 
-![Github logo](https://i.imgur.com/Yc7jLwG.png) Let's talk on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)<br>
+![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: [@.ow777](https://discord.com/)
 
-## 🖋️ Versioning
+## 🖋️ Versions
 **We use the following format:**
 `yyyy.mm.dd.hotfix`
-
-**yyyy** stands for the year. (like 2012)
-
-**mm** stands for the month. (it can be both single digit and 2 digits) 
-
-**dd** stands for the day (it can be both single digit and 2 digits) 
 
 **hotfix** stands for the amount of bugfix updates made that day. 
 
