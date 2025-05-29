@@ -23,7 +23,7 @@ Supports control animations, blur effects on controls, and rounded forms for a s
 ![NuGet logo](https://i.imgur.com/6aPyVAg.png) Nuget [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).<br>
 
 ## 📃 Documentation
-> They're on `itzkxhu.gitbook.io/cuoreui`<br>
+> Available at `itzkxhu.gitbook.io/cuoreui`<br>
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
