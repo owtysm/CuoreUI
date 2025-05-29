@@ -20,7 +20,7 @@ Supports control animations, blur effects on controls, and rounded forms for a s
 ## 📦 Installation 
 > `Install-Package CuoreUI.Winforms`
 
-![NuGet logo](https://i.imgur.com/6aPyVAg.png) Nuget [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).<br>
+![NuGet logo](https://i.imgur.com/6aPyVAg.png) NuGet [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).<br>
 
 ## 📃 Documentation
 > Available at `itzkxhu.gitbook.io/cuoreui`<br>
