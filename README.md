@@ -8,9 +8,9 @@ NuGet gets updated with a delay.
 > [!NOTE]
 > CuoreUI is in development
 
-This is a C# .NET Winforms Library with <ins>modern-looking</ins> controls, components and forms.<br>
+This is a C# .NET Winforms Library with *modern-looking* controls, components and forms.<br>
 The library features many controls with a sleek design inspired by Xiaomi and modern Web UI design.<br>
-The library does everything <ins>decently</ins>, for more special-case controls check out other libraries, like Siticone (or use WPF). 
+The library does everything *decently* for more special-case controls check out other libraries, like Siticone (or use WPF). 
 
 ## 🗿 Why use Cuore
 Many promise to give you a *"modern design"*, but they can sometimes look old or feel clunky.
