@@ -40,7 +40,6 @@ I respect every race, gender, orientation, or religion.
 **We use the following format:**
 `yyyy.mm.dd.hotfix`
 
-**hotfix** stands for the amount of bugfix updates made that day. 
-
+**hotfix** stands for the amount of bugfix updates made that day.<br>
 > An example version would be 2022.9.2. It means the update came out on the 2nd day of the 9th month in the year 2022 - that's September 2nd, 2022 and no bugfixes were made. 
 
