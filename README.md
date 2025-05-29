@@ -15,7 +15,7 @@ The library features many controls with a sleek design inspired by Xiaomi and mo
 Many promise to give you a *"modern design"*, but they can sometimes look old or feel clunky.
 
 So, CuoreUI draws inspiration from the latest modern, *often web* designs.<br>
-Supports control animations, blur controls, and rounded forms for a sleek, modern look, yet is lightweight.
+Supports control animations, blur effects on controls, and rounded forms for a sleek, modern look, yet is lightweight.
 
 ## 📦 Installation 
 > `Install-Package CuoreUI.Winforms`
