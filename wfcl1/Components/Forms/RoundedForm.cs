@@ -7,7 +7,7 @@ using static CuoreUI.Helper.Win32;
 using Color = System.Drawing.Color;
 using Pen = System.Drawing.Pen;
 
-namespace CuoreUI.Components.cuiFormRounderV2Resources
+namespace CuoreUI.Components.Forms
 {
     public partial class RoundedForm : Form
     {

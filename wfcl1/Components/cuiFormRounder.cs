@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CuoreUI.Components.cuiFormRounderV2Resources;
+using CuoreUI.Components.Forms;
 using Color = System.Drawing.Color;
 
 namespace CuoreUI.Components

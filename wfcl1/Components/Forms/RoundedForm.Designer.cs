@@ -1,4 +1,4 @@
-﻿namespace CuoreUI.Components.cuiFormRounderV2Resources
+﻿namespace CuoreUI.Components.Forms
 {
     partial class RoundedForm
     {
