@@ -14,6 +14,10 @@ Many promise to give you a *"modern design"*, but they can sometimes look old or
 
 So, CuoreUI draws inspiration from the latest modern, *often web* designs. Supports control animations, blur effects on controls, and rounded forms for a sleek, modern look, yet is lightweight.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51a5fd2b-ad03-4e9b-8ea7-8c086cc047a1">
+</p>
+
 ## 📦 Installation 
 > `Install-Package CuoreUI.Winforms`
 
