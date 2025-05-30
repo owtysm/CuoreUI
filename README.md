@@ -1,56 +1,38 @@
-![CuoreUI Logo](https://i.imgur.com/sh8j9cJ.png)
-![Static Unlicense License Badge](https://img.shields.io/badge/License-Unlicense-ff6a00)
+![CuoreUI Logo](https://i.imgur.com/pWwYDum.jpeg)
+[![License: Unlicense](https://img.shields.io/badge/License-Unlicense-ff6a00)](https://unlicense.org/)
 
+The repository source code updates more frequently than the release binaries on NuGet.
+
+# CuoreUI.Winforms
 > [!NOTE]
 > CuoreUI is in development
 
-The repository source updates faster than the release binaries on NuGet.
+This is a C# .NET Winforms Library with *modern-looking* controls, components and forms. The library features many controls with a sleek design inspired by Xiaomi and modern web design.
 
-NuGet gets updated days after the repository does.
+## 🗿 Why use Cuore
+Many promise to give you a *"modern design"*, but they can sometimes look old or feel clunky.
 
-# A WinForms library.. 
-This is a C# .NET Winforms UI Library with <ins>modern-looking</ins> controls, components and forms.
+So, CuoreUI draws inspiration from the latest modern, *often web* designs. Supports control animations, blur effects on controls, and rounded forms for a sleek, modern look, yet is lightweight.
 
-The library features many controls with a sleek design inspired by Xiaomi and modern Web UI design.
+## 📦 Installation 
+> `Install-Package CuoreUI.Winforms`
 
-The library does everything <ins>decently</ins>, for more special-case controls check out other libraries, like Siticone (or use WPF). 
-
-## 🗿 Why use CuoreUI?
-Have you ever used a UI Library only to find out you need a license, it is unpolished, or it was abandoned?
-
-**CuoreUI might be the solution.**
-
-CuoreUI will be alive for as long as at least one person uses it!
-
-## 💾 Where to install? 
-`dotnet add package CuoreUI.Winforms`
-
-Latest Releases: [NuGet](https://www.nuget.org/packages/CuoreUI.Winforms/).
-
-Older Releases (+ DLL): [GitHub](https://github.com/7owh/CuoreUI/releases).
+![NuGet logo](https://i.imgur.com/6aPyVAg.png) NuGet [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).
 
 ## 📃 Documentation
-View the docs [here](https://itzkxhu.gitbook.io/cuoreui).
+> Available at `itzkxhu.gitbook.io/cuoreui`
 
-(https://itzkxhu.gitbook.io/cuoreui)
+![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
-## 📫 Contact?
+## 📫 Contact
 
-Don't hesitate to reach out, I respect everyone!
+If you want to talk, don't hesitate to reach out! I respect every race, gender, orientation, or religion.
 
-![Github logo](https://i.imgur.com/Yc7jLwG.png) Let's talk on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
 
-## 🖋️ Versioning
-**We use the following format:**
-`yyyy.mm.dd.hotfix`
+![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**
 
-**yyyy** stands for the year. (like 2012)
-
-**mm** stands for the month. (it can be both single digit and 2 digits) 
-
-**dd** stands for the day (it can be both single digit and 2 digits) 
-
-**hotfix** stands for the amount of bugfix updates made that day. 
-
-> An example version would be 2022.9.2. It means the update came out on the 2nd day of the 9th month in the year 2022 - that's September 2nd, 2022 and no bugfixes were made. 
+## 🖋️ Versions
+**We use the following format:** `yyyy.mm.dd.hotfix`.
+> An example version would be `2022.9.2.2`. It means the update came out on the 2nd day of the 9th month in the year 2022 - that's September 2nd, 2022 and 2 hotfixes were made. 
 
