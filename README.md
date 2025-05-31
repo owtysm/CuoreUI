@@ -30,7 +30,7 @@ So, CuoreUI draws inspiration from the latest modern, *often web* designs. Suppo
 
 ## 📫 Contact
 
-If you want to talk, don't hesitate to reach out! I respect every race, gender, orientation, or religion.
+If you want to talk, don't hesitate to reach out! I respect everyone.
 
 ![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
 
