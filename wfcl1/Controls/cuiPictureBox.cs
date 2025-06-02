@@ -50,7 +50,6 @@ namespace CuoreUI.Controls
             try
             {
                 target.Dispose();
-                GC.Collect();
             }
             catch {; }
             target = null;
@@ -62,7 +61,6 @@ namespace CuoreUI.Controls
             {
                 target.Image.Dispose();
                 target.Dispose();
-                GC.Collect();
             }
             catch { }
             target = null;

@@ -73,10 +73,11 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton5.ImageAutoCenter = true;
             this.cuiButton5.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton5.NormalImageTint = System.Drawing.Color.Gray;
             this.cuiButton5.Location = new System.Drawing.Point(16, 10);
             this.cuiButton5.Name = "cuiButton5";
             this.cuiButton5.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton5.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton5.NormalImageTint = System.Drawing.Color.Gray;
             this.cuiButton5.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton5.OutlineThickness = 1.6F;
             this.cuiButton5.PressedBackground = System.Drawing.Color.Empty;
@@ -86,6 +87,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton5.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton5.Size = new System.Drawing.Size(29, 29);
             this.cuiButton5.TabIndex = 27;
+            this.cuiButton5.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton5.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton5.Click += new System.EventHandler(this.cuiButton5_Click);
             // 
@@ -100,6 +102,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton3.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton3.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton3.Content = "Cancel";
+            this.cuiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -111,12 +114,13 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton3.ImageAutoCenter = true;
             this.cuiButton3.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton3.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.cuiButton3.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.Location = new System.Drawing.Point(202, 258);
             this.cuiButton3.Name = "cuiButton3";
             this.cuiButton3.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton3.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.cuiButton3.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cuiButton3.OutlineThickness = 1.6F;
+            this.cuiButton3.OutlineThickness = 1F;
             this.cuiButton3.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton3.PressedForeColor = System.Drawing.Color.White;
             this.cuiButton3.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -124,6 +128,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton3.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton3.Size = new System.Drawing.Size(186, 43);
             this.cuiButton3.TabIndex = 24;
+            this.cuiButton3.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton3.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton3.Click += new System.EventHandler(this.cuiButton3_Click);
             // 
@@ -138,6 +143,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton2.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton2.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton2.Content = "Done";
+            this.cuiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton2.ForeColor = System.Drawing.Color.White;
@@ -149,12 +155,13 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton2.ImageAutoCenter = true;
             this.cuiButton2.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton2.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton2.Location = new System.Drawing.Point(10, 258);
             this.cuiButton2.Name = "cuiButton2";
             this.cuiButton2.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton2.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton2.NormalOutline = System.Drawing.Color.Empty;
-            this.cuiButton2.OutlineThickness = 1.6F;
+            this.cuiButton2.OutlineThickness = 1F;
             this.cuiButton2.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton2.PressedForeColor = System.Drawing.Color.White;
             this.cuiButton2.PressedImageTint = System.Drawing.Color.White;
@@ -162,6 +169,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton2.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton2.Size = new System.Drawing.Size(186, 43);
             this.cuiButton2.TabIndex = 23;
+            this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton2.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton2.ForeColorChanged += new System.EventHandler(this.cuiButton2_ForeColorChanged);
             this.cuiButton2.Click += new System.EventHandler(this.cuiButton2_Click);
@@ -176,6 +184,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton4.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton4.CheckedOutline = System.Drawing.Color.Empty;
             this.cuiButton4.Content = "";
+            this.cuiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton4.ForeColor = System.Drawing.Color.White;
@@ -187,10 +196,11 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton4.ImageAutoCenter = true;
             this.cuiButton4.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cuiButton4.Location = new System.Drawing.Point(306, 1);
             this.cuiButton4.Name = "cuiButton4";
             this.cuiButton4.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton4.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cuiButton4.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton4.OutlineThickness = 1.6F;
             this.cuiButton4.PressedBackground = System.Drawing.Color.Empty;
@@ -200,6 +210,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton4.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton4.Size = new System.Drawing.Size(43, 43);
             this.cuiButton4.TabIndex = 22;
+            this.cuiButton4.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton4.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton4.Click += new System.EventHandler(this.cuiButton4_Click);
             // 
@@ -213,6 +224,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.cuiButton1.Content = "";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton1.ForeColor = System.Drawing.Color.White;
@@ -224,10 +236,11 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton1.ImageAutoCenter = true;
             this.cuiButton1.ImageExpand = new System.Drawing.Point(2, 2);
             this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton1.Location = new System.Drawing.Point(355, 1);
             this.cuiButton1.Name = "cuiButton1";
             this.cuiButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton1.NormalOutline = System.Drawing.Color.Empty;
             this.cuiButton1.OutlineThickness = 1.6F;
             this.cuiButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
@@ -237,6 +250,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiButton1.Size = new System.Drawing.Size(43, 43);
             this.cuiButton1.TabIndex = 21;
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton1.Click += new System.EventHandler(this.cuiButton1_Click);
             // 
@@ -250,6 +264,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiLabel3.Name = "cuiLabel3";
             this.cuiLabel3.Size = new System.Drawing.Size(261, 15);
             this.cuiLabel3.TabIndex = 25;
+            this.cuiLabel3.VerticalAlignment = System.Drawing.StringAlignment.Near;
             // 
             // cuiFormRounder1
             // 

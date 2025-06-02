@@ -65,6 +65,27 @@ namespace CuoreUI.Controls.Charts
             }
         }
 
+        private bool privateShowLines = false;
+
+        [Browsable(true)]
+        [Category("CuoreUI Chart Colors")]
+        [Description("Whether the dashed lines should render.")]
+        public bool ShowLines
+        {
+            get
+            {
+                return privateShowLines;
+            }
+            set
+            {
+                if (privateShowLines != value)
+                {
+                    privateShowLines = value;
+                    Refresh();
+                }
+            }
+        }
+
         private Color privatePointColor = CuoreUI.Drawing.PrimaryColor;
 
         [Browsable(true)]
@@ -308,10 +329,13 @@ namespace CuoreUI.Controls.Charts
             g.DrawLine(axisPen, chartPadding, chartPadding, chartPadding, chartHeight + chartPadding);
             g.DrawLine(axisPen, chartPadding, chartHeight + chartPadding, chartWidth + chartPadding, chartHeight + chartPadding);
 
-            for (int i = 1; i <= 5; i++)
+            if (privateShowLines)
             {
-                float y = chartPadding + chartHeight - (i * chartHeight / 5);
-                g.DrawLine(dashedPen, chartPadding, y, chartWidth + chartPadding, y);
+                for (int i = 1; i <= 5; i++)
+                {
+                    float y = chartPadding + chartHeight - (i * chartHeight / 5);
+                    g.DrawLine(dashedPen, chartPadding, y, chartWidth + chartPadding, y);
+                }
             }
 
             float yScaleFactor = 100f / privateMaxValue;

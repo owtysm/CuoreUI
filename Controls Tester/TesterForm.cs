@@ -11,6 +11,7 @@ namespace ControlsTester
     {
         System.Collections.Generic.List<Control> availableControls = new System.Collections.Generic.List<Control>();
         int controlsCount = 0;
+        int componentsCount = 0;
         int currentControlIndex = 0;
 
         public TesterForm()
@@ -41,24 +42,34 @@ namespace ControlsTester
             Type[] types = assembly.GetTypes();
 
             controlsCount = 0;
+            componentsCount = 0;
 
             foreach (Type type in types)
             {
-                if (type.IsCuoreControl())
+                if (type.IsCuore())
                 {
-                    label2.Text = $"Loading {type.Name} ({type.Namespace})";
-                    Control control = Activator.CreateInstance(type) as Control;
-                    availableControls.Add(control);
-                    controlsCount++;
+                    if (type.FullName.StartsWith("CuoreUI.Controls.") && type.IsSubclassOf(typeof(Control)) && !type.IsSubclassOf(typeof(Form)))
+                    {
+                        label2.Text = $"Loading {type.Name} ({type.Namespace})";
+                        Control control = Activator.CreateInstance(type) as Control;
+                        availableControls.Add(control);
+                        controlsCount++;
+                    }
+                    else if (type.FullName.StartsWith("CuoreUI.Components."))
+                    {
+                        label3.Text = $"Loading {type.Name} ({type.Namespace})";
+                        componentsCount++;
+                    }
                 }
             }
 
-            AllControlsLoaded();
+            AllClassesLoaded();
         }
 
-        private void AllControlsLoaded()
+        private void AllClassesLoaded()
         {
             label2.Text = $"Loaded {controlsCount} controls successfully!";
+            label3.Text = $"Found {componentsCount} components!";
             panel2.Enabled = true;
 
             if (controlsCount > 0)
@@ -110,7 +121,7 @@ namespace ControlsTester
 
     public static class TypeExtensions
     {
-        public static bool IsCuoreControl(this Type type)
+        public static bool IsCuore(this Type type)
         {
             // check if control is marked with [ToolboxItem(false)] attribute
             object[] toolboxAttributes = type.GetCustomAttributes(typeof(ToolboxItemAttribute), false);
@@ -120,10 +131,7 @@ namespace ControlsTester
             }
 
             return type.IsClass
-                && type.IsPublic
-                && type.IsSubclassOf(typeof(Control))
-                && !type.IsSubclassOf(typeof(Form))
-                && type.FullName.StartsWith("CuoreUI.Controls.");
+                && type.IsPublic;
         }
     }
 }

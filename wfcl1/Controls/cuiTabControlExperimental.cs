@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using CuoreUI.TabControlStuff;
 using static System.Windows.Forms.TabControl;
 
 namespace CuoreUI.Controls
@@ -104,11 +103,6 @@ namespace CuoreUI.Controls
         }
 
         public void AddTab(TabPage tabPage)
-        {
-            tabControl.AddTab(tabPage);
-        }
-
-        public void AddTab(cuiTabPage tabPage)
         {
             tabControl.AddTab(tabPage);
         }

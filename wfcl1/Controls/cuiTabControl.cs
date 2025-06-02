@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using CuoreUI.TabControlStuff;
 
 namespace CuoreUI.Controls
 {
@@ -409,7 +408,7 @@ namespace CuoreUI.Controls
 
         public void AddTab()
         {
-            cuiTabPage tabPage = new cuiTabPage();
+            TabPage tabPage = new TabPage();
             tabPage.Name = GetUniqueTabName();
             tabPage.Text = tabPage.Name;
             tabPage.BackColor = BackgroundColor;
@@ -420,7 +419,7 @@ namespace CuoreUI.Controls
 
         public void AddTab(string tabName)
         {
-            cuiTabPage tabPage = new cuiTabPage();
+            TabPage tabPage = new TabPage();
             tabPage.Name = tabName;
             tabPage.Text = tabName;
             tabPage.BackColor = BackgroundColor;
@@ -435,21 +434,9 @@ namespace CuoreUI.Controls
             SelectedTab = tabPage;
         }
 
-        public void AddTab(cuiTabPage tabPage)
-        {
-            CallTabAddedEvent(tabPage);
-            TabPages.Add(tabPage);
-            SelectedTab = tabPage;
-        }
-
         [Description("sender is the added tab!")]
         [Browsable(true)]
         public event EventHandler TabAdded;
-
-        public void CallTabAddedEvent(cuiTabPage tabPage)
-        {
-            TabAdded?.Invoke(tabPage, new EventArgs());
-        }
 
         public void CallTabAddedEvent(TabPage tabPage)
         {

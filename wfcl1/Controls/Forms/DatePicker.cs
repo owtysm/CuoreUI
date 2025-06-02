@@ -136,12 +136,12 @@ namespace CuoreUI.Controls.Forms
                                 cl.ForeColor = Color.Black;
                             }
                         }
-                        cuiButton3.NormalOutline = Color.FromArgb(20, 0, 0, 0);
+                        cuiButton3.NormalOutline = Color.FromArgb(128, 255, 255, 255);
 
-                        cuiButton2.NormalBackground = Color.FromArgb(20, 0, 0, 0);
+                        cuiButton2.NormalBackground = Color.FromArgb(128, 255, 255, 25);
                         cuiButton2.ForeColor = Color.Black;
 
-                        cuiButton1.NormalBackground = Color.FromArgb(20, 0, 0, 0);
+                        cuiButton1.NormalBackground = Color.FromArgb(128, 255, 255, 255);
                         cuiButton1.NormalImageTint = Color.Black;
                         cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
                         cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;

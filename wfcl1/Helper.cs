@@ -384,6 +384,72 @@ namespace CuoreUI
             return path;
         }
 
+        public static PointF ClosestPointOnSegment(PointF p, PointF a, PointF b)
+        {
+            var ap = new PointF(p.X - a.X, p.Y - a.Y);
+            var ab = new PointF(b.X - a.X, b.Y - a.Y);
+            float ab2 = ab.X * ab.X + ab.Y * ab.Y;
+            float dot = ap.X * ab.X + ap.Y * ab.Y;
+            float t = Math.Max(0, Math.Min(1, ab2 == 0 ? 0 : dot / ab2));
+            return new PointF(a.X + ab.X * t, a.Y + ab.Y * t);
+        }
+
+        public static PointF ClosestPointOnTriangle(PointF p, PointF a, PointF b, PointF c)
+        {
+            var ab = ClosestPointOnSegment(p, a, b);
+            var bc = ClosestPointOnSegment(p, b, c);
+            var ca = ClosestPointOnSegment(p, c, a);
+
+            float d1 = DistanceSquared(p, ab);
+            float d2 = DistanceSquared(p, bc);
+            float d3 = DistanceSquared(p, ca);
+
+            return d1 < d2 && d1 < d3 ? ab : (d2 < d3 ? bc : ca);
+        }
+        public static float DistanceSquared(PointF p1, PointF p2)
+        {
+            float dx = p1.X - p2.X;
+            float dy = p1.Y - p2.Y;
+            return dx * dx + dy * dy;
+        }
+
+
+        public static PointF RotatePoint(PointF origin, PointF point, float angleDegrees)
+        {
+            double angleRadians = angleDegrees * Math.PI / 180.0;
+            double cosA = Math.Cos(angleRadians);
+            double sinA = Math.Sin(angleRadians);
+
+            float dx = point.X - origin.X;
+            float dy = point.Y - origin.Y;
+
+            float xNew = (float)(dx * cosA - dy * sinA) + origin.X;
+            float yNew = (float)(dx * sinA + dy * cosA) + origin.Y;
+
+            return new PointF(xNew, yNew);
+        }
+
+        public static bool PointInTriangle(PointF p, PointF p0, PointF p1, PointF p2)
+        {
+            float s = p0.Y * p2.X - p0.X * p2.Y + (p2.Y - p0.Y) * p.X + (p0.X - p2.X) * p.Y;
+            float t = p0.X * p1.Y - p0.Y * p1.X + (p0.Y - p1.Y) * p.X + (p1.X - p0.X) * p.Y;
+
+            if ((s < 0) != (t < 0))
+                return false;
+
+            float A = -p1.Y * p2.X + p0.Y * (p2.X - p1.X) + p0.X * (p1.Y - p2.Y) + p1.X * p2.Y;
+            return A < 0 ? (s <= 0 && s + t >= A) : (s >= 0 && s + t <= A);
+        }
+
+        public static (double X, double Y, double Z) BarycentricCoords(PointF p, PointF a, PointF b, PointF c)
+        {
+            double denom = (b.Y - c.Y) * (a.X - c.X) + (c.X - b.X) * (a.Y - c.Y);
+            double w1 = ((b.Y - c.Y) * (p.X - c.X) + (c.X - b.X) * (p.Y - c.Y)) / denom;
+            double w2 = ((c.Y - a.Y) * (p.X - c.X) + (a.X - c.X) * (p.Y - c.Y)) / denom;
+            double w3 = 1 - w1 - w2;
+            return (w1, w2, w3);
+        }
+
         public static void ToggleFormVisibilityWithoutActivating(Form form, bool show)
         {
             if (form == null || form.IsDisposed)
@@ -403,33 +469,6 @@ namespace CuoreUI
 
         public static class Win32
         {
-            [DllImport("user32.dll")]
-            public static extern IntPtr GetDC(IntPtr hwnd);
-
-            [DllImport("user32.dll")]
-            public static extern int ReleaseDC(IntPtr hwnd, IntPtr hdc);
-
-            [DllImport("gdi32.dll")]
-            public static extern uint GetPixel(IntPtr hdc, int nXPos, int nYPos);
-
-            [DllImport("user32.dll")]
-            public static extern bool GetCursorPos(out POINT lpPoint);
-
-            [DllImport("user32.dll")]
-            public static extern short GetAsyncKeyState(int vKey);
-
-            public static bool isClickingLeftMouse()
-            {
-                return (GetAsyncKeyState(0x01) & 0x8000) != 0;
-            }
-
-            [StructLayout(LayoutKind.Sequential)]
-            public struct POINT
-            {
-                public int X;
-                public int Y;
-            }
-
             [DllImport("user32.dll")]
             public static extern int SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
@@ -567,8 +606,6 @@ namespace CuoreUI
                 [System.Runtime.InteropServices.DllImport("user32.dll")]
                 public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
-                internal const int LWA_ALPHA = 0x2;
-
                 [DllImport("user32.dll")]
                 public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
@@ -663,9 +700,7 @@ namespace CuoreUI
                         public byte AlphaFormat;
                     }
 
-                    public const Int32 ULW_COLORKEY = 0x00000001;
                     public const Int32 ULW_ALPHA = 0x00000002;
-                    public const Int32 ULW_OPAQUE = 0x00000004;
 
                     public const byte AC_SRC_OVER = 0x00;
                     public const byte AC_SRC_ALPHA = 0x01;

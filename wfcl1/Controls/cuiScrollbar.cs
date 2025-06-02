@@ -189,14 +189,6 @@ namespace CuoreUI.Controls
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-            if (targetControl is cuiDataGridView gridview && gridview.Controls.Contains(this) == false && DesignMode == false)
-            {
-                gridview.Controls.Add(this);
-            }
-            else
-            {
-            }
-
             if (targetControl != null)
             {
                 if (Location != new Point(targetControl.Right - this.Width, targetControl.Top))

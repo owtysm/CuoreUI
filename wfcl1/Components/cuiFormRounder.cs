@@ -281,15 +281,18 @@ namespace CuoreUI.Components
         {
             if (!DesignMode || TargetForm?.Opacity != 1)
             {
-                if (roundedFormObj != null && roundedFormObj != null && roundedFormObj.IsDisposed == false)
+                if (roundedFormObj != null && roundedFormObj.IsDisposed == false)
                 {
                     // for opacity support
                     Region region = new Region(roundedFormObj.ClientRectangle);
-                    Region offsetRegion = TargetForm.Region.Clone();
+                    Region offsetRegion = TargetForm.Region?.Clone();
 
-                    offsetRegion.Translate(1, 1);
+                    if (offsetRegion != null)
+                    {
+                        offsetRegion.Translate(1, 1);
+                        region.Exclude(offsetRegion);
+                    }
 
-                    region.Exclude(offsetRegion);
                     roundedFormObj.Region = region;
                 }
             }

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -21,11 +22,25 @@ namespace CuoreUI.Controls
         {
             get
             {
-                return Regex.Escape(privateContent);
+                if (privateContent.Length > 1)
+                {
+                    return Regex.Escape(privateContent);
+                }
+
+                return privateContent;
             }
             set
             {
-                privateContent = Regex.Unescape(value);
+                try
+                {
+
+                    privateContent = Regex.Unescape(value);
+                }
+                catch (ArgumentException)
+                {
+                    // there was probably a backslash which wasnt escaped?
+                    privateContent = value;
+                }
                 Invalidate();
             }
         }
