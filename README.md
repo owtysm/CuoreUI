@@ -36,7 +36,9 @@ If you want to talk, don't hesitate to reach out! I respect everyone.
 
 ![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**
 
-## 🖋️ Versions
-**We use the following format:** `yyyy.mm.dd.hotfix`.
-> An example version would be `2022.9.2.2`. It means the update came out on the 2nd day of the 9th month in the year 2022 - that's September 2nd, 2022 and 2 hotfixes were made. 
+## 🕸️Website
+Psst, we have a website, and it's code is available aswell.
 
+🕸️Visit it here: https://CuoreUI.github.io/
+
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [`CuoreUI/CuoreUI.github.io`](https://github.com/CuoreUI/CuoreUI.github.io)
