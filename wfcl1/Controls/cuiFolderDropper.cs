@@ -34,7 +34,7 @@ namespace CuoreUI.Controls
 
         private Color privatePanelOutlineColor = Color.FromArgb(128, 128, 128, 128);
         [Category("CuoreUI")]
-        public Color PanelOutlineColor
+        public Color DashedOutlineColor
         {
             get
             {
@@ -47,7 +47,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private float privateOutlineThickness = 1;
+        private float privateOutlineThickness = 1.5f;
         [Category("CuoreUI")]
         public float OutlineThickness
         {
@@ -77,7 +77,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private int privateDashLength = 8;
+        private int privateDashLength = 4;
         [Category("CuoreUI")]
         public int DashLength
         {
@@ -178,9 +178,11 @@ namespace CuoreUI.Controls
             modifiedCR.Width -= 1;
             modifiedCR.Height -= 1;
 
+            modifiedCR.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
+
             using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding))
             using (SolidBrush brush = new SolidBrush(PanelColor))
-            using (Pen pen = new Pen(PanelOutlineColor, OutlineThickness) { DashStyle = DashedOutline ? DashStyle.Dash : DashStyle.Solid })
+            using (Pen pen = new Pen(DashedOutlineColor, OutlineThickness) { DashStyle = DashedOutline ? DashStyle.Dash : DashStyle.Solid })
             using (SolidBrush textBrush = new SolidBrush(hover ? HoverForeColor : NormalForeColor))
             {
                 if (DashedOutline)

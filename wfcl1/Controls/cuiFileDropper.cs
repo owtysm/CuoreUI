@@ -31,7 +31,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePanelOutlineColor = Color.FromArgb(128, 128, 128, 128);
-        public Color PanelOutlineColor
+        public Color DashedOutlineColor
         {
             get
             {
@@ -169,9 +169,11 @@ namespace CuoreUI.Controls
             modifiedCR.Width -= 1;
             modifiedCR.Height -= 1;
 
+            modifiedCR.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
+
             using (GraphicsPath roundBackground = Helper.RoundRect(modifiedCR, Rounding))
             using (SolidBrush brush = new SolidBrush(PanelColor))
-            using (Pen pen = new Pen(PanelOutlineColor, OutlineThickness) { DashStyle = DashedOutline ? DashStyle.Dash : DashStyle.Solid })
+            using (Pen pen = new Pen(DashedOutlineColor, OutlineThickness) { DashStyle = DashedOutline ? DashStyle.Dash : DashStyle.Solid })
             using (SolidBrush textBrush = new SolidBrush(hover ? HoverForeColor : NormalForeColor))
             {
                 if (DashedOutline)
@@ -338,6 +340,6 @@ namespace CuoreUI.Controls
 
         public bool OneFileDropped { get; private set; } = false;
         public string FileName;
-        public string[] FileNames = Array.Empty<string>();
+        public string[] FileNames { get; } = Array.Empty<string>();
     }
 }
