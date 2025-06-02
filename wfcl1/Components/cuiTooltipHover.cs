@@ -46,6 +46,36 @@ namespace CuoreUI.Components
             }
         }
 
+        private Size privatePositionOffset = new Size(0, 0);
+        public Size TooltipPositionOffset
+        {
+            get => privatePositionOffset;
+            set
+            {
+                privatePositionOffset = value;
+            }
+        }
+
+        public enum Position
+        {
+            [Description("Literally where the cursor is")]
+            Custom,
+
+            [Description("Above the cursor")]
+            Top,
+
+            [Description("To the left of the cursor")]
+            Left,
+
+            [Description("To the right of the cursor")]
+            Right,
+
+            [Description("Below the cursor")]
+            Bottom
+        }
+
+        public Position TooltipPosition { get; set; } = Position.Top;
+
         public Color ForeColor
         {
             get
@@ -86,7 +116,30 @@ namespace CuoreUI.Components
                     break;
                 }
 
-                tooltipForm.Location = Cursor.Position - new Size((tooltipForm.Width / 2), -1);
+                Size offset = Size.Empty;
+
+                if (TooltipPosition == Position.Custom)
+                {
+                    offset = new Size((tooltipForm.Width / 2), -1);
+                }
+                else if (TooltipPosition == Position.Top)
+                {
+                    offset = new Size((tooltipForm.Width / 2), 32);
+                }
+                else if (TooltipPosition == Position.Left)
+                {
+                    offset = new Size(tooltipForm.Width, tooltipForm.Height/2);
+                }
+                else if (TooltipPosition == Position.Right)
+                {
+                    offset = new Size(0, tooltipForm.Height / 2);
+                }
+                else if (TooltipPosition == Position.Bottom)
+                {
+                    offset = new Size((tooltipForm.Width / 2), -24);
+                }
+
+                tooltipForm.Location = Cursor.Position - offset + privatePositionOffset;
             }
 
             ToggleFormVisibilityWithoutActivating(tooltipForm, false);
