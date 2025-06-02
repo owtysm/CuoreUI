@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -22,6 +23,8 @@ namespace CuoreUI.Controls
 
         Image cachedImage = null;
         private Image privateContent = null;
+
+        [Category("CuoreUI")]
         public Image Content
         {
             get
@@ -67,6 +70,8 @@ namespace CuoreUI.Controls
         }
 
         private Padding privateCornerRadius = new Padding(8, 8, 8, 8);
+
+        [Category("CuoreUI")]
         public Padding Rounding
         {
             get
@@ -122,6 +127,8 @@ namespace CuoreUI.Controls
         private TextureBrush cachedImageBrush = null;
 
         private Color privateImageTint = Color.White;
+
+        [Category("CuoreUI")]
         public Color ImageTint
         {
             get
@@ -166,6 +173,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRotation = 0;
+
+        [Category("CuoreUI")]
         public int Rotation
         {
             get
@@ -184,6 +193,8 @@ namespace CuoreUI.Controls
 
         // empty to not affect already existing projects that use cuoreui and have a picturebox
         private Color privatePanelOutlineColor = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color PanelOutlineColor
         {
             get
@@ -198,6 +209,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get

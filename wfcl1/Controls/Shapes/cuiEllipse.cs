@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,6 +8,8 @@ namespace CuoreUI.Controls.Shapes
     public partial class cuiEllipse : UserControl
     {
         private Color privateOutlineColor = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color OutlineColor
         {
             get
@@ -21,6 +24,8 @@ namespace CuoreUI.Controls.Shapes
         }
 
         private Color privatePanelColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PanelColor
         {
             get
@@ -35,6 +40,8 @@ namespace CuoreUI.Controls.Shapes
         }
 
         private int privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
         public int OutlineThickness
         {
             get

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -35,6 +36,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 8;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -64,6 +67,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateItemRounding = 8;
+
+        [Category("CuoreUI")]
         public int ItemRounding
         {
             get
@@ -93,6 +98,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBackgroundColor = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color BackgroundColor
         {
             get
@@ -107,6 +114,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateItemHoveredBackgroundColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color ItemHoverBackgroundColor
         {
             get
@@ -121,6 +130,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateItemHoveredForegroundColor = Color.Gray;
+
+        [Category("CuoreUI")]
         public Color ItemHoverForegroundColor
         {
             get
@@ -135,6 +146,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateForegroundColor = Color.DimGray;
+
+        [Category("CuoreUI")]
         public Color ForegroundColor
         {
             get
@@ -149,6 +162,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateItemSelectedBackgroundColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ItemSelectedBackgroundColor
         {
             get
@@ -163,6 +178,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateSelectedForegroundColor = Color.FromArgb(11, 11, 12);
+
+        [Category("CuoreUI")]
         public Color SelectedForegroundColor
         {
             get

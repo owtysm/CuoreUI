@@ -16,6 +16,8 @@ namespace CuoreUI.Components
         }
 
         private Form privateTargetForm;
+
+        [Category("CuoreUI")]
         public Form TargetForm
         {
             get => privateTargetForm;
@@ -44,6 +46,8 @@ namespace CuoreUI.Components
         }
 
         private Image privateImage;
+
+        [Category("CuoreUI")]
         public Image Image
         {
             get => privateImage;
@@ -91,6 +95,8 @@ namespace CuoreUI.Components
         }
 
         private string privateDescription = "";
+
+        [Category("CuoreUI")]
         public string Description
         {
             get
@@ -147,6 +153,8 @@ namespace CuoreUI.Components
 
         private int privateNumericValue = 0;
 
+        [Category("CuoreUI")]
+
         [Description("0 or <0 will NOT show in the Taskbar.")]
         public int NumericValue
         {
@@ -175,8 +183,13 @@ namespace CuoreUI.Components
             }
         }
 
+        [Category("CuoreUI")]
         public Color NumericBackColor { get; set; } = Color.Red;
+
+        [Category("CuoreUI")]
         public Color NumericForeColor { get; set; } = Color.White;
+
+        [Category("CuoreUI")]
         public Font NumericFont { get; set; } = new Font("Microsoft YaHei UI", 8, FontStyle.Bold);
 
         private Image GenerateDynamicNumericBadge()
@@ -224,6 +237,5 @@ namespace CuoreUI.Components
 
             return bmp;
         }
-
     }
 }

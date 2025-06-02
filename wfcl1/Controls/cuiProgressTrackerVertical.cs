@@ -18,6 +18,7 @@ namespace CuoreUI.Controls
 
         private string[] tasks = new string[] { "Task1", "Task2", "Task3", "Task4" };
 
+        [Category("CuoreUI")]
         [Description("Tasks in text separated by new lines.")]
         public string[] Tasks
         {
@@ -37,6 +38,7 @@ namespace CuoreUI.Controls
 
         public int privateTasksProgress = 2;
 
+        [Category("CuoreUI")]
         [Description("How many tasks are completed.")]
         public int TasksProgress
         {
@@ -52,6 +54,8 @@ namespace CuoreUI.Controls
         }
 
         public int privateLineThickness = 4;
+
+        [Category("CuoreUI")]
         public int LineThickness
         {
             get
@@ -66,6 +70,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateShowSymbols = true;
+
+        [Category("CuoreUI")]
         [Description("Whether to show the checkmark symbol on the completed tasks.")]
         public bool ShowSymbols
         {
@@ -81,6 +87,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCompletedColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         [Description("The primary color of the control, the color of completed tasks and current task.")]
         public Color CompletedColor
         {
@@ -96,6 +104,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCurrentTaskForeColor = Color.FromArgb(128, 128, 128);
+
+        [Category("CuoreUI")]
         [Description("The color of the text of the current task.")]
         public Color CurrentTaskForeColor
         {
@@ -111,6 +121,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateTaskForeColor = Color.FromArgb(128, 128, 128);
+
+        [Category("CuoreUI")]
         [Description("The color of the text for every task other than the current task.")]
         public Color TaskForeColor
         {
@@ -126,6 +138,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateTrackColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         [Description("The color of the track of the uncompleted tasks.")]
         public Color TrackColor
         {
@@ -141,6 +155,8 @@ namespace CuoreUI.Controls
         }
 
         int privateRounding = 10;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -155,6 +171,8 @@ namespace CuoreUI.Controls
         }
 
         bool privateAutoRounding = true;
+
+        [Category("CuoreUI")]
         public bool AutoRounding
         {
             get
@@ -168,6 +186,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         [Description("Read-only. Returns the name of the current task (as string).")]
         public string CurrentTask
         {

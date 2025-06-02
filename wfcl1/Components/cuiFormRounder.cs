@@ -18,6 +18,8 @@ namespace CuoreUI.Components
         public RoundedForm roundedFormObj;
 
         private Form privateTargetForm;
+
+        [Category("CuoreUI")]
         public Form TargetForm
         {
             get => privateTargetForm;
@@ -189,6 +191,8 @@ namespace CuoreUI.Components
         }
 
         private int privateRounding = 8;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get => privateRounding;
@@ -246,6 +250,8 @@ namespace CuoreUI.Components
         }
 
         private Color privateOutlineColor = Color.FromArgb(32, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color OutlineColor
         {
             get => privateOutlineColor;
@@ -381,6 +387,8 @@ namespace CuoreUI.Components
         }
 
         private bool privateEnhanceCorners = false;
+
+        [Category("CuoreUI")]
         [Description("EXPERIMENTAL! Uses a bitmap approach to smoothen out the insides of the form, so that there isn't a 1px border the color of TargetForm.BackColor around the TargetForm")]
         public bool EnhanceCorners
         {
@@ -468,8 +476,8 @@ namespace CuoreUI.Components
                     TargetForm.Region = null;
                 }
             }
-            targetFormActivating = false;
 
+            targetFormActivating = false;
         }
     }
 }

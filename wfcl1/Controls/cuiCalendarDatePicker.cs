@@ -22,6 +22,8 @@ namespace CuoreUI.Controls
         }
 
         private Themes privateTheme = Themes.Light;
+
+        [Category("CuoreUI")]
         public Themes Theme
         {
             get
@@ -35,6 +37,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateEnableThemeChangeButton = true;
+
+        [Category("CuoreUI")]
         [Description("Lets the USER toggle the theme between Light and Dark with a button.")]
         public bool EnableThemeChangeButton
         {
@@ -88,6 +92,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 8;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -102,6 +108,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBackgroundColor = Color.FromArgb(32, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color NormalBackground
         {
             get
@@ -116,6 +124,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverBackground = Color.FromArgb(50, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color HoverBackground
         {
             get => privateHoverBackground;
@@ -127,6 +137,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedBackground = Color.FromArgb(80, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color PressedBackground
         {
             get => privatePressedBackground;
@@ -138,6 +150,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalOutline = Color.FromArgb(150, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color NormalOutline
         {
             get => privateNormalOutline;
@@ -149,6 +163,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverOutline = Color.FromArgb(180, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color HoverOutline
         {
             get => privateHoverOutline;
@@ -160,6 +176,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedOutline = Color.FromArgb(210, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color PressedOutline
         {
             get => privatePressedOutline;
@@ -171,6 +189,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1.5f;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get => privateOutlineThickness;
@@ -182,6 +202,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateShowIcon = true;
+
+        [Category("CuoreUI")]
         public bool ShowIcon
         {
             get
@@ -196,6 +218,8 @@ namespace CuoreUI.Controls
         }
 
         private Image privateIcon = Resources.calendar;
+
+        [Category("CuoreUI")]
         public Image Icon
         {
             get
@@ -210,6 +234,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateImageTint = Color.Gray;
+
+        [Category("CuoreUI")]
         public Color IconTint
         {
             get
@@ -276,6 +302,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public event EventHandler DateChanged;
 
         StringFormat stringFormat = new StringFormat() { Alignment = StringAlignment.Center };
@@ -364,6 +391,5 @@ namespace CuoreUI.Controls
             Refresh();
             base.OnMouseUp(e);
         }
-
     }
 }

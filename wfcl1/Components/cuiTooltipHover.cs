@@ -23,6 +23,7 @@ namespace CuoreUI.Components
         }
 
         private Control privateTargetControl;
+        [Category("CuoreUI")]
         public Control TargetControl
         {
             get => privateTargetControl;
@@ -37,6 +38,7 @@ namespace CuoreUI.Components
         }
 
         private string privateContent = "Tooltip Text";
+        [Category("CuoreUI")]
         public string Content
         {
             get => privateContent;
@@ -47,6 +49,7 @@ namespace CuoreUI.Components
         }
 
         private Size privatePositionOffset = new Size(0, 0);
+        [Category("CuoreUI")]
         public Size TooltipPositionOffset
         {
             get => privatePositionOffset;
@@ -56,26 +59,21 @@ namespace CuoreUI.Components
             }
         }
 
+        [Category("CuoreUI")]
+        [Description("Where the tooltip should show up, relative to where the cursor is.")]
         public enum Position
         {
-            [Description("Literally where the cursor is")]
             Custom,
-
-            [Description("Above the cursor")]
             Top,
-
-            [Description("To the left of the cursor")]
             Left,
-
-            [Description("To the right of the cursor")]
             Right,
-
-            [Description("Below the cursor")]
             Bottom
         }
 
+        [Category("CuoreUI")]
         public Position TooltipPosition { get; set; } = Position.Top;
 
+        [Category("CuoreUI")]
         public Color ForeColor
         {
             get
@@ -88,6 +86,7 @@ namespace CuoreUI.Components
             }
         }
 
+        [Category("CuoreUI")]
         public Color BackColor
         {
             get
@@ -128,7 +127,7 @@ namespace CuoreUI.Components
                 }
                 else if (TooltipPosition == Position.Left)
                 {
-                    offset = new Size(tooltipForm.Width, tooltipForm.Height/2);
+                    offset = new Size(tooltipForm.Width, tooltipForm.Height / 2);
                 }
                 else if (TooltipPosition == Position.Right)
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -13,6 +14,8 @@ namespace CuoreUI.Controls
         Point lastMousePoint = new Point(-1, -1);
 
         Form privateTargetForm;
+
+        [Category("CuoreUI")]
         public Form TargetForm
         {
             get
@@ -26,6 +29,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateGripColor = Color.Gray;
+
+        [Category("CuoreUI")]
         public Color GripColor
         {
             get
@@ -40,6 +45,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateGripTexture = true;
+
+        [Category("CuoreUI")]
         public bool GripTexture
         {
             get
@@ -131,6 +138,8 @@ namespace CuoreUI.Controls
         }
 
         private Size privateTextureOffset = new Size(-2, -2);
+
+        [Category("CuoreUI")]
         public Size TextureOffset
         {
             get
@@ -174,6 +183,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateGripSize = 2;
+
+        [Category("CuoreUI")]
         public int GripSize
         {
             get
@@ -188,6 +199,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateSkipBottomRightSquare = false;
+
+        [Category("CuoreUI")]
         public bool SkipBottomRightSquare
         {
             get

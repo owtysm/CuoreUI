@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -21,6 +22,8 @@ namespace CuoreUI.Controls
         }
 
         Color privatePanelColor1 = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PanelColor1
         {
             get
@@ -35,6 +38,8 @@ namespace CuoreUI.Controls
         }
 
         Color privatePanelColor2 = Color.Transparent;
+
+        [Category("CuoreUI")]
         public Color PanelColor2
         {
             get
@@ -49,6 +54,8 @@ namespace CuoreUI.Controls
         }
 
         Color privatePanelOutlineColor1 = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PanelOutlineColor1
         {
             get
@@ -63,6 +70,8 @@ namespace CuoreUI.Controls
         }
 
         Color privatePanelOutlineColor2 = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PanelOutlineColor2
         {
             get
@@ -77,6 +86,8 @@ namespace CuoreUI.Controls
         }
 
         float privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get
@@ -91,6 +102,8 @@ namespace CuoreUI.Controls
         }
 
         Padding privateRounding = new Padding(8, 8, 8, 8);
+
+        [Category("CuoreUI")]
         public Padding Rounding
         {
             get
@@ -105,6 +118,8 @@ namespace CuoreUI.Controls
         }
 
         float privateGradientAngle = 0;
+
+        [Category("CuoreUI")]
         public float GradientAngle
         {
             get

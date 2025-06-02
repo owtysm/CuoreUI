@@ -16,12 +16,18 @@ namespace CuoreUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
         }
 
+        [Category("CuoreUI")]
         public bool OnlyDigit { get; set; } = false;
 
+        [Category("CuoreUI")]
         public event EventHandler FinishedTypingContent;
+
+        [Category("CuoreUI")]
         public event EventHandler NotFinishedTypingContent;
 
         private string privateContent = "";
+
+        [Category("CuoreUI")]
         public string Content
         {
             get
@@ -48,6 +54,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateBoxAmount = 6;
+
+        [Category("CuoreUI")]
         public int BoxAmount
         {
             get
@@ -68,6 +76,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateUnfocusedColor = Color.FromArgb(32, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color UnfocusedColor
         {
             get
@@ -82,6 +92,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateFocusedColor = Color.FromArgb(32, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color FocusedColor
         {
             get
@@ -96,6 +108,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateUnfocusedBorderColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color UnfocusedBorderColor
         {
             get
@@ -110,6 +124,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateFocusedBorderColor = Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color FocusedBorderColor
         {
             get
@@ -124,6 +140,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateUnfocusedTextColor = Color.Gray;
+
+        [Category("CuoreUI")]
         public Color UnfocusedTextColor
         {
             get
@@ -138,6 +156,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateFocusedTextColor = Color.Black;
+
+        [Category("CuoreUI")]
         public Color FocusedTextColor
         {
             get
@@ -152,6 +172,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 8;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get

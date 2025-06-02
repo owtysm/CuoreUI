@@ -32,9 +32,11 @@ namespace CuoreUI.Controls
             Invalidate();
         }
 
+        [Category("CuoreUI")]
         public bool AllowNoTabs { get; set; } = false;
 
         private Color privateBackgroundColor = Color.Empty;
+        [Category("CuoreUI")]
         public Color BackgroundColor
         {
             get
@@ -49,6 +51,7 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 8;
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -63,6 +66,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateUnselectedTabBackColor = Color.FromArgb(32, 128, 128, 128);
+        [Category("CuoreUI")]
         public Color UnselectedTabBackColor
         {
             get
@@ -77,6 +81,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateSelectedTabBackColor = CuoreUI.Drawing.PrimaryColor;
+        [Category("CuoreUI")]
         public Color SelectedTabBackColor
         {
             get
@@ -91,6 +96,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoveredTabBackColor = Color.FromArgb(64, 128, 128, 128);
+        [Category("CuoreUI")]
         public Color HoveredTabBackColor
         {
             get
@@ -107,6 +113,7 @@ namespace CuoreUI.Controls
         //
 
         private Color privateUnselectedTabTextBackColor = Color.Gray;
+        [Category("CuoreUI")]
         public Color UnselectedTabTextBackColor
         {
             get
@@ -121,6 +128,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateSelectedTabTextBackColor = Color.White;
+        [Category("CuoreUI")]
         public Color SelectedTabTextBackColor
         {
             get
@@ -136,6 +144,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoveredTabTextBackColor = Color.FromArgb(64, 64, 64);
+        [Category("CuoreUI")]
         public Color HoveredTabTextBackColor
         {
             get
@@ -150,6 +159,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateDeletionTabBackgroundColor = Color.Crimson;
+        [Category("CuoreUI")]
         public Color DeletionTabBackgroundColor
         {
             get
@@ -164,6 +174,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateDeletionColor = Color.White;
+        [Category("CuoreUI")]
         public Color DeletionColor
         {
             get
@@ -178,6 +189,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateAddButtonBackgroundColor = Color.FromArgb(128, 0, 0, 0);
+        [Category("CuoreUI")]
         public Color AddButtonBackgroundColor
         {
             get
@@ -191,6 +203,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateAddButtonColor = Color.White;
+        [Category("CuoreUI")]
         public Color AddButtonColor
         {
             get
@@ -204,6 +217,7 @@ namespace CuoreUI.Controls
         }
 
         private bool privateShowAddTabButton = true;
+        [Category("CuoreUI")]
         public bool ShowAddTabButton
         {
             get
@@ -217,6 +231,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public Cursor HoverCursor { get; set; } = Cursors.Hand;
 
         #region VisualProperties
@@ -366,12 +381,14 @@ namespace CuoreUI.Controls
 
         }
 
+        [Category("CuoreUI")]
         public string tabNamingConvention
         {
             get;
             set;
         } = "tabPage";
 
+        [Category("CuoreUI")]
         public string GetUniqueTabName()
         {
             int i = 1;
@@ -434,7 +451,8 @@ namespace CuoreUI.Controls
             SelectedTab = tabPage;
         }
 
-        [Description("sender is the added tab!")]
+        [Category("CuoreUI")]
+        [Description("Fires whenever user clicks the 'add tab' button (sender is the added tab!).")]
         [Browsable(true)]
         public event EventHandler TabAdded;
 

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -13,7 +14,16 @@ namespace CuoreUI.Controls
             ForeColor = Color.FromArgb(128, 128, 128, 128);
         }
 
+        [Category("CuoreUI")]
+        public override Color ForeColor 
+        {
+            get => base.ForeColor; 
+            set => base.ForeColor = value;
+        }
+
         private float privateThickness = 0.5f;
+
+        [Category("CuoreUI")]
         public float Thickness
         {
             get
@@ -28,6 +38,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateVertical = false;
+
+        [Category("CuoreUI")]
         public bool Vertical
         {
             get
@@ -42,6 +54,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateSeparatorMargin = 8;
+
+        [Category("CuoreUI")]
         public int SeparatorMargin
         {
             get

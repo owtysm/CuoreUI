@@ -13,6 +13,8 @@ namespace CuoreUI.Controls
         Timer designerExclusiveRotationTimer = new Timer();
 
         private float privateRotateSpeed = 2;
+
+        [Category("CuoreUI")]
         public float RotateSpeed
         {
             get
@@ -71,6 +73,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateArcColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ArcColor
         {
             get
@@ -85,6 +89,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateRingColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color RingColor
         {
             get
@@ -99,6 +105,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateRotation = 0;
+
+        [Category("CuoreUI")]
         public float Rotation
         {
             get
@@ -117,6 +125,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateArcSize = 5;
+
+        [Category("CuoreUI")]
         public float Thickness
         {
             get

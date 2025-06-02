@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public ScrollableControl TargetControl
         {
             get
@@ -116,6 +118,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 5;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -130,6 +134,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBackground = Color.Transparent;
+
+        [Category("CuoreUI")]
         public Color Background
         {
             get
@@ -144,6 +150,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateThumbColor = Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ThumbColor
         {
             get
@@ -158,6 +166,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoveredThumbColor = Drawing.TranslucentPrimaryColor;
+
+        [Category("CuoreUI")]
         public Color HoveredThumbColor
         {
             get
@@ -172,6 +182,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedThumbColor = Drawing.TranslucentPrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PressedThumbColor
         {
             get

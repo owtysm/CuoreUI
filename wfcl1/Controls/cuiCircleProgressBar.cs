@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -14,6 +15,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateBorderWidth = 12;
+
+        [Category("CuoreUI")]
         public int BorderWidth
         {
             get
@@ -28,6 +31,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateProgressValue = 50;
+
+        [Category("CuoreUI")]
         public int ProgressValue
         {
             get
@@ -42,6 +47,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateMinimumValue = 0;
+
+        [Category("CuoreUI")]
         public int MinimumValue
         {
             get
@@ -56,6 +63,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateMaximumValue = 100;
+
+        [Category("CuoreUI")]
         public int MaximumValue
         {
             get
@@ -70,6 +79,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color NormalColor
         {
             get
@@ -84,6 +95,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateProgressColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ProgressColor
         {
             get
@@ -98,6 +111,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateRoundedEnds = true;
+
+        [Category("CuoreUI")]
         public bool RoundedEnds
         {
             get

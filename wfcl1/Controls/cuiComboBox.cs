@@ -15,6 +15,7 @@ namespace CuoreUI.Controls
         private string privateSelectedItem = string.Empty;
         private string[] privateItems = new string[0];
 
+        [Category("CuoreUI")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public string[] Items
         {
@@ -28,9 +29,13 @@ namespace CuoreUI.Controls
 
         DateTime lastClosed = DateTime.MinValue;
 
+        [Category("CuoreUI")]
         public event EventHandler SelectedIndexChanged;
+
+        [Category("CuoreUI")]
         public Cursor ButtonCursor { get; set; } = Cursors.Arrow;
 
+        [Category("CuoreUI")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string SelectedItem
         {
@@ -157,6 +162,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBackgroundColor = Color.FromArgb(255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color BackgroundColor
         {
             get
@@ -171,6 +178,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateOutlineColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color OutlineColor
         {
             get
@@ -185,6 +194,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateDropDownBackgroundColor = Color.White;
+
+        [Category("CuoreUI")]
         public Color DropDownBackgroundColor
         {
             get
@@ -199,6 +210,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateDropDownOutlineColor = Color.FromArgb(30, 255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color DropDownOutlineColor
         {
             get
@@ -213,6 +226,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get
@@ -229,6 +244,8 @@ namespace CuoreUI.Controls
         public bool isBrowsingOptions = false;
 
         private string privateNoSelectionText = "None";
+
+        [Category("CuoreUI")]
         public string NoSelectionText
         {
             get
@@ -246,6 +263,8 @@ namespace CuoreUI.Controls
         }
 
         private string privateNoSelectionDropdownText = "Empty";
+
+        [Category("CuoreUI")]
         public string NoSelectionDropdownText
         {
             get
@@ -327,6 +346,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateExpandColor = Color.Gray;
+
+        [Category("CuoreUI")]
         public Color ExpandArrowColor
         {
             get
@@ -366,6 +387,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public int SelectedIndex => Array.IndexOf(privateItems, SelectedItem);
 
         private void cuiComboBox_Click(object sender, EventArgs e)
@@ -515,36 +537,43 @@ namespace CuoreUI.Controls
 
         // dropdown buttons
 
+        [Category("CuoreUI")]
         public int Rounding
         {
             get; set;
         } = 8;
 
+        [Category("CuoreUI")]
         public Color ButtonNormalBackground
         {
             get; set;
         } = CuoreUI.Drawing.PrimaryColor;
 
+        [Category("CuoreUI")]
         public Color ButtonHoverBackground
         {
             get; set;
         } = CuoreUI.Drawing.TranslucentPrimaryColor;
 
+        [Category("CuoreUI")]
         public Color ButtonPressedBackground
         {
             get; set;
         } = CuoreUI.Drawing.PrimaryColor;
 
+        [Category("CuoreUI")]
         public Color ButtonNormalOutline
         {
             get; set;
         } = Color.Empty;
 
+        [Category("CuoreUI")]
         public Color ButtonHoverOutline
         {
             get; set;
         } = Color.Empty;
 
+        [Category("CuoreUI")]
         public Color ButtonPressedOutline
         {
             get; set;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -39,6 +40,7 @@ namespace CuoreUI.Controls
         }
 
         private int privateWheelThickness = 16;
+        [Category("CuoreUI")]
         public int WheelThickness
         {
             get
@@ -250,6 +252,7 @@ namespace CuoreUI.Controls
         // 2 - sat/val triangle
         byte state = 0;
 
+        [Category("CuoreUI")]
         public event EventHandler ContentChanged;
 
         protected override void OnLoad(EventArgs e)
@@ -260,6 +263,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateContent = Color.Red;
+        [Category("CuoreUI")]
         public Color Content
         {
             get
@@ -396,6 +400,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public event EventHandler SelectedColor;
 
         protected override void OnMouseUp(MouseEventArgs e)

@@ -16,6 +16,8 @@ namespace CuoreUI.Components
         }
 
         private Control privateTargetControl;
+
+        [Category("CuoreUI")]
         public Control TargetControl
         {
             get
@@ -56,6 +58,8 @@ namespace CuoreUI.Components
         }
 
         private float privateBlurAmount = 1.5f;
+
+        [Category("CuoreUI")]
         public float BlurAmount
         {
             get

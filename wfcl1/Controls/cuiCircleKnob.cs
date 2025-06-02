@@ -61,6 +61,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateTrackColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color TrackColor
         {
             get
@@ -76,6 +78,8 @@ namespace CuoreUI.Controls
 
         private float privateHalfTrackThickness = 0;
         private int privateTrackThickness = 2;
+
+        [Category("CuoreUI")]
         public int TrackThickness
         {
             get
@@ -92,6 +96,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateThumbColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ThumbColor
         {
             get
@@ -109,8 +115,10 @@ namespace CuoreUI.Controls
         private float privateMinValue = 0;
         private float privateMaxValue = 360;
 
+        [Category("CuoreUI")]
         public event EventHandler ValueChanged;
 
+        [Category("CuoreUI")]
         public float Value
         {
             get
@@ -131,6 +139,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public float MinValue
         {
             get
@@ -148,6 +157,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public float MaxValue
         {
             get
@@ -166,6 +176,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateShowValueText = true;
+
+        [Category("CuoreUI")]
         public bool ShowValueText
         {
             get
@@ -187,6 +199,8 @@ namespace CuoreUI.Controls
         }
 
         private KnobStyles privateKnobStyle = KnobStyles.Combined;
+
+        [Category("CuoreUI")]
         public KnobStyles KnobStyle
         {
             get

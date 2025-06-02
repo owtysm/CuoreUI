@@ -15,6 +15,7 @@ namespace CuoreUI.Controls
         }
 
         private Padding privateRounding = new Padding(4);
+
         [Category("CuoreUI")]
         [Description("How round will the inside border be.")]
         public Padding Rounding
@@ -31,6 +32,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBorderColor = Color.FromArgb(64, 128, 128, 128);
+
         [Category("CuoreUI")]
         [Description("The color of the inner border.")]
         public Color BorderColor
@@ -47,6 +49,7 @@ namespace CuoreUI.Controls
         }
 
         private string privateContent = "cuiGroupBox";
+
         [Category("CuoreUI")]
         [Description("The text that appears on top left.")]
         public string Content

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -19,6 +20,7 @@ namespace CuoreUI.Controls
         private Color privateStarColor = CuoreUI.Drawing.PrimaryColor;
         private int privateStarBorderSize = 1;
 
+        [Category("CuoreUI")]
         public int StarCount
         {
             get
@@ -32,6 +34,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public int Rating
         {
             get
@@ -45,6 +48,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public Color StarColor
         {
             get
@@ -58,6 +62,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public int StarBorderSize
         {
             get
@@ -72,6 +77,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateAllowUserInteraction = true;
+
+        [Category("CuoreUI")]
         public bool AllowUserInteraction
         {
             get

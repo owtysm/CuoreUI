@@ -33,6 +33,8 @@ namespace CuoreUI.Components
         }
 
         private Control privateTargetControl = null;
+
+        [Category("CuoreUI")]
         [Description("The control to animate.")]
         public Control TargetControl
         {
@@ -69,6 +71,7 @@ namespace CuoreUI.Components
 
         private int privateDuration = 1000;
 
+        [Category("CuoreUI")]
         [Description("How long the animation should last in milliseconds. (ms)")]
         public int Duration
         {
@@ -84,6 +87,7 @@ namespace CuoreUI.Components
 
         private bool privateAnimateOpacity = false;
 
+        [Category("CuoreUI")]
         [Description("Animates 'opacity' of the control from 0 -> 1.")]
         public bool AnimateOpacity
         {
@@ -97,6 +101,7 @@ namespace CuoreUI.Components
             }
         }
 
+        [Category("CuoreUI")]
         [Description("Choose the easing type that suits the best.")]
         public EasingTypes EasingType
         {
@@ -104,6 +109,7 @@ namespace CuoreUI.Components
             set;
         } = EasingTypes.QuadInOut;
 
+        [Category("CuoreUI")]
         [Description("Where the TargetControl should be moved to.")]
         public Point TargetLocation
         {
@@ -111,6 +117,7 @@ namespace CuoreUI.Components
             set;
         } = Point.Empty;
 
+        [Category("CuoreUI")]
         [Description("Animate control when first shown on screen.")]
         public bool AnimateOnStart
         {
@@ -118,6 +125,7 @@ namespace CuoreUI.Components
             set;
         } = true;
 
+        [Category("CuoreUI")]
         [Description("Either move to TargetLocation or ignore animating location.")]
         public bool AnimateLocation
         {
@@ -127,6 +135,7 @@ namespace CuoreUI.Components
 
         private OpacityEnum privateTargetOpacity = OpacityEnum.Visible;
 
+        [Category("CuoreUI")]
         [Description("Target opacity (0 - 255) for the control when animation completes.")]
         public OpacityEnum TargetOpacity
         {
@@ -250,7 +259,10 @@ namespace CuoreUI.Components
             AnimationEnded?.Invoke(this, EventArgs.Empty);
         }
 
-        public EventHandler AnimationEnded;
-        public EventHandler AnimationStarted;
+        [Category("CuoreUI")]
+        public event EventHandler AnimationEnded;
+
+        [Category("CuoreUI")]
+        public event EventHandler AnimationStarted;
     }
 }

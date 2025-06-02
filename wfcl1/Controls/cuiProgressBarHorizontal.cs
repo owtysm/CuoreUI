@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
@@ -18,6 +19,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateValue = 50;
+
+        [Category("CuoreUI")]
         public int Value
         {
             get
@@ -32,6 +35,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateMaxValue = 100;
+
+        [Category("CuoreUI")]
         public int MaxValue
         {
             get
@@ -46,6 +51,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateFlipped = false;
+
+        [Category("CuoreUI")]
         public bool Flipped
         {
             get
@@ -60,6 +67,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateBackground = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color Background
         {
             get
@@ -74,6 +83,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateForeground = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color Foreground
         {
             get
@@ -88,6 +99,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateRounding = 8;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text.RegularExpressions;
@@ -18,6 +19,8 @@ namespace CuoreUI.Controls
         }
 
         private string privateContent = "Your text here!";
+
+        [Category("CuoreUI")]
         public string Content
         {
             get
@@ -62,6 +65,7 @@ namespace CuoreUI.Controls
         private StringAlignment privateHorizontalAlignment = StringAlignment.Center;
         private StringAlignment privateVerticalAlignment = StringAlignment.Near;
 
+        [Category("CuoreUI")]
         public StringAlignment HorizontalAlignment
         {
             get
@@ -75,6 +79,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public StringAlignment VerticalAlignment
         {
             get

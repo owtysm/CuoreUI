@@ -27,9 +27,12 @@ namespace CuoreUI.Controls
             Content = this.Name;
         }
 
+        [Category("CuoreUI")]
         public event EventHandler CheckedChanged;
 
         private bool privateChecked = false;
+
+        [Category("CuoreUI")]
         [Description("Whether the switch is on or off.")]
         public bool Checked
         {
@@ -45,11 +48,12 @@ namespace CuoreUI.Controls
                     Invalidate();
                     CheckedChanged?.Invoke(this, EventArgs.Empty);
                 }
-
             }
         }
 
         private Color privateCheckedForeground = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         [Description("The checked foreground.")]
         public Color CheckedForeground
         {
@@ -65,6 +69,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateUncheckedForeground = Color.Empty;
+
+        [Category("CuoreUI")]
         [Description("The unchecked foreground.")]
         public Color UncheckedForeground
         {
@@ -80,6 +86,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateOutlineStyle = true;
+
+        [Category("CuoreUI")]
         [Description("The style of the outline.")]
         public bool OutlineStyle
         {
@@ -95,6 +103,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateOutlineColor = Color.Gray;
+
+        [Category("CuoreUI")]
         [Description("The color of the outline.")]
         public Color UncheckedOutlineColor
         {
@@ -110,6 +120,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCheckedOutlineColor = Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         [Description("The color of the checked outline.")]
         public Color CheckedOutlineColor
         {
@@ -125,6 +137,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1f;
+
+        [Category("CuoreUI")]
         [Description("The thickness of the outline.")]
         public float OutlineThickness
         {
@@ -140,6 +154,8 @@ namespace CuoreUI.Controls
         }
 
         private string privateContent;
+
+        [Category("CuoreUI")]
         public string Content
         {
             get
@@ -162,6 +178,8 @@ namespace CuoreUI.Controls
         }
 
         int privateRounding = 5;
+
+        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -178,6 +196,8 @@ namespace CuoreUI.Controls
         public Point symbolsOffset = new Point(0, 1);
 
         Color SymbolColor = Color.Empty;
+
+        [Category("CuoreUI")]
         [Description("The color of the symbol when NOT checked.")]
         public Color UncheckedSymbolColor
         {
@@ -193,6 +213,8 @@ namespace CuoreUI.Controls
         }
 
         Color privateCheckedSymbolColor = Color.White;
+
+        [Category("CuoreUI")]
         [Description("The color of the symbol when checked.")]
         public Color CheckedSymbolColor
         {
@@ -208,6 +230,9 @@ namespace CuoreUI.Controls
         }
 
         private bool privateShowSymbols = true;
+
+        [Category("CuoreUI")]
+        [Description("Whether to show the cross when unchecked, and the check when checked.")]
         public bool ShowSymbols
         {
             get

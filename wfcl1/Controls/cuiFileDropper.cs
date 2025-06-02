@@ -14,9 +14,12 @@ namespace CuoreUI.Controls
         private bool hover = false;
         private readonly StringFormat sf = new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
 
+        [Category("CuoreUI")]
         public bool Multiselect { get; set; } = false;
 
         private Color privatePanelColor = Color.FromArgb(16, 255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color PanelColor
         {
             get
@@ -31,6 +34,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePanelOutlineColor = Color.FromArgb(128, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color DashedOutlineColor
         {
             get
@@ -45,6 +50,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get
@@ -59,6 +66,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateDashedOutline = true;
+
+        [Category("CuoreUI")]
         public bool DashedOutline
         {
             get
@@ -73,6 +82,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateDashLength = 8;
+
+        [Category("CuoreUI")]
         public int DashLength
         {
             get
@@ -87,6 +98,8 @@ namespace CuoreUI.Controls
         }
 
         private Padding privateRounding = new Padding(8, 8, 8, 8);
+
+        [Category("CuoreUI")]
         public Padding Rounding
         {
             get
@@ -110,6 +123,7 @@ namespace CuoreUI.Controls
 
         [Category("CuoreUI")]
         public string NormalContent { get; set; } = "Drop file here";
+
         [Category("CuoreUI")]
         public string HoverContent { get; set; } = "Release to drop";
 
@@ -118,12 +132,15 @@ namespace CuoreUI.Controls
         public string Filter { get; set; } = "";
 
         private Color privateHoverForeColor = Color.FromArgb(128, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color HoverForeColor
         {
             get => privateHoverForeColor;
             set { privateHoverForeColor = value; Invalidate(); }
         }
 
+        [Category("CuoreUI")]
         public Color NormalForeColor
         {
             get => ForeColor;
@@ -131,6 +148,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverUploadForeColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color HoverUploadForeColor
         {
             get => privateHoverUploadForeColor;
@@ -138,6 +157,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateForeUploadColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color NormalUploadForeColor
         {
             get => privateForeUploadColor;
@@ -145,6 +166,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateClickToUpload = true;
+
+        [Category("CuoreUI")]
         public bool UploadWithClick
         {
             get
@@ -158,6 +181,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public string UploadContent { get; set; } = "Click to upload";
 
         protected override void OnPaint(PaintEventArgs e)
@@ -287,8 +311,8 @@ namespace CuoreUI.Controls
             return extensions.Contains(".*") ? Array.Empty<string>() : extensions;
         }
 
-        public string FileName { get; set; }
-        public string[] FileNames { get; set; }
+        public string FileName { get; private set; }
+        public string[] FileNames { get; private set; }
 
         protected override void OnMouseClick(MouseEventArgs e)
         {

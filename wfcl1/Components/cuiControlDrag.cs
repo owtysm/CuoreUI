@@ -16,6 +16,7 @@ namespace CuoreUI.Components
             container.Add(this);
         }
 
+        [Category("CuoreUI")]
         public Control TargetControl
         {
             get => targetControl;

@@ -28,6 +28,8 @@ namespace CuoreUI.Controls
         }
 
         private DialogResult privateDialogResult = DialogResult.None;
+
+        [Category("CuoreUI")]
         public DialogResult DialogResult
         {
             get
@@ -42,6 +44,8 @@ namespace CuoreUI.Controls
         }
 
         private string privateContent = "Your text here!";
+
+        [Category("CuoreUI")]
         public string Content
         {
             get
@@ -56,6 +60,8 @@ namespace CuoreUI.Controls
         }
 
         private Padding privateRounding = new Padding(8, 8, 8, 8);
+
+        [Category("CuoreUI")]
         public Padding Rounding
         {
             get
@@ -70,6 +76,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalBackground = Color.White;
+
+        [Category("CuoreUI")]
         public Color NormalBackground
         {
             get
@@ -84,6 +92,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverBackground = Color.White;
+
+        [Category("CuoreUI")]
         public Color HoverBackground
         {
             get
@@ -98,6 +108,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedBackground = Color.WhiteSmoke;
+
+        [Category("CuoreUI")]
         public Color PressedBackground
         {
             get
@@ -112,6 +124,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalOutline = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color NormalOutline
         {
             get
@@ -126,6 +140,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverOutline = Color.FromArgb(32, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color HoverOutline
         {
             get
@@ -140,6 +156,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedOutline = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color PressedOutline
         {
             get
@@ -154,6 +172,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateCheckButton = false;
+
+        [Category("CuoreUI")]
         public bool CheckButton
         {
 
@@ -169,6 +189,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateChecked = false;
+
+        [Category("CuoreUI")]
         public bool Checked
         {
             get
@@ -188,6 +210,8 @@ namespace CuoreUI.Controls
         StringFormat stringFormat = new StringFormat() { Alignment = StringAlignment.Center };
 
         private Image privateImage = null;
+
+        [Category("CuoreUI")]
         public Image Image
         {
             get
@@ -202,6 +226,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCheckedBackground = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color CheckedBackground
         {
             get
@@ -216,6 +242,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCheckedOutline = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color CheckedOutline
         {
             get
@@ -230,6 +258,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateImageAutoCenter = true;
+
+        [Category("CuoreUI")]
         public bool ImageAutoCenter
         {
             get
@@ -244,6 +274,8 @@ namespace CuoreUI.Controls
         }
 
         private StringAlignment privateTextAlignment = StringAlignment.Center;
+
+        [Category("CuoreUI")]
         public StringAlignment TextAlignment
         {
             get
@@ -259,6 +291,8 @@ namespace CuoreUI.Controls
         }
 
         private float privateOutlineThickness = 1f;
+
+        [Category("CuoreUI")]
         public float OutlineThickness
         {
             get
@@ -273,6 +307,8 @@ namespace CuoreUI.Controls
         }
 
         private Point privateImageExpand = Point.Empty;
+
+        [Category("CuoreUI")]
         public Point ImageExpand
         {
             get
@@ -287,6 +323,8 @@ namespace CuoreUI.Controls
         }
 
         Color privateCheckedForeColor = Color.White;
+
+        [Category("CuoreUI")]
         public Color CheckedForeColor
         {
             get
@@ -301,6 +339,8 @@ namespace CuoreUI.Controls
         }
 
         Color privatePressedForeColor = Color.FromArgb(32, 32, 32);
+
+        [Category("CuoreUI")]
         public Color PressedForeColor
         {
             get
@@ -314,6 +354,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public Color NormalForeColor
         {
             get
@@ -327,6 +368,8 @@ namespace CuoreUI.Controls
         }
 
         Color privateHoverForeColor = Color.Black;
+
+        [Category("CuoreUI")]
         public Color HoverForeColor
         {
             get
@@ -467,6 +510,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateImageTint = Color.White;
+
+        [Category("CuoreUI")]
         public Color NormalImageTint
         {
             get
@@ -481,6 +526,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoveredImageTint = Color.White;
+
+        [Category("CuoreUI")]
         public Color HoveredImageTint
         {
             get
@@ -495,6 +542,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateCheckedImageTint = Color.White;
+
+        [Category("CuoreUI")]
         public Color CheckedImageTint
         {
             get
@@ -509,6 +558,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedImageTint = Color.White;
+
+        [Category("CuoreUI")]
         public Color PressedImageTint
         {
             get
@@ -523,6 +574,8 @@ namespace CuoreUI.Controls
         }
 
         private Point privateImageOffset = new Point(0, 0);
+
+        [Category("CuoreUI")]
         public Point ImageOffset
         {
             get
@@ -537,6 +590,8 @@ namespace CuoreUI.Controls
         }
 
         private Point privateTextOffset = new Point(0, 0);
+
+        [Category("CuoreUI")]
         public Point TextOffset
         {
             get

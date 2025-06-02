@@ -13,6 +13,7 @@ namespace CuoreUI.Controls
         private readonly cuiTabControl tabControl = new cuiTabControl();
         private readonly Panel panel = new Panel();
 
+        [Category("CuoreUI")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public TabPageCollection TabPages => tabControl.TabPages;
 
@@ -34,6 +35,7 @@ namespace CuoreUI.Controls
             tabControl.TabAdded += TabControl_TabAdded;
         }
 
+        [Category("CuoreUI")]
         public string tabNamingConvention
         {
             get
@@ -79,6 +81,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateOverflowArrowsColor = Color.White;
+
+        [Category("CuoreUI")]
         public Color OverflowArrowsColor
         {
             get
@@ -112,6 +116,7 @@ namespace CuoreUI.Controls
             TabAdded?.Invoke(sender, EventArgs.Empty);
         }
 
+        [Category("CuoreUI")]
         [Description("sender is the added tab!")]
         [Browsable(true)]
         public event EventHandler TabAdded;
@@ -124,72 +129,84 @@ namespace CuoreUI.Controls
         public object UnselectedTab_ => null;
         #endregion
 
+        [Category("CuoreUI")]
         public Color BackgroundColor
         {
             get => tabControl.BackgroundColor;
             set => tabControl.BackgroundColor = value;
         }
 
+        [Category("CuoreUI")]
         public int Rounding
         {
             get => tabControl.Rounding;
             set => tabControl.Rounding = value;
         }
 
+        [Category("CuoreUI")]
         public Color UnselectedTabBackColor
         {
             get => tabControl.UnselectedTabBackColor;
             set => tabControl.UnselectedTabBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color SelectedTabBackColor
         {
             get => tabControl.SelectedTabBackColor;
             set => tabControl.SelectedTabBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color HoveredTabBackColor
         {
             get => tabControl.HoveredTabBackColor;
             set => tabControl.HoveredTabBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color UnselectedTabTextBackColor
         {
             get => tabControl.UnselectedTabTextBackColor;
             set => tabControl.UnselectedTabTextBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color SelectedTabTextBackColor
         {
             get => tabControl.SelectedTabTextBackColor;
             set => tabControl.SelectedTabTextBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color HoveredTabTextBackColor
         {
             get => tabControl.HoveredTabTextBackColor;
             set => tabControl.HoveredTabTextBackColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color DeletionTabBackgroundColor
         {
             get => tabControl.DeletionTabBackgroundColor;
             set => tabControl.DeletionTabBackgroundColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color DeletionColor
         {
             get => tabControl.DeletionColor;
             set => tabControl.DeletionColor = value;
         }
 
+        [Category("CuoreUI")]
         public Color AddButtonBackgroundColor
         {
             get => tabControl.AddButtonBackgroundColor;
             set => tabControl.AddButtonBackgroundColor = value;
         }
 
+        [Category("CuoreUI")]
         public bool ShowAddTabButton
         {
             get => tabControl.ShowAddTabButton;
@@ -220,6 +237,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public bool IsTabControlOverfilled
         {
             get
@@ -230,6 +248,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public int TabPagesWidth
         {
             get
@@ -241,7 +260,6 @@ namespace CuoreUI.Controls
 
         private void CountChanged(object sender, EventArgs e)
         {
-
             Invalidate();
         }
 
@@ -278,14 +296,18 @@ namespace CuoreUI.Controls
             tabControl.Dock = DockStyle.Fill;
         }
 
+        [Category("CuoreUI")]
         public bool AllowNoTabs => tabControl.AllowNoTabs;
 
-        public object GetSelectedTab()
+        public TabPage GetSelectedTab()
         {
             return tabControl.SelectedTab;
         }
 
+        [Category("CuoreUI")]
         public int SelectedIndex => tabControl.SelectedIndex;
+
+        [Category("CuoreUI")]
         public object SelectedTab => tabControl.SelectedTab;
 
         private void panelPaint(object sender, PaintEventArgs e)

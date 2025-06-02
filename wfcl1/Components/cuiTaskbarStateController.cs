@@ -8,6 +8,8 @@ namespace CuoreUI.Components
     public partial class cuiTaskbarStateController : Component
     {
         private Form privateTargetForm;
+
+        [Category("CuoreUI")]
         public Form TargetForm
         {
             get => privateTargetForm;
@@ -49,6 +51,8 @@ namespace CuoreUI.Components
         }
 
         private TaskbarStates privateState = TaskbarStates.Default;
+
+        [Category("CuoreUI")]
         public TaskbarStates State
         {
             get
@@ -63,6 +67,8 @@ namespace CuoreUI.Components
         }
 
         private int privateProgressValue = 50;
+
+        [Category("CuoreUI")]
         public int ProgressValue
         {
             get
@@ -77,6 +83,8 @@ namespace CuoreUI.Components
         }
 
         private int privateMaxValue = 100;
+
+        [Category("CuoreUI")]
         public int MaxValue
         {
             get

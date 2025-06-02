@@ -117,10 +117,12 @@ namespace CuoreUI.Controls
 
         [Category("CuoreUI")]
         public string NormalContent { get; set; } = "Drop folder here";
+
         [Category("CuoreUI")]
         public string HoverContent { get; set; } = "Release to drop";
 
         private Color privateHoverForeColor = Color.FromArgb(128, 128, 128, 128);
+
         [Category("CuoreUI")]
         public Color HoverForeColor
         {
@@ -136,6 +138,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverUploadForeColor = CuoreUI.Drawing.PrimaryColor;
+
         [Category("CuoreUI")]
         public Color HoverUploadForeColor
         {
@@ -144,6 +147,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privateForeUploadColor = CuoreUI.Drawing.PrimaryColor;
+
         [Category("CuoreUI")]
         public Color NormalUploadForeColor
         {
@@ -152,6 +156,7 @@ namespace CuoreUI.Controls
         }
 
         private bool privateClickToUpload = true;
+
         [Category("CuoreUI")]
         public bool UploadWithClick
         {
@@ -278,9 +283,10 @@ namespace CuoreUI.Controls
         }
 
         [Category("CuoreUI")]
-        public string FolderName { get; set; }
+        public string FolderName { get; private set; }
+
         [Category("CuoreUI")]
-        public string[] FolderNames { get; set; }
+        public string[] FolderNames { get; private set; }
 
         protected override void OnMouseClick(MouseEventArgs e)
         {

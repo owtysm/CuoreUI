@@ -26,6 +26,8 @@ namespace CuoreUI.Controls
         }
 
         private Padding privateRounding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
+        [Category("CuoreUI")]
         public Padding Rounding
         {
             get
@@ -40,6 +42,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalBackground = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color NormalBackground
         {
             get
@@ -54,6 +58,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverBackground = CuoreUI.Drawing.TranslucentPrimaryColor;
+
+        [Category("CuoreUI")]
         public Color HoverBackground
         {
             get
@@ -68,6 +74,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedBackground = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color PressedBackground
         {
             get
@@ -82,6 +90,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalOutline = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color NormalOutline
         {
             get
@@ -96,6 +106,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverOutline = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color HoverOutline
         {
             get
@@ -110,6 +122,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedOutline = Color.Empty;
+
+        [Category("CuoreUI")]
         public Color PressedOutline
         {
             get
@@ -124,6 +138,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateNormalArrowColor = Color.FromArgb(128, 255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color NormalArrowColor
         {
             get
@@ -138,6 +154,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateHoverArrowColor = Color.FromArgb(255, 255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color HoverArrowColor
         {
             get
@@ -152,6 +170,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePressedArrowColor = Color.FromArgb(128, 255, 255, 255);
+
+        [Category("CuoreUI")]
         public Color PressedArrowColor
         {
             get
@@ -204,6 +224,7 @@ namespace CuoreUI.Controls
 
         private float privateStepSize = 5;
 
+        [Category("CuoreUI")]
         public float Value
         {
             get
@@ -221,6 +242,8 @@ namespace CuoreUI.Controls
             }
         }
 
+
+        [Category("CuoreUI")]
         public float MinValue
         {
             get
@@ -237,6 +260,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public float MaxValue
         {
             get
@@ -253,6 +277,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public float StepSize
         {
             get
@@ -266,6 +291,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public event EventHandler ValueChanged;
 
         protected override void OnMouseDown(MouseEventArgs e)

@@ -53,7 +53,10 @@ namespace CuoreUI.Controls
         {
             FormatCreditCardSoFar();
 
-            switch (DetectCardType(Content))
+            CardType detectedCompany = DetectCardType(Content);
+            Company = detectedCompany;
+
+            switch (detectedCompany)
             {
                 case CardType.Unknown:
                     Image = Resources.credit_card;
@@ -97,9 +100,11 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public bool IsCardValid => privateIsCardValid && DetectCardType(actualText) != CardType.Unknown;
 
         private bool privateIsCardValid = false;
+
         private bool IsCardValidGetter
         {
             get
@@ -204,6 +209,20 @@ namespace CuoreUI.Controls
             UnionPay,
             RuPay,
             UATP
+        }
+
+        private CardType privateCompany = CardType.Unknown;
+        [Category("CuoreUI")]
+        public CardType Company 
+        {
+            get
+            {
+                return privateCompany;
+            }
+            private set
+            {
+                privateCompany = value;
+            }
         }
     }
 }

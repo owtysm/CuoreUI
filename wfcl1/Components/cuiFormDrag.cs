@@ -15,6 +15,7 @@ namespace CuoreUI.Components
             container.Add(this);
         }
 
+        [Category("CuoreUI")]
         public Form TargetForm
         {
             get

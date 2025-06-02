@@ -20,6 +20,8 @@ namespace CuoreUI.Controls
         }
 
         private bool privateUpsideDown = false;
+
+        [Category("CuoreUI")]
         public bool UpsideDown
         {
             get
@@ -61,6 +63,7 @@ namespace CuoreUI.Controls
             return progress * 2;
         }
 
+        [Category("CuoreUI")]
         public float Value
         {
             get
@@ -119,8 +122,10 @@ namespace CuoreUI.Controls
             halfThumb = halfThumbWidth;
         }
 
+        [Category("CuoreUI")]
         public event EventHandler ValueChanged;
 
+        [Category("CuoreUI")]
         public float MinValue
         {
             get
@@ -137,6 +142,7 @@ namespace CuoreUI.Controls
             }
         }
 
+        [Category("CuoreUI")]
         public float MaxValue
         {
             get
@@ -154,6 +160,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateTrackColor = Color.FromArgb(64, 128, 128, 128);
+
+        [Category("CuoreUI")]
         public Color TrackColor
         {
             get
@@ -168,6 +176,8 @@ namespace CuoreUI.Controls
         }
 
         private Color privateThumbColor = CuoreUI.Drawing.PrimaryColor;
+
+        [Category("CuoreUI")]
         public Color ThumbColor
         {
             get
@@ -212,6 +222,8 @@ namespace CuoreUI.Controls
         }
 
         private int privateThumbOutlineThickness = 3;
+
+        [Category("CuoreUI")]
         public int ThumbOutlineThickness
         {
             get
