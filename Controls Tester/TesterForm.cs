@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -13,6 +14,9 @@ namespace ControlsTester
         int controlsCount = 0;
         int componentsCount = 0;
         int currentControlIndex = 0;
+
+        List<string> controlsNames = new List<string>();
+        List<string> componentsNames = new List<string>();
 
         public TesterForm()
         {
@@ -51,6 +55,8 @@ namespace ControlsTester
                     if (type.FullName.StartsWith("CuoreUI.Controls.") && type.IsSubclassOf(typeof(Control)) && !type.IsSubclassOf(typeof(Form)))
                     {
                         label2.Text = $"Loading {type.Name} ({type.Namespace})";
+                        controlsNames.Add(type.Name);
+
                         Control control = Activator.CreateInstance(type) as Control;
                         availableControls.Add(control);
                         controlsCount++;
@@ -58,6 +64,8 @@ namespace ControlsTester
                     else if (type.FullName.StartsWith("CuoreUI.Components."))
                     {
                         label3.Text = $"Loading {type.Name} ({type.Namespace})";
+                        componentsNames.Add(type.Name);
+
                         componentsCount++;
                     }
                 }
@@ -70,7 +78,9 @@ namespace ControlsTester
         {
             label2.Text = $"Loaded {controlsCount} controls successfully!";
             label3.Text = $"Found {componentsCount} components!";
+
             panel2.Enabled = true;
+            button3.Enabled = true;
 
             if (controlsCount > 0)
             {
@@ -116,6 +126,32 @@ namespace ControlsTester
         {
             currentControlIndex = Math.Max(0, currentControlIndex - 1);
             ShowControl();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form a = new Form() { Height = 512 + 72};
+
+            var controlsListBox = new RichTextBox() { ReadOnly = true, Height = 256, Top = 16, Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, Width = a.Width - 16, ScrollBars = RichTextBoxScrollBars.Vertical };
+            var componentsListBox = new RichTextBox() { ReadOnly = true, Height = 256, Top = 16 + 256 + 16, Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, Width = a.Width - 16, ScrollBars = RichTextBoxScrollBars.Vertical };
+
+            a.Controls.Add(new Label() { Text = "CONTROLS", Height = 16 });
+            a.Controls.Add(controlsListBox);
+
+            a.Controls.Add(new Label() { Text = "COMPONENTS", Height = 16, Top = 16 + 256 });
+            a.Controls.Add(componentsListBox);
+
+            foreach (string controlName in controlsNames)
+            {
+                controlsListBox.AppendText($"{controlName}\n");
+            }
+
+            foreach (string componentName in componentsNames)
+            {
+                componentsListBox.AppendText($"{componentName}\n");
+            }
+
+            a.Show();
         }
     }
 
