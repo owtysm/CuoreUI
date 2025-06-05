@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using CuoreUI.Properties;
 
@@ -15,6 +16,11 @@ namespace CuoreUI.Controls
             InitializeComponent();
             ContentChanged += CuiTextBoxCreditCardNumber_ContentChanged;
         }
+
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Image Image { get => base.Image; private set => base.Image = value; }
 
         private void FormatCreditCardSoFar()
         {
