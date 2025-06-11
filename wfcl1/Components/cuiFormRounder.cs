@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CuoreUI.Components.Forms;
 using Color = System.Drawing.Color;
+using Task = System.Threading.Tasks.Task;
 
 namespace CuoreUI.Components
 {
@@ -30,6 +30,11 @@ namespace CuoreUI.Components
                     privateTargetForm.Region = null;
                 }
 
+                if (privateTargetForm != null)
+                {
+                    FormsRegisteredByRounder.RemoveByForm(privateTargetForm);
+                }
+
                 privateTargetForm = value;
 
                 if (value == null)
@@ -37,6 +42,11 @@ namespace CuoreUI.Components
                     roundedFormObj?.UpdBitmap();
                     roundedFormObj?.Hide();
                     return;
+                }
+
+                if (FormsRegisteredByRounder.AddByForm(value, this) == false)
+                {
+                    throw new Exception("This form already has a cuiformRounder");
                 }
 
                 TargetForm.Load += TargetForm_Load;
@@ -70,6 +80,8 @@ namespace CuoreUI.Components
 
         private void TargetForm_HandleCreated(object sender, EventArgs e)
         {
+            FormsRegisteredByRounder.AddByForm(TargetForm, this);
+
             if (!DesignMode && TargetForm != null)
             {
                 int disable = 1;
@@ -461,7 +473,7 @@ namespace CuoreUI.Components
             {
                 // Related to how RoundedForm is drawn
                 // Updates rounding if needed, too
-                roundedFormObj.Size = Size.Add(TargetForm.Size, new Size(2, 2));
+                roundedFormObj.Size = System.Drawing.Size.Add(TargetForm.Size, new Size(2, 2));
                 UpdateRoundedFormRegion();
                 UpdateExperimentalBitmap();
 

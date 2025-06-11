@@ -129,7 +129,7 @@ namespace CuoreUI.Controls.Forms
                             {
                                 ctb.ForeColor = Color.Black;
                                 ctb.BackColor = SystemColors.Control;
-                                ctb.BorderColor = Color.FromArgb(221, 221, 221);
+                                ctb.OutlineColor = Color.FromArgb(221, 221, 221);
                             }
                             else if (ct is cuiLabel cl && cl != cuiLabel3)
                             {
@@ -158,7 +158,7 @@ namespace CuoreUI.Controls.Forms
                             {
                                 ctb.ForeColor = SystemColors.ButtonFace;
                                 ctb.BackColor = Color.Black;
-                                ctb.BorderColor = Color.FromArgb(34, 34, 34);
+                                ctb.OutlineColor = Color.FromArgb(34, 34, 34);
                             }
                             else if (ct is cuiLabel cl && cl != cuiLabel3)
                             {

@@ -16,29 +16,49 @@ namespace CuoreUI.Controls
             //SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             SetStyle(ControlStyles.ResizeRedraw, true);
             SetStyle(ControlStyles.UserPaint, true);
+
+            UpdateStyles();
             DrawMode = DrawMode.OwnerDrawFixed;
             BorderStyle = BorderStyle.None;
             ItemHeight = 34;
             ForeColor = Color.FromArgb(84, 84, 84);
             SelectionMode = SelectionMode.One;
-            Drawing.FrameDrawn += RefreshTimer_Tick;
             Font = new Font("Microsoft YaHei UI", 9, FontStyle.Regular);
-        }
 
-        private void RefreshTimer_Tick(object sender, EventArgs e)
-        {
-            if (DoubleBuffered)
+            var parentForm = FindForm();
+            if (parentForm != null)
             {
-                SuspendLayout();
-                Refresh();
-                ResumeLayout(true);
+                BackColor = parentForm.BackColor;
             }
         }
 
-        private int privateRounding = 8;
+        public override Color BackColor
+        {
+            get
+            {
+                return base.BackColor;
+            }
+            set
+            {
+                if (value == Color.Empty || value == Color.Transparent)
+                {
+                    var a = FindForm();
+                    if (a != null)
+                    {
+                        base.BackColor = a.BackColor;
+                    }
+                }
+                else
+                {
+                    base.BackColor = value;
+                }
+            }
+        }
+
+        private Padding privateRounding = new Padding(8);
 
         [Category("CuoreUI")]
-        public int Rounding
+        public Padding Rounding
         {
             get
             {
@@ -46,23 +66,43 @@ namespace CuoreUI.Controls
             }
             set
             {
-                if (value > 0)
-                {
-                    if (value > (ClientRectangle.Height / 2))
-                    {
-                        privateRounding = ClientRectangle.Height / 2;
-                        Rounding = privateRounding;
-                    }
-                    else
-                    {
-                        privateRounding = value;
-                    }
-                }
-                else
-                {
-                    throw new Exception("Rounding cannot be less than 1");
-                }
+                privateRounding = value;
                 Invalidate();
+            }
+        }
+
+        private Color privateOutlineColor = Color.FromArgb(128, 128, 128, 128);
+
+        [Category("CuoreUI")]
+        public Color OutlineColor
+        {
+            get
+            {
+                return privateOutlineColor;
+            }
+            set
+            {
+                privateOutlineColor = value;
+                Invalidate();
+            }
+        }
+
+        private int privateOutlineThickness = 1;
+
+        [Category("CuoreUI")]
+        private int OutlineThickness
+        {
+            get
+            {
+                return privateOutlineThickness;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    privateOutlineThickness = value;
+                    Invalidate();
+                }
             }
         }
 
@@ -97,7 +137,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateBackgroundColor = Color.Empty;
+        private Color privateBackgroundColor = Color.White;
 
         [Category("CuoreUI")]
         public Color BackgroundColor
@@ -113,7 +153,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateItemHoveredBackgroundColor = Color.FromArgb(64, 128, 128, 128);
+        private Color privateItemHoveredBackgroundColor = Color.FromArgb(32, 128, 128, 128);
 
         [Category("CuoreUI")]
         public Color ItemHoverBackgroundColor
@@ -129,7 +169,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateItemHoveredForegroundColor = Color.Gray;
+        private Color privateItemHoveredForegroundColor = Color.DimGray;
 
         [Category("CuoreUI")]
         public Color ItemHoverForegroundColor
@@ -161,6 +201,22 @@ namespace CuoreUI.Controls
             }
         }
 
+        private Color privateItemBackgroundColor = Color.Empty;
+
+        [Category("CuoreUI")]
+        public Color ItemBackgroundColor
+        {
+            get
+            {
+                return privateItemBackgroundColor;
+            }
+            set
+            {
+                privateItemBackgroundColor = value;
+                Invalidate();
+            }
+        }
+
         private Color privateItemSelectedBackgroundColor = CuoreUI.Drawing.PrimaryColor;
 
         [Category("CuoreUI")]
@@ -177,7 +233,7 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateSelectedForegroundColor = Color.FromArgb(11, 11, 12);
+        private Color privateSelectedForegroundColor = Color.White;
 
         [Category("CuoreUI")]
         public Color SelectedForegroundColor
@@ -212,48 +268,59 @@ namespace CuoreUI.Controls
                 g.FillRectangle(bgBrush, backgroundRect);
             }
 
+
             using (GraphicsPath path2 = Helper.RoundRect(cr, Rounding))
             using (Brush itemBrush = new SolidBrush(BackgroundColor))
+            using (Pen bgPen = new Pen(OutlineColor, OutlineThickness))
             {
-                g.FillPath(itemBrush, path2);
-            }
+                e.Graphics.FillPath(itemBrush, path2);
+                e.Graphics.DrawPath(bgPen, path2);
 
-            using (Brush selectedBrush = new SolidBrush(ItemSelectedBackgroundColor))
-            using (Brush selectedTextBrush = new SolidBrush(SelectedForegroundColor))
-            using (Brush hoverBrush = new SolidBrush(ItemHoverBackgroundColor))
-            using (Brush hoverTextBrush = new SolidBrush(ItemHoverForegroundColor))
-            using (Brush normalBrush = new SolidBrush(BackgroundColor))
-            using (Brush normalTextBrush = new SolidBrush(ForegroundColor))
-            {
-                for (int i = 0; i < Items.Count; i++)
+                // Clip to path2 to prevent overflow
+                g.SetClip(path2, CombineMode.Intersect);
+
+                // Now draw items inside clipped area
+                using (Brush selectedBrush = new SolidBrush(ItemSelectedBackgroundColor))
+                using (Brush selectedTextBrush = new SolidBrush(SelectedForegroundColor))
+                using (Brush hoverBrush = new SolidBrush(ItemHoverBackgroundColor))
+                using (Brush hoverTextBrush = new SolidBrush(ItemHoverForegroundColor))
+                using (Brush normalBrush = new SolidBrush(ItemBackgroundColor))
+                using (Brush normalTextBrush = new SolidBrush(ForegroundColor))
                 {
-                    Rectangle itemRect = GetItemRectangle(i);
-                    itemRect.Inflate(-4, -2);
-                    itemRect.Offset(0, 2);
-                    int yCenterString = itemRect.Y + (ItemHeight / 2) - (Font.Height) + 4;
-
-                    using (GraphicsPath path = Helper.RoundRect(itemRect, ItemRounding))
+                    for (int i = 0; i < Items.Count; i++)
                     {
-                        string itemText = Items[i].ToString();
+                        Rectangle itemRect = GetItemRectangle(i);
+                        itemRect.Inflate(-4, -2);
+                        itemRect.Offset(0, 2);
+                        int yCenterString = itemRect.Y + (ItemHeight / 2) - (Font.Height) + 6;
 
-                        if (SelectedIndex == i)
+                        using (GraphicsPath path = Helper.RoundRect(itemRect, ItemRounding))
                         {
-                            g.FillPath(selectedBrush, path);
-                            g.DrawString(itemText, Font, selectedTextBrush, itemRect.X + 6, yCenterString);
-                        }
-                        else if (HoveredIndex == i)
-                        {
-                            g.FillPath(hoverBrush, path);
-                            g.DrawString(itemText, Font, hoverTextBrush, itemRect.X + 6, yCenterString);
-                        }
-                        else
-                        {
-                            g.FillPath(normalBrush, path);
-                            g.DrawString(itemText, Font, normalTextBrush, itemRect.X + 6, yCenterString);
+                            string itemText = Items[i].ToString();
+
+                            if (SelectedIndex == i)
+                            {
+                                g.FillPath(selectedBrush, path);
+                                g.DrawString(itemText, Font, selectedTextBrush, itemRect.X + 6, yCenterString);
+                            }
+                            else if (HoveredIndex == i)
+                            {
+                                g.FillPath(hoverBrush, path);
+                                g.DrawString(itemText, Font, hoverTextBrush, itemRect.X + 6, yCenterString);
+                            }
+                            else
+                            {
+                                g.FillPath(normalBrush, path);
+                                g.DrawString(itemText, Font, normalTextBrush, itemRect.X + 6, yCenterString);
+                            }
                         }
                     }
                 }
+
+                // Reset the clip after drawing
+                g.ResetClip();
             }
+
 
             base.OnPaint(e);
         }
@@ -289,7 +356,14 @@ namespace CuoreUI.Controls
             {
                 OnMouseDown(e);
             }
-            base.OnMouseMove(e);
+
+            Refresh();
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+            Refresh();
         }
 
         protected override void OnSelectedIndexChanged(EventArgs e)

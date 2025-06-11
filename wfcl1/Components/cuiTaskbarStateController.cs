@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Taskbar;
+using static CuoreUI.Helper.Win32;
 
 namespace CuoreUI.Components
 {
@@ -135,6 +137,23 @@ namespace CuoreUI.Components
             var taskbar = TaskbarManager.Instance;
 
             taskbar.SetProgressValue(privateProgressValue, privateMaxValue, privateTargetForm.Handle);
+        }
+
+        public void Flash()
+        {
+            if (privateTargetForm == null || DesignMode || privateTargetForm.Handle == IntPtr.Zero)
+                return;
+
+            var fInfo = new FLASHWINFO
+            {
+                cbSize = (uint)Marshal.SizeOf(typeof(FLASHWINFO)),
+                hwnd = privateTargetForm.Handle,
+                dwFlags = FLASHW_ALL | FLASHW_TIMERNOFG,
+                uCount = uint.MaxValue,
+                dwTimeout = 0
+            };
+
+            FlashWindowEx(ref fInfo);
         }
     }
 }

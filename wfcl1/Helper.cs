@@ -469,6 +469,59 @@ namespace CuoreUI
 
         public static class Win32
         {
+            [StructLayout(LayoutKind.Sequential)]
+            struct OSVERSIONINFOEX
+            {
+                public int dwOSVersionInfoSize;
+                public int dwMajorVersion;
+                public int dwMinorVersion;
+                public int dwBuildNumber;
+                public int dwPlatformId;
+                [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+                public string szCSDVersion;
+                public ushort wServicePackMajor;
+                public ushort wServicePackMinor;
+                public ushort wSuiteMask;
+                public byte wProductType;
+                public byte wReserved;
+            }
+
+            [DllImport("ntdll.dll", SetLastError = true)]
+            static extern int RtlGetVersion(ref OSVERSIONINFOEX versionInfo);
+
+            public static bool IsWindows11()
+            {
+                var osVersion = new OSVERSIONINFOEX();
+                osVersion.dwOSVersionInfoSize = Marshal.SizeOf(osVersion);
+                int status = RtlGetVersion(ref osVersion);
+
+                if (status == 0)
+                {
+                    return osVersion.dwMajorVersion == 10 && osVersion.dwBuildNumber >= 22000;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            public const uint FLASHW_ALL = 1 | 2;
+            public const uint FLASHW_TIMERNOFG = 12;
+
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool FlashWindowEx(ref FLASHWINFO pwfi);
+
+            [StructLayout(LayoutKind.Sequential)]
+            public struct FLASHWINFO
+            {
+                public uint cbSize;
+                public IntPtr hwnd;
+                public uint dwFlags;
+                public uint uCount;
+                public uint dwTimeout;
+            }
+
             [DllImport("user32.dll")]
             public static extern int SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 

@@ -246,7 +246,6 @@ namespace CuoreUI.Controls
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            base.OnMouseUp(e);
             if (e.Button == MouseButtons.Left)
             {
                 isThumbPressed = false;
@@ -257,7 +256,6 @@ namespace CuoreUI.Controls
 
         protected override void OnMouseLeave(EventArgs e)
         {
-            base.OnMouseLeave(e);
             isThumbPressed = false;
             Capture = false;
             isThumbHovered = false;
@@ -266,7 +264,6 @@ namespace CuoreUI.Controls
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            base.OnMouseMove(e);
             if (isThumbPressed)
             {
                 int deltaY = e.Y - initialMouseY;

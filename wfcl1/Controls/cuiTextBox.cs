@@ -114,7 +114,7 @@ namespace CuoreUI.Controls
         }
 
         [Category("CuoreUI")]
-        public Color BorderColor
+        public Color OutlineColor
         {
             get
             {
@@ -128,7 +128,7 @@ namespace CuoreUI.Controls
         }
 
         [Category("CuoreUI")]
-        public Color FocusBorderColor
+        public Color FocusOutlineColor
         {
             get
             {
@@ -141,7 +141,7 @@ namespace CuoreUI.Controls
         }
 
         [Category("CuoreUI")]
-        private int BorderSize
+        private int OutlineThickness
         {
             get
             {
@@ -442,16 +442,16 @@ namespace CuoreUI.Controls
                 g.SmoothingMode = SmoothingMode.AntiAlias;
 
                 var rectBorderSmooth = ClientRectangle;
-                var rectBorder = Rectangle.Inflate(rectBorderSmooth, -BorderSize, -BorderSize);
+                var rectBorder = Rectangle.Inflate(rectBorderSmooth, -OutlineThickness, -OutlineThickness);
                 //rectBorder.Offset(-BorderSize, -BorderSize);
 
                 int smoothSize = privateBorderSize > 0 ? privateBorderSize : 1;
 
                 using (SolidBrush bgBrush = new SolidBrush(privateIsFocused ? FocusBackgroundColor : BackgroundColor))
                 using (GraphicsPath pathBorderSmooth = Helper.RoundRect(rectBorderSmooth, Rounding))
-                using (GraphicsPath pathBorder = Helper.RoundRect(rectBorder, Rounding - new Padding(BorderSize, BorderSize, BorderSize, BorderSize) - new Padding(1, 1, 1, 1)))
+                using (GraphicsPath pathBorder = Helper.RoundRect(rectBorder, Rounding - new Padding(OutlineThickness, OutlineThickness, OutlineThickness, OutlineThickness) - new Padding(1, 1, 1, 1)))
                 using (Pen penBorderSmooth = new Pen(BackColor, smoothSize))
-                using (Pen penBorder = new Pen(privateIsFocused ? FocusBorderColor : BorderColor, BorderSize) { Alignment = PenAlignment.Center })
+                using (Pen penBorder = new Pen(privateIsFocused ? FocusOutlineColor : OutlineColor, OutlineThickness) { Alignment = PenAlignment.Center })
                 {
                     e.Graphics.FillPath(bgBrush, pathBorder);
 
@@ -491,12 +491,12 @@ namespace CuoreUI.Controls
             else //Square/Normal TextBox
             {
                 //Draw border
-                using (Pen penBorder = new Pen(BorderColor, BorderSize))
+                using (Pen penBorder = new Pen(OutlineColor, OutlineThickness))
                 {
                     Region = new Region(ClientRectangle);
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                     if (privateIsFocused)
-                        penBorder.Color = FocusBorderColor;
+                        penBorder.Color = FocusOutlineColor;
 
                     if (UnderlinedStyle) //Line Style
                         g.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);

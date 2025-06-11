@@ -2,18 +2,33 @@
 <package>
   <metadata>
     <id>CuoreUI.Winforms</id>
-    <version>2025.05.07</version>
+    <version>2025.06.12</version>
     <authors>itzkxhu</authors>
     <owners>itzkxhu</owners>
-    <description>THE Free WinForms UI/UX Library.</description>
+    <description>Free WinForms UI/UX Library. Modern look in your Windows Forms app.</description>
     <icon>icon.png</icon>
     <license type="expression">Unlicense</license>
-    <tags>winforms modern ui telerik siticone cui theme bunifu guna cuoreui 7ow 7owh</tags>
+    <tags>winforms modern controls ui telerik siticone cui theme bunifu guna cuoreui 7ow</tags>
     <repository type="git" url="https://github.com/7owh/CuoreUI" />
+    <projectUrl>https://cuoreui.github.io</projectUrl>
+    <readme>README.md</readme>
+
+  <dependencies>
+    <group>
+      <dependency id="7ow.OpenFolderDialog" version="1.0.0" />
+      <dependency id="Microsoft.NETCore.Platforms" version="7.0.4" />
+      <dependency id="Microsoft-WindowsAPICodePack-Shell" version="1.1.5" />
+      <dependency id="System.Diagnostics.DiagnosticSource" version="9.0.5" />
+      <dependency id="System.Management" version="9.0.5" />
+      <dependency id="System.Runtime.CompilerServices.Unsafe" version="6.1.2" />
+    </group>
+  </dependencies>
   </metadata>
+
   <files>
-    <file src="wfcl1\bin\Release\net472\CuoreUI.dll" target="lib\netstandard2.0" />
+    <file src="wfcl1\bin\Release\net472\CuoreUI.dll" target="lib\net472" />
     <file src="wfcl1\bin\Release\net8.0-windows\CuoreUI.dll" target="lib\net8.0" />
     <file src="icon.png" target="icon.png" />
+    <file src="README.md" target="" />
   </files>
 </package>
