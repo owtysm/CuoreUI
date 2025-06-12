@@ -7,6 +7,7 @@ using static System.Windows.Forms.TabControl;
 
 namespace CuoreUI.Controls
 {
+    [Description("Experimental: paints over Windows's scrollbar with a custom graphic")]
     [ToolboxBitmap(typeof(TabControl))]
     public partial class cuiTabControlExperimental : UserControl
     {

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Progress bar in the shape of a circle")]
     [ToolboxBitmap(typeof(ProgressBar))]
     public partial class cuiCircleProgressBar : UserControl
     {

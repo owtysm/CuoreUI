@@ -10,6 +10,7 @@ using static CuoreUI.Controls.Forms.DatePicker;
 
 namespace CuoreUI.Controls
 {
+    [Description("Allows the user to select a date with the custom CuoreUI date picker form")]
     public partial class cuiCalendarDatePicker : UserControl
     {
         public cuiCalendarDatePicker()

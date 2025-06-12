@@ -8,6 +8,7 @@ using static CuoreUI.Drawing;
 
 namespace CuoreUI.Components
 {
+    [Description("Animate your control's location and/or opacity with easing functions")]
     [ToolboxBitmap(typeof(TrackBar))]
     public partial class cuiControlAnimator : Component
     {

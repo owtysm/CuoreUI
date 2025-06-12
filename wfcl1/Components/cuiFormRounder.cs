@@ -9,6 +9,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace CuoreUI.Components
 {
+    [Description("Smooth rounded corners for your form with a bitmap approach")]
     public partial class cuiFormRounder : Component
     {
         public cuiFormRounder()

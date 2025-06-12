@@ -7,6 +7,7 @@ using static CuoreUI.Drawing;
 
 namespace CuoreUI.Components
 {
+    [Description("Animate how your form shows itself")]
     public partial class cuiFormAnimator : Component
     {
         public cuiFormAnimator()

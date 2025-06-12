@@ -10,6 +10,7 @@ using static CuoreUI.Helper;
 
 namespace CuoreUI.Controls
 {
+    [Description("HSV Color picker wheel, triangle inside")]
     public partial class cuiColorPickerWheel : UserControl
     {
         private Bitmap privateHueBitmap;

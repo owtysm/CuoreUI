@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Bring back resizing for FormBorderStyle.None forms")]
     [ToolboxBitmap(typeof(Form))]
 
     public partial class cuiResizeGrip : UserControl

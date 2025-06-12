@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Select a rating in stars")]
     [ToolboxBitmap(typeof(ToolTip))]
     public partial class cuiStarRating : Control
     {

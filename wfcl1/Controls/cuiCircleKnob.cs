@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("A slider in the shape of a circle")]
     [ToolboxBitmap(typeof(TrackBar))]
     [DefaultEvent("ValueChanged")]
     public partial class cuiCircleKnob : UserControl

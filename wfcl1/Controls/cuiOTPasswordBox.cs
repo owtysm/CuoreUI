@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Lets the user input characters in separate boxes")]
     [DefaultEvent("FinishedTypingContent")]
     public partial class cuiOTPasswordBox : UserControl
     {

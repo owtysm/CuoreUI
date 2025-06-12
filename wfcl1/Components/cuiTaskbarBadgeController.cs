@@ -8,6 +8,7 @@ using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace CuoreUI.Components
 {
+    [Description("Shows a badge next to your form's taskbar icon")]
     public partial class cuiTaskbarBadgeController : Component
     {
         public cuiTaskbarBadgeController()

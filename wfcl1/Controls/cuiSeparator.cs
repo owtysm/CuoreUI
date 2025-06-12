@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Also called a Divider, separate content from each other")]
     [ToolboxBitmap(typeof(SplitContainer))]
     public partial class cuiSeparator : UserControl
     {

@@ -6,6 +6,7 @@ using CuoreUI.Components.Forms;
 
 namespace CuoreUI.Components
 {
+    [Description("Modern dialog which disables interaction with the form until option is chosen")]
     public partial class cuiMessageDialog : Component
     {
         public cuiMessageDialog()

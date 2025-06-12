@@ -167,7 +167,8 @@ namespace ControlsTester
             }
 
             return type.IsClass
-                && type.IsPublic;
+                && type.IsPublic 
+                && type.Name.StartsWith("cui");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Show progress step-by-step to the user")]
     public partial class cuiProgressTrackerHorizontal : Control
     {
         public cuiProgressTrackerHorizontal()

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Components
 {
+    [Description("Window dragging abilities for FormBorderStyle.None forms")]
     [ToolboxBitmap(typeof(Form))]
     public partial class cuiFormDrag : Component
     {

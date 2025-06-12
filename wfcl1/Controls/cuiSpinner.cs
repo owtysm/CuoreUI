@@ -7,6 +7,7 @@ using static CuoreUI.Drawing;
 
 namespace CuoreUI.Controls
 {
+    [Description("Loading spinner animated control")]
     [ToolboxBitmap(typeof(BackgroundWorker))]
     public partial class cuiSpinner : Control
     {

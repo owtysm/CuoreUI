@@ -7,6 +7,7 @@ using static CuoreUI.Helper;
 
 namespace CuoreUI.Components
 {
+    [Description("Show a tooltip when hovering over a specific control")]
     public partial class cuiTooltipHover : Component
     {
         private TooltipForm tooltipForm => TooltipController.tooltipForm;

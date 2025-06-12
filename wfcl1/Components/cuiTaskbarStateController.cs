@@ -7,6 +7,7 @@ using static CuoreUI.Helper.Win32;
 
 namespace CuoreUI.Components
 {
+    [Description("Controls the form's taskbar icon's look")]
     public partial class cuiTaskbarStateController : Component
     {
         private Form privateTargetForm;

@@ -6,7 +6,8 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
-    public partial class cuiGradientPanel : UserControl
+    [Description("cuiPanel with a gradient instead")]
+    public partial class cuiGradientPanel : Panel
     {
         public cuiGradientPanel()
         {

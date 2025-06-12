@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Components
 {
+    [Description("Drag your window by dragging the target control")]
     [ToolboxBitmap(typeof(Button))]
     public partial class cuiControlDrag : Component
     {

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Components
 {
+    [Description("Blur effect on a control")]
     [ToolboxBitmap(typeof(Panel))]
     public partial class cuiControlBlur : Component
     {

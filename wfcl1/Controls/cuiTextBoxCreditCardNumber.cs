@@ -6,6 +6,7 @@ using CuoreUI.Properties;
 
 namespace CuoreUI.Controls
 {
+    [Description("Card company's logo shows as the user inputs their credit card number")]
     [DefaultEvent("IsCardValidChanged")]
     public partial class cuiTextBoxCreditCardNumber : cuiTextBox
     {

@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Label with more alignment settings and RegEx parsing")]
     [ToolboxBitmap(typeof(Label))]
     public partial class cuiLabel : UserControl
     {

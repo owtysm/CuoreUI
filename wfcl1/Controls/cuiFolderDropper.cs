@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace CuoreUI.Controls
 {
+    [Description("Lets the user select a folder or drop it onto the control")]
     [DefaultEvent("FolderDropped")]
     public partial class cuiFolderDropper : Control
     {

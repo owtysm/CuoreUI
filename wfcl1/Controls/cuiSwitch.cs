@@ -8,6 +8,7 @@ using static CuoreUI.Drawing;
 
 namespace CuoreUI.Controls
 {
+    [Description("Modern take on the checkbox")]
     [ToolboxBitmap(typeof(ProgressBar))]
     [DefaultEvent("CheckedChanged")]
     public partial class cuiSwitch : UserControl

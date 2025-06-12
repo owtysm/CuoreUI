@@ -8,6 +8,7 @@ using static CuoreUI.Controls.cuiButton;
 
 namespace CuoreUI.Controls
 {
+    [Description("Unchecks other group buttons in the same Parent when pressed")]
     [ToolboxBitmap(typeof(Button))]
     [DefaultEvent("Click")]
     public partial class cuiButtonGroup : UserControl
