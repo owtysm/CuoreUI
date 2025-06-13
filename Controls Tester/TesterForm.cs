@@ -10,7 +10,7 @@ namespace ControlsTester
 {
     public partial class TesterForm : Form
     {
-        System.Collections.Generic.List<Control> availableControls = new System.Collections.Generic.List<Control>();
+        List<Control> availableControls = new List<Control>();
         int controlsCount = 0;
         int componentsCount = 0;
         int currentControlIndex = 0;
@@ -130,7 +130,7 @@ namespace ControlsTester
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form a = new Form() { Height = 512 + 72};
+            Form a = new Form() { Height = 512 + 72 };
 
             var controlsListBox = new RichTextBox() { ReadOnly = true, Height = 256, Top = 16, Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, Width = a.Width - 16, ScrollBars = RichTextBoxScrollBars.Vertical };
             var componentsListBox = new RichTextBox() { ReadOnly = true, Height = 256, Top = 16 + 256 + 16, Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, Width = a.Width - 16, ScrollBars = RichTextBoxScrollBars.Vertical };
@@ -167,7 +167,7 @@ namespace ControlsTester
             }
 
             return type.IsClass
-                && type.IsPublic 
+                && type.IsPublic
                 && type.Name.StartsWith("cui");
         }
     }

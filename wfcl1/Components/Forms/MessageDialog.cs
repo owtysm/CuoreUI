@@ -10,7 +10,6 @@ namespace CuoreUI.Components.Forms
     public partial class MessageDialog : Form
     {
         public Color DimColor { get; set; } = Color.FromArgb(160, 0, 0, 0);
-        public System.Drawing.Font ButtonFont { get; set; } = SystemFonts.DefaultFont;
         public Size ButtonSize { get; set; } = new Size(80, 32);
         public Padding DialogPadding { get; set; } = new Padding(20);
 
@@ -51,7 +50,7 @@ namespace CuoreUI.Components.Forms
         FormBorderStyle parentBorderStyleBefore;
         bool rounderExists = false;
 
-        public Task<DialogResult> ShowDialog(Form parent, string text, string title, MessageBoxButtons buttons, Size targetSize)
+        public Task<DialogResult> ShowDialog(Form parent, string text, string title, MessageBoxButtons buttons, Size targetSize, Size buttonSize)
         {
             var tcs = new TaskCompletionSource<DialogResult>();
 
@@ -68,7 +67,7 @@ namespace CuoreUI.Components.Forms
 
             string[] buttonsText = { OKText, YesText, NoText, CancelText };
 
-            var dialog = new MessageDialog(text, title, buttons, parent, targetSize, buttonsText)
+            var dialog = new MessageDialog(text, title, buttons, parent, targetSize, buttonsText, buttonSize)
             {
                 parentForm = parentForm,
                 BackColor = this.BackColor,
@@ -243,7 +242,7 @@ namespace CuoreUI.Components.Forms
 
         //
 
-        private MessageDialog(string text, string title, MessageBoxButtons buttons, Form parent, Size targetSize, string[] buttonsText)
+        private MessageDialog(string text, string title, MessageBoxButtons buttons, Form parent, Size targetSize, string[] buttonsText, Size buttonSize)
         {
             SuspendLayout();
 
@@ -311,8 +310,7 @@ namespace CuoreUI.Components.Forms
                         PressedForeColor = Color.FromArgb(128, Color.Gray),
 
                         Content = buttonText,
-                        Font = ButtonFont,
-                        Size = ButtonSize,
+                        Size = buttonSize,
                         DialogResult = DialogResult.OK
                     };
                     btn.Click += (_, __) => { result = res; Close(); };
@@ -333,9 +331,9 @@ namespace CuoreUI.Components.Forms
                         AddButton(YesText, DialogResult.Yes);
                         break;
                     case MessageBoxButtons.YesNoCancel:
+                        AddButton(CancelText, DialogResult.Cancel);
                         AddButton(NoText, DialogResult.No);
                         AddButton(YesText, DialogResult.Yes);
-                        AddButton(CancelText, DialogResult.Cancel);
                         break;
                 }
 
