@@ -3,9 +3,9 @@
   <metadata>
     <id>CuoreUI.Winforms</id>
     <version>2025.06.13</version>
-    <authors>itzkxhu</authors>
+    <authors>7ow</authors>
     <owners>itzkxhu</owners>
-    <description>Free WinForms UI/UX Library. Modern look in your Windows Forms app.</description>
+    <description>Free WinForms UI/UX Controls Library ∙ Stretch what WinForms can and create Modern Windows Forms apps.</description>
     <icon>icon.png</icon>
     <license type="expression">Unlicense</license>
     <tags>winforms modern controls ui telerik siticone cui theme bunifu guna cuoreui 7ow</tags>
