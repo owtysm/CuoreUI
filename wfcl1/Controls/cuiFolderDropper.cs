@@ -2,9 +2,11 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using CuoreUI.Properties;
 
 namespace CuoreUI.Controls
 {
@@ -34,6 +36,7 @@ namespace CuoreUI.Controls
         }
 
         private Color privatePanelOutlineColor = Color.FromArgb(128, 128, 128, 128);
+
         [Category("CuoreUI")]
         public Color DashedOutlineColor
         {
@@ -48,7 +51,8 @@ namespace CuoreUI.Controls
             }
         }
 
-        private float privateOutlineThickness = 1.5f;
+        private float privateOutlineThickness = 1;
+
         [Category("CuoreUI")]
         public float OutlineThickness
         {
@@ -64,6 +68,7 @@ namespace CuoreUI.Controls
         }
 
         private bool privateDashedOutline = true;
+
         [Category("CuoreUI")]
         public bool DashedOutline
         {
@@ -78,7 +83,8 @@ namespace CuoreUI.Controls
             }
         }
 
-        private int privateDashLength = 4;
+        private int privateDashLength = 8;
+
         [Category("CuoreUI")]
         public int DashLength
         {
@@ -114,6 +120,7 @@ namespace CuoreUI.Controls
             AllowDrop = true;
             ForeColor = Color.Gray;
             Cursor = Cursors.Hand;
+            Size = new Size(270, 135);
         }
 
         [Category("CuoreUI")]
@@ -209,15 +216,80 @@ namespace CuoreUI.Controls
                 float totalHeight = size1.Height + (line2 != null ? size2.Height : 0f);
                 float startY = modifiedCR.Top + (modifiedCR.Height - totalHeight) / 2;
 
-                RectangleF textRect1 = new RectangleF(modifiedCR.Left, startY, modifiedCR.Width, size1.Height);
-                e.Graphics.DrawString(line1, Font, textBrush, textRect1, sf);
-
-                if (line2 != null)
+                if (privateImage != null)
                 {
-                    using (SolidBrush uploadTextBrush = new SolidBrush(hover ? HoverUploadForeColor : NormalUploadForeColor))
+                    int imageHalfHeight = privateImageSize.Height / 2;
+                    int halfPadding = ImagePadding / 2;
+
+                    Rectangle imageRectangle = new Rectangle(
+                        Width / 2 - privateImageSize.Width / 2,
+                        (int)(startY - imageHalfHeight - halfPadding),
+                        privateImageSize.Width,
+                        privateImageSize.Height
+                    );
+                    e.Graphics.DrawImage(privateImage, imageRectangle);
+
+                    float tintR = ImageTint.R / 255f;
+                    float tintG = ImageTint.G / 255f;
+                    float tintB = ImageTint.B / 255f;
+                    float tintA = ImageTint.A / 255f;
+
+                    ColorMatrix colorMatrix = new ColorMatrix(new float[][]
                     {
-                        RectangleF textRect2 = new RectangleF(modifiedCR.Left, startY + size1.Height, modifiedCR.Width, size2.Height);
-                        e.Graphics.DrawString(line2, Font, uploadTextBrush, textRect2, sf);
+        new float[] {tintR, 0, 0, 0, 0},
+        new float[] {0, tintG, 0, 0, 0},
+        new float[] {0, 0, tintB, 0, 0},
+        new float[] {0, 0, 0, tintA, 0},
+        new float[] {0, 0, 0, 0, 1}
+                    });
+
+                    ImageAttributes imageAttributes = new ImageAttributes();
+                    imageAttributes.SetColorMatrix(colorMatrix);
+
+                    e.Graphics.DrawImage(
+                        privateImage,
+                        imageRectangle,
+                        0, 0, privateImage.Width, privateImage.Height,
+                        GraphicsUnit.Pixel,
+                        imageAttributes
+                    );
+
+                    int imageRectHalfHeight = imageRectangle.Height / 2;
+
+                    RectangleF textRect1 = new RectangleF(
+                        modifiedCR.Left,
+                        startY + imageRectHalfHeight + halfPadding,
+                        modifiedCR.Width,
+                        size1.Height
+                    );
+                    e.Graphics.DrawString(line1, Font, textBrush, textRect1, sf);
+
+                    if (line2 != null)
+                    {
+                        using (SolidBrush uploadTextBrush = new SolidBrush(hover ? HoverUploadForeColor : NormalUploadForeColor))
+                        {
+                            RectangleF textRect2 = new RectangleF(
+                                modifiedCR.Left,
+                                startY + size1.Height + imageRectHalfHeight + halfPadding,
+                                modifiedCR.Width,
+                                size2.Height
+                            );
+                            e.Graphics.DrawString(line2, Font, uploadTextBrush, textRect2, sf);
+                        }
+                    }
+                }
+                else
+                {
+                    RectangleF textRect1 = new RectangleF(modifiedCR.Left, startY, modifiedCR.Width, size1.Height);
+                    e.Graphics.DrawString(line1, Font, textBrush, textRect1, sf);
+
+                    if (line2 != null)
+                    {
+                        using (SolidBrush uploadTextBrush = new SolidBrush(hover ? HoverUploadForeColor : NormalUploadForeColor))
+                        {
+                            RectangleF textRect2 = new RectangleF(modifiedCR.Left, startY + size1.Height, modifiedCR.Width, size2.Height);
+                            e.Graphics.DrawString(line2, Font, uploadTextBrush, textRect2, sf);
+                        }
                     }
                 }
             }
@@ -251,6 +323,70 @@ namespace CuoreUI.Controls
             base.OnDragLeave(e);
             hover = false;
             Refresh();
+        }
+
+        private Image privateImage = Resources.ic_fluent_folder_add_24_regular;
+
+        [Category("CuoreUI")]
+        public Image Image
+        {
+            get
+            {
+                return privateImage;
+            }
+            set
+            {
+                privateImage = value;
+                Refresh();
+            }
+        }
+
+        private Size privateImageSize = new Size(24, 24);
+
+        [Category("CuoreUI")]
+        public Size ImageSize
+        {
+            get
+            {
+                return privateImageSize;
+            }
+            set
+            {
+                privateImageSize = value;
+                Refresh();
+            }
+        }
+
+        private Color privateImageColor = Color.Gray;
+
+        [Category("CuoreUI")]
+        public Color ImageTint
+        {
+            get
+            {
+                return privateImageColor;
+            }
+            set
+            {
+                privateImageColor = value;
+                Refresh();
+            }
+        }
+
+        private int privateImagePadding = 2;
+
+        [Category("CuoreUI")]
+        public int ImagePadding
+        {
+            get
+            {
+                return privateImagePadding;
+            }
+            set
+            {
+                privateImagePadding = value;
+                Refresh();
+            }
         }
 
         protected override void OnDragDrop(DragEventArgs drgevent)

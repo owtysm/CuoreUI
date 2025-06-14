@@ -143,6 +143,26 @@ namespace CuoreUI.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_document_add_24_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_document_add_24_regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_folder_add_24_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_folder_add_24_regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jcb {
             get {
                 object obj = ResourceManager.GetObject("jcb", resourceCulture);
