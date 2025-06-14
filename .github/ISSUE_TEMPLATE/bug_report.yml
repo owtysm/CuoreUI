@@ -1,0 +1,108 @@
+name: 🐞I found a BUG
+description: File a bug report
+title: "[BUG] "
+labels: [bug]
+assignees: 7owh
+body:
+  - type: markdown
+    attributes:
+      value: |
+      
+        <div align="center">
+          <img src="https://i.imgur.com/voAeB8p.png" alt="CuoreUI BUG REPORT banner">
+        </div>
+
+        Thanks for taking the time to report a bug in **CuoreUI.Winforms**.
+
+        Please try to provide as much context and detail as possible. This helps us reproduce and fix issues faster.
+
+  - type: markdown
+    id: version
+    attributes:
+      value: |
+
+        ## Are you using the latest version?
+
+        No bug support will be provided for versions lower than the latest release.
+
+        ## Are you using Windows?
+
+        No bug support will be provided for translation / compatibility layers (like WineHQ)
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g. The cuiControl crashes with 200% system UI scale.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: How can we reliably reproduce the issue?
+      placeholder: |
+        1. Add a new cuiControl to a .NET WinForms project
+        2. Set `BuggedProperty = true`
+        3. Switch to 200% scale in Windows Settings
+        4. Run the app
+        5. Watch it throw a `StackOverflowException`
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: The cuiControl should not crash when Windows UI scale isn't 100%
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happens instead?
+      placeholder: The cuiControl displays a crossed red box with a warning icon and lots of text before throwing a StackOverflowException
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag and drop any relevant screenshots or screen recordings here.
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Your OS
+      description: Which OS does this bug occur on?
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows 8
+    validations:
+      required: true
+
+  - type: input
+    id: platform-detail
+    attributes:
+      label: Platform Details
+      description: If you want to share specific details, include them here.
+      placeholder: e.g. Windows 11, 200% scale
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Anything else that might help understand the issue better? (like thrown Exceptions)
+
+  - type: markdown
+    attributes:
+      value: |
+
+        _Thank you for helping improve CuoreUI!_

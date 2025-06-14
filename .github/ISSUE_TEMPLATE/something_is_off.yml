@@ -1,0 +1,75 @@
+name: ❓Something seems Off..
+description: I found something weird
+title: "[WEIRD] "
+labels: [invalid]
+assignees: 7owh
+body:
+  - type: markdown
+    attributes:
+      value: |
+      
+        <div align="center">
+          <img src="https://i.imgur.com/OkBfuT4.png" alt="CuoreUI SOMETHING IS WRONG banner">
+        </div>
+
+        Thanks for reporting something which doesn't seem right in **CuoreUI.Winforms**.
+
+        Please try to tell shortly
+
+  - type: markdown
+    id: version
+    attributes:
+      value: |
+
+        ## Are you using the latest version?
+
+        No bug support will be provided for versions lower than the latest release.
+
+        ## Are you using Windows?
+
+        No bug support will be provided for translation / compatibility layers (like WineHQ)
+
+  - type: textarea
+    id: badcode
+    attributes:
+      label: Lines of bad code
+      description: Which lines of code do you think are wrong? (You can generalise)
+      placeholder: e.g. The cuiControl's OnPaint seems off
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: The cuiControl should draw smooth antialiased borders
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happens instead?
+      placeholder: Its borders are jagged, aliased
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag and drop any relevant screenshots or screen recordings here.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Anything else that might help understand the issue better? (like thrown Exceptions)
+
+  - type: markdown
+    attributes:
+      value: |
+
+        _Thank you for helping improve CuoreUI!_
