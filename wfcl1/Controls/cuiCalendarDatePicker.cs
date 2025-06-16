@@ -89,7 +89,7 @@ namespace CuoreUI.Controls
             PickerForm.Theme = Theme;
             PickerForm?.ToggleThemeSwitchButton(privateEnableThemeChangeButton);
 
-            Point basePoint = PointToScreen(Location);
+            Point basePoint = FindForm().Location + ((Size)Location);
             int rounding = PickerForm.cuiFormRounder1.Rounding;
             Size pickerSize = PickerForm.Size;
 
@@ -98,39 +98,39 @@ namespace CuoreUI.Controls
             switch (PickerPosition)
             {
                 case Position.Top:
-                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, pickerSize.Height);
+                    location = basePoint + new Size(Width / 2 + rounding, rounding * 4) - new Size(pickerSize.Width / 2, pickerSize.Height);
                     break;
 
                 case Position.Left:
-                    location = basePoint + new Size(0, Height / 2) - new Size(pickerSize.Width, pickerSize.Height / 2);
+                    location = basePoint + new Size(rounding, Height / 2 + rounding * 4) - new Size(pickerSize.Width, pickerSize.Height / 2);
                     break;
 
                 case Position.Bottom:
-                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, 0);
+                    location = basePoint + new Size(Width / 2 + rounding, Height + rounding * 4) - new Size(pickerSize.Width / 2, 0);
                     break;
 
                 case Position.Right:
-                    location = basePoint + new Size(Width - rounding * 4, Height / 2) - new Size(0, pickerSize.Height / 2);
+                    location = basePoint + new Size(Width + rounding, Height / 2 + rounding * 4) - new Size(0, pickerSize.Height / 2);
                     break;
 
                 case Position.TopLeft:
-                    location = basePoint + new Size(Width / 2, 0) - new Size(pickerSize.Width, pickerSize.Height);
+                    location = basePoint + new Size(rounding, rounding * 4) - pickerSize;
                     break;
 
                 case Position.TopRight:
-                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(0, pickerSize.Height);
+                    location = basePoint + new Size(Width + rounding, rounding * 4) - new Size(0, pickerSize.Height);
                     break;
 
                 case Position.BottomLeft:
-                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width, 0);
+                    location = basePoint + new Size(rounding, Height + rounding * 4) - new Size(pickerSize.Width, 0);
                     break;
 
                 case Position.BottomRight:
-                    location = basePoint + new Size(Width / 2, rounding * 2);
+                    location = basePoint + new Size(Width + rounding, Height + rounding * 4);
                     break;
 
-                default:
-                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, 0);
+                default: // same as bottom
+                    location = basePoint + new Size(Width / 2 + rounding, Height + rounding * 4) - new Size(pickerSize.Width / 2, 0);
                     break;
             }
 
