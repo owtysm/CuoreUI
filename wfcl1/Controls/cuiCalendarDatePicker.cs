@@ -57,6 +57,24 @@ namespace CuoreUI.Controls
         DatePicker _PickerForm;
         public bool isDialogVisible = false;
 
+        [Category("CuoreUI")]
+        [Description("Where the tooltip should show up, relative to where the cursor is.")]
+        public enum Position
+        {
+            Top = 1,
+            Left = 2,
+            Bottom = 3,
+            Right = 4,
+
+            TopLeft = 5,
+            TopRight = 6,
+            BottomLeft = 7,
+            BottomRight = 8,
+        }
+
+        [Category("CuoreUI")]
+        public Position PickerPosition { get; set; } = Position.Bottom;
+
         public void ShowDialog()
         {
             if (isDialogVisible)
@@ -71,8 +89,54 @@ namespace CuoreUI.Controls
             PickerForm.Theme = Theme;
             PickerForm?.ToggleThemeSwitchButton(privateEnableThemeChangeButton);
 
+            Point basePoint = PointToScreen(Location);
+            int rounding = PickerForm.cuiFormRounder1.Rounding;
+            Size pickerSize = PickerForm.Size;
+
+            Point location;
+
+            switch (PickerPosition)
+            {
+                case Position.Top:
+                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, pickerSize.Height);
+                    break;
+
+                case Position.Left:
+                    location = basePoint + new Size(0, Height / 2) - new Size(pickerSize.Width, pickerSize.Height / 2);
+                    break;
+
+                case Position.Bottom:
+                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, 0);
+                    break;
+
+                case Position.Right:
+                    location = basePoint + new Size(Width - rounding * 4, Height / 2) - new Size(0, pickerSize.Height / 2);
+                    break;
+
+                case Position.TopLeft:
+                    location = basePoint + new Size(Width / 2, 0) - new Size(pickerSize.Width, pickerSize.Height);
+                    break;
+
+                case Position.TopRight:
+                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(0, pickerSize.Height);
+                    break;
+
+                case Position.BottomLeft:
+                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width, 0);
+                    break;
+
+                case Position.BottomRight:
+                    location = basePoint + new Size(Width / 2, rounding * 2);
+                    break;
+
+                default:
+                    location = basePoint + new Size(Width / 2, rounding * 2) - new Size(pickerSize.Width / 2, 0);
+                    break;
+            }
+
+            PickerForm.Location = location;
+
             PickerForm.Show();
-            PickerForm.Location = PointToScreen(Location) + new Size(Width / 2, PickerForm.cuiFormRounder1.Rounding * 2) - new Size(PickerForm.Width, 0);
 
             PickerForm.FormClosing += (s, e) =>
             {

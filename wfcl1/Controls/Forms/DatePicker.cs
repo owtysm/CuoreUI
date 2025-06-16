@@ -138,7 +138,7 @@ namespace CuoreUI.Controls.Forms
                         }
                         cuiButton3.NormalOutline = Color.FromArgb(128, 255, 255, 255);
 
-                        cuiButton2.NormalBackground = Color.FromArgb(128, 255, 255, 25);
+                        cuiButton2.NormalBackground = Color.FromArgb(128, 255, 255, 255);
                         cuiButton2.ForeColor = Color.Black;
 
                         cuiButton1.NormalBackground = Color.FromArgb(128, 255, 255, 255);
