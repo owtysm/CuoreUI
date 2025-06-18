@@ -420,23 +420,28 @@ namespace CuoreUI.Controls
 
                     if (FileNames.Length > 1)
                     {
-                        FileDropped?.Invoke(null, new FileDroppedEventArgs(FileNames));
+                        FileDropped?.Invoke(this, new FileDroppedEventArgs(FileNames));
                     }
                     else
                     {
-                        FileDropped?.Invoke(null, new FileDroppedEventArgs(FileName));
+                        FileDropped?.Invoke(this, new FileDroppedEventArgs(FileName));
                     }
-
                 }
             }
         }
 
         public string[] GetExtensionsFromFilter()
         {
+            if (string.IsNullOrWhiteSpace(Filter))
+                return Array.Empty<string>();
+
             var extensions = Filter
                 .Split('|')
-                .Where((_, index) => index % 2 == 1) // pick only extensions
-                .Select(ext => ext.StartsWith("*") ? ext.Substring(1) : ext)
+                .Where((_, index) => index % 2 == 1)
+                .SelectMany(part => part.Split(';'))
+                .Select(ext => ext.TrimStart('*').ToLowerInvariant())
+                .Where(ext => !string.IsNullOrWhiteSpace(ext))
+                .Distinct()
                 .ToArray();
 
             return extensions.Contains(".*") ? Array.Empty<string>() : extensions;
@@ -459,12 +464,12 @@ namespace CuoreUI.Controls
                         if (MultiselectNow)
                         {
                             FileNames = ofd.FileNames;
-                            FileDropped?.Invoke(null, new FileDroppedEventArgs(FileNames));
+                            FileDropped?.Invoke(this, new FileDroppedEventArgs(FileNames));
                         }
                         else
                         {
                             FileName = ofd.FileName;
-                            FileDropped?.Invoke(null, new FileDroppedEventArgs(FileName));
+                            FileDropped?.Invoke(this, new FileDroppedEventArgs(FileName));
                         }
                     }
                 }
