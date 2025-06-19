@@ -31,7 +31,7 @@ So, CuoreUI draws inspiration from the latest modern, *often web* designs. Suppo
 - ### Add to toolbox from .DLL file
 > This will take you to another markdown file
 
-Step-by step: [Load CuoreUI.dll from toolbox](./github/load-into-toolbox.md).
+Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 
 ## 📃 Documentation & Samples
 - ### Samples / Demos
