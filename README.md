@@ -33,7 +33,7 @@ Step-by step: [Load CuoreUI.dll from toolbox](./github/load-into-toolbox.md).
 - ### Samples / Demos
 > Available at [`7owh/CuoreUI-Samples`](https://github.com/7owh/CuoreUI-Samples/)
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/).
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/releases).
 
 - ### Documentation
 > Available at [`itzkxhu.gitbook.io/cuoreui`](https://itzkxhu.gitbook.io/cuoreui)
