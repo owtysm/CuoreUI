@@ -31,13 +31,13 @@ So, CuoreUI draws inspiration from the latest modern, *often web* designs. Suppo
 - ### Add to toolbox from .DLL file
 > This will take you to another markdown file
 
-Step-by step: [Load CuoreUI.dll from toolbox](./github/load-into-toolbox.md).
+Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 
 ## 📃 Documentation & Samples
 - ### Samples / Demos
 > Available at [`7owh/CuoreUI-Samples`](https://github.com/7owh/CuoreUI-Samples/)
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/releases).
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/?tab=readme-ov-file#available-demos).
 
 - ### Documentation
 > Available at [`itzkxhu.gitbook.io/cuoreui`](https://itzkxhu.gitbook.io/cuoreui)
