@@ -19,12 +19,24 @@ So, CuoreUI draws inspiration from the latest modern, *often web* designs. Suppo
 </p>
 
 ## 📦 Installation 
+- ### Nuget
 > `Install-Package CuoreUI.Winforms`
 
 ![NuGet logo](https://i.imgur.com/6aPyVAg.png) NuGet [CuoreUI.Winforms](https://www.nuget.org/packages/CuoreUI.Winforms/).
 
-## 📃 Documentation
-> Available at `itzkxhu.gitbook.io/cuoreui`
+- ### Add to toolbox from .DLL file
+> This will take you to another markdown file
+
+Step-by step: [Load CuoreUI.dll from toolbox](./github/load-into-toolbox.md).
+
+## 📃 Documentation & Samples
+- ### Samples / Demos
+> Available at [`7owh/CuoreUI-Samples`](https://github.com/7owh/CuoreUI-Samples/)
+
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/).
+
+- ### Documentation
+> Available at [`itzkxhu.gitbook.io/cuoreui`](https://itzkxhu.gitbook.io/cuoreui)
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
@@ -32,13 +44,13 @@ So, CuoreUI draws inspiration from the latest modern, *often web* designs. Suppo
 
 If you want to talk, don't hesitate to reach out! I respect everyone.
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions)
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions).
 
-![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**
+![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**.
 
 ## 🕸️Website
 Psst, we have a website, and it's code is available aswell.
 
-🕸️Visit it here: https://CuoreUI.github.io/
+🕸️Visit it here: https://CuoreUI.github.io/.
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [`CuoreUI/CuoreUI.github.io`](https://github.com/CuoreUI/CuoreUI.github.io)
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [`CuoreUI/CuoreUI.github.io`](https://github.com/CuoreUI/CuoreUI.github.io).
