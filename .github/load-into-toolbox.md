@@ -27,9 +27,9 @@
 > ![image](https://github.com/user-attachments/assets/1311e771-7c8d-4528-bd2d-8b1c2fc8ade2)
 
 ## Done!
-You should now be able to browse all CuoreUI controls and components.
+Enjoy CuoreUI.
 
-Without using the `NuGet VSIX Manager` to install CuoreUI.
+You can create an issue [here](https://github.com/7owh/CuoreUI/issues) if you find any bugs!
 
 # 🐞 Troubleshooting
 
