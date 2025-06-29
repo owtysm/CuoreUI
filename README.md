@@ -50,14 +50,6 @@ Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
-## 📫 Contact
-
-If you want to talk, don't hesitate to reach out! I respect everyone.
-
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Let's discuss on Github: [Discussions](https://github.com/7owh/CuoreUI/discussions).
-
-![Discord logo](https://i.imgur.com/BvvyqHK.png) Let's chat on Discord: **`.ow777`**.
-
 ## 🕸️Website
 Psst, we have a website, and it's code is available aswell.
 
