@@ -1,9 +1,3 @@
-> [!WARNING] 
-> # ⚠️ The repository will be archived by August 2025
-> This is due to personal privacy concerns.
->
-> CuoreUI will remain oss, usable, forkable.
-
 ![CuoreUI Logo](https://i.imgur.com/pWwYDum.jpeg)
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-ff6a00)](https://unlicense.org/)
 
