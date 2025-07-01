@@ -13,9 +13,7 @@
 
 The repository source code updates more frequently than the release binaries on NuGet.
 
-# CuoreUI.Winforms
-> [!NOTE]
-> CuoreUI is in development
+# ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
 This is a C# .NET Winforms Library with *modern-looking* controls, components and forms. The library features many controls with a sleek design inspired by Xiaomi and modern web design.
 
@@ -41,12 +39,10 @@ Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 
 ## 📃 Documentation & Samples
 - ### Samples / Demos
-> Available at [`7owh/CuoreUI-Samples`](https://github.com/7owh/CuoreUI-Samples/)
 
 ![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/?tab=readme-ov-file#available-demos).
 
 - ### Documentation
-> Available at [`itzkxhu.gitbook.io/cuoreui`](https://itzkxhu.gitbook.io/cuoreui)
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
