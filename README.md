@@ -34,7 +34,7 @@ Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 ## 📃 Documentation & Samples
 - ### Samples / Demos
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/7owh/CuoreUI-Samples/?tab=readme-ov-file#available-demos).
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Download samples from [GitHub](https://github.com/owtysm/CuoreUI-Samples/?tab=readme-ov-file#available-demos).
 
 - ### Documentation
 
