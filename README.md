@@ -38,11 +38,13 @@ Step-by step: [Load CuoreUI.dll from toolbox](./.github/load-into-toolbox.md).
 
 - ### Documentation
 
+Documentation may not be up-to-date. In that case, [create an issue](https://github.com/owtysm/CuoreUI/issues/new/choose).
+
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
 
 ## 🕸️Website
 Psst, we have a website, and it's code is available aswell.
 
-🕸️Visit it here: https://CuoreUI.github.io/.
+🕸️Visit it here: [CuoreUI.github.io](https://CuoreUI.github.io/).
 
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [`CuoreUI/CuoreUI.github.io`](https://github.com/CuoreUI/CuoreUI.github.io).
+![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [/CuoreUI/CuoreUI.github.io](https://github.com/CuoreUI/CuoreUI.github.io).
