@@ -21,8 +21,9 @@ CuoreUI draws inspiration from the latest web designs. Tries to support control 
 ![image](https://i.imgur.com/7yeFZER.png)
 
 **Lightweight**
+*(Data from Early July 2025)*
 
-While 5-20x smaller in size than other competitors, it still packs similar features due to not being obfuscated.
+While smaller in size than other competitors, it still packs similar features due to not being obfuscated.
 
 ![image](https://i.imgur.com/9VbO6gK.png)
 
