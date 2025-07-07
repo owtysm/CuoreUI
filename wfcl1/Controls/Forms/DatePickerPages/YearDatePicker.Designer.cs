@@ -55,7 +55,7 @@
             this.cuiButtonGroup1.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup1.Group = 0;
             this.cuiButtonGroup1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup1.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup1.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup1.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup1.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup1.Image = null;
@@ -90,7 +90,7 @@
             this.cuiButtonGroup2.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup2.Group = 0;
             this.cuiButtonGroup2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup2.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup2.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup2.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup2.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup2.Image = null;
@@ -125,7 +125,7 @@
             this.cuiButtonGroup3.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup3.Group = 0;
             this.cuiButtonGroup3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup3.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup3.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup3.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup3.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup3.Image = null;
@@ -160,7 +160,7 @@
             this.cuiButtonGroup4.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup4.Group = 0;
             this.cuiButtonGroup4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup4.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup4.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup4.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup4.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup4.Image = null;
@@ -195,7 +195,7 @@
             this.cuiButtonGroup5.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup5.Group = 0;
             this.cuiButtonGroup5.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup5.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup5.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup5.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup5.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup5.Image = null;
@@ -230,7 +230,7 @@
             this.cuiButtonGroup6.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup6.Group = 0;
             this.cuiButtonGroup6.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup6.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup6.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup6.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup6.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup6.Image = null;
@@ -265,7 +265,7 @@
             this.cuiButtonGroup7.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup7.Group = 0;
             this.cuiButtonGroup7.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup7.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup7.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup7.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup7.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup7.Image = null;
@@ -300,7 +300,7 @@
             this.cuiButtonGroup8.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup8.Group = 0;
             this.cuiButtonGroup8.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup8.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup8.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup8.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup8.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup8.Image = null;
@@ -335,7 +335,7 @@
             this.cuiButtonGroup9.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup9.Group = 0;
             this.cuiButtonGroup9.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup9.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup9.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup9.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup9.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup9.Image = null;
@@ -370,7 +370,7 @@
             this.cuiButtonGroup10.ForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup10.Group = 0;
             this.cuiButtonGroup10.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButtonGroup10.HoveredImageTint = System.Drawing.Color.Empty;
+            this.cuiButtonGroup10.HoverImageTint = System.Drawing.Color.Empty;
             this.cuiButtonGroup10.HoverForeColor = System.Drawing.Color.Gray;
             this.cuiButtonGroup10.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButtonGroup10.Image = null;
@@ -409,7 +409,7 @@
             this.leftMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.leftMonthButton.ForeColor = System.Drawing.Color.White;
             this.leftMonthButton.HoverBackground = System.Drawing.Color.Empty;
-            this.leftMonthButton.HoveredImageTint = System.Drawing.Color.Gray;
+            this.leftMonthButton.HoverImageTint = System.Drawing.Color.Gray;
             this.leftMonthButton.HoverForeColor = System.Drawing.Color.Empty;
             this.leftMonthButton.HoverOutline = System.Drawing.Color.Empty;
             this.leftMonthButton.Image = ((System.Drawing.Image)(resources.GetObject("leftMonthButton.Image")));
@@ -447,7 +447,7 @@
             this.rightMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.rightMonthButton.ForeColor = System.Drawing.Color.White;
             this.rightMonthButton.HoverBackground = System.Drawing.Color.Empty;
-            this.rightMonthButton.HoveredImageTint = System.Drawing.Color.Gray;
+            this.rightMonthButton.HoverImageTint = System.Drawing.Color.Gray;
             this.rightMonthButton.HoverForeColor = System.Drawing.Color.Empty;
             this.rightMonthButton.HoverOutline = System.Drawing.Color.Empty;
             this.rightMonthButton.Image = ((System.Drawing.Image)(resources.GetObject("rightMonthButton.Image")));

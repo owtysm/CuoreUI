@@ -216,7 +216,7 @@
             this.button1.ForeColor = System.Drawing.Color.Gray;
             this.button1.Group = 0;
             this.button1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button1.HoverImageTint = System.Drawing.Color.Empty;
             this.button1.HoverForeColor = System.Drawing.Color.Gray;
             this.button1.HoverOutline = System.Drawing.Color.Empty;
             this.button1.Image = null;
@@ -251,7 +251,7 @@
             this.button2.ForeColor = System.Drawing.Color.Gray;
             this.button2.Group = 0;
             this.button2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button2.HoverImageTint = System.Drawing.Color.Empty;
             this.button2.HoverForeColor = System.Drawing.Color.Gray;
             this.button2.HoverOutline = System.Drawing.Color.Empty;
             this.button2.Image = null;
@@ -286,7 +286,7 @@
             this.button3.ForeColor = System.Drawing.Color.Gray;
             this.button3.Group = 0;
             this.button3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button3.HoverImageTint = System.Drawing.Color.Empty;
             this.button3.HoverForeColor = System.Drawing.Color.Gray;
             this.button3.HoverOutline = System.Drawing.Color.Empty;
             this.button3.Image = null;
@@ -321,7 +321,7 @@
             this.button4.ForeColor = System.Drawing.Color.Gray;
             this.button4.Group = 0;
             this.button4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button4.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button4.HoverImageTint = System.Drawing.Color.Empty;
             this.button4.HoverForeColor = System.Drawing.Color.Gray;
             this.button4.HoverOutline = System.Drawing.Color.Empty;
             this.button4.Image = null;
@@ -356,7 +356,7 @@
             this.button5.ForeColor = System.Drawing.Color.Gray;
             this.button5.Group = 0;
             this.button5.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button5.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button5.HoverImageTint = System.Drawing.Color.Empty;
             this.button5.HoverForeColor = System.Drawing.Color.Gray;
             this.button5.HoverOutline = System.Drawing.Color.Empty;
             this.button5.Image = null;
@@ -391,7 +391,7 @@
             this.button6.ForeColor = System.Drawing.Color.Gray;
             this.button6.Group = 0;
             this.button6.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button6.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button6.HoverImageTint = System.Drawing.Color.Empty;
             this.button6.HoverForeColor = System.Drawing.Color.Gray;
             this.button6.HoverOutline = System.Drawing.Color.Empty;
             this.button6.Image = null;
@@ -426,7 +426,7 @@
             this.button7.ForeColor = System.Drawing.Color.Gray;
             this.button7.Group = 0;
             this.button7.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button7.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button7.HoverImageTint = System.Drawing.Color.Empty;
             this.button7.HoverForeColor = System.Drawing.Color.Gray;
             this.button7.HoverOutline = System.Drawing.Color.Empty;
             this.button7.Image = null;
@@ -461,7 +461,7 @@
             this.button8.ForeColor = System.Drawing.Color.Gray;
             this.button8.Group = 0;
             this.button8.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button8.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button8.HoverImageTint = System.Drawing.Color.Empty;
             this.button8.HoverForeColor = System.Drawing.Color.Gray;
             this.button8.HoverOutline = System.Drawing.Color.Empty;
             this.button8.Image = null;
@@ -496,7 +496,7 @@
             this.button9.ForeColor = System.Drawing.Color.Gray;
             this.button9.Group = 0;
             this.button9.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button9.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button9.HoverImageTint = System.Drawing.Color.Empty;
             this.button9.HoverForeColor = System.Drawing.Color.Gray;
             this.button9.HoverOutline = System.Drawing.Color.Empty;
             this.button9.Image = null;
@@ -531,7 +531,7 @@
             this.button10.ForeColor = System.Drawing.Color.Gray;
             this.button10.Group = 0;
             this.button10.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button10.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button10.HoverImageTint = System.Drawing.Color.Empty;
             this.button10.HoverForeColor = System.Drawing.Color.Gray;
             this.button10.HoverOutline = System.Drawing.Color.Empty;
             this.button10.Image = null;
@@ -566,7 +566,7 @@
             this.button11.ForeColor = System.Drawing.Color.Gray;
             this.button11.Group = 0;
             this.button11.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button11.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button11.HoverImageTint = System.Drawing.Color.Empty;
             this.button11.HoverForeColor = System.Drawing.Color.Gray;
             this.button11.HoverOutline = System.Drawing.Color.Empty;
             this.button11.Image = null;
@@ -601,7 +601,7 @@
             this.button12.ForeColor = System.Drawing.Color.Gray;
             this.button12.Group = 0;
             this.button12.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button12.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button12.HoverImageTint = System.Drawing.Color.Empty;
             this.button12.HoverForeColor = System.Drawing.Color.Gray;
             this.button12.HoverOutline = System.Drawing.Color.Empty;
             this.button12.Image = null;
@@ -636,7 +636,7 @@
             this.button13.ForeColor = System.Drawing.Color.Gray;
             this.button13.Group = 0;
             this.button13.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button13.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button13.HoverImageTint = System.Drawing.Color.Empty;
             this.button13.HoverForeColor = System.Drawing.Color.Gray;
             this.button13.HoverOutline = System.Drawing.Color.Empty;
             this.button13.Image = null;
@@ -671,7 +671,7 @@
             this.button14.ForeColor = System.Drawing.Color.Gray;
             this.button14.Group = 0;
             this.button14.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button14.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button14.HoverImageTint = System.Drawing.Color.Empty;
             this.button14.HoverForeColor = System.Drawing.Color.Gray;
             this.button14.HoverOutline = System.Drawing.Color.Empty;
             this.button14.Image = null;
@@ -706,7 +706,7 @@
             this.button15.ForeColor = System.Drawing.Color.Gray;
             this.button15.Group = 0;
             this.button15.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button15.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button15.HoverImageTint = System.Drawing.Color.Empty;
             this.button15.HoverForeColor = System.Drawing.Color.Gray;
             this.button15.HoverOutline = System.Drawing.Color.Empty;
             this.button15.Image = null;
@@ -741,7 +741,7 @@
             this.button16.ForeColor = System.Drawing.Color.Gray;
             this.button16.Group = 0;
             this.button16.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button16.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button16.HoverImageTint = System.Drawing.Color.Empty;
             this.button16.HoverForeColor = System.Drawing.Color.Gray;
             this.button16.HoverOutline = System.Drawing.Color.Empty;
             this.button16.Image = null;
@@ -776,7 +776,7 @@
             this.button17.ForeColor = System.Drawing.Color.Gray;
             this.button17.Group = 0;
             this.button17.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button17.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button17.HoverImageTint = System.Drawing.Color.Empty;
             this.button17.HoverForeColor = System.Drawing.Color.Gray;
             this.button17.HoverOutline = System.Drawing.Color.Empty;
             this.button17.Image = null;
@@ -811,7 +811,7 @@
             this.button18.ForeColor = System.Drawing.Color.Gray;
             this.button18.Group = 0;
             this.button18.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button18.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button18.HoverImageTint = System.Drawing.Color.Empty;
             this.button18.HoverForeColor = System.Drawing.Color.Gray;
             this.button18.HoverOutline = System.Drawing.Color.Empty;
             this.button18.Image = null;
@@ -846,7 +846,7 @@
             this.button19.ForeColor = System.Drawing.Color.Gray;
             this.button19.Group = 0;
             this.button19.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button19.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button19.HoverImageTint = System.Drawing.Color.Empty;
             this.button19.HoverForeColor = System.Drawing.Color.Gray;
             this.button19.HoverOutline = System.Drawing.Color.Empty;
             this.button19.Image = null;
@@ -881,7 +881,7 @@
             this.button20.ForeColor = System.Drawing.Color.Gray;
             this.button20.Group = 0;
             this.button20.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button20.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button20.HoverImageTint = System.Drawing.Color.Empty;
             this.button20.HoverForeColor = System.Drawing.Color.Gray;
             this.button20.HoverOutline = System.Drawing.Color.Empty;
             this.button20.Image = null;
@@ -916,7 +916,7 @@
             this.button21.ForeColor = System.Drawing.Color.Gray;
             this.button21.Group = 0;
             this.button21.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button21.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button21.HoverImageTint = System.Drawing.Color.Empty;
             this.button21.HoverForeColor = System.Drawing.Color.Gray;
             this.button21.HoverOutline = System.Drawing.Color.Empty;
             this.button21.Image = null;
@@ -951,7 +951,7 @@
             this.button22.ForeColor = System.Drawing.Color.Gray;
             this.button22.Group = 0;
             this.button22.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button22.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button22.HoverImageTint = System.Drawing.Color.Empty;
             this.button22.HoverForeColor = System.Drawing.Color.Gray;
             this.button22.HoverOutline = System.Drawing.Color.Empty;
             this.button22.Image = null;
@@ -986,7 +986,7 @@
             this.button23.ForeColor = System.Drawing.Color.Gray;
             this.button23.Group = 0;
             this.button23.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button23.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button23.HoverImageTint = System.Drawing.Color.Empty;
             this.button23.HoverForeColor = System.Drawing.Color.Gray;
             this.button23.HoverOutline = System.Drawing.Color.Empty;
             this.button23.Image = null;
@@ -1021,7 +1021,7 @@
             this.button24.ForeColor = System.Drawing.Color.Gray;
             this.button24.Group = 0;
             this.button24.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button24.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button24.HoverImageTint = System.Drawing.Color.Empty;
             this.button24.HoverForeColor = System.Drawing.Color.Gray;
             this.button24.HoverOutline = System.Drawing.Color.Empty;
             this.button24.Image = null;
@@ -1056,7 +1056,7 @@
             this.button25.ForeColor = System.Drawing.Color.Gray;
             this.button25.Group = 0;
             this.button25.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button25.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button25.HoverImageTint = System.Drawing.Color.Empty;
             this.button25.HoverForeColor = System.Drawing.Color.Gray;
             this.button25.HoverOutline = System.Drawing.Color.Empty;
             this.button25.Image = null;
@@ -1091,7 +1091,7 @@
             this.button26.ForeColor = System.Drawing.Color.Gray;
             this.button26.Group = 0;
             this.button26.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button26.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button26.HoverImageTint = System.Drawing.Color.Empty;
             this.button26.HoverForeColor = System.Drawing.Color.Gray;
             this.button26.HoverOutline = System.Drawing.Color.Empty;
             this.button26.Image = null;
@@ -1126,7 +1126,7 @@
             this.button27.ForeColor = System.Drawing.Color.Gray;
             this.button27.Group = 0;
             this.button27.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button27.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button27.HoverImageTint = System.Drawing.Color.Empty;
             this.button27.HoverForeColor = System.Drawing.Color.Gray;
             this.button27.HoverOutline = System.Drawing.Color.Empty;
             this.button27.Image = null;
@@ -1161,7 +1161,7 @@
             this.button28.ForeColor = System.Drawing.Color.Gray;
             this.button28.Group = 0;
             this.button28.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button28.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button28.HoverImageTint = System.Drawing.Color.Empty;
             this.button28.HoverForeColor = System.Drawing.Color.Gray;
             this.button28.HoverOutline = System.Drawing.Color.Empty;
             this.button28.Image = null;
@@ -1196,7 +1196,7 @@
             this.button29.ForeColor = System.Drawing.Color.Gray;
             this.button29.Group = 0;
             this.button29.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button29.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button29.HoverImageTint = System.Drawing.Color.Empty;
             this.button29.HoverForeColor = System.Drawing.Color.Gray;
             this.button29.HoverOutline = System.Drawing.Color.Empty;
             this.button29.Image = null;
@@ -1231,7 +1231,7 @@
             this.button30.ForeColor = System.Drawing.Color.Gray;
             this.button30.Group = 0;
             this.button30.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button30.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button30.HoverImageTint = System.Drawing.Color.Empty;
             this.button30.HoverForeColor = System.Drawing.Color.Gray;
             this.button30.HoverOutline = System.Drawing.Color.Empty;
             this.button30.Image = null;
@@ -1266,7 +1266,7 @@
             this.button31.ForeColor = System.Drawing.Color.Gray;
             this.button31.Group = 0;
             this.button31.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button31.HoveredImageTint = System.Drawing.Color.Empty;
+            this.button31.HoverImageTint = System.Drawing.Color.Empty;
             this.button31.HoverForeColor = System.Drawing.Color.Gray;
             this.button31.HoverOutline = System.Drawing.Color.Empty;
             this.button31.Image = null;
@@ -1305,7 +1305,7 @@
             this.rightMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.rightMonthButton.ForeColor = System.Drawing.Color.White;
             this.rightMonthButton.HoverBackground = System.Drawing.Color.Empty;
-            this.rightMonthButton.HoveredImageTint = System.Drawing.Color.Gray;
+            this.rightMonthButton.HoverImageTint = System.Drawing.Color.Gray;
             this.rightMonthButton.HoverForeColor = System.Drawing.Color.Empty;
             this.rightMonthButton.HoverOutline = System.Drawing.Color.Empty;
             this.rightMonthButton.Image = ((System.Drawing.Image)(resources.GetObject("rightMonthButton.Image")));
@@ -1344,7 +1344,7 @@
             this.leftMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.leftMonthButton.ForeColor = System.Drawing.Color.White;
             this.leftMonthButton.HoverBackground = System.Drawing.Color.Empty;
-            this.leftMonthButton.HoveredImageTint = System.Drawing.Color.Gray;
+            this.leftMonthButton.HoverImageTint = System.Drawing.Color.Gray;
             this.leftMonthButton.HoverForeColor = System.Drawing.Color.Empty;
             this.leftMonthButton.HoverOutline = System.Drawing.Color.Empty;
             this.leftMonthButton.Image = ((System.Drawing.Image)(resources.GetObject("leftMonthButton.Image")));

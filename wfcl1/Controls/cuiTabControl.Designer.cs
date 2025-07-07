@@ -10,7 +10,6 @@
             {
                 components.Dispose();
             }
-            TabPages.Clear();
             base.Dispose(disposing);
         }
 
@@ -18,9 +17,26 @@
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
+            this.scrollbarTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // scrollbarTimer
+            // 
+            this.scrollbarTimer.Enabled = true;
+            this.scrollbarTimer.Interval = 32;
+            this.scrollbarTimer.Tick += new System.EventHandler(this.scrollbarTimer_Tick);
+            // 
+            // cuiTabControl
+            // 
+            this.Name = "cuiTabControl";
+            this.Size = new System.Drawing.Size(500, 300);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer scrollbarTimer;
     }
 }

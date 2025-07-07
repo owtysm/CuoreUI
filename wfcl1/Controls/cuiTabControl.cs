@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -7,51 +8,41 @@ using System.Windows.Forms;
 namespace CuoreUI.Controls
 {
     [ToolboxBitmap(typeof(TabControl))]
-    public partial class cuiTabControl : TabControl
+    public partial class cuiTabControl : UserControl
     {
-        public cuiTabControl()
-        {
-            InitializeComponent();
+        private bool hoveringInteractive = false;
+        public List<TabPage> Pages = new List<TabPage>();
+        private int _selectedIndex = -1;
 
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.DoubleBuffer, true);
-            SetStyle(ControlStyles.ResizeRedraw, true);
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
-            Appearance = TabAppearance.Buttons;
-            DrawMode = TabDrawMode.OwnerDrawFixed;
-            SizeMode = TabSizeMode.Fixed;
-            ItemSize = new Size(126, 42);
-
-            ControlAdded += TabsChanged;
-            ControlRemoved += TabsChanged;
-        }
-
-        private void TabsChanged(object sender, ControlEventArgs e)
-        {
-            Invalidate();
-        }
-
-        [Category("CuoreUI")]
-        public bool AllowNoTabs { get; set; } = false;
-
-        private Color privateBackgroundColor = Color.Empty;
-        [Category("CuoreUI")]
-        public Color BackgroundColor
+        private bool privateShowPlus = true;
+        public bool ShowPlus
         {
             get
             {
-                return privateBackgroundColor;
+                return privateShowPlus;
             }
             set
             {
-                privateBackgroundColor = value;
+                privateShowPlus = value;
+                Invalidate();
+            }
+        }
+
+        private bool privateShowDelete = true;
+        public bool ShowDelete
+        {
+            get
+            {
+                return privateShowDelete;
+            }
+            set
+            {
+                privateShowDelete = value;
                 Invalidate();
             }
         }
 
         private int privateRounding = 8;
-        [Category("CuoreUI")]
         public int Rounding
         {
             get
@@ -65,458 +56,559 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateUnselectedTabBackColor = Color.FromArgb(32, 128, 128, 128);
-        [Category("CuoreUI")]
-        public Color UnselectedTabBackColor
+        public cuiTabControl()
+        {
+            InitializeComponent();
+            DoubleBuffered = true;
+            SetStyle(ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.OptimizedDoubleBuffer |
+                     ControlStyles.ResizeRedraw |
+                     ControlStyles.UserPaint, true);
+
+            MouseWheel += CustomTabControl_MouseWheel;
+            MouseDown += tb_MouseDown;
+            MouseUp += tb_MouseUp;
+            MouseMove += tb_MouseMove;
+        }
+
+        public int SelectedIndex
         {
             get
             {
-                return privateUnselectedTabBackColor;
+                return _selectedIndex;
             }
             set
             {
-                privateUnselectedTabBackColor = value;
-                Invalidate();
+                SelectTab(value);
             }
         }
 
-        private Color privateSelectedTabBackColor = CuoreUI.Drawing.PrimaryColor;
-        [Category("CuoreUI")]
-        public Color SelectedTabBackColor
+        public TabPage SelectedTab
         {
             get
             {
-                return privateSelectedTabBackColor;
-            }
-            set
-            {
-                privateSelectedTabBackColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateHoveredTabBackColor = Color.FromArgb(64, 128, 128, 128);
-        [Category("CuoreUI")]
-        public Color HoveredTabBackColor
-        {
-            get
-            {
-                return privateHoveredTabBackColor;
-            }
-            set
-            {
-                privateHoveredTabBackColor = value;
-                Invalidate();
-            }
-        }
-
-        //
-
-        private Color privateUnselectedTabTextBackColor = Color.Gray;
-        [Category("CuoreUI")]
-        public Color UnselectedTabTextBackColor
-        {
-            get
-            {
-                return privateUnselectedTabTextBackColor;
-            }
-            set
-            {
-                privateUnselectedTabTextBackColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateSelectedTabTextBackColor = Color.White;
-        [Category("CuoreUI")]
-        public Color SelectedTabTextBackColor
-        {
-            get
-            {
-                return privateSelectedTabTextBackColor;
-            }
-            set
-            {
-                privateSelectedTabTextBackColor = value;
-                privateSelectedTabTextBackColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateHoveredTabTextBackColor = Color.FromArgb(64, 64, 64);
-        [Category("CuoreUI")]
-        public Color HoveredTabTextBackColor
-        {
-            get
-            {
-                return privateHoveredTabTextBackColor;
-            }
-            set
-            {
-                privateHoveredTabTextBackColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateDeletionTabBackgroundColor = Color.Crimson;
-        [Category("CuoreUI")]
-        public Color DeletionTabBackgroundColor
-        {
-            get
-            {
-                return privateDeletionTabBackgroundColor;
-            }
-            set
-            {
-                privateDeletionTabBackgroundColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateDeletionColor = Color.White;
-        [Category("CuoreUI")]
-        public Color DeletionColor
-        {
-            get
-            {
-                return privateDeletionColor;
-            }
-            set
-            {
-                privateDeletionColor = value;
-                Invalidate();
-            }
-        }
-
-        private Color privateAddButtonBackgroundColor = Color.FromArgb(128, 0, 0, 0);
-        [Category("CuoreUI")]
-        public Color AddButtonBackgroundColor
-        {
-            get
-            {
-                return privateAddButtonBackgroundColor;
-            }
-            set
-            {
-                privateAddButtonBackgroundColor = value;
-            }
-        }
-
-        private Color privateAddButtonColor = Color.White;
-        [Category("CuoreUI")]
-        public Color AddButtonColor
-        {
-            get
-            {
-                return privateAddButtonColor;
-            }
-            set
-            {
-                privateAddButtonColor = value;
-            }
-        }
-
-        private bool privateShowAddTabButton = true;
-        [Category("CuoreUI")]
-        public bool ShowAddTabButton
-        {
-            get
-            {
-                return privateShowAddTabButton;
-            }
-            set
-            {
-                privateShowAddTabButton = value;
-                Refresh();
-            }
-        }
-
-        [Category("CuoreUI")]
-        public Cursor HoverCursor { get; set; } = Cursors.Hand;
-
-        #region VisualProperties
-        public object HoveredTab_ => null;
-
-        public object SelectedTab_ => null;
-
-        public object UnselectedTab_ => null;
-        #endregion
-
-        private int HoveredTabIndex = -1;
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            OnMouseMove(new MouseEventArgs(MouseButtons.Left, 1, Cursor.Position.X, Cursor.Position.Y, 0));
-
-            e.Graphics.FillRectangle(new SolidBrush(BackgroundColor), ClientRectangle);
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-
-            for (int i = 0; i < TabPages.Count; i++)
-            {
-                bool isSelectedTab = i == SelectedIndex;
-                bool isHoveredTab = i == HoveredTabIndex;
-                Rectangle tabRectangle = GetTabRect(i);
-                tabRectangle.Offset(0, 2);
-                Color tempTabColor;
-                Color tempTextColor;
-                Color tempAddButtonColor;
-
-                if (isSelectedTab)
+                if (_selectedIndex < 0 || _selectedIndex + 1 < Pages.Count)
                 {
-                    //selected
-                    tempTabColor = SelectedTabBackColor;
-                    tempTextColor = SelectedTabTextBackColor;
-                    tempAddButtonColor = SelectedTabTextBackColor;
-                }
-                else if (isHoveredTab)
-                {
-                    //hovered
-                    tempTabColor = HoveredTabBackColor;
-                    tempTextColor = HoveredTabTextBackColor;
-                    tempAddButtonColor = HoveredTabTextBackColor;
-                }
-                else
-                {
-                    //normal
-                    tempTabColor = UnselectedTabBackColor;
-                    tempTextColor = UnselectedTabTextBackColor;
-                    tempAddButtonColor = UnselectedTabTextBackColor;
+                    return null;
                 }
 
-                using (GraphicsPath roundedRectanglePath = Helper.RoundRect(tabRectangle, Rounding))
-                {
-                    if (TabSelectedToDeletion == i)
-                    {
-                        //deletion
-                        tempTabColor = DeletionTabBackgroundColor;
-
-                        Rectangle crossmarkRectangle = tabRectangle;
-                        crossmarkRectangle.Width = Font.Height;
-                        crossmarkRectangle.Height = crossmarkRectangle.Width;
-                        crossmarkRectangle.X = tabRectangle.X + ((tabRectangle.Width / 2) - (crossmarkRectangle.Width / 2));
-                        crossmarkRectangle.Y = (tabRectangle.Height / 2) - (crossmarkRectangle.Height / 2);
-                        using (GraphicsPath crossmark = Helper.Crossmark(crossmarkRectangle))
-                        using (SolidBrush deletionBrush = new SolidBrush(DeletionTabBackgroundColor))
-                        using (Pen deletionCrossmarkPen = new Pen(DeletionColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round })
-                        {
-                            e.Graphics.FillPath(deletionBrush, roundedRectanglePath);
-                            e.Graphics.DrawPath(deletionCrossmarkPen, crossmark);
-                        }
-                    }
-                    else
-                    {
-                        using (SolidBrush tabBrush = new SolidBrush(tempTabColor))
-                        using (SolidBrush textBrush = new SolidBrush(tempTextColor))
-                        using (StringFormat stringFormat = new StringFormat { Alignment = StringAlignment.Center })
-                        {
-                            e.Graphics.FillPath(tabBrush, roundedRectanglePath);
-                            tabRectangle.Offset(0, tabRectangle.Height / 2);
-                            tabRectangle.Offset(0, -1 + -Font.Height / 2);
-                            e.Graphics.DrawString(TabPages[i].Text, Font, textBrush, tabRectangle, stringFormat);
-                        }
-                    }
-                }
-
-                if (ShowAddTabButton && i == (TabPages.Count - 1) && i != TabSelectedToDeletion)
-                {
-                    //last tab, draw plus button
-                    Rectangle rect = GetTabRect(i);
-                    int height = rect.Height / 2;
-                    int scaleDown = height / 12;
-                    int scaleDownHalf = scaleDown / 2;
-
-                    addTabRectangle = new Rectangle(rect.Right - height - height / 2, 2 + (height / 2), height, height);
-                    addTabRectangle.Offset(scaleDownHalf, scaleDownHalf);
-                    addTabRectangle.Inflate(-scaleDown, -scaleDown);
-
-                    using (GraphicsPath plusBackground = Helper.RoundRect(addTabRectangle, Rounding / 2))
-                    using (SolidBrush addButtonBrush = new SolidBrush(AddButtonBackgroundColor))
-                    {
-                        e.Graphics.FillPath(addButtonBrush, plusBackground);
-                    }
-
-                    addTabRectangle.Offset(0, 0);
-                    addTabRectangle.Inflate(-4, -3);
-
-                    using (GraphicsPath plusSymbol = Helper.Plus(addTabRectangle))
-                    using (Pen addSymbolPen = new Pen(AddButtonColor, 2) { EndCap = LineCap.Round, StartCap = LineCap.Round, LineJoin = LineJoin.Round })
-                    {
-                        e.Graphics.DrawPath(addSymbolPen, plusSymbol);
-                    }
-                }
+                return Pages[_selectedIndex];
             }
-
-            base.OnPaint(e);
-        }
-
-        Rectangle addTabRectangle = new Rectangle(0, 0, 0, 0);
-
-        protected override void OnSelectedIndexChanged(EventArgs e)
-        {
-            base.OnSelectedIndexChanged(e);
-            Invalidate();
-        }
-
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-
-            bool showHoverCursor = false;
-            for (int i = 0; i < TabCount; i++)
+            set
             {
-                if (GetTabRect(i).Contains(e.Location))
-                {
-                    if (HoveredTabIndex != i)
-                    {
-                        HoveredTabIndex = i;
-                        Invalidate();
-                        return;
-                    }
-                    break;
-                }
+                SelectTab(value);
             }
+        }
 
-            Cursor = showHoverCursor ? HoverCursor : Cursors.Default;
+        private int scrollOffset = 0;
+        private int tabHeight = 42;
 
+        [Browsable(true)]
+        [Category("CuoreUI")]
+        [Description("Height of the tab headers.")]
+        public int TabHeight
+        {
+            get => tabHeight;
+            set
+            {
+                tabHeight = Math.Max(16, value); // sane lower bound
+                Invalidate();
+            }
+        }
+
+        private int tabWidth = 104;
+
+        [Browsable(true)]
+        [Category("CuoreUI")]
+        [Description("Height of the tab headers.")]
+        public int TabWidth
+        {
+            get => tabWidth;
+            set
+            {
+                tabWidth = Math.Max(16, value); // sane lower bound
+                Invalidate();
+            }
+        }
+
+        private const int ScrollSpeed = 80;
+        private const int CloseBoxSize = 16;
+        private const int TabPadding = 6;
+
+        public int ScrollbarHeight { get; set; } = 8;
+        public Rectangle scrollbarThumbRect;
+        private bool draggingThumb = false;
+        private int dragOffsetX;
+
+        private string namingConvention = "TabPage";
+
+        [Category("CuoreUI")]
+        public int ScrollOffset
+        {
+            get => scrollOffset;
+            set
+            {
+                scrollOffset = Math.Max(0, value);
+                Invalidate();
+            }
         }
 
         [Category("CuoreUI")]
-        public string tabNamingConvention
+        public string NamingConvention
         {
-            get;
-            set;
-        } = "tabPage";
+            get => namingConvention;
+            set => namingConvention = value ?? "TabPage";
+        }
 
-        [Category("CuoreUI")]
         public string GetUniqueTabName()
         {
             int i = 1;
-            string finalUniqueName = string.Empty;
-            bool foundUniqueName = false;
-
-            while (!foundUniqueName)
+            while (true)
             {
-                string generatedTabName = tabNamingConvention + i;
-                bool nameExists = false;
-
-                foreach (TabPage tb in TabPages)
-                {
-                    if (generatedTabName == tb.Name || generatedTabName == tb.Text)
-                    {
-                        nameExists = true;
-                        break;
-                    }
-                }
-
-                if (!nameExists)
-                {
-                    finalUniqueName = generatedTabName;
-                    foundUniqueName = true;
-                }
-
+                string name = $"{namingConvention}{i}";
+                if (!Pages.Exists(p => p.Title == name))
+                    return name;
                 i++;
             }
-
-            return finalUniqueName;
         }
 
-        public int TabSelectedToDeletion = -1;
-
-        public void AddTab()
+        public TabPage AddTab()
         {
-            TabPage tabPage = new TabPage();
-            tabPage.Name = GetUniqueTabName();
-            tabPage.Text = tabPage.Name;
-            tabPage.BackColor = BackgroundColor;
-            tabPage.ForeColor = BackgroundColor;
+            TabPage page = new TabPage();
+            page.Title = GetUniqueTabName();
+            page.Dock = DockStyle.Bottom;
+            page.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            page.Height = Height - TabHeight - ScrollbarHeight;
+            page.Width = Width;
+            page.Top = TabHeight + ScrollbarHeight;
+            page.BackColor = BackColor;
+            Pages.Add(page);
+            TabAdded?.Invoke(this, new TabAddedEventArgs(page));
 
-            AddTab(tabPage);
+            int totalWidth = Pages.Count * (TabWidth + TabPadding) + TabHeight;
+            scrollOffset = Math.Max(0, totalWidth - Width);
+
+            if (_selectedIndex == -1)
+                SelectTab(0);
+            scrollAlpha = 255;
+
+            Invalidate();
+            return page;
         }
 
-        public void AddTab(string tabName)
-        {
-            TabPage tabPage = new TabPage();
-            tabPage.Name = tabName;
-            tabPage.Text = tabName;
-            tabPage.BackColor = BackgroundColor;
+        public event EventHandler<TabAddedEventArgs> TabAdded;
+        public event EventHandler SelectedTabChanged;
+        public event EventHandler<int> TabRemoved;
 
-            AddTab(tabPage);
+        public void RemoveTab(int index)
+        {
+            if (index < 0 || index >= Pages.Count) return;
+            Pages.RemoveAt(index);
+            TabRemoved?.Invoke(this, index);
+            if (_selectedIndex >= Pages.Count)
+                _selectedIndex = Pages.Count - 1;
+            Invalidate();
         }
 
-        public void AddTab(TabPage tabPage)
+        public void SelectTab(int index)
         {
-            CallTabAddedEvent(tabPage);
-            TabPages.Add(tabPage);
-            SelectedTab = tabPage;
+            if (index < 0 || index >= Pages.Count || index == _selectedIndex) return;
+
+            Controls.Clear();
+            var page = Pages[index];
+            Controls.Add(page);
+            _selectedIndex = index;
+            SelectedTabChanged?.Invoke(this, EventArgs.Empty);
+            Invalidate();
         }
 
-        [Category("CuoreUI")]
-        [Description("Fires whenever user clicks the 'add tab' button (sender is the added tab!).")]
-        [Browsable(true)]
-        public event EventHandler TabAdded;
-
-        public void CallTabAddedEvent(TabPage tabPage)
+        public void SelectTab(TabPage page)
         {
-            TabAdded?.Invoke(tabPage, new EventArgs());
+            if (!Pages.Contains(page)) return;
+            SelectTab(Pages.IndexOf(page));
         }
 
-        protected override void OnMouseClick(MouseEventArgs e)
+        public Color UnselectedBackgroundColor { get; set; } = Color.Transparent;
+        public Color SelectedBackgroundColor { get; set; } = Color.White;
+        public Color HoverBackgroundColor { get; set; } = Color.FromArgb(248, 248, 248);
+
+        public Color SelectedTextColor { get; set; } = Color.Black;
+        public Color UnselectedTextColor { get; set; } = Color.FromArgb(64, 64, 64);
+        public Color HoverTextColor { get; set; } = Color.FromArgb(32, 32, 32);
+
+        public Color PlusColor { get; set; } = Color.Gray;
+
+        public Color UnselectedDeleteColor { get; set; } = Color.Gray;
+        public Color SelectedDeleteColor { get; set; } = Color.Crimson;
+        public Color HoverDeleteColor { get; set; } = Color.FromArgb(32, 32, 32);
+
+        public Color ScrollbarColor { get; set; } = Color.FromArgb(128, 128, 128);
+
+        private SizeF cachedTextSize = SizeF.Empty;
+
+        // measure only once for font height
+        private void EnsureTextSize(Graphics g)
         {
-            base.OnMouseClick(e);
-            if (e.Button != MouseButtons.Right && e.Button != MouseButtons.Left)
+            if (cachedTextSize == SizeF.Empty)
+                cachedTextSize = g.MeasureString("A", Font);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.Clear(BackColor);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+
+            int totalWidth = (Pages.Count) * (TabWidth + TabPadding) + TabHeight;
+            scrollOffset = Math.Max(0, Math.Min(scrollOffset, totalWidth - Width));
+            EnsureTextSize(g);
+
+            // Create and dispose brushes once per paint event
+            using (var unselectedBackgroundBrush = new SolidBrush(UnselectedBackgroundColor))
+            using (var selectedBackgroundBrush = new SolidBrush(SelectedBackgroundColor))
+            using (var hoverBackgroundBrush = new SolidBrush(HoverBackgroundColor))
+
+            using (var selectedTextBrush = new SolidBrush(SelectedTextColor))
+            using (var unselectedTextBrush = new SolidBrush(UnselectedTextColor))
+            using (var hoverTextBrush = new SolidBrush(HoverTextColor))
             {
-                return;
+                for (int i = 0; i < Pages.Count; i++)
+                {
+                    int x = i * (TabWidth + TabPadding) - scrollOffset;
+                    if (x + TabWidth < 0 || x > Width) continue;
+
+                    var tabRect = new Rectangle(x, 0, TabWidth, TabHeight);
+                    bool isSelected = i == _selectedIndex;
+                    bool isHover = i == _hoverIndex && !isSelected;
+
+                    using (var path = Helper.RoundRect(tabRect, Rounding))
+                    {
+                        g.FillPath(isSelected ? selectedBackgroundBrush :
+                                      isHover ? hoverBackgroundBrush :
+                                      unselectedBackgroundBrush, path);
+                    }
+
+                    g.DrawString(
+                        Pages[i].Title,
+                        Font,
+                        isSelected ? selectedTextBrush : isHover ? hoverTextBrush : unselectedTextBrush,
+                        tabRect.Left + tabHeight / 2 - Font.Height / 2,
+                        2 + tabRect.Top + (TabHeight - cachedTextSize.Height) / 2
+                    );
+
+                    if (ShowDelete)
+                    {
+                        var closeRect = new Rectangle(
+                            tabRect.Right - CloseBoxSize - 10,
+                            tabRect.Top + (TabHeight - CloseBoxSize) / 2 + 1,
+                            CloseBoxSize - 4,
+                            CloseBoxSize - 4
+                        );
+
+                        using (Pen ClosePen = new Pen(isSelected ? SelectedDeleteColor : isHover ? HoverDeleteColor : UnselectedDeleteColor) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                        using (var closePath = Helper.Crossmark(closeRect))
+                        {
+                            g.DrawPath(ClosePen, closePath);
+                        }
+                    }
+                }
             }
 
-            if (e.Button == MouseButtons.Left)
+            void DrawGradient(Rectangle rect, bool reverse = false)
             {
-                for (int i = 0; i < TabCount; i++)
+                using (var brush = new LinearGradientBrush(
+                    rect,
+                    reverse ? BackColor : Color.Transparent, // start
+                    reverse ? Color.Transparent : BackColor, // end
+                    LinearGradientMode.Horizontal))
                 {
-                    if (ShowAddTabButton && i != TabSelectedToDeletion && addTabRectangle.Contains(e.Location) && i == HoveredTabIndex)
+                    g.FillRectangle(brush, rect);
+                }
+            }
+
+            bool isOverfilled = totalWidth > Width;
+            if (isOverfilled)
+            {
+                float visibleRatio = Width / (float)totalWidth;
+                int thumbWidth = Math.Max(30, (int)(Width * visibleRatio));
+                int maxThumbPos = Width - thumbWidth;
+                int thumbX = (int)(scrollOffset / (float)(totalWidth - Width) * maxThumbPos);
+                scrollbarThumbRect = new Rectangle(thumbX, TabHeight + ScrollbarHeight / 2 - 3, thumbWidth - 1, ScrollbarHeight);
+
+                using (var scrollBrush = new SolidBrush(Color.FromArgb(scrollAlpha, ScrollbarColor)))
+                using (var scrollPath = Helper.RoundRect(scrollbarThumbRect, ScrollbarHeight / 2 - 1))
+                {
+                    g.FillPath(scrollBrush, scrollPath);
+
+                    using (SolidBrush UnselectedTextBrush = new SolidBrush(UnselectedTextColor))
+                        if (scrollOffset < totalWidth - Width)
+                        {
+                            DrawGradient(new Rectangle(Width - 30, 0, 32, TabHeight + ScrollbarHeight));
+                            using (GraphicsPath rightScrollArrow = Helper.LeftArrowtest(new Rectangle(Width - 6, TabHeight + ScrollbarHeight / 2 - 3, 6, 7)))
+                            using (Matrix matrix = new Matrix())
+                            {
+                                RectangleF bounds = rightScrollArrow.GetBounds();
+                                matrix.Translate(-bounds.X - bounds.Width / 2, 0, MatrixOrder.Append);
+                                matrix.Scale(-1, 1, MatrixOrder.Append);
+                                matrix.Translate(bounds.X + bounds.Width / 2, 0, MatrixOrder.Append);
+                                rightScrollArrow.Transform(matrix);
+
+                                g.FillPath(UnselectedTextBrush, rightScrollArrow);
+                            }
+                        }
+
+                    if (scrollOffset > 0)
                     {
-                        AddTab();
+                        DrawGradient(new Rectangle(-2, 0, 33, TabHeight + ScrollbarHeight), true);
+
+                        using (SolidBrush UnselectedTextBrush = new SolidBrush(UnselectedTextColor))
+                        using (GraphicsPath leftScrollArrow = Helper.LeftArrowtest(new Rectangle(0, TabHeight + ScrollbarHeight / 2 - 3, 6, 7)))
+                        {
+                            g.FillPath(UnselectedTextBrush, leftScrollArrow);
+                        }
+                    }
+                }
+            }
+
+            if (ShowPlus)
+            {
+                int addX = Pages.Count * (TabWidth + TabPadding) - scrollOffset;
+                var addRect = new Rectangle(addX, 0, TabHeight, TabHeight);
+
+                using (Pen plusPen = new Pen(PlusColor))
+                using (GraphicsPath plus = Helper.Plus(new Rectangle(addRect.Left + addRect.Width / 2 - 6, (int)(addRect.Top + (TabHeight - cachedTextSize.Height) / 2), 12, 12)))
+                {
+                    g.DrawPath(plusPen, plus);
+                }
+            }
+        }
+
+        private int _hoverIndex = -1;
+
+        private void CustomTabControl_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (Pages.Count * (TabWidth + TabPadding) - TabPadding <= Width) return;
+            scrollOffset -= e.Delta > 0 ? ScrollSpeed : -ScrollSpeed;
+            Invalidate();
+        }
+
+        protected override bool IsInputKey(Keys keyData)
+        {
+            return keyData is Keys.Left || keyData is Keys.Right || base.IsInputKey(keyData);
+        }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                scrollOffset -= ScrollSpeed;
+                Invalidate();
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                scrollOffset += ScrollSpeed;
+                Invalidate();
+            }
+            base.OnKeyDown(e);
+        }
+
+        private void tb_MouseDown(object sender, MouseEventArgs e)
+        {
+            int totalWidth = (Pages.Count) * (TabWidth + TabPadding) + TabHeight;
+
+            for (int i = 0; i < Pages.Count; i++)
+            {
+                int x = i * (TabWidth + TabPadding) - scrollOffset;
+                var tabRect = new Rectangle(x, 0, TabWidth, TabHeight);
+
+                if (!tabRect.Contains(e.Location))
+                    continue;
+
+                if (ShowDelete)
+                {
+                    var closeRect = new Rectangle(
+                               tabRect.Right - CloseBoxSize - 10,
+                               tabRect.Top + (TabHeight - CloseBoxSize) / 2 + 1,
+                               CloseBoxSize - 4, CloseBoxSize - 4);
+
+                    if (closeRect.Contains(e.Location))
+                    {
+                        RemoveTab(i);
+                        if (_selectedIndex == i)
+                            SelectTab(Math.Min(i, Pages.Count - 1));
                         return;
                     }
-
-                    if (GetTabRect(i).Contains(e.Location))
-                    {
-                        if (i == TabSelectedToDeletion)
-                        {
-                            if (!AllowNoTabs)
-                            {
-                                if (TabPages.Count == 1)
-                                {
-                                    break;
-                                }
-                            }
-
-                            TabPages.RemoveAt(i);
-                            break;
-                        }
-                        Invalidate();
-                    }
                 }
-                TabSelectedToDeletion = -1;
+
+                SelectTab(i);
                 return;
             }
 
-            for (int i = 0; i < TabCount; i++)
+            if (ShowPlus)
             {
-                if (GetTabRect(i).Contains(e.Location))
+                int addX = Pages.Count * (TabWidth + TabPadding) - scrollOffset;
+                var addRect = new Rectangle(addX, 0, TabHeight, TabHeight);
+                if (addRect.Contains(e.Location))
                 {
-                    TabSelectedToDeletion = i;
-                    Invalidate();
+                    SelectTab(AddTab());
+                    return;
                 }
             }
+
+            // scroll start
+            Rectangle expandedThumbRect = scrollbarThumbRect;
+            expandedThumbRect.Inflate(2, 2);
+            if (expandedThumbRect.Contains(e.Location))
+            {
+                draggingThumb = true;
+                dragOffsetX = e.X - scrollbarThumbRect.X;
+            }
+        }
+
+        private void tb_MouseUp(object sender, MouseEventArgs e)
+        {
+            draggingThumb = false;
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-            TabSelectedToDeletion = -1;
-            HoveredTabIndex = -1;
-            Invalidate();
+            if (_hoverIndex != -1)
+            {
+                _hoverIndex = -1;
+                Invalidate();
+            }
         }
+
+        private void tb_MouseMove(object sender, MouseEventArgs e)
+        {
+            int newHover = -1;
+            bool newHoveringInteractive = false;
+
+            for (int i = 0; i < Pages.Count; i++)
+            {
+                int x = i * (TabWidth + TabPadding) - scrollOffset;
+                var tabRect = new Rectangle(x, 0, TabWidth, TabHeight);
+                if (tabRect.Contains(e.Location))
+                {
+                    newHover = i;
+                    if (ShowDelete)
+                    {
+                        // check if hovering over close box
+                        var closeRect = new Rectangle(
+                        tabRect.Right - CloseBoxSize - 10,
+                        tabRect.Top + (TabHeight - CloseBoxSize) / 2 + 1,
+                        CloseBoxSize - 4, CloseBoxSize - 4);
+
+                        if (closeRect.Contains(e.Location))
+                            newHoveringInteractive = true;
+                    }
+                    break;
+                }
+            }
+
+            if (ShowPlus)
+            {
+                // check add tab button hover
+                int addX = Pages.Count * (TabWidth + TabPadding) - scrollOffset;
+                var addRect = new Rectangle(addX, 0, TabHeight, TabHeight);
+                if (addRect.Contains(e.Location))
+                {
+                    newHover = Pages.Count;
+                    newHoveringInteractive = true;
+                }
+            }
+
+            // update hover index
+            if (newHover != _hoverIndex)
+            {
+                _hoverIndex = newHover;
+                Invalidate();
+            }
+
+            // update cursor
+            if (newHoveringInteractive != hoveringInteractive)
+            {
+                hoveringInteractive = newHoveringInteractive;
+                Cursor = hoveringInteractive ? Cursors.Hand : Cursors.Default;
+            }
+
+            // handle thumb dragging
+            if (draggingThumb)
+            {
+                int totalWidth = (Pages.Count) * (TabWidth + TabPadding) + TabHeight;
+                int thumbWidth = scrollbarThumbRect.Width;
+                int maxThumbX = Width - thumbWidth;
+
+                int newThumbX = Math.Max(0, Math.Min(e.X - dragOffsetX, maxThumbX));
+                float ratio = newThumbX / (float)maxThumbX;
+                scrollOffset = (int)((totalWidth - Width) * ratio);
+
+                Invalidate();
+            }
+            else
+            {
+                Rectangle expandedScrollRect = scrollbarThumbRect;
+                expandedScrollRect.Inflate(2, 2);
+                if (expandedScrollRect.Contains(e.Location))
+                    scrollAlpha = 255;
+                Invalidate(scrollbarThumbRect);
+            }
+        }
+
+        bool scrollbarUntouchable = false;
+        byte scrollAlpha = 0;
+
+        // 32ms delay is unnoticable imo
+        private void scrollbarTimer_Tick(object sender, EventArgs e)
+        {
+            if (scrollAlpha == 0)
+            {
+                return;
+            }
+
+            if (draggingThumb || scrollbarUntouchable || scrollbarThumbRect.Contains(PointToClient(Cursor.Position)))
+            {
+                scrollAlpha = 255;
+            }
+            else
+            {
+                scrollAlpha = (byte)(((scrollAlpha * 80) + 128) / 85);
+            }
+
+            Rectangle expandedThumbRect = scrollbarThumbRect;
+            expandedThumbRect.Inflate(2, 2);
+            Invalidate(expandedThumbRect);
+        }
+    }
+
+    public class TabPage : Panel
+    {
+        public string Title { get; set; }
+
+        public TabPage()
+        {
+            BackColor = Color.White;
+        }
+
+        public void SetContent(Control newContent)
+        {
+            SuspendLayout();
+            newContent.Dock = DockStyle.Fill;
+            Controls.Clear();
+            Controls.Add(newContent);
+            ResumeLayout();
+        }
+    }
+
+    public class TabAddedEventArgs : EventArgs
+    {
+        public TabAddedEventArgs(TabPage addedPage)
+        {
+            Tab = addedPage;
+        }
+
+        public TabPage Tab { get; set; }
     }
 }

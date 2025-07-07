@@ -66,7 +66,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton5.ForeColor = System.Drawing.Color.White;
             this.cuiButton5.HoverBackground = System.Drawing.Color.Empty;
-            this.cuiButton5.HoveredImageTint = System.Drawing.Color.Gray;
+            this.cuiButton5.HoverImageTint = System.Drawing.Color.Gray;
             this.cuiButton5.HoverForeColor = System.Drawing.Color.Empty;
             this.cuiButton5.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton5.Image = ((System.Drawing.Image)(resources.GetObject("cuiButton5.Image")));
@@ -107,7 +107,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButton3.HoveredImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.cuiButton3.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.cuiButton3.HoverForeColor = System.Drawing.Color.White;
             this.cuiButton3.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiButton3.Image = global::CuoreUI.Properties.Resources.crossmark;
@@ -148,7 +148,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton2.ForeColor = System.Drawing.Color.White;
             this.cuiButton2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButton2.HoveredImageTint = System.Drawing.Color.White;
+            this.cuiButton2.HoverImageTint = System.Drawing.Color.White;
             this.cuiButton2.HoverForeColor = System.Drawing.Color.White;
             this.cuiButton2.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton2.Image = global::CuoreUI.Properties.Resources.yes;
@@ -189,7 +189,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton4.ForeColor = System.Drawing.Color.White;
             this.cuiButton4.HoverBackground = System.Drawing.Color.Empty;
-            this.cuiButton4.HoveredImageTint = System.Drawing.Color.Gray;
+            this.cuiButton4.HoverImageTint = System.Drawing.Color.Gray;
             this.cuiButton4.HoverForeColor = System.Drawing.Color.White;
             this.cuiButton4.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton4.Image = global::CuoreUI.Properties.Resources.half_moon;
@@ -229,7 +229,7 @@ namespace CuoreUI.Controls.Forms
             this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cuiButton1.ForeColor = System.Drawing.Color.White;
             this.cuiButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.cuiButton1.HoveredImageTint = System.Drawing.Color.White;
+            this.cuiButton1.HoverImageTint = System.Drawing.Color.White;
             this.cuiButton1.HoverForeColor = System.Drawing.Color.White;
             this.cuiButton1.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton1.Image = global::CuoreUI.Properties.Resources.crossmark;

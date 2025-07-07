@@ -11,6 +11,11 @@ namespace CuoreUI
 {
     public static class Helper
     {
+        static Helper()
+        {
+            HandCursorFix.EnableModernCursor();
+        }
+
         public static int[] GetRefreshRates()
         {
             return Win32.GetRefreshRates();

@@ -143,7 +143,7 @@ namespace CuoreUI.Controls.Forms
 
                         cuiButton1.NormalBackground = Color.FromArgb(128, 255, 255, 255);
                         cuiButton1.NormalImageTint = Color.Black;
-                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
+                        cuiButton1.HoverImageTint = cuiButton1.NormalImageTint;
                         cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 0, 0, 0);
@@ -172,7 +172,7 @@ namespace CuoreUI.Controls.Forms
 
                         cuiButton1.NormalBackground = Color.FromArgb(20, 255, 255, 255);
                         cuiButton1.NormalImageTint = Color.White;
-                        cuiButton1.HoveredImageTint = cuiButton1.NormalImageTint;
+                        cuiButton1.HoverImageTint = cuiButton1.NormalImageTint;
                         cuiButton1.PressedImageTint = cuiButton1.NormalImageTint;
 
                         cuiFormRounder1.OutlineColor = Color.FromArgb(30, 255, 255, 255);
@@ -208,8 +208,8 @@ namespace CuoreUI.Controls.Forms
 
             cuiButton2.NormalImageTint = cuiButton2.ForeColor;
             cuiButton3.NormalImageTint = cuiButton2.ForeColor;
-            cuiButton2.HoveredImageTint = cuiButton2.ForeColor;
-            cuiButton3.HoveredImageTint = cuiButton2.ForeColor;
+            cuiButton2.HoverImageTint = cuiButton2.ForeColor;
+            cuiButton3.HoverImageTint = cuiButton2.ForeColor;
             cuiButton2.PressedImageTint = cuiButton2.ForeColor;
             cuiButton3.PressedImageTint = cuiButton2.ForeColor;
         }

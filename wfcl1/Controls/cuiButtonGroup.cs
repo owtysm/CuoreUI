@@ -389,7 +389,7 @@ namespace CuoreUI.Controls
                         case States.Hovered:
                             renderedBackgroundColor = HoverBackground;
                             renderedOutlineColor = HoverOutline;
-                            renderedTint = HoveredImageTint;
+                            renderedTint = HoverImageTint;
                             renderedForeColor = HoverForeColor;
                             break;
 
@@ -491,18 +491,18 @@ namespace CuoreUI.Controls
             }
         }
 
-        private Color privateHoveredImageTint = Color.White;
+        private Color privateHoverImageTint = Color.White;
 
         [Category("CuoreUI")]
-        public Color HoveredImageTint
+        public Color HoverImageTint
         {
             get
             {
-                return privateHoveredImageTint;
+                return privateHoverImageTint;
             }
             set
             {
-                privateHoveredImageTint = value;
+                privateHoverImageTint = value;
                 Invalidate();
             }
         }
