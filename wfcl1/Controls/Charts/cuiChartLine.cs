@@ -66,7 +66,7 @@ namespace CuoreUI.Controls.Charts
             }
         }
 
-        private bool privateShowLines = false;
+        private bool privateShowLines = true;
 
         [Browsable(true)]
         [Category("CuoreUI Chart Colors")]
@@ -166,8 +166,22 @@ namespace CuoreUI.Controls.Charts
             }
             set
             {
-                privateCustomXAxis = value;
-                Invalidate();
+                if (value.Length == 1)
+                {
+                    if (DesignMode)
+                    {
+                        MessageBox.Show("Please input at least 2 values for the X axis.\nNo changes have been made to the array.");
+                    }
+                    else
+                    {
+                        throw new Exception("CustomXAxis.Length must not be equal to 1.");
+                    }
+                }
+                else
+                {
+                    privateCustomXAxis = value;
+                    Invalidate();
+                }
             }
         }
 

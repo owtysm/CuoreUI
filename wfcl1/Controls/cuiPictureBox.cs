@@ -52,7 +52,7 @@ namespace CuoreUI.Controls
         {
             try
             {
-                target.Dispose();
+                target?.Dispose();
             }
             catch {; }
             target = null;
@@ -62,8 +62,8 @@ namespace CuoreUI.Controls
         {
             try
             {
-                target.Image.Dispose();
-                target.Dispose();
+                target?.Image?.Dispose();
+                target?.Dispose();
             }
             catch { }
             target = null;
@@ -115,9 +115,16 @@ namespace CuoreUI.Controls
                 ImageAttributes imageAttributes = new ImageAttributes();
                 imageAttributes.SetColorMatrix(colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
-                graphics.DrawImage(privateContent, new Rectangle(0, 0, privateContent.Width, privateContent.Height),
-                            0, 0, privateContent.Width, privateContent.Height,
-                            GraphicsUnit.Pixel, imageAttributes);
+                try
+                {
+                    graphics.DrawImage(privateContent, new Rectangle(0, 0, privateContent.Width, privateContent.Height),
+                                0, 0, privateContent.Width, privateContent.Height,
+                                GraphicsUnit.Pixel, imageAttributes);
+                }
+                catch (InvalidOperationException)
+                {
+
+                }
             }
 
             cachedImageBrush = new TextureBrush(tintedBitmap, WrapMode.Clamp);

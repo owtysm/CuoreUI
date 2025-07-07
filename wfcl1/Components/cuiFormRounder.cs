@@ -70,10 +70,6 @@ namespace CuoreUI.Components
                     TargetForm_LocationChanged(this, EventArgs.Empty);
                     TargetForm_Resize(this, EventArgs.Empty);
 
-                    if (EnhanceCorners)
-                    {
-                        UpdateExperimentalBitmap();
-                    }
                     roundedFormObj?.Show();
                 }
             }
@@ -399,23 +395,6 @@ namespace CuoreUI.Components
 
         }
 
-        private bool privateEnhanceCorners = false;
-
-        [Category("CuoreUI")]
-        [Description("EXPERIMENTAL! Uses a bitmap approach to smoothen out the insides of the form, so that there isn't a 1px border the color of TargetForm.BackColor around the TargetForm")]
-        public bool EnhanceCorners
-        {
-            get
-            {
-                return privateEnhanceCorners;
-            }
-            set
-            {
-                privateEnhanceCorners = value;
-                UpdateExperimentalBitmap();
-            }
-        }
-
         Bitmap experimentalBitmap
         {
             get; set;
@@ -429,7 +408,7 @@ namespace CuoreUI.Components
                 return;
             }
 
-            if (!EnhanceCorners || Rounding == 0)
+            if (Rounding == 0)
             {
                 experimentalBitmap?.Dispose();
                 roundedFormObj?.UpdBitmap();

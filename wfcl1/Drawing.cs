@@ -259,8 +259,8 @@ namespace CuoreUI
                     case EasingTypes.ExpoOut:
                         return Expo.Out(time, duration);
                     case EasingTypes.ExpoInOut:
-
                         return Expo.InOut(time, duration);
+
                     case EasingTypes.BackIn:
                         return Back.In(time, duration, backOvershoot);
                     case EasingTypes.BackOut:

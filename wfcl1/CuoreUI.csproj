@@ -115,9 +115,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TabControlStuff\" />
-  </ItemGroup>
   <Target Name="Pack">
     <PropertyGroup>
       <OutputPath>bin\$(Configuration)</OutputPath>

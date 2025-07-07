@@ -583,6 +583,7 @@ namespace CuoreUI.Controls
         }
     }
 
+    [ToolboxItem(false)]
     public class TabPage : Panel
     {
         public string Title { get; set; }

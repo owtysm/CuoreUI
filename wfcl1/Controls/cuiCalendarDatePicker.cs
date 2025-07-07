@@ -58,7 +58,7 @@ namespace CuoreUI.Controls
         public bool isDialogVisible = false;
 
         [Category("CuoreUI")]
-        [Description("Where the tooltip should show up, relative to where the cursor is.")]
+        [Description("Where the picker should show up, relative to where the control's bounds.")]
         public enum Position
         {
             Top = 1,
@@ -83,7 +83,7 @@ namespace CuoreUI.Controls
             }
 
             isDialogVisible = true;
-            DatePicker PickerForm = new DatePicker(Value);
+            DatePicker PickerForm = new DatePicker(Content);
             _PickerForm = PickerForm;
 
             PickerForm.Theme = Theme;
@@ -143,7 +143,7 @@ namespace CuoreUI.Controls
                 _PickerForm = null;
                 if (PickerForm.DialogResult == DialogResult.OK)
                 {
-                    Value = PickerForm.Value;
+                    Content = PickerForm.Value;
                 }
                 isDialogVisible = false;
             };
@@ -353,7 +353,9 @@ namespace CuoreUI.Controls
         }
 
         private DateTime privateValue = DateTime.Now.Date;
-        public DateTime Value
+
+        [Category("CuoreUI")]
+        public DateTime Content
         {
             get
             {
@@ -403,10 +405,10 @@ namespace CuoreUI.Controls
                 Rectangle textRectangle = new Rectangle(1 + (textStartX / 4) * 3, textStartY, Width - textStartX, Font.Height);
                 using (SolidBrush textBrush = new SolidBrush(ForeColor))
                 {
-                    e.Graphics.DrawString(Value.ToShortDateString(), Font, textBrush, textRectangle, stringFormat);
+                    e.Graphics.DrawString(Content.ToShortDateString(), Font, textBrush, textRectangle, stringFormat);
                 }
 
-                int textWidth = e.Graphics.MeasureString(Value.ToShortDateString(), Font).ToSize().Width;
+                int textWidth = e.Graphics.MeasureString(Content.ToShortDateString(), Font).ToSize().Width;
                 Rectangle iconRect = new Rectangle(Width / 2 - textWidth / 2 - textWidth / 8, iconYOffset, Font.Height, Font.Height);
                 using (Image tintedIcon = TintIcon(privateIcon))
                 {
@@ -418,7 +420,7 @@ namespace CuoreUI.Controls
                 Rectangle textRectangle = new Rectangle(0, textStartY, Width, Height);
                 using (SolidBrush textBrush = new SolidBrush(ForeColor))
                 {
-                    e.Graphics.DrawString(Value.ToShortDateString(), Font, textBrush, textRectangle, stringFormat);
+                    e.Graphics.DrawString(Content.ToShortDateString(), Font, textBrush, textRectangle, stringFormat);
                 }
             }
 

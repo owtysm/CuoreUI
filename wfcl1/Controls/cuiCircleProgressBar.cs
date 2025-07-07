@@ -12,6 +12,7 @@ namespace CuoreUI.Controls
         public cuiCircleProgressBar()
         {
             InitializeComponent();
+            Size = new Size(48, 48);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
