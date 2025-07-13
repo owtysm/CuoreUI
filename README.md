@@ -9,6 +9,10 @@ The repository source code updates more frequently than the release binaries on 
 
 >[!WARNING]
 > There appears to be a problem with the GitHub Pages for CuoreUI, please check back in a couple hours.
+> 
+> **UPDATE:**
+> https://github.com/CuoreUI seems to be flagged (shadow-banned), this is the account which hosts the GitHub Pages.
+> A GitHub ticket had been sent and we are awaiting a response.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
