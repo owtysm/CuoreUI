@@ -9,21 +9,21 @@ The repository source code updates more frequently than the release binaries on 
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
-This is a C# .NET Winforms Library with **modern** controls, components and forms.
+This is a C# .NET Winforms library with **modern** controls, components and forms.
 
 ## 🗿 Why use Cuore
 ![image](https://i.imgur.com/VrbId38.png)
 
 **UI Design**
 
-CuoreUI draws inspiration from the latest web designs. Tries to support control animations, blur effects on controls, and rounded forms for a sleek, modern look.
+CuoreUI draws inspiration from web UI designs. Tries to support control animations, blur effects on controls, and rounded forms for a "modern" look.
 
 ![image](https://i.imgur.com/7yeFZER.png)
 
 **Lightweight**
 *(Data from Early July 2025)*
 
-While smaller in size than other competitors, it still packs similar features due to not being obfuscated.
+While smaller in size than other competitors, it still packs similar features due to not being obfuscated and not having a license manager.
 
 ![image](https://i.imgur.com/9VbO6gK.png)
 
