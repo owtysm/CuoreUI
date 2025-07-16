@@ -10,13 +10,8 @@ The repository source code updates more frequently than the release binaries on 
 >[!WARNING]
 > There appears to be a problem with the GitHub Pages for CuoreUI, please check back in a few days.
 > 
-> **UPDATE:**
-> https://github.com/CuoreUI seems to be flagged, this is the account which hosts the GitHub Pages.
-> A GitHub ticket had been sent and we are awaiting a response.
-> 
-> "Due to high support volume, it may take up to seven business days to hear back from our Support Engineers. "
->
-> 16th July: we are still waiting for a response
+> **UPDATE 16th July:**
+> The CuoreUI GitHub account is flagged because 2 accounts are registered on the same e-mail account. Please wait, as I am still trying to resolve this with the support team.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
