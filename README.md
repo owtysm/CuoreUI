@@ -8,9 +8,9 @@
 The repository source code updates more frequently than the release binaries on NuGet.
 
 >[!NOTE]
-> Our GitHub page for CuoreUI (CuoreUI.github.io) had been struck down because of more than 1 account on the same e-mail.
+> **July 17th**
 > 
-> We will be moving to a different service soon.
+> We moved our website from GitHub over to Netlify.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
@@ -54,10 +54,3 @@ We dispose classes inheriting `IDisposable`, and use memory efficiently.
 Documentation may not be up-to-date. In that case, [create an issue](https://github.com/owtysm/CuoreUI/issues/new/choose).
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
-
-## 🌐Website
-Psst, we have a website, and its code is available on GitHub aswell.
-
-**Link: [CuoreUI.github.io](https://CuoreUI.github.io/)**
-
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [/CuoreUI/CuoreUI.github.io](https://github.com/CuoreUI/CuoreUI.github.io).
