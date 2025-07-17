@@ -12,6 +12,9 @@ The repository source code updates more frequently than the release binaries on 
 > 
 > **UPDATE 16th July:**
 > The CuoreUI GitHub account is flagged because 2 accounts are registered on the same e-mail account. Please wait, as I am still trying to resolve this with the support team.
+>
+> **UPDATE 17th July:**
+> I have received access to delete the duplicate account. I did so, and now am waiting for the final response from GitHub on @CuoreUI's reinstation.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
