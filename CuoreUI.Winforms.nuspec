@@ -2,15 +2,15 @@
 <package>
   <metadata>
     <id>CuoreUI.Winforms</id>
-    <version>2025.06.19</version>
+    <version>2025.07.17</version>
     <authors>owtysm</authors>
-    <owners>itzkxhu</owners>
+    <owners>owtysm</owners>
     <description>Free WinForms UI/UX Controls Library ∙ Stretch what WinForms can and create Modern Windows Forms apps.</description>
     <icon>icon.png</icon>
     <license type="expression">Unlicense</license>
     <tags>winforms modern controls ui telerik siticone cui theme bunifu guna cuoreui 7ow</tags>
-    <repository type="git" url="https://github.com/7owh/CuoreUI" />
-    <projectUrl>https://cuoreui.github.io</projectUrl>
+    <repository type="git" url="https://github.com/owtysm/CuoreUI" />
+    <projectUrl>https://cuoreui.netlify.app</projectUrl>
     <readme>README.md</readme>
   </metadata>
   <files>
