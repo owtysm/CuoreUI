@@ -7,14 +7,10 @@
 
 The repository source code updates more frequently than the release binaries on NuGet.
 
->[!WARNING]
-> There appears to be a problem with the GitHub Pages for CuoreUI, please check back in a few days.
+>[!NOTE]
+> Our GitHub page for CuoreUI (CuoreUI.github.io) had been struck down because of more than 1 account on the same e-mail.
 > 
-> **UPDATE 16th July:**
-> The CuoreUI GitHub account is flagged because 2 accounts are registered on the same e-mail account. Please wait, as I am still trying to resolve this with the support team.
->
-> **UPDATE 17th July:**
-> I have received access to delete the duplicate account. I did so, and now am waiting for the final response from GitHub on @CuoreUI's reinstation.
+> We will be moving to a different service soon.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
