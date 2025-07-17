@@ -7,22 +7,28 @@
 
 The repository source code updates more frequently than the release binaries on NuGet.
 
+>[!NOTE]
+> **July 17th**
+> 
+> We moved our website from GitHub over to Netlify.
+
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
-This is a C# .NET Winforms Library with **modern** controls, components and forms.
+This is a C# .NET Winforms library with **modern** controls, components and forms.
 
 ## 🗿 Why use Cuore
 ![image](https://i.imgur.com/VrbId38.png)
 
 **UI Design**
 
-CuoreUI draws inspiration from the latest web designs. Tries to support control animations, blur effects on controls, and rounded forms for a sleek, modern look.
+CuoreUI draws inspiration from web UI designs. Tries to support control animations, blur effects on controls, and rounded forms for a "modern" look.
 
 ![image](https://i.imgur.com/7yeFZER.png)
 
 **Lightweight**
+*(Data from Early July 2025)*
 
-While 5-20x smaller in size than other competitors, it still packs similar features due to not being obfuscated.
+While smaller in size than other competitors, it still packs similar features due to not being obfuscated and not having a license manager.
 
 ![image](https://i.imgur.com/9VbO6gK.png)
 
@@ -48,10 +54,3 @@ We dispose classes inheriting `IDisposable`, and use memory efficiently.
 Documentation may not be up-to-date. In that case, [create an issue](https://github.com/owtysm/CuoreUI/issues/new/choose).
 
 ![GitBook logo](https://i.imgur.com/zUxXXU9.png) View the docs on [GitBook](https://itzkxhu.gitbook.io/cuoreui).
-
-## 🌐Website
-Psst, we have a website, and its code is available on GitHub aswell.
-
-**Link: [CuoreUI.github.io](https://CuoreUI.github.io/)**
-
-![GitHub logo](https://i.imgur.com/Yc7jLwG.png) Website source: [/CuoreUI/CuoreUI.github.io](https://github.com/CuoreUI/CuoreUI.github.io).
