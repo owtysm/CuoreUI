@@ -12,7 +12,7 @@ The repository source code updates more frequently than the release binaries on 
 > 
 > Starting July 17th 2025, CuoreUI won't be receiving updates as frequently. (previously at least once per month)
 > 
-> Any issues will still be looked at, and bugs and QoL updates will still be pushed.
+> Any issues will still be looked at, and bugfixes and QoL updates will still be pushed.
 
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
