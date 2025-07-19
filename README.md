@@ -14,6 +14,9 @@ The repository source code updates more frequently than the release binaries on 
 > 
 > Any issues will still be looked at, and bugfixes and QoL updates will still be pushed.
 
+> [!TIP]
+> AI-generated & AI-assisted [Issues](https://github.com/owtysm/CuoreUI/issues) will be skipped.
+
 # ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
 
 This is a C# .NET Winforms library with **modern** controls, components and forms.
