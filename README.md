@@ -8,11 +8,16 @@
 The repository source code updates more frequently than the release binaries on NuGet.
 
 >[!NOTE]
-> **July 17th**
+> **Stable**
 > 
-> We moved our website from GitHub over to Netlify.
+> Starting July 17th 2025, CuoreUI won't be receiving updates as frequently. (previously at least once per month)
+> 
+> Any issues will still be looked at, and bugfixes and QoL updates will still be pushed.
 
-# ![image](https://github.com/user-attachments/assets/15f11b1b-bc5e-429f-9a80-635304f0cbf0) CuoreUI.Winforms
+> [!TIP]
+> AI-generated & AI-assisted [Issues](https://github.com/owtysm/CuoreUI/issues) will be skipped.
+
+# ![cui logo mini](https://i.imgur.com/8fLdRDY.png) CuoreUI.Winforms
 
 This is a C# .NET Winforms library with **modern** controls, components and forms.
 
