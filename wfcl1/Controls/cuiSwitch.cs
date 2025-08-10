@@ -23,6 +23,7 @@ namespace CuoreUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             Size = new Size(48, 24);
+            MinimumSize = new Size(12, 8);
             Cursor = Cursors.Hand;
 
             if (DesignMode)
@@ -41,8 +42,38 @@ namespace CuoreUI.Controls
 
         bool animationFinished = true;
 
-        public async Task AnimateThumbLocation()
+        void UpdateTargetX()
         {
+            if (Checked)
+            {
+                targetX = Width - 3.5f - (Height - 7) - (OutlineThickness / 2) + 0.5f;
+            }
+            else
+            {
+                targetX = (Height / 2f) - (thumbRectangleInt.Height / 2f) + (OutlineThickness / 2) - 1.5f;
+            }
+        }
+
+        private void UpdateThumbRect()
+        {
+            int thumbDim = Height - 7;
+            thumbRect = new RectangleF(thumbX, 3, thumbDim, thumbDim);
+            thumbRect.Offset(0.5f, 0.5f);
+            thumbRect.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
+            thumbRect.Inflate(ThumbSizeModifier);
+        }
+
+        public async Task AnimateThumbLocation(bool instant = false)
+        {
+            if (instant)
+            {
+                UpdateTargetX();
+                thumbX = (int)targetX;
+                UpdateThumbRect();
+                Invalidate();
+                return;
+            }
+
             if (animating)
             {
                 animationsInQueue++;
@@ -52,15 +83,7 @@ namespace CuoreUI.Controls
 
             startX = thumbX;
 
-            if (Checked)
-            {
-                targetX = Width - 3.5f - (Height - 7) - (OutlineThickness / 2) + 0.5f; // lines 55 & 332
-            }
-            else
-            {
-                targetX = (Height / 2f) - (thumbRectangleInt.Height / 2f) + (OutlineThickness / 2) - 1.5f; // lines 59 & 336
-            }
-
+            UpdateTargetX();
             xDistance = -(startX - targetX);
 
             double durationRatio = Duration / 1000.0;
@@ -121,7 +144,7 @@ namespace CuoreUI.Controls
         private bool privateChecked = false;
 
         [Category("CuoreUI")]
-        [Description("Whether the switch is on or off.")]
+        [Description("Whether the switch is currently on or off.")]
         public bool Checked
         {
             get
@@ -352,15 +375,7 @@ namespace CuoreUI.Controls
             }
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-            int Rounding;
-            try
-            {
-                Rounding = (Height / 2) - 1;
-            }
-            catch
-            {
-                Rounding = 1;
-            }
+            int Rounding = (Math.Max(Height, 1) / 2) - 1;
 
             Rectangle modifiedCR = ClientRectangle;
             modifiedCR.Inflate(-1, -1);
@@ -375,12 +390,7 @@ namespace CuoreUI.Controls
                     e.Graphics.FillPath(brush, roundBackground);
                 }
 
-                int thumbDim = Height - 7;
-                thumbRect = new RectangleF(thumbX, 3, thumbDim, thumbDim);
-                thumbRect.Offset(0.5f, 0.5f);
-                thumbRect.Inflate(-(int)(OutlineThickness), -(int)(OutlineThickness));
-
-                thumbRect.Inflate(ThumbSizeModifier);
+                UpdateThumbRect();
 
                 Rectangle temporaryThumbRect = thumbRectangleInt;
                 temporaryThumbRect.Offset(1, 0);
@@ -420,6 +430,7 @@ namespace CuoreUI.Controls
                 }
             }
 
+            //e.Graphics.DrawString(thumbX.ToString(), Font, Brushes.Black, Point.Empty);
             base.OnPaint(e);
         }
 
@@ -433,13 +444,14 @@ namespace CuoreUI.Controls
 
         protected override void OnSizeChanged(EventArgs e)
         {
-            base.OnSizeChanged(e);
             thumbX = 3;
             if (Width > 0)
             {
-                int thumbDim = Height - 7;
-                thumbX = Math.Min(Width - 5 - thumbDim, 3);
+                UpdateTargetX();
+                thumbX = (int)targetX;
+                Invalidate();
             }
+            base.OnSizeChanged(e);
         }
 
         protected override void OnMouseClick(MouseEventArgs e)
@@ -452,7 +464,7 @@ namespace CuoreUI.Controls
 
         private void cuiSwitch_Load(object sender, EventArgs e)
         {
-            _ = AnimateThumbLocation();
+            _ = AnimateThumbLocation(instant: true);
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
