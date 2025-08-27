@@ -2,7 +2,11 @@
 > **About the Development**
 > 
 > Starting September 27th 2025, CuoreUI won't be receiving any further updates.
+>
+> This means that [**2025.8.27**](https://www.nuget.org/packages/CuoreUI.Winforms/2025.8.27) is the last version.
 > 
+> **What you can do**
+>
 > Please feel free to fork the project, make your own improvements, and even monetize your version.
 > 
 > This project will be accessible for however long GitHub allows.
