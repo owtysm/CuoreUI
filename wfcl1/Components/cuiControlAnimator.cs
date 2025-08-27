@@ -166,7 +166,8 @@ namespace CuoreUI.Components
 
             if (animating || TargetControl == null || TargetControl is cuiPictureBox || DesignMode)
                 return;
-            animating = true;
+            animating = true; 
+            animationFinished = false;
 
             TargetControl.Paint += paintHandler;
 
@@ -187,10 +188,8 @@ namespace CuoreUI.Components
             bool shouldAnimateLocationNow = AnimateLocation;
             EmergencySetLocation(Duration, shouldAnimateLocationNow);
 
-            animationFinished = false;
-            AnimationStarted?.Invoke(this, EventArgs.Empty);
-
             bool animateTowardsVisible = TargetOpacity == OpacityEnum.Visible;
+            AnimationStarted?.Invoke(this, EventArgs.Empty);
 
             while (true)
             {
@@ -204,7 +203,7 @@ namespace CuoreUI.Components
                 if (elapsedTime >= Duration || IsAnimationFinished())
                 {
                     animating = false;
-                    animationFinished = false;
+                    animationFinished = true;
                     elapsedTime = 0;
                     TargetControl.Paint -= paintHandler;
                     //MessageBox.Show($"{elapsedTime}, {privateDuration}");
