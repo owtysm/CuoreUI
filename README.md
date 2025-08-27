@@ -1,18 +1,19 @@
+>[!IMPORTANT]
+> **About the Development**
+> 
+> Starting September 27th 2025, CuoreUI won't be receiving any further updates.
+> 
+> Please feel free to fork the project, make your own improvements, and even monetize your version.
+> 
+> This project will be accessible for however long GitHub allows.
+
+
 ![CuoreUI Logo](https://i.imgur.com/pWwYDum.jpeg)
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-ff6a00)](https://unlicense.org/)
 
 > [Fluent Icons](https://github.com/microsoft/fluentui-system-icons) used in this project are licensed under the MIT license.
 > 
 > [![License: MIT License](https://img.shields.io/badge/MIT-License-006aff)](https://mit-license.org/)
-
-The repository source code updates more frequently than the release binaries on NuGet.
-
->[!NOTE]
-> **Stable**
-> 
-> Starting July 17th 2025, CuoreUI won't be receiving updates as frequently. (previously at least once per month)
-> 
-> Any issues will still be looked at, and bugfixes and QoL updates will still be pushed.
 
 # ![cui logo mini](https://i.imgur.com/8fLdRDY.png) CuoreUI.Winforms
 
